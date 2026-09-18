@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   })();
 
-  // SCROLL REVEAL
+  // SCROLL REVEAL (stagger por fileira)
   (function(){
-    const els=document.querySelectorAll('.section-header, .stoa-card, .why-card, .testimonial-card, .contact-channel, .ebook-card, .software-card, .tool');
+    const els=document.querySelectorAll('.section-header, .stoa-card, .why-card, .testimonial-card, .contact-channel, .ebook-card, .software-card, .tool, .roteiro-row, .hero-proof, .ficha');
     const obs=new IntersectionObserver(entries=>{
       entries.forEach(ent=>{
         if(ent.isIntersecting){
           const sib=[...ent.target.parentElement.children].filter(c=>c.classList.contains(ent.target.classList[0]));
-          const idx=sib.indexOf(ent.target);
-          ent.target.style.transitionDelay = (idx*0.06)+'s';
+          const idx=Math.max(0, sib.indexOf(ent.target));
+          ent.target.style.transitionDelay = (Math.min(idx,6)*0.09)+'s';
           ent.target.classList.add('active');
           obs.unobserve(ent.target);
         }
