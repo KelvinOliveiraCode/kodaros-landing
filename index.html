@@ -17,8 +17,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070709">
 <link rel="icon" type="image/png" href="./kodaros_icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script type="application/ld+json">
-{"@context":"https://***@type":"Organization","name":"KODAROS","url":"https://kelvinoliveiracode.github.io/plataforma-kodaros/","logo":"./kodaros_logo.png","sameAs":["https://www.instagram.com/kodaros01"]}
+{"@context":"https://schema.org","@type":"Organization","name":"KODAROS","url":"https://kelvinoliveiracode.github.io/kodaros-landing/","logo":"./kodaros_icon.png","sameAs":["https://www.instagram.com/kodaros01"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O diagnóstico KODAROS é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. 4 perguntas em cerca de 2 minutos, com e-book Do Zero ao Patrimônio de presente."}},{"@type":"Question","name":"Como recebo os e-books?","acceptedAnswer":{"@type":"Answer","text":"Entrega imediata via Hotmart, com acesso vitalício."}},{"@type":"Question","name":"O KodaGrid funciona offline?","acceptedAnswer":{"@type":"Answer","text":"Sim. Software 100% offline para Windows, gera .xlsx com fórmulas vivas."}}]}
@@ -30,7 +31,7 @@
 /* KODAROS — direção Dossiê: ledger editorial em fileiras */
 :root{
   --stone-obsidian:#070709; --stone-basalto:#0E0E11; --stone-temple:#141418; --stone-coluna:#1C1C21;
-  --ink-primary:#F0ECE6; --ink-muted:#B3ADA3; --ink-dim:#857F75;
+  --ink-primary:#F0ECE6; --ink-muted:#8C7B6B; --ink-dim:#857F75;
   --hairline:rgba(237,233,225,0.12); --hairline-strong:rgba(237,233,225,0.22);
   --aurea:#D4AF6A; --aurea-lux:#E8C99A; --aurea-umbra:#8C6B2F;
   --aurea-soft:rgba(212,175,106,0.10); --aurea-hair:rgba(212,175,106,0.34);
@@ -92,7 +93,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo)}
 .reveal.active{opacity:1;transform:none}
 /* ---------- HERO: manchete + ficha ---------- */
-.hero{padding:178px 0 90px}
+.hero{padding:140px 0 70px}
 .hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:70px;align-items:start}
 .hero-over{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--aurea);margin-bottom:24px;display:block}
 .hero-title{font-family:var(--font-display);font-weight:600;font-size:clamp(2.5rem,5.6vw,4.2rem);line-height:1.1;margin-bottom:24px}
@@ -213,10 +214,12 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .ebook-card-oraculo img{width:110px}
 .ebook-card-oraculo h3{font-family:var(--font-display);font-size:1.2rem;margin:4px 0 6px}
 .ebook-card-oraculo p{font-size:.85rem;color:var(--ink-muted);margin-bottom:14px}
-.rec-grid{display:flex;flex-direction:column}
-.rec-card{display:grid;grid-template-columns:84px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--hairline);align-items:start}
-.rec-card-primary{border:1px solid var(--aurea-hair);padding:24px;margin:6px 0 8px;background:rgba(212,175,106,0.05)}
-.rec-why{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.2em;color:#141204;background:var(--aurea);padding:5px 12px;margin-bottom:12px}
+.rec-grid{display:flex;flex-direction:column;gap:4px}
+.rec-card{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:20px;padding:22px 0;border-bottom:1px solid var(--hairline);align-items:start}
+.rec-card-primary{grid-template-columns:104px minmax(0,1fr);border:1px solid var(--aurea-hair);padding:24px 24px 22px;margin:6px 0 8px;background:rgba(212,175,106,0.05)}
+.rec-why{grid-column:1/-1;display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.2em;color:#141204;background:var(--aurea);padding:5px 12px;margin-bottom:14px}
+.rec-cover{align-self:start}
+.rec-body{min-width:0}
 .rec-cover img{width:84px;border:1px solid var(--hairline-strong);display:block}
 .rec-card-primary .rec-cover img{width:104px}
 .rec-badge{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aurea)}
@@ -315,11 +318,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .ebook-price .old{font-size:.78rem;color:var(--ink-dim);text-decoration:line-through}
 .ebook-price .now{font-family:var(--font-display);font-size:1.25rem;color:var(--aurea-lux)}
 .ebook-safe{display:block;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
-/* marquee ferramentas */
-.marquee{overflow:hidden;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--stone-basalto);padding:16px 0;white-space:nowrap}
-.marquee-track{display:inline-flex;gap:36px;padding-right:36px;animation:mq 30s linear infinite;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted)}
-.marquee-track b{color:var(--aurea)}
-@keyframes mq{to{transform:translateX(-50%)}}
+
 /* roteiro numerado */
 .roteiro-row{grid-template-columns:84px 1fr auto}
 .roteiro-row .n{font-family:var(--font-display);font-size:2.4rem;color:transparent;-webkit-text-stroke:1px var(--aurea);line-height:1}
@@ -509,7 +508,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 </section>
 
 <!-- ABAS -->
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><span><b>ROI</b> · precificação · fluxo de caixa ·</span><span><b>follow-up</b> · WhatsApp · margem ·</span><span>50+ ferramentas gratuitas · sem cadastro ·</span><span><b>ROI</b> · precificação · fluxo de caixa ·</span><span><b>follow-up</b> · WhatsApp · margem ·</span><span>50+ ferramentas gratuitas · sem cadastro ·</span></div></div>
+
 <div class="tabs-bar" id="explorar">
   <div class="container">
     <div class="platform-tabs" role="tablist" aria-label="Conteúdos principais">

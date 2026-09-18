@@ -298,20 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
     resize(); animate();
   })();
 
-  /* ---- NAVBAR ---- */
-  (function initNavbar() {
-    const navbar = document.getElementById('navbar'); if (!navbar) return;
-    function handle() {
-      const cur = window.pageYOffset;
-      if (cur > 30) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-      // mantém navbar sempre visível e fixa no topo (sem esconder no scroll)
-      navbar.classList.remove('hidden');
-      navbar.classList.add('visible');
-    }
-    window.addEventListener('scroll', handle, { passive: true });
-    handle();
-  })();
-
   /* ---- SMOOTH SCROLL ---- */
   (function initSmooth() {
     const navbar = document.getElementById('navbar');
@@ -691,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return '' +
             '<article class="' + cls + '">' +
             whyTag +
-            '<div class="rec-cover"><img src="' + p.cover + '" alt="' + p.title + '" loading="lazy" width="270" height="360"></div>' +
+             '<div class="rec-cover"><img src="' + p.cover + '" alt="" loading="lazy" width="270" height="360"></div>' +
             '<div class="rec-body">' +
             '<span class="rec-badge">' + p.badge + '</span>' +
             '<h3 class="rec-title">' + p.title + '</h3>' +
@@ -831,7 +817,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!canvas) return;
         var ctx = canvas.getContext("2d");
         var dots = [];
-        var COUNT = 28;
+        var COUNT = window.matchMedia('(pointer: coarse)').matches ? 12 : 28;
         var COLORS = ["59,91,254", "197,164,106", "154,163,184"];
 
         function resize() {
