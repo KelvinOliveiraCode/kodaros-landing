@@ -3,26 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KODAROS — Plataforma de Crescimento</title>
-<meta name="description" content="Softwares, 8 e-books, 50+ ferramentas que rodam no navegador e um diagnóstico de 2 minutos — tudo no mesmo lugar.">
+<title>KODAROS: softwares, sites e e-books para seu negócio</title>
+<meta name="description" content="Softwares, sites, vídeos, e-books e ferramentas que rodam no navegador, mais um diagnóstico gratuito de 2 minutos para o seu negócio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Figtree:wght@400;600;700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<meta property="og:title" content="KODAROS — Plataforma">
+<link rel="preload" href="bg-salao.webp" as="image" type="image/webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://kelvinoliveiracode.github.io/kodaros-landing/">
+<meta property="og:title" content="KODAROS: Plataforma">
 <meta property="og:description" content="Softwares, biblioteca e ferramentas para o seu negócio.">
-<meta property="og:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.png">
+<meta property="og:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
+<meta name="twitter:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
 <meta property="og:url" content="https://kelvinoliveiracode.github.io/kodaros-landing/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070709">
-<link rel="icon" type="image/png" href="./kodaros_icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" href="./favicon-192.png">
+<link rel="apple-touch-icon" href="./favicon-180.png">
+<link rel="manifest" href="./site.webmanifest">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"KODAROS","url":"https://kelvinoliveiracode.github.io/kodaros-landing/","logo":"./kodaros_icon.png","sameAs":["https://www.instagram.com/kodaros01"]}
+{"@context":"https://schema.org","@type":"Organization","name":"KODAROS","url":"https://kelvinoliveiracode.github.io/kodaros-landing/","logo":"https://kelvinoliveiracode.github.io/kodaros-landing/favicon-512.png","sameAs":["https://www.instagram.com/kodaros01"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O diagnóstico KODAROS é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. 4 perguntas em cerca de 2 minutos, com e-book Do Zero ao Patrimônio de presente."}},{"@type":"Question","name":"Como recebo os e-books?","acceptedAnswer":{"@type":"Answer","text":"Entrega imediata via Hotmart, com acesso vitalício."}},{"@type":"Question","name":"O KodaGrid funciona offline?","acceptedAnswer":{"@type":"Answer","text":"Sim. Software 100% offline para Windows, gera .xlsx com fórmulas vivas."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O diagnóstico KODAROS é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada."}},{"@type":"Question","name":"Como recebo os e-books depois de comprar?","acceptedAnswer":{"@type":"Answer","text":"A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício."}},{"@type":"Question","name":"O KodaGrid funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel."}},{"@type":"Question","name":"Quais formas de pagamento a Hotmart aceita?","acceptedAnswer":{"@type":"Answer","text":"Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão."}},{"@type":"Question","name":"E se eu me arrepender da compra?","acceptedAnswer":{"@type":"Answer","text":"A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"KodaGrid — Construtor de Planilhas com Fórmulas","brand":{"@type":"Brand","name":"KODAROS"},"description":"Monte planilhas sem decorar fórmula. Gera .xlsx com fórmula viva, 13 templates, 100% offline para Windows."}
@@ -36,22 +39,27 @@
   --aurea:#D4AF6A; --aurea-lux:#E8C99A; --aurea-umbra:#8C6B2F;
   --aurea-soft:rgba(212,175,106,0.10); --aurea-hair:rgba(212,175,106,0.34);
   --paper:#EDE6D3; --paper-ink:#191510; --paper-dim:#5C5546;
-  --gold:0;
+  --aurea-deep:#6E4F1A;
   --gradient-aurea:linear-gradient(135deg,#D4AF6A 0%,#B8944F 55%,#8C6B2F 100%);
   --ease-expo:cubic-bezier(0.22,1,0.36,1);
   --font-display:"Cinzel",Georgia,serif; --font-body:"Figtree",system-ui,sans-serif;
   --font-quote:"Cormorant Garamond",Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px;scrollbar-color:#2A2418 var(--stone-obsidian)}
+html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:88px;scrollbar-color:#2A2418 var(--stone-obsidian)}
 body{font-family:var(--font-body);color:var(--ink-primary);background:var(--stone-obsidian);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--aurea);color:#141204}
 img{max-width:100%;height:auto}
 a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--aurea-lux);outline-offset:3px}
+.wall a:focus-visible,.wall button:focus-visible,.wall summary:focus-visible,.wall input:focus-visible,.wall textarea:focus-visible{outline-color:var(--aurea-deep)}
 #particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
 #particles-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
 .page-wrap{position:relative;z-index:4}
 body::before{content:"";position:fixed;inset:0;background:url('bg-salao.jpg') center 28%/cover no-repeat;z-index:0}
+@supports (background-image:image-set(url("bg-salao.webp") type("image/webp"))){
+  body::before{background-image:image-set(url("bg-salao.webp") type("image/webp"));background-size:cover;background-position:center 28%;background-repeat:no-repeat}
+}
 body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(7,7,9,0.80),rgba(7,7,9,0.93) 42%,#070709 78%);z-index:1}
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--aurea);color:#141204;padding:10px 18px;z-index:200;font-weight:700}
 .skip-link:focus{left:12px;top:12px}
@@ -122,7 +130,6 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .roteiro{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--stone-basalto)}
 .roteiro-row{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--hairline)}
 .roteiro-row:last-child{border-bottom:0}
-.roteiro-row .n{font-family:var(--font-display);font-size:2.6rem;color:transparent;-webkit-text-stroke:1px var(--aurea);line-height:1}
 .roteiro-row h3{font-size:1.05rem;margin-bottom:4px}
 .roteiro-row p{font-size:.88rem;color:var(--ink-muted)}
 .roteiro-row a{color:var(--aurea-lux);font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
@@ -194,7 +201,6 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .option::before{content:counter(opt,upper-alpha);font-size:.72rem;font-weight:700;color:var(--ink-dim);border:1px solid var(--hairline-strong);width:26px;height:26px;flex:none;display:inline-flex;align-items:center;justify-content:center}
 .option:hover{background:rgba(212,175,106,0.05)}
 .option.is-selected{background:rgba(212,175,106,0.08);box-shadow:inset 3px 0 0 var(--aurea)}
-.option-highlight{font-weight:700}
 .feedback{display:none;margin-top:18px;font-size:.86rem;color:var(--aurea-lux);border-left:2px solid var(--aurea);padding-left:14px}
 .feedback.is-visible{display:block}
 .result-flag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#0E2A17;background:#9FD6A8;padding:8px 18px;margin-bottom:16px}
@@ -262,7 +268,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .wall-lead{font-family:var(--font-quote);font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.4;max-width:800px;margin-bottom:50px;color:var(--paper-ink)}
 .testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
 .testimonial-card{padding:26px 0;border-bottom:1px solid rgba(25,21,16,0.2)}
-.stars{color:var(--aurea-umbra);letter-spacing:.2em;font-size:.8rem;margin-bottom:8px}
+.stars{color:var(--aurea-deep);letter-spacing:.2em;font-size:.8rem;margin-bottom:8px}
 .testimonial-text{font-size:.95rem;color:#33302A}
 .testimonial-author{margin-top:10px;font-size:.82rem;color:var(--paper-dim)}
 .testimonial-author strong{color:var(--paper-ink)}
@@ -306,7 +312,6 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .ficha-vitrine{display:flex;gap:10px;justify-content:center;padding:18px 24px 4px}
 .ficha-vitrine img{width:72px;border:1px solid var(--hairline-strong);transition:transform .3s var(--ease-expo),border-color .3s}
 .ficha-vitrine img:hover{transform:translateY(-4px);border-color:var(--aurea)}
-.ficha-count{display:block;text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--aurea);padding:10px 0 0}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
 .chip{font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--aurea-lux);border:1px solid var(--aurea-hair);background:rgba(212,175,106,0.07);padding:6px 12px}
 /* biblioteca vitrine */
@@ -319,11 +324,8 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .ebook-price .now{font-family:var(--font-display);font-size:1.25rem;color:var(--aurea-lux)}
 .ebook-safe{display:block;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
 
-/* roteiro numerado */
-.roteiro-row{grid-template-columns:84px 1fr auto}
-.roteiro-row .n{font-family:var(--font-display);font-size:2.4rem;color:transparent;-webkit-text-stroke:1px var(--aurea);line-height:1}
 /* depoimentos iniciais */
-.testi-init{width:40px;height:40px;flex:none;border:1px solid var(--aurea-umbra);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--aurea-umbra);background:rgba(212,175,106,0.12);margin-right:10px;vertical-align:middle}
+.testi-init{width:40px;height:40px;flex:none;border:1px solid var(--aurea-deep);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--aurea-deep);background:rgba(212,175,106,0.12);margin-right:10px;vertical-align:middle}
 .wall .testimonial-author{display:flex;align-items:center;margin-top:12px}
 /* whatsapp flutuante */
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:120;width:58px;height:58px;border-radius:50%;background:#1E3A2B;border:1px solid rgba(46,125,72,0.6);display:flex;align-items:center;justify-content:center;color:#7BD88F;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:transform .25s var(--ease-expo),background .25s}
@@ -349,15 +351,27 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 .buy-row{display:flex;gap:14px;flex-wrap:wrap}
 .btn-buy{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--gradient-aurea);color:#141204;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:transform .25s var(--ease-expo)}
 .btn-buy:hover{transform:translateY(-2px)}
+/* ---------- FAQ: verbetes ledgers ---------- */
+.faq-list{border-top:2px solid var(--aurea-umbra)}
+.faq-item{border-bottom:1px solid var(--hairline)}
+.faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;list-style:none;padding:22px 6px;font-weight:600;font-size:1.02rem;color:var(--ink-primary)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-mark{flex:none;width:26px;height:26px;border:1px solid var(--aurea-hair);border-radius:50%;position:relative;transition:border-color .25s}
+.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;background:var(--aurea);transition:transform .25s var(--ease-expo),opacity .25s}
+.faq-mark::before{width:10px;height:1.5px;transform:translate(-50%,-50%)}
+.faq-mark::after{width:1.5px;height:10px;transform:translate(-50%,-50%)}
+.faq-item[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-item summary:hover .faq-mark{border-color:var(--aurea)}
+.faq-item p{padding:0 6px 24px;color:var(--ink-muted);font-size:.95rem;max-width:720px}
 /* ---------- RESPONSIVO ---------- */
 @media(max-width:960px){
   .hero{padding-top:140px}
   .hero-grid{grid-template-columns:1fr;gap:48px}
   .roteiro-row{grid-template-columns:1fr;gap:8px}
   .stoa-row{grid-template-columns:1fr;gap:14px}
-  .ebook-row{grid-template-columns:110px 1fr;grid-template-areas:"cover body" "cover buy"}
+  .ebook-row{grid-template-columns:110px 1fr;grid-template-areas:"cover body" "cover preco" "cover buy"}
   .ebook-cover img{width:110px}
-  .ebook-price{grid-area:buy;flex-direction:row;gap:10px;align-items:baseline;text-align:left;margin:10px 0 8px}
+  .ebook-price{grid-area:preco;flex-direction:row;gap:10px;align-items:baseline;text-align:left;margin:10px 0 8px}
   .ebook-cover{grid-area:cover}
   .ebook-row .ebook-body{grid-area:body}
   .ebook-row .buy{grid-area:buy}
@@ -375,6 +389,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
   .contact-form{padding:28px 20px}
   .contact-form-grid{grid-template-columns:1fr}
   .rec-card{grid-template-columns:1fr}
+  .faq-item summary{font-size:.95rem;padding:20px 4px}
   .nav-menu{position:fixed;top:70px;left:0;right:0;background:#0E0E11;flex-direction:column;padding:12px 28px 22px;border-bottom:1px solid var(--hairline);display:none;gap:4px}
   .nav-menu.active{display:flex}
   .nav-toggle{display:block}
@@ -395,13 +410,14 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
   <div class="nav-container">
     <a href="#inicio" class="nav-logo" aria-label="KODAROS">
       <span class="nav-logo-text">KODAROS</span>
-      <img src="./bust.png" alt="KODAROS" class="nav-bust" height="40">
+      <img src="./bust.webp" alt="KODAROS" class="nav-bust" height="40">
     </a>
     
     <ul class="nav-menu" id="nav-menu">
       <li><a href="#ecossistema" class="nav-link">Ecossistema</a></li>
       <li><a href="#biblioteca" class="nav-link">Biblioteca</a></li>
       <li><a href="#diagnostico" class="nav-link"><b>○</b>Diagnóstico</a></li>
+      <li><a href="#duvidas" class="nav-link">Dúvidas</a></li>
       <li><a href="#contato" class="nav-link">Contato</a></li>
     </ul>
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
@@ -416,8 +432,8 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
     <div>
       <span class="hero-over">Software · Sites · Vídeos</span>
       <h1 class="hero-title">Uma empresa de tecnologia feita para <span class="it">vender</span> e escalar.</h1>
-      <p class="hero-sub">A <strong>KODAROS</strong> cria o que faz seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários — além de uma biblioteca de e-books e 50+ ferramentas para o dia a dia.</p>
-      <div class="hero-proof" aria-label="Prova social"><span class="stars">★★★★★</span><span><strong>4.9</strong> · 8 e-books · 50+ ferramentas · acesso vitalício</span></div>
+      <p class="hero-sub">A <strong>KODAROS</strong> cria o que faz seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários — além de uma biblioteca de e-books e ferramentas para o dia a dia.</p>
+      <div class="hero-proof" aria-label="Prova social"><span class="stars">★★★★★</span><span><strong>4.9</strong> · acesso vitalício</span></div>
       <div class="hero-ctas">
         <a class="btn btn-aurea" href="#diagnostico">Fazer meu diagnóstico <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-whatsapp" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
@@ -430,17 +446,16 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
       </div>
     </div>
     <aside class="ficha" aria-label="Ficha da plataforma">
-      <div class="ficha-head"><span>PLATAFORMA</span><span>Nº 001</span></div>
+      <div class="ficha-head"><span>PLATAFORMA</span></div>
       <figure>
-        <img src="./kodaros_icon.png" alt="Brasão KODAROS" width="420" height="420" fetchpriority="high">
+        <img src="./kodaros-icon.webp" alt="Brasão KODAROS" width="420" height="420" fetchpriority="high">
         <figcaption>Brasão oficial</figcaption>
       </figure>
       <div class="ficha-name">KODAROS</div>
-      <span class="ficha-count">8 e-books · 50+ ferramentas · 1 software</span>
       <div class="ficha-vitrine" aria-hidden="true">
-        <img src="./arquitetura-capa.png" alt="" width="144" height="192" loading="lazy">
-        <img src="./kodagrid-capa.png" alt="" width="144" height="192" loading="lazy">
-        <img src="./livro-gestao.png" alt="" width="144" height="192" loading="lazy">
+        <img src="./arquitetura-capa.webp" alt="" width="144" height="192" loading="lazy">
+        <img src="./kodagrid-capa.webp" alt="" width="144" height="192" loading="lazy">
+        <img src="./livro-gestao.webp" alt="" width="144" height="192" loading="lazy">
       </div>
       <div class="hero-orcamento" role="note" aria-label="Orçamento de software sob medida">
         <p><b>Software sob medida?</b> Precisa de um programa feito para você ou para sua empresa? Peça um orçamento, sem compromisso.</p>
@@ -454,18 +469,15 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 <section class="roteiro" aria-label="Como funciona">
   <div class="container">
     <div class="roteiro-row">
-      <span class="n" aria-hidden="true">01</span>
-      <div><h3>Diagnóstico de 2 minutos</h3><p>4 perguntas adaptadas ao seu perfil revelam o que trava seu negócio.</p></div>
+      <div><h3>Diagnóstico de 2 minutos</h3><p>3 perguntas adaptadas ao seu perfil revelam o que trava seu negócio.</p></div>
       <a href="#diagnostico">Começar agora →</a>
     </div>
     <div class="roteiro-row">
-      <span class="n" aria-hidden="true">02</span>
       <div><h3>E-book de presente</h3><p>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</p></div>
       <a href="#diagnostico">Ver presente →</a>
     </div>
     <div class="roteiro-row">
-      <span class="n" aria-hidden="true">03</span>
-      <div><h3>Biblioteca e ferramentas</h3><p>Com o diagnóstico na mão, escolha 1 dos 8 e-books e use as 50+ ferramentas.</p></div>
+      <div><h3>Biblioteca e ferramentas</h3><p>Com o diagnóstico na mão, escolha seu e-book e use as ferramentas.</p></div>
       <a href="#biblioteca">Explorar →</a>
     </div>
   </div>
@@ -501,7 +513,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
     </a>
     <a class="stoa-row stoa-card" href="#biblioteca">
       
-      <span><span class="stoa-status">8 e-books</span><h3>Biblioteca</h3><p>8 e-books de Tráfego a Gestão. Entrega imediata via Hotmart, acesso vitalício.</p></span>
+      <span><span class="stoa-status">Disponível</span><h3>Biblioteca</h3><p>De Tráfego a Gestão. Entrega imediata via Hotmart, acesso vitalício.</p></span>
       <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
     </a>
   </div>
@@ -516,7 +528,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
       <button class="platform-tab" data-target="sites" role="tab" aria-selected="false" aria-controls="panel-sites" id="tab-sites">Sites <small>sob encomenda</small></button>
       <button class="platform-tab active" data-target="diagnostico" role="tab" aria-selected="true" aria-controls="panel-diagnostico" id="tab-diagnostico">Diagnóstico <small>2 min</small></button>
       <button class="platform-tab" data-target="videos" role="tab" aria-selected="false" aria-controls="panel-videos" id="tab-videos">Vídeos <small>e propagandas</small></button>
-      <button class="platform-tab" data-target="biblioteca" role="tab" aria-selected="false" aria-controls="panel-biblioteca" id="tab-biblioteca">Biblioteca <small>8 e-books</small></button>
+      <button class="platform-tab" data-target="biblioteca" role="tab" aria-selected="false" aria-controls="panel-biblioteca" id="tab-biblioteca">Biblioteca</button>
     </div>
   </div>
 </div>
@@ -537,52 +549,52 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
     </div>
     <div class="ebooks-grid">
       <article class="ebook-card ebook-row" data-class="avancado">
-        <div class="ebook-cover"><img src="./arquitetura-capa.png" alt="Arquitetura de Aquisição" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./arquitetura-capa.webp" alt="Arquitetura de Aquisição" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Avançado</span><h3 class="ebook-title">Arquitetura de Aquisição</h3><p class="ebook-desc">O método completo de tráfego pago e funis — do anúncio à venda. Com o framework A.P.E.R.T.O., 3 calculadoras e checklists prontos.</p></div>
         <div class="ebook-price"><span class="old">R$ 247</span><span class="now">R$ 197</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro3.png" alt="Lançamento Milionário" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro3.webp" alt="Lançamento Milionário" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Lançamento Milionário</h3><p class="ebook-desc">Do planejamento à execução de lançamentos que convertem.</p></div>
         <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro1.png" alt="Tráfego Que Vende" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro1.webp" alt="Tráfego Que Vende" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Tráfego Que Vende</h3><p class="ebook-desc">Facebook e Google Ads com retorno consistente.</p></div>
         <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro2.png" alt="Venda Mais Hoje" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro2.webp" alt="Venda Mais Hoje" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Venda Mais Hoje</h3><p class="ebook-desc">Táticas práticas para vender hoje, sem enrolação.</p></div>
         <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-gestao.png" alt="Os 10 Pilares da Gestão Empresarial" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro-gestao.webp" alt="Os 10 Pilares da Gestão Empresarial" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Os 10 Pilares da Gestão Empresarial</h3><p class="ebook-desc">10 pilares para organizar e crescer com controle.</p></div>
         <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-financeiro.png" alt="Os 10 Pilares do Controle Financeiro" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro-financeiro.webp" alt="Os 10 Pilares do Controle Financeiro" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Os 10 Pilares do Controle Financeiro</h3><p class="ebook-desc">Fluxo de caixa, preços e custos com previsibilidade.</p></div>
         <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro-site.png" alt="Use Seu Site Para Escalar Sua Empresa" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro-site.webp" alt="Use Seu Site Para Escalar Sua Empresa" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Use Seu Site Para Escalar Sua Empresa</h3><p class="ebook-desc">SEO, captura e automação para seu site vender.</p></div>
         <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
       <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-reclamacoes.png" alt="Transforme Reclamações em Vendas" width="270" height="360" loading="lazy"></div>
+        <div class="ebook-cover"><img src="./livro-reclamacoes.webp" alt="Transforme Reclamações em Vendas" width="270" height="360" loading="lazy"></div>
         <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Transforme Reclamações em Vendas</h3><p class="ebook-desc">De reclamação a fidelização, cultura centrada no cliente.</p></div>
         <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro</span></div>
+        <div class="buy"><a href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
       </article>
     </div>
   </div>
@@ -590,12 +602,11 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 
 <!-- DIAGNÓSTICO -->
 <section class="section oraculo platform-panel active" id="panel-diagnostico" role="tabpanel" aria-labelledby="tab-diagnostico">
-<div style="display:none" id="diagnostico"></div>
   <div class="container">
     <div class="section-head">
       <div class="rule-top"></div>
       <h2 class="section-title">Descubra o que está travando seu negócio</h2>
-      <p class="section-desc">Responda 4 perguntas e receba um diagnóstico com um e-book gratuito (42 páginas).</p>
+      <p class="section-desc">Responda 3 perguntas e receba um diagnóstico com um e-book gratuito (42 páginas).</p>
     </div>
     <div class="funnel" id="funnel">
       <div class="funnel-bar"><span>DOSSIÊ</span><span>DIAGNÓSTICO GRATUITO</span></div>
@@ -604,8 +615,8 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
         <div style="text-align:center">
           <span class="badge-oraculo"><span class="badge-dot"></span> Diagnóstico gratuito · 2 minutos</span>
           <h3 class="oraculo-title" style="margin-top:18px">Descubra o que está<br><span class="aurea">travando o crescimento</span><br>do seu negócio</h3>
-          <p class="lead-oraculo">Responda <strong>4 perguntas rápidas</strong> e receba seu diagnóstico — com e-book de presente.</p>
-          <div class="ebook-teaser-oraculo"><img src="./ebook-cover.png" alt="Do Zero ao Patrimônio" width="96"><div style="display:flex;flex-direction:column;gap:4px"><span class="gift-tag">Presente liberado no final</span><strong style="font-family:'Cormorant Garamond',serif;font-size:1.05rem">Do Zero ao Patrimônio</strong><small style="color:var(--ink-dim);font-size:.82rem;line-height:1.4">42 páginas sobre empreendedorismo e transformação digital</small></div></div>
+          <p class="lead-oraculo">Responda <strong>3 perguntas rápidas</strong> e receba seu diagnóstico — com e-book de presente.</p>
+          <div class="ebook-teaser-oraculo"><img src="./ebook-cover.webp" alt="Do Zero ao Patrimônio" width="96"><div style="display:flex;flex-direction:column;gap:4px"><span class="gift-tag">Presente liberado no final</span><strong style="font-family:'Cormorant Garamond',serif;font-size:1.05rem">Do Zero ao Patrimônio</strong><small style="color:var(--ink-dim);font-size:.82rem;line-height:1.4">42 páginas sobre empreendedorismo e transformação digital</small></div></div>
           <button class="btn btn-aurea" data-next type="button" style="padding:18px 34px;font-size:.92rem">COMEÇAR MEU DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </section>
@@ -629,7 +640,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
         <div style="text-align:center"><span class="result-flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5 5L20 6.5"/></svg> Diagnóstico concluído</span><h3 class="result-title">Isso é o que suas respostas revelaram</h3></div>
         <div class="diagnosis" id="diagnosis"></div>
         <div class="divider-oraculo"><span>SEU PRESENTE</span></div>
-        <div class="ebook-card-oraculo"><img src="./ebook-cover.png" alt="Do Zero ao Patrimônio" width="132"><div><span class="gift-tag">E-BOOK 100% GRATUITO</span><h3>Do Zero ao Patrimônio</h3><p>Empreendedorismo, transformação digital e estratégias para construir patrimônio.</p><a class="btn btn-download" href="./do-zero-ao-patrimonio.pdf" download="Kodaros-Do-Zero-ao-Patrimonio.pdf" style="display:inline-flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg> BAIXAR MEU E-BOOK GRÁTIS</a></div></div>
+        <div class="ebook-card-oraculo"><img src="./ebook-cover.webp" alt="Do Zero ao Patrimônio" width="132"><div><span class="gift-tag">E-BOOK 100% GRATUITO</span><h3>Do Zero ao Patrimônio</h3><p>Empreendedorismo, transformação digital e estratégias para construir patrimônio.</p><a class="btn btn-download" href="./do-zero-ao-patrimonio.pdf" download="Kodaros-Do-Zero-ao-Patrimonio.pdf" style="display:inline-flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg> BAIXAR MEU E-BOOK GRÁTIS</a></div></div>
         <div class="divider-oraculo"><span>PRÓXIMO PASSO</span></div>
         <div style="display:flex;flex-direction:column;gap:12px">
           <a class="btn btn-aurea" href="#biblioteca"><span>VER BIBLIOTECA COMPLETA</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
@@ -653,7 +664,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
     </div>
     <article class="software-card spec">
       <figure class="spec-side">
-        <img src="./kodagrid-capa.png" alt="KodaGrid — Construtor de Planilhas com Fórmulas" width="270" height="360" loading="lazy">
+        <img src="./kodagrid-capa.webp" alt="KodaGrid — Construtor de Planilhas com Fórmulas" width="270" height="360" loading="lazy">
         <figcaption>KodaGrid</figcaption>
       </figure>
       <div class="spec-main">
@@ -673,6 +684,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
           <li>100% offline · Windows · Suporte: kodaros01@gmail.com</li>
         </ul>
         <a href="https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=softwares" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta" style="max-width:340px;width:100%;justify-content:center">Comprar na Hotmart</a>
+      <span class="ebook-safe" style="display:block;margin-top:10px;text-align:center">Hotmart seguro · pagamento protegido</span>
       </div>
     </article>
   </div>
@@ -690,7 +702,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
       <figure class="spec-side" aria-label="Exemplo de site">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">seusite.com.br — landing KODAROS</span></div>
-          <img class="browser-shot" src="./banner.png" alt="Exemplo de site com identidade KODAROS" width="600" height="200" loading="lazy">
+          <img class="browser-shot" src="./banner.webp" alt="Exemplo de site com identidade KODAROS" width="600" height="200" loading="lazy">
         </div>
         <figcaption>Landing · Institucional · Portfólio</figcaption>
         <div class="chips" style="justify-content:center;margin-top:14px"><span class="chip">Mobile-first</span><span class="chip">SEO incluso</span></div>
@@ -791,6 +803,39 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
   </div>
 </section>
 
+<!-- DÚVIDAS -->
+<section class="section" id="duvidas">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule-top"></div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <p class="section-desc">O que as pessoas perguntam antes de comprar. Se a sua dúvida não estiver aqui, chame no WhatsApp.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O diagnóstico é gratuito?<span class="faq-mark" aria-hidden="true"></span></summary>
+        <p>Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como recebo os e-books depois de comprar?<span class="faq-mark" aria-hidden="true"></span></summary>
+        <p>A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O KodaGrid funciona sem internet?<span class="faq-mark" aria-hidden="true"></span></summary>
+        <p>Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quais formas de pagamento a Hotmart aceita?<span class="faq-mark" aria-hidden="true"></span></summary>
+        <p>Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu me arrepender da compra?<span class="faq-mark" aria-hidden="true"></span></summary>
+        <p>A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CONTATO -->
 <section class="section" id="contato">
   <div class="container contact-grid">
@@ -816,7 +861,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
 
 <footer class="footer">
   <div class="container">
-    <a class="footer-banner" href="#inicio" aria-label="KODAROS — voltar ao início"><img src="./banner.png" alt="KODAROS" height="84"></a>
+    <a class="footer-banner" href="#inicio" aria-label="KODAROS — voltar ao início"><img src="./banner.webp" alt="KODAROS" height="84"></a>
     <p class="footer-tag">Softwares, sites, vídeos e conteúdo para quem toca negócio de verdade.</p>
     <nav class="footer-lines" aria-label="Mapa do site">
       <a href="#inicio">Início</a><span class="sep">·</span>
@@ -824,6 +869,7 @@ body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,
       <a href="#biblioteca">Biblioteca</a><span class="sep">·</span>
       <a href="#ferramentas">Ferramentas</a><span class="sep">·</span>
       <a href="#diagnostico">Diagnóstico</a><span class="sep">·</span>
+      <a href="#duvidas">Dúvidas</a><span class="sep">·</span>
       <a href="#contato">Contato</a>
     </nav>
     <nav class="footer-lines" aria-label="Legal">
