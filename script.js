@@ -1,9 +1,6 @@
 // PLATAFORMA KODAROS — Script unificado
-// Gold scroll + Navbar + Reveal + Biblioteca + Ágora + Diagnóstico
+// Navbar + Reveal + Biblioteca + Diagnóstico
 document.addEventListener('DOMContentLoaded', function(){
-  const isTouch = window.matchMedia('(pointer: coarse)').matches;
-  let isTabActive = true;
-  document.addEventListener('visibilitychange', ()=>{ isTabActive = !document.hidden; });
 
   // NAVBAR
   (function initNavbar(){
@@ -62,35 +59,6 @@ document.addEventListener('DOMContentLoaded', function(){
     els.forEach(el=>{ el.classList.add('reveal'); obs.observe(el); });
   })();
 
-  // GOLD SCROLL — pedra -> ouro
-  (function(){
-    const root=document.documentElement;
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ root.style.setProperty('--gold','1'); return; }
-    let ticking=false;
-    function upd(){
-      const vh=window.innerHeight||1;
-      const y=window.pageYOffset;
-      let p=(y - vh*0.45)/(vh*1.9);
-      p=Math.min(Math.max(p,0),1);
-      const e=p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
-      root.style.setProperty('--gold', e.toFixed(4));
-      ticking=false;
-    }
-    window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(upd); ticking=true; } }, {passive:true});
-    window.addEventListener('resize', upd, {passive:true});
-    upd();
-  })();
-
-  // HERO PARALLAX subtle
-  (function(){
-    const vis=document.querySelector('.hero-visual');
-    if(!vis||isTouch) return;
-    let ticking=false;
-    window.addEventListener('scroll', ()=>{
-      if(!ticking){ requestAnimationFrame(()=>{ if(!isTabActive) return; const s=window.pageYOffset; vis.style.transform=`translateY(${s*0.06}px)`; ticking=false; }); ticking=true; }
-    }, {passive:true});
-  })();
-
   // ACTIVE LINKS
   (function(){
     const secs=document.querySelectorAll('section[id]');
@@ -99,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const pos=window.pageYOffset+180;
       secs.forEach(sec=>{
         const top=sec.offsetTop, h=sec.offsetHeight, id=sec.getAttribute('id');
-        if(pos>=top && pos<top+h){ links.forEach(l=>{ l.classList.remove('active'); if(l.getAttribute('href')==='#'+id) l.classList.add('active'); }); }
+        if(pos>=top && pos<top+h){ links.forEach(l=>{ l.classList.remove('active'); const href=l.getAttribute('href')||''; if(href==='#'+id || href==='#'+id.replace(/^panel-/,'')) l.classList.add('active'); }); }
       });
     }
     let t=false; window.addEventListener('scroll', ()=>{ if(!t){ requestAnimationFrame(()=>{ set(); t=false; }); t=true; } }, {passive:true});
@@ -150,6 +118,7 @@ function handleNotify(e){
   setTimeout(()=>{ window.location.href='mailto:kodaros01@gmail.com?subject=Avise-me '+topic+'&body=Quero ser avisado em '+encodeURIComponent(email); }, 700);
   return false;
 }
+function waLink(text){ return 'https://wa.me/559192094504?text='+encodeURIComponent(text); }
 function handleContact(e){
   e.preventDefault();
   const form=e.target;
@@ -160,10 +129,9 @@ function handleContact(e){
   const status=document.getElementById('cf-msg-status');
   if(!name||!email||!m){ if(status) status.textContent='Preencha todos os campos.'; return false; }
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(status) status.textContent='E-mail inválido.'; return false; }
-  const subject=encodeURIComponent('Contato site — '+name);
-  const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+email+'\n\nMensagem:\n'+m);
-  window.location.href='mailto:kodaros01@gmail.com?subject='+subject+'&body='+body;
-  if(status) status.textContent='Abrindo seu e-mail... Se não abrir, escreva para kodaros01@gmail.com';
+  const msg='Contato pelo site\n\nNome: '+name+'\nE-mail: '+email+'\n\nMensagem:\n'+m;
+  window.location.href=waLink(msg);
+  if(status) status.textContent='Abrindo o WhatsApp com sua mensagem... se não abrir, use o botão verde no canto da tela.';
   form.reset(); return false;
 }
 
@@ -177,6 +145,7 @@ function handleContact(e){
       const on=b.dataset.target===target;
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on?'true':'false');
+      b.tabIndex = on ? 0 : -1;
     });
     panels.forEach(p=>{
       const on=p.id==='panel-'+target;
@@ -199,7 +168,17 @@ function handleContact(e){
   }
   tabs.forEach(btn=>{
     btn.addEventListener('click', ()=>activate(btn.dataset.target));
+    btn.addEventListener('keydown', (e)=>{
+      const i=Array.prototype.indexOf.call(tabs, btn);
+      let j=null;
+      if(e.key==='ArrowRight') j=(i+1)%tabs.length;
+      else if(e.key==='ArrowLeft') j=(i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home') j=0;
+      else if(e.key==='End') j=tabs.length-1;
+      if(j!==null){ e.preventDefault(); tabs[j].focus(); activate(tabs[j].dataset.target); }
+    });
   });
+  tabs.forEach(b=>{ b.tabIndex = b.classList.contains('active') ? 0 : -1; });
   const hash=location.hash.replace('#','');
   if(['biblioteca','diagnostico','softwares','sites','videos'].includes(hash)) activate(hash);
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -217,126 +196,15 @@ function handleContact(e){
   });
 })();
 
-/* =========================================================
-   MÓDULOS DE IDENTIDADE VISUAL (espelham o site principal)
-   ========================================================= */
-document.addEventListener('DOMContentLoaded', function() {
-  const isTouch = window.matchMedia('(pointer: coarse)').matches;
-  let isTabActive = true;
-  document.addEventListener('visibilitychange', () => { isTabActive = !document.hidden; });
-
-   /* ---- GALÁXIA ANIMADA ---- */
-  (function initGalaxy() {
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const canvas = document.getElementById('particle-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let dpr = window.devicePixelRatio || 1, width = 0, height = 0;
-    let stars = [], nebulas = [], shootingStars = [], time = 0, nextShootingStar = 400, animId = null;
-    const galaxyCenter = { x: 0.72, y: 0.30 };
-    const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
-    const palette = ['#E6E8EE', '#9AA3B8', '#C5A46A'];
-    function rand(a, b) { return a + Math.random() * (b - a); }
-    function createStars() {
-      stars = [];
-      const cx = width * galaxyCenter.x, cy = height * galaxyCenter.y;
-      const bgCount = Math.round((width * height) / 8500);
-      for (let i = 0; i < bgCount; i++) stars.push({ x: Math.random()*width, y: Math.random()*height, size: rand(0.3,1.4), twinkle: rand(0.4,2.0), phase: rand(0,Math.PI*2), color: palette[(Math.random()*palette.length)|0], galaxy: false });
-      const spiralCount = Math.round((width * height) / 15000), arms = 2, maxR = Math.min(width, height) * 0.42;
-      for (let i = 0; i < spiralCount; i++) {
-        const arm = i % arms, angle = arm * Math.PI + i * 0.22, radius = Math.pow(Math.random(), 0.6) * maxR, a = angle + radius * 0.006, spread = rand(0.4, 1.6) * maxR * 0.06, r = radius + (Math.random()-0.5)*spread;
-        stars.push({ x: cx + Math.cos(a)*r, y: cy + Math.sin(a)*r*0.62, size: rand(0.5,2.1), twinkle: rand(0.3,1.6), phase: rand(0,Math.PI*2), color: palette[(Math.random()*palette.length)|0], galaxy: true, arm });
-      }
-    }
-    function createNebulas() {
-      nebulas = [];
-      const defs = [{color:'59, 91, 254',alpha:0.05},{color:'197, 164, 106',alpha:0.03},{color:'59, 91, 254',alpha:0.04}];
-      for (let i = 0; i < 6; i++) { const d = defs[i % defs.length]; nebulas.push({ x: rand(0,width), y: rand(0,height), radius: rand(Math.min(width,height)*0.28, Math.min(width,height)*0.55), color: d.color, alpha: d.alpha, pulse: rand(0.10,0.30), phase: rand(0,Math.PI*2) }); }
-    }
-    function drawNebulas() {
-      ctx.globalCompositeOperation = 'lighter';
-      for (const n of nebulas) {
-        const pulse = 0.72 + 0.28 * Math.sin(time * n.pulse * 0.02 + n.phase);
-        const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.radius);
-        g.addColorStop(0, `rgba(${n.color}, ${(n.alpha*pulse).toFixed(3)})`); g.addColorStop(1, `rgba(${n.color}, 0)`);
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x, n.y, n.radius, 0, Math.PI*2); ctx.fill();
-      }
-      ctx.globalCompositeOperation = 'source-over';
-    }
-    function drawStars() {
-      const cx = width*galaxyCenter.x, cy = height*galaxyCenter.y, offX = mouse.x*0.35, offY = mouse.y*0.35, rot = time*0.00011, cos = Math.cos(rot), sin = Math.sin(rot);
-      for (const s of stars) {
-        const tw = 0.55 + 0.45 * Math.sin(time*0.03*s.twinkle + s.phase);
-        let x = s.x, y = s.y;
-        if (s.galaxy) { const dx = s.x-cx, dy = s.y-cy; x = cx + dx*cos - dy*sin; y = cy + dx*sin + dy*cos; }
-        ctx.globalAlpha = Math.min(1, tw*0.85 + 0.15); ctx.fillStyle = s.color;
-        ctx.beginPath(); ctx.arc(x + offX, y + offY, s.size, 0, Math.PI*2); ctx.fill();
-      }
-      ctx.globalAlpha = 1;
-    }
-    function spawn() { const sx=rand(0,width), sy=rand(0,height), dir=Math.random()*Math.PI*2, spd=rand(5,9); shootingStars.push({ x:sx, y:sy, vx:Math.cos(dir)*spd, vy:Math.sin(dir)*spd, life:1, decay:rand(0.008,0.016), length:rand(60,130) }); }
-    function drawShooting() {
-      for (let i = shootingStars.length-1; i >= 0; i--) {
-        const s = shootingStars[i]; s.x += s.vx; s.y += s.vy; s.life -= s.decay;
-        if (s.life <= 0) { shootingStars.splice(i,1); continue; }
-        const g = ctx.createLinearGradient(s.x, s.y, s.x - s.vx*5, s.y - s.vy*5);
-        g.addColorStop(0, `rgba(255,255,255, ${(s.life*0.9).toFixed(3)})`); g.addColorStop(1, 'rgba(255,255,255,0)');
-        ctx.strokeStyle = g; ctx.lineWidth = 1.3; ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(s.x - s.vx*5, s.y - s.vy*5); ctx.stroke();
-      }
-    }
-    function resize() { dpr = window.devicePixelRatio || 1; width = window.innerWidth; height = window.innerHeight; canvas.width = width*dpr; canvas.height = height*dpr; canvas.style.width = width+'px'; canvas.style.height = height+'px'; ctx.setTransform(dpr,0,0,dpr,0,0); createStars(); createNebulas(); }
-    function animate() {
-      if (isTabActive) {
-        time += 1; mouse.x += (mouse.tx - mouse.x)*0.05; mouse.y += (mouse.ty - mouse.y)*0.05;
-        if (time > nextShootingStar) { spawn(); nextShootingStar = time + rand(260,640); }
-        ctx.clearRect(0,0,width,height); drawNebulas(); drawShooting(); drawStars();
-      }
-      animId = requestAnimationFrame(animate);
-    }
-    window.addEventListener('resize', resize);
-  // parallax mousemove removido
-    resize(); animate();
-  })();
-
-  /* ---- SMOOTH SCROLL ---- */
-  (function initSmooth() {
-    const navbar = document.getElementById('navbar');
-    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) {
-      const href = this.getAttribute('href'); if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) { e.preventDefault(); const nh = navbar ? navbar.offsetHeight : 0; const pos = target.getBoundingClientRect().top + window.pageYOffset - nh - 20; window.scrollTo({ top: pos, behavior: 'smooth' }); }
-    }));
-  })();
-
-  /* ---- SCROLL REVEAL ---- */
-  (function initReveal() {
-    const els = document.querySelectorAll('.panel-head, .tool');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          const p = en.target.parentElement;
-          if (p) { const sibs = Array.from(p.children).filter(c => c.classList.contains('tool')); const idx = sibs.indexOf(en.target); en.target.style.transitionDelay = `${Math.min(idx, 6) * 0.07}s`; }
-          en.target.classList.add('active'); obs.unobserve(en.target);
-          setTimeout(() => en.target.classList.remove('reveal', 'active'), 1100);
-        }
-      });
-    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(el => { el.classList.add('reveal'); obs.observe(el); });
-  })();
-  // MAGNETIC BUTTONS removido - botões fixos
-  // CURSOR GLOW removido
-});
-
 /* KODAROS — Funil de diagnóstico
-   Fluxo: abertura → perfil → 4 perguntas adaptadas ao perfil → diagnóstico + brinde + vitrine 1+2 → site principal */
+   Fluxo: abertura → perfil → 3 perguntas adaptadas ao perfil → diagnóstico + brinde + vitrine 1+2 → site principal */
 
 (function () {
     "use strict";
 
     var state = { profile: null, qIndex: 0, answers: [] };
     var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
-    var ADVANCE_MS = 850;
-    var SITE_BASE = "";
+    var ADVANCE_MS = 1000;
     var COVER_BASE = "./";
 
     /* ---------- CATÁLOGO ESPELHADO DO SITE PRINCIPAL ---------- */
@@ -346,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Lançamento Milionário",
             desc: "O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.",
             old: "R$ 47,00", now: "R$ 12,99",
-            cover: COVER_BASE + "livro3.png",
+            cover: COVER_BASE + "livro3.webp",
             url: "https://pay.hotmart.com/R106895415M?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         trafego: {
@@ -354,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Tráfego Que Vende",
             desc: "Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.",
             old: "R$ 47,00", now: "R$ 12,99",
-            cover: COVER_BASE + "livro1.png",
+            cover: COVER_BASE + "livro1.webp",
             url: "https://pay.hotmart.com/D106894870O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         venda: {
@@ -362,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Venda Mais Hoje",
             desc: "Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar suas vendas imediatamente.",
             old: "R$ 47,00", now: "R$ 12,99",
-            cover: COVER_BASE + "livro2.png",
+            cover: COVER_BASE + "livro2.webp",
             url: "https://pay.hotmart.com/R106895345D?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         gestao: {
@@ -370,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Os 10 Pilares da Gestão Empresarial",
             desc: "10 pilares para organizar e crescer sua empresa com controle e decisões baseadas em dados.",
             old: "R$ 67,00", now: "R$ 22,99",
-            cover: COVER_BASE + "livro-gestao.png",
+            cover: COVER_BASE + "livro-gestao.webp",
             url: "https://pay.hotmart.com/S107016677T?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         financeiro: {
@@ -378,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Os 10 Pilares do Controle Financeiro",
             desc: "Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.",
             old: "R$ 67,00", now: "R$ 22,99",
-            cover: COVER_BASE + "livro-financeiro.png",
+            cover: COVER_BASE + "livro-financeiro.webp",
             url: "https://pay.hotmart.com/E107016796K?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         site: {
@@ -386,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Use Seu Site Para Escalar Sua Empresa",
             desc: "Transforme seu site em máquina de vendas com SEO, captura de leads e automação.",
             old: "R$ 67,00", now: "R$ 22,99",
-            cover: COVER_BASE + "livro-site.png",
+            cover: COVER_BASE + "livro-site.webp",
             url: "https://pay.hotmart.com/Y107016734X?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         reclamacoes: {
@@ -394,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Transforme Reclamações em Vendas",
             desc: "O método para virar reclamações em fidelização e construir uma cultura centrada no cliente.",
             old: "R$ 67,00", now: "R$ 22,99",
-            cover: COVER_BASE + "livro-reclamacoes.png",
+            cover: COVER_BASE + "livro-reclamacoes.webp",
             url: "https://pay.hotmart.com/G107016779V?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         },
         arquitetura: {
@@ -402,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Arquitetura de Aquisição",
             desc: "O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists.",
             old: "R$ 247,00", now: "R$ 197,00",
-            cover: COVER_BASE + "arquitetura-capa.png",
+            cover: COVER_BASE + "arquitetura-capa.webp",
             url: "https://pay.hotmart.com/B107295159O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico"
         }
     };
@@ -439,8 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { v: "followup", t: "Follow-up de clientes e orçamentos", fb: "Grande parte das vendas acontece no follow-up — e é exatamente ele que ninguém tem tempo de fazer." },
                     { v: "tudo", t: "Por tudo — quero escalar de vez", fb: "Quem automatiza tudo não contrai dívida de tempo com o próprio negócio." }
                 ]
-            },
-            microCommit()
+            }
         ],
         iniciante: [
             {
@@ -472,8 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { v: "constancia", t: "Criar constância nas redes", fb: "Constância é o que separa quem aparece de quem desiste na semana 3." },
                     { v: "plano", t: "Ter um plano claro passo a passo", fb: "Com plano, cada dia tem um próximo passo. Sem plano, cada dia é dúvida." }
                 ]
-            },
-            microCommit()
+            }
         ],
         outros: [
             {
@@ -505,21 +371,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     { v: "vendas", t: "Aumentar minhas vendas", fb: "Venda consistente nasce de processo, não de sorte." },
                     { v: "automatizar", t: "Automatizar o que já faço manualmente", fb: "Automatizar o que existe libera o tempo para o que vem." }
                 ]
-            },
-            microCommit()
+            }
         ]
     };
-
-    function microCommit() {
-        return {
-            q: "Quer receber seu diagnóstico + o e-book gratuito agora?",
-            sub: "",
-            options: [
-                { v: "sim", t: "SIM, QUERO RECEBER", fb: "", highlight: true },
-                { v: "pensar", t: "Quero, mas vou pensar mais um pouco…", fb: "" }
-            ]
-        };
-    }
 
     /* ---------- DIAGNÓSTICO POR PERFIL ---------- */
     var DIAG = {
@@ -673,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!p) return "";
         var isPrimary = variant === "primary";
         var cls = isPrimary ? "rec-card rec-card-primary" : "rec-card";
-        var whyTag = isPrimary ? '<span class="rec-why">RECOMENDAÇÃO #1 — COMECE POR AQUI</span>' : "";
+        var whyTag = isPrimary ? '<span class="rec-why">COMECE POR AQUI</span>' : "";
         return '' +
             '<article class="' + cls + '">' +
             whyTag +
@@ -775,11 +629,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>' + b + "</li>";
         }).join("") + "</ul>";
 
-        if (state.answers[state.answers.length - 1] === "pensar") {
-            html += '<p class="diagnosis-text" style="margin-top:14px"><strong>P.S.:</strong> ' +
-                "enquanto isso, cada cliente sem resposta e cada post que não sai é espaço que o concorrente ocupa. " +
-                "Quando quiser, o WhatsApp da Kodaros está a um clique.</p>";
-        }
         box.innerHTML = html;
 
         var recBox = document.getElementById("rec-grid");
@@ -815,6 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function particles() {
         var canvas = document.getElementById("particles");
         if (!canvas) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         var ctx = canvas.getContext("2d");
         var dots = [];
         var COUNT = window.matchMedia('(pointer: coarse)').matches ? 12 : 28;
@@ -864,6 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function initGoldenParticles() {
         const canvas = document.getElementById('particles-canvas');
         if (!canvas) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const ctx = canvas.getContext('2d');
         let dpr = window.devicePixelRatio || 1;
         let W = 0, H = 0, particles = [];
