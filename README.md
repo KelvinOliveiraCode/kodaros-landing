@@ -6,114 +6,104 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Zero deps](https://img.shields.io/badge/depend%C3%AAncias-0-2EA44F?style=flat-square)
 
-Página oficial do ecossistema **KODAROS** — software, educação e ferramentas para pequenos negócios. Single-page application em **HTML/CSS/JS puro** (679 linhas de HTML + 939 de JS, zero dependências de build), com funil de diagnóstico interativo ("Oráculo"), biblioteca de e-books com filtros e painel de softwares. Direção de arte "Dossiê": obsidiana `#070709`, tipografia Cinzel + Cormorant Garamond + Figtree, acento dourado `#D4AF6A` e partículas douradas em canvas nos dois cantos inferiores.
+Uma única página em HTML, CSS e JavaScript puro que serve de hub para o ecossistema KODAROS, com diagnóstico interativo de 4 perguntas, biblioteca de 8 e-books com filtros, vitrine do software KodaGrid e link para mais de 50 ferramentas que rodam no navegador. Sem dependências, sem passo de build, deploy direto no GitHub Pages.
 
-**Live:** https://kelvinoliveiracode.github.io/KodarosLanding/ (case-sensitive)
+Acesse https://kelvinoliveiracode.github.io/KodarosLanding/ (diferencia maiúsculas de minúsculas)
 
----
+## Problema / Por que existe
 
-## 🇧🇷 Português
+Dono de pequeno negócio perde tempo com tarefas repetitivas, atendimento manual, follow-up esquecido e presença digital desorganizada. Não falta informação; falta um próximo passo claro, sem exigir técnico, cadastro ou assinatura. A KODAROS reúne em uma página diagnóstico gratuito, e-book de presente, biblioteca de e-books e ferramentas gratuitas.
 
-### O que é
+## O que faz
 
-O hub central do ecossistema KODAROS (4 sites em produção). Reúne em uma página:
+- Hero com identidade da marca, navbar KODAROS, brasão, ficha da plataforma (8 e-books, mais de 50 ferramentas, 1 software) e botões de contato e de orçamento de software sob medida.
+- Roteiro de 3 passos — diagnóstico de 2 minutos, e-book "Do Zero ao Patrimônio" de presente (42 páginas, PDF), biblioteca e ferramentas.
+- Ecossistema com 5 painéis acessíveis (roles ARIA tablist, tab e tabpanel): Softwares e Apps, Sites, Vídeos e Propagandas, Ferramentas (link para PWA externo com mais de 50 calculadoras) e Biblioteca (8 e-books).
+- Diagnóstico "Oráculo" — máquina de estados em JavaScript puro. Fluxo — introdução, escolha de perfil (empresa, iniciante ou outros), 4 perguntas que se adaptam ao perfil, resultado com diagnóstico, download do e-book gratuito e vitrine com 1 recomendação principal mais 2 secundárias. Os links de compra levam à Hotmart com o parâmetro UTM utm_source=funil.
+- Biblioteca com 8 e-books de Tráfego a Gestão, filtros por categoria (Geral, Iniciantes, Intermediário, Avançado), preços de vitrine e compra direta na Hotmart.
+- Softwares com KodaGrid, construtor de planilhas com fórmulas para Windows, 100% offline, gera .xlsx com fórmula viva e 13 templates.
+- Sites e vídeos sob encomenda, com formulário de orçamento enviado por e-mail.
+- Depoimentos, diferenciais e formulário de contato com validação de e-mail, campo honeypot e envio por mailto para kodaros01@gmail.com.
+- Partículas douradas em canvas nos dois cantos inferiores, animações em cubic-bezier e redução de movimento conforme prefers-reduced-motion.
 
-- **Hero** com identidade da marca (navbar KODAROS em Cinzel + busto dourado, fundo bg-salao.jpg);
-- **Roteiro** — como funciona a plataforma, passo a passo;
-- **Ecossistema** em 3 painéis acessíveis (roles ARIA `tablist`/`tab`/`tabpanel`, `aria-selected`, estados `hidden`):
-  - **Biblioteca** — 8 e-books com filtros por categoria;
-  - **Diagnóstico "Oráculo"** — quiz interativo com máquina de estados (intro → perfil → 4 perguntas adaptadas ao perfil → resultado), brinde gratuito e vitrine de produtos → site principal com UTM `utm_source=funil`;
-  - **Softwares** — vitrine dos produtos;
-- **Ferramentas** — link para as 53 calculadoras do PWA KODAROS Ferramentas;
-- **Diferenciais, depoimentos e contato** — fechamento comercial.
+## Stack
 
-### E-books da biblioteca
+- HTML5 semântico com CSS embutido em index.html
+- JavaScript puro em script.js; sem framework, sem biblioteca externa, sem passo de build
+- Fontes do Google Fonts — Cinzel, Cormorant Garamond, Figtree
+- Canvas 2D para duas camadas de partículas (cinzas e douradas)
+- IntersectionObserver para reveal ao rolar; localStorage para lembrar o filtro escolhido na biblioteca
+- JSON-LD (Organization, FAQPage, Product), Open Graph, meta description, theme-color e favicon
+- Hospedagem no GitHub Pages no repositório KelvinOliveiraCode/kodaros-landing
 
-| Título | Categoria |
-|---|---|
-| Arquitetura de Aquisição | Aquisição & Tráfego |
-| Lançamento Milionário | Lançamento |
-| Tráfego Que Vende | Aquisição & Tráfego |
-| Venda Mais Hoje | Vendas |
-| Os 10 Pilares da Gestão Empresarial | Gestão |
-| Os 10 Pilares do Controle Financeiro | Financeiro |
-| Use Seu Site Para Escalar Sua Empresa | Sites |
-| Transforme Reclamações em Vendas | Suporte |
+## Como funciona
 
-Preço de vitrine: de R$ 47,00 por R$ 12,99 (Hotmart). Bônus gratuito: e-book "Do Zero ao Patrimônio" (PDF).
+1. Abra index.html em qualquer navegador moderno. Não é preciso instalar nada.
+2. Na aba Diagnóstico, escolha um perfil (empresa, iniciante ou outros) e responda 4 perguntas que se adaptam ao perfil escolhido.
+3. Ao finalizar, o JavaScript monta o diagnóstico a partir dos objetos PRODUCTS, QUESTIONS e DIAG de script.js, libera o download do e-book "Do Zero ao Patrimônio" e exibe 3 recomendações de e-books (1 principal, 2 secundárias).
+4. Compras abrem a Hotmart; o WhatsApp abre com mensagem pré-preenchida; o contato abre o cliente de e-mail do visitante. Não há backend.
 
-### Engenharia do funil Oráculo
+## Como rodar
 
-O diagnóstico é uma state machine em JS puro:
+Abra index.html em qualquer navegador moderno ou sirva a pasta com qualquer servidor estático. Não há dependências a instalar.
 
-```
-state = { profile, qIndex, answers }
-steps: .step → intro → profile → quiz (4 perguntas adaptadas) → result
-```
+Para publicar no GitHub Pages, publique o conteúdo da raiz no repositório KelvinOliveiraCode/kodaros-landing. O site fica disponível em https://kelvinoliveiracode.github.io/KodarosLanding/ (diferencia maiúsculas de minúsculas).
 
-- Perguntas adaptam-se ao perfil declarado (básico/intermediário/avançado);
-- O resultado combina respostas, entrega brinde + 2 vitrines e direciona ao site principal com UTM de rastreamento;
-- Catálogo de produtos espelhado em objeto único `PRODUCTS` — fonte de verdade para preços, capas e URLs.
+Para editar, altere index.html (marcação e estilos) e script.js (lógica do diagnóstico, partículas, abas e filtro da biblioteca). Imagens, PDFs e páginas legais ficam na raiz do repositório.
 
-### Decisões técnicas
-
-- **Zero dependências**: sem framework, sem build step — o site é o deliverable; deploy direto no GitHub Pages;
-- **Acessibilidade**: painéis com roles ARIA completos e estados `hidden` nativos;
-- **SEO**: meta description, Open Graph (og:title/description/image/type), JSON-LD `Organization` com `sameAs` (Instagram oficial), theme-color e favicon dedicados;
-- **Performance**: partículas em canvas único (dois emissores nos cantos inferiores), animações em `cubic-bezier(0.22,1,0.36,1)`, `scroll-behavior: smooth`;
-- **Design system em CSS custom properties**: paleta pedra (obsidiana, basalto, temple, coluna), tintas (primary/muted/dim), acento áureo em 6 tons e papel claro para contraste.
-
-### Estrutura
+## Estrutura do projeto
 
 ```
 KodarosLanding/
-├── index.html    # 679 linhas — toda a página + CSS embutido
-├── script.js     # 939 linhas — partículas, tabs, funil Oráculo, catálogo
-└── assets        # capas dos e-books, logos, bg-salao.jpg
+├── index.html
+├── script.js
+├── do-zero-ao-patrimonio.pdf
+├── privacidade.html
+├── termos.html
+├── sitemap.xml
+├── robots.txt
+├── kodaros_icon.png
+├── kodaros_og.png
+├── banner.png
+├── bust.png
+├── bg-salao.jpg
+├── arquitetura-capa.png
+├── kodagrid-capa.png
+├── ebook-cover.png
+├── livro-financeiro.png
+├── livro-gestao.png
+├── livro-reclamacoes.png
+├── livro-site.png
+├── livro1.png
+├── livro2.png
+└── livro3.png
 ```
 
-### Autor
+## Trade-offs e decisões
 
-**Kelvin Oliveira** — fundador do ecossistema KODAROS · [GitHub](https://github.com/KelvinOliveiraCode) · [LinkedIn](https://www.linkedin.com/in/kelvin-oliveira-code/)
+- Zero dependências e sem build — o site é o entregável; deploy direto e carregamento rápido, mas toda manutenção fica em HTML, CSS e JavaScript puro, sem abstrações de framework.
+- CSS embutido em index.html — simplifica o deploy de um único arquivo, mas concentra estilos em um documento grande.
+- Sem backend — contato sai pelo cliente de e-mail do visitante e compras acontecem na Hotmart ou WhatsApp; a landing não processa pagamento nem armazena respostas do diagnóstico.
+- Partículas em canvas com requestAnimationFrame — desativadas com prefers-reduced-motion e quando a aba fica inativa, para economizar bateria.
+- Filtro da biblioteca salvo em localStorage; funciona sem cadastro e sem servidor.
+- Diagnóstico inteiramente no cliente; os dados das respostas não saem do navegador do visitante.
 
----
+## Limitações conhecidas
 
-## 🇺🇸 English
+- Não há backend — mensagens de contato dependem do cliente de e-mail do visitante e não há confirmação de entrega no site.
+- Compras ocorrem fora da landing (Hotmart e WhatsApp); não há processamento de pagamento na página.
+- O diagnóstico é estático, com objetos fixos em JavaScript, não um algoritmo treinado.
+- Partículas e animações exigem canvas e JavaScript habilitados.
+- A URL do GitHub Pages diferencia maiúsculas de minúsculas.
+- Os depoimentos são de usuários iniciais; a página já avisa que resultados variam conforme a aplicação.
 
-The official hub of the **KODAROS** ecosystem — software, education and tools for small businesses. A single-page application in **vanilla HTML/CSS/JS** (679 lines of HTML + 939 of JS, zero build dependencies), featuring an interactive diagnosis funnel ("Oráculo"), a filterable e-book library and a software showcase. "Dossier" art direction: obsidian `#070709`, Cinzel + Cormorant Garamond + Figtree typography, gold accent `#D4AF6A` and golden canvas particles rising from both bottom corners.
+## Licença
 
-**Live:** https://kelvinoliveiracode.github.io/KodarosLanding/ (case-sensitive)
+Não há arquivo LICENSE no repositório. Os textos, e-books, imagens e marcas pertencem à KODAROS. Entre em contato por kodaros01@gmail.com antes de reutilizar código ou materiais.
 
-### What's in it
+## Autor
 
-- **Hero** with brand identity (KODAROS navbar in Cinzel + golden bust, bg-salao.jpg backdrop);
-- **Journey** — how the platform works, step by step;
-- **Ecosystem** in 3 accessible panels (full ARIA tablist/tab/tabpanel roles):
-  - **Library** — 8 e-books with category filters;
-  - **"Oráculo" diagnosis** — interactive quiz as a state machine (intro → profile → 4 profile-adaptive questions → result), free lead magnet and product showcases → main site with `utm_source=funil`;
-  - **Software** — product showcase;
-- **Tools** — link to the 53 calculators in the KODAROS Ferramentas PWA;
-- **Differentiators, testimonials and contact** — commercial close.
-
-### Oráculo funnel engineering
-
-The diagnosis is a state machine in pure JS:
-
-```
-state = { profile, qIndex, answers }
-steps: .step → intro → profile → quiz (4 adaptive questions) → result
-```
-
-Questions adapt to the declared profile; the result combines answers, delivers a free gift + 2 showcases and forwards to the main site with tracking UTM. The product catalog lives in a single `PRODUCTS` object — the source of truth for prices, covers and URLs.
-
-### Technical decisions
-
-- **Zero dependencies**: no framework, no build step — the site is the deliverable; direct GitHub Pages deploy;
-- **Accessibility**: panels with complete ARIA roles and native `hidden` states;
-- **SEO**: meta description, Open Graph, JSON-LD `Organization` with official `sameAs`, dedicated theme-color and favicon;
-- **Performance**: single-canvas particles (two emitters at bottom corners), `cubic-bezier(0.22,1,0.36,1)` easing, smooth scroll;
-- **CSS custom-property design system**: stone palette, ink tones, six-step gold accent and light paper for contrast.
-
-### Author
-
-**Kelvin Oliveira** — KODAROS ecosystem founder · [GitHub](https://github.com/KelvinOliveiraCode) · [LinkedIn](https://www.linkedin.com/in/kelvin-oliveira-code/)
+Kelvin Oliveira — fundador do ecossistema KODAROS
+GitHub https://github.com/KelvinOliveiraCode
+LinkedIn https://www.linkedin.com/in/kelvin-oliveira-code/
+Contato kodaros01@gmail.com
