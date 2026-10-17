@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KodarosLanding — Plataforma de Crescimento KODAROS
 
 ![Site](https://img.shields.io/badge/site-live-D4AF6A?style=flat-square&label=kelvinoliveiracode.github.io%2FKodarosLanding)
