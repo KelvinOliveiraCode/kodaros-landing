@@ -14,7 +14,7 @@
 
 ## O que é
 
-KODAROS ,  plataforma: 8 e-books, diagnóstico interativo e ferramentas | KODAROS platform landing with interactive diagnosis funnel
+KODAROS ,  plataforma: 8 e-books, diagnóstico interativo e ferramentas
 
 ---
 
