@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kelvinoliveiracode.github.io/KodarosLanding/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kelvinoliveiracode.github.io/KodarosLanding/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://kelvinoliveiracode.github.io/KodarosLanding/termos.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/termos.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
