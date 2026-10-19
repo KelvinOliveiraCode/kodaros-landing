@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KODAROS: softwares, sites e e-books para seu negócio</title>
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KODAROS: Softwares, sites, vídeos e conteúdo para escalar</title>
 <meta name="description" content="Softwares, sites, vídeos, e-books e ferramentas que rodam no navegador, mais um diagnóstico gratuito de 2 minutos para o seu negócio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="bg-salao.webp" as="image" type="image/webp">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="canonical" href="https://kelvinoliveiracode.github.io/kodaros-landing/">
 <meta property="og:title" content="KODAROS: Plataforma">
 <meta property="og:description" content="Softwares, biblioteca e ferramentas para o seu negócio.">
 <meta property="og:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
-<meta name="twitter:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
 <meta property="og:url" content="https://kelvinoliveiracode.github.io/kodaros-landing/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
 <meta name="theme-color" content="#070709">
 <link rel="icon" type="image/png" href="./favicon-192.png">
 <link rel="apple-touch-icon" href="./favicon-180.png">
@@ -27,863 +26,1702 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O diagnóstico KODAROS é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada."}},{"@type":"Question","name":"Como recebo os e-books depois de comprar?","acceptedAnswer":{"@type":"Answer","text":"A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício."}},{"@type":"Question","name":"O KodaGrid funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel."}},{"@type":"Question","name":"Quais formas de pagamento a Hotmart aceita?","acceptedAnswer":{"@type":"Answer","text":"Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão."}},{"@type":"Question","name":"E se eu me arrepender da compra?","acceptedAnswer":{"@type":"Answer","text":"A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá."}}]}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"KodaGrid — Construtor de Planilhas com Fórmulas","brand":{"@type":"Brand","name":"KODAROS"},"description":"Monte planilhas sem decorar fórmula. Gera .xlsx com fórmula viva, 13 templates, 100% offline para Windows."}
-</script>
 <style>
-/* KODAROS — direção Dossiê: ledger editorial em fileiras */
+/* ══════════════════════════════════════════════════════════════════
+   KODAROS v2 · "Console" — tokens extraídos do brand source atual
+   (index.html v1) e convertidos para OKLch. Sem hex solto fora daqui.
+   ══════════════════════════════════════════════════════════════════ */
 :root{
-  --stone-obsidian:#070709; --stone-basalto:#0E0E11; --stone-temple:#141418; --stone-coluna:#1C1C21;
-  --ink-primary:#F0ECE6; --ink-muted:#8C7B6B; --ink-dim:#857F75;
-  --hairline:rgba(237,233,225,0.12); --hairline-strong:rgba(237,233,225,0.22);
-  --aurea:#D4AF6A; --aurea-lux:#E8C99A; --aurea-umbra:#8C6B2F;
-  --aurea-soft:rgba(212,175,106,0.10); --aurea-hair:rgba(212,175,106,0.34);
-  --paper:#EDE6D3; --paper-ink:#191510; --paper-dim:#5C5546;
-  --aurea-deep:#6E4F1A;
-  --gradient-aurea:linear-gradient(135deg,#D4AF6A 0%,#B8944F 55%,#8C6B2F 100%);
-  --ease-expo:cubic-bezier(0.22,1,0.36,1);
-  --font-display:"Cinzel",Georgia,serif; --font-body:"Figtree",system-ui,sans-serif;
-  --font-quote:"Cormorant Garamond",Georgia,serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:88px;scrollbar-color:#2A2418 var(--stone-obsidian)}
-body{font-family:var(--font-body);color:var(--ink-primary);background:var(--stone-obsidian);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--aurea);color:#141204}
-img{max-width:100%;height:auto}
-a{color:inherit}
-a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--aurea-lux);outline-offset:3px}
-.wall a:focus-visible,.wall button:focus-visible,.wall summary:focus-visible,.wall input:focus-visible,.wall textarea:focus-visible{outline-color:var(--aurea-deep)}
-#particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-#particles-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
-.page-wrap{position:relative;z-index:4}
-body::before{content:"";position:fixed;inset:0;background:url('bg-salao.jpg') center 28%/cover no-repeat;z-index:0}
-@supports (background-image:image-set(url("bg-salao.webp") type("image/webp"))){
-  body::before{background-image:image-set(url("bg-salao.webp") type("image/webp"));background-size:cover;background-position:center 28%;background-repeat:no-repeat}
-}
-body::after{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(7,7,9,0.80),rgba(7,7,9,0.93) 42%,#070709 78%);z-index:1}
-.skip-link{position:absolute;left:-9999px;top:0;background:var(--aurea);color:#141204;padding:10px 18px;z-index:200;font-weight:700}
-.skip-link:focus{left:12px;top:12px}
-.container{max-width:1180px;margin:0 auto;padding:0 28px}
-/* ---------- NAV: filete ouro, links numerados ---------- */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:#070709;border-bottom:2px solid var(--aurea-umbra)}
-.nav-container{max-width:1180px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;gap:20px}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.nav-logo-text{font-family:var(--font-display);font-weight:700;font-size:1.12rem;letter-spacing:0.24em}
-.nav-bust{height:40px;width:auto}
-.nav-ed{font-size:.64rem;letter-spacing:.24em;color:var(--ink-dim);border:1px solid var(--hairline);padding:5px 10px;white-space:nowrap}
-.nav-menu{display:flex;list-style:none;gap:26px}
-.nav-link{text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);padding:6px 0}
-.nav-link b{color:var(--aurea);font-weight:600;margin-right:7px;font-size:.7rem}
-.nav-link:hover{color:var(--ink-primary)}
-.nav-link.active{color:var(--aurea-lux);box-shadow:inset 0 -2px 0 var(--aurea)}
-.nav-toggle{display:none;background:none;border:1px solid var(--hairline);padding:10px;cursor:pointer}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink-primary);margin:5px 0}
-/* ---------- BOTÕES ---------- */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-family:var(--font-body);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .25s var(--ease-expo),background .25s,color .25s}
-.btn-aurea{background:var(--gradient-aurea);color:#141204}
-.btn-aurea:hover{transform:translateY(-2px)}
-.btn-line{background:transparent;color:var(--aurea-lux);border-color:var(--aurea-hair)}
-.btn-line:hover{background:rgba(212,175,106,0.10)}
-.btn-text{background:none;border:0;color:var(--aurea-lux);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--aurea-hair);padding:16px 4px;cursor:pointer;font-family:var(--font-body)}
-.btn-text:hover{text-decoration-color:var(--aurea)}
-.btn-whatsapp{background:#1E3A2B;color:#E9F5EC;border-color:rgba(46,125,72,0.5)}
-.btn-whatsapp:hover{background:#27492F}
-.btn-download{background:var(--aurea-soft);color:var(--aurea-lux);border-color:var(--aurea-hair)}
-.btn-download:hover{background:rgba(212,175,106,0.2)}
-.btn-primary{background:var(--gradient-aurea);color:#141204}
-.btn-secondary{background:transparent;color:var(--aurea-lux);border-color:var(--aurea-hair)}
-/* ---------- BASE DE SEÇÃO ---------- */
-.section{padding:104px 0}
-.rule-top{width:56px;height:3px;background:var(--aurea);margin-bottom:26px}
-.section-title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,3.8vw,2.7rem);line-height:1.18;margin-bottom:14px;max-width:700px}
-.section-desc{color:var(--ink-muted);max-width:620px;font-size:1.02rem}
-.section-head{margin-bottom:54px}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo)}
-.reveal.active{opacity:1;transform:none}
-/* ---------- HERO: manchete + ficha ---------- */
-.hero{padding:140px 0 70px}
-.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:70px;align-items:start}
-.hero-over{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--aurea);margin-bottom:24px;display:block}
-.hero-title{font-family:var(--font-display);font-weight:600;font-size:clamp(2.5rem,5.6vw,4.2rem);line-height:1.1;margin-bottom:24px}
-.hero-title .gold{color:var(--aurea-lux)}
-.hero-sub{color:var(--ink-muted);font-size:1.06rem;max-width:560px;margin-bottom:36px}
-.hero-sub strong{color:var(--ink-primary)}
-.hero-ctas{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-bottom:44px}
-.hero-ledger{border-top:2px solid var(--aurea-umbra);font-size:.86rem;color:var(--ink-muted)}
-.hero-ledger div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--hairline)}
-.hero-ledger b{color:var(--ink-primary);font-weight:600;text-align:right}
-/* ficha lateral */
-.ficha{border:1px solid var(--hairline-strong);background:var(--stone-basalto)}
-.ficha-head{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--hairline);font-size:.68rem;font-weight:700;letter-spacing:.26em;color:var(--aurea)}
-.ficha figure{padding:34px 30px 10px;text-align:center}
-.ficha figure img{width:170px}
-.ficha figcaption{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:14px}
-.ficha-name{font-family:var(--font-display);letter-spacing:.3em;color:var(--aurea-lux);text-align:center;padding:6px 0 2px}
-.ficha-rows{padding:20px 24px 8px}
-.ficha-rows div{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-top:1px solid var(--hairline);font-size:.84rem;color:var(--ink-muted)}
-.ficha-rows b{color:var(--ink-primary);font-weight:600;text-align:right}
-.ficha .hero-orcamento{margin:18px 24px 24px;border:1px solid var(--aurea-hair);background:rgba(212,175,106,0.06);padding:20px 22px}
-.ficha .hero-orcamento p{font-size:.85rem;color:var(--ink-muted);margin-bottom:14px}
-.ficha .hero-orcamento p b{color:var(--ink-primary)}
-.ficha .hero-orcamento .btn{width:100%;padding:14px 10px}
-/* ---------- ROTEIRO: fileiras ---------- */
-.roteiro{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--stone-basalto)}
-.roteiro-row{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--hairline)}
-.roteiro-row:last-child{border-bottom:0}
-.roteiro-row h3{font-size:1.05rem;margin-bottom:4px}
-.roteiro-row p{font-size:.88rem;color:var(--ink-muted)}
-.roteiro-row a{color:var(--aurea-lux);font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
-.roteiro-row a:hover{text-decoration:underline;text-underline-offset:5px}
-/* ---------- ECOSSISTEMA: fileiras ---------- */
-.stoa-row{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding:38px 0;border-bottom:1px solid var(--hairline);text-decoration:none}
-.stoa-row:first-of-type{border-top:2px solid var(--aurea-umbra)}
-.stoa-row:hover .stoa-go{background:var(--aurea);color:#141204;border-color:var(--aurea)}
-.stoa-card h3{font-family:var(--font-display);font-size:1.45rem;font-weight:600;margin:8px 0}
-.stoa-card p{font-size:.92rem;color:var(--ink-muted);max-width:640px}
-.stoa-status{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0E2A17;background:#9FD6A8;padding:5px 12px}
-.stoa-go{width:58px;height:58px;flex:none;border:1px solid var(--aurea-hair);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--aurea);transition:background .25s,color .25s}
-/* ---------- ABAS: sublinhadas ---------- */
-.tabs-bar{border-top:1px solid var(--hairline);padding:0;position:sticky;top:70px;z-index:50;background:#070709}
-.platform-tabs{display:flex;gap:34px}
-.platform-tab{background:none;border:0;border-bottom:3px solid transparent;color:var(--ink-dim);font-family:var(--font-body);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:20px 2px;cursor:pointer}
-.platform-tab small{font-weight:400;color:inherit;opacity:.65;letter-spacing:.04em;margin-left:8px}
-.platform-tab:hover{color:var(--ink-primary)}
-.platform-tab.active{color:var(--aurea-lux);border-bottom-color:var(--aurea)}
-.platform-panel{background:var(--stone-basalto);border-top:1px solid var(--hairline)}
-/* ---------- BIBLIOTECA: ledger ---------- */
-.ebook-filter{display:flex;gap:26px;flex-wrap:wrap;margin:36px 0 8px}
-.ebook-filter-btn{background:none;border:0;color:var(--ink-dim);font-family:var(--font-body);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 2px;cursor:pointer;border-bottom:2px solid transparent}
-.ebook-filter-btn:hover{color:var(--ink-primary)}
-.ebook-filter-btn.active{color:var(--aurea-lux);border-bottom-color:var(--aurea)}
-.ebook-row{display:grid;grid-template-columns:76px 1fr auto auto;gap:26px;align-items:center;padding:26px 0;border-bottom:1px solid var(--hairline)}
-.ebook-card.hide{display:none}
-.ebook-cover img{width:76px;border:1px solid var(--hairline-strong);display:block}
-.ebook-badge{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aurea)}
-.ebook-title{font-family:var(--font-display);font-size:1.2rem;margin:6px 0}
-.ebook-desc{font-size:.85rem;color:var(--ink-muted);max-width:560px}
-.ebook-cta{white-space:nowrap;padding:14px 22px;font-size:.72rem}
-/* ---------- ORÁCULO: dossiê ---------- */
-.oraculo{background:var(--stone-obsidian)}
-.funnel{max-width:700px;margin:0 auto;border:1px solid var(--hairline-strong);background:var(--stone-temple)}
-.funnel-bar{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;border-bottom:1px solid var(--hairline);font-size:.66rem;font-weight:700;letter-spacing:.28em;color:var(--aurea)}
-.funnel-body{padding:48px 46px}
-.step{display:none}
-.step.is-active{display:block;animation:stepIn .5s var(--ease-expo)}
-@keyframes stepIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.badge-oraculo{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aurea-lux);margin-bottom:16px}
-.badge-dot{width:7px;height:7px;background:var(--aurea)}
-.oraculo-title{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2.05rem);line-height:1.3;margin-bottom:12px}
-.oraculo-title .aurea{color:var(--aurea-lux)}
-.lead-oraculo{color:var(--ink-muted);margin-bottom:26px}
-.ebook-teaser-oraculo{display:flex;gap:16px;align-items:center;background:var(--stone-basalto);border:1px solid var(--hairline);padding:16px 18px;margin-bottom:30px}
-.ebook-teaser-oraculo img{width:60px;flex:none}
-.gift-tag{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aurea)}
-.progress-label{font-size:.66rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:22px}
-.question{font-family:var(--font-body);font-weight:600;font-size:1.25rem;line-height:1.4;margin-bottom:6px}
-.question-sub{color:var(--ink-muted);font-size:.88rem;margin-bottom:24px}
-.profile-grid{display:flex;flex-direction:column;margin-top:26px;border-top:1px solid var(--hairline)}
-.profile-card{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--hairline);padding:20px 6px;cursor:pointer;color:var(--ink-primary);font-family:var(--font-body)}
-.profile-card:hover{background:rgba(212,175,106,0.05)}
-.profile-card.is-selected{background:rgba(212,175,106,0.08);box-shadow:inset 3px 0 0 var(--aurea)}
-.pc-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--aurea)}
-.pc-icon svg{width:26px;height:26px}
-.pc-icon.cyan{color:#9CC3D8}
-.pc-icon.violet{color:#C0A8D8}
-.pc-text strong{display:block;font-size:.86rem;letter-spacing:.06em}
-.pc-text small{color:var(--ink-dim);font-size:.78rem}
-.pc-check{width:24px;height:24px;border:1px solid var(--hairline-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;color:transparent}
-.pc-check svg{width:13px;height:13px}
-.profile-card.is-selected .pc-check{background:var(--aurea);border-color:var(--aurea);color:#141204}
-.progress-oraculo{height:3px;background:var(--stone-coluna,#1C1C21);margin-bottom:26px}
-.progress-fill{height:100%;width:0;background:var(--aurea);transition:width .5s var(--ease-expo)}
-.options{display:flex;flex-direction:column;counter-reset:opt;border-top:1px solid var(--hairline)}
-.option{counter-increment:opt;background:none;border:0;border-bottom:1px solid var(--hairline);color:var(--ink-primary);font-family:var(--font-body);font-size:.94rem;text-align:left;padding:17px 6px;cursor:pointer;display:flex;gap:16px;align-items:baseline}
-.option::before{content:counter(opt,upper-alpha);font-size:.72rem;font-weight:700;color:var(--ink-dim);border:1px solid var(--hairline-strong);width:26px;height:26px;flex:none;display:inline-flex;align-items:center;justify-content:center}
-.option:hover{background:rgba(212,175,106,0.05)}
-.option.is-selected{background:rgba(212,175,106,0.08);box-shadow:inset 3px 0 0 var(--aurea)}
-.feedback{display:none;margin-top:18px;font-size:.86rem;color:var(--aurea-lux);border-left:2px solid var(--aurea);padding-left:14px}
-.feedback.is-visible{display:block}
-.result-flag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#0E2A17;background:#9FD6A8;padding:8px 18px;margin-bottom:16px}
-.result-flag svg{width:13px;height:13px;vertical-align:-2px;margin-right:6px}
-.result-title{font-family:var(--font-display);font-size:1.5rem;margin-bottom:22px}
-.diagnosis{border-top:2px solid var(--aurea-umbra);border-bottom:1px solid var(--hairline);padding:24px 0;margin-bottom:8px}
-.diagnosis-head{font-size:.66rem;font-weight:700;letter-spacing:.26em;color:var(--aurea);margin-bottom:12px}
-.diagnosis-text{font-size:.94rem;color:var(--ink-muted);margin-bottom:14px}
-.diagnosis-text strong{color:var(--ink-primary)}
-.diagnosis-list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.diagnosis-list li{display:flex;gap:12px;font-size:.9rem;color:var(--ink-muted)}
-.diagnosis-list li strong{color:var(--ink-primary)}
-.diagnosis-list svg{width:16px;height:16px;flex:none;color:var(--aurea);margin-top:5px}
-.divider-oraculo{display:flex;align-items:center;gap:14px;margin:30px 0 22px;font-size:.66rem;font-weight:700;letter-spacing:.26em;color:var(--ink-dim)}
-.divider-oraculo::before,.divider-oraculo::after{content:"";height:1px;background:var(--hairline);flex:1}
-.ebook-card-oraculo{display:grid;grid-template-columns:110px 1fr;gap:22px;align-items:center;border:1px solid var(--aurea-hair);padding:24px;background:rgba(212,175,106,0.05)}
-.ebook-card-oraculo img{width:110px}
-.ebook-card-oraculo h3{font-family:var(--font-display);font-size:1.2rem;margin:4px 0 6px}
-.ebook-card-oraculo p{font-size:.85rem;color:var(--ink-muted);margin-bottom:14px}
-.rec-grid{display:flex;flex-direction:column;gap:4px}
-.rec-card{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:20px;padding:22px 0;border-bottom:1px solid var(--hairline);align-items:start}
-.rec-card-primary{grid-template-columns:104px minmax(0,1fr);border:1px solid var(--aurea-hair);padding:24px 24px 22px;margin:6px 0 8px;background:rgba(212,175,106,0.05)}
-.rec-why{grid-column:1/-1;display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.2em;color:#141204;background:var(--aurea);padding:5px 12px;margin-bottom:14px}
-.rec-cover{align-self:start}
-.rec-body{min-width:0}
-.rec-cover img{width:84px;border:1px solid var(--hairline-strong);display:block}
-.rec-card-primary .rec-cover img{width:104px}
-.rec-badge{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aurea)}
-.rec-title{font-family:var(--font-display);font-size:1.05rem;margin:6px 0}
-.rec-desc{font-size:.82rem;color:var(--ink-muted)}
-.rec-price{display:none}
-.rec-price .old{font-size:.78rem;color:var(--ink-dim);text-decoration:line-through}
-.rec-price .now{font-family:var(--font-display);font-size:1.2rem;color:var(--aurea-lux)}
-.rec-cta{margin-top:12px;font-size:.72rem;padding:14px 18px;justify-content:center}
-/* ---------- SOFTWARES: ficha técnica ---------- */
-.spec{display:grid;grid-template-columns:320px 1fr;gap:0;border:1px solid var(--hairline-strong)}
-.spec-side{border-right:1px solid var(--hairline);background:var(--stone-basalto);padding:36px 30px;text-align:center}
-.spec-side img{width:200px;border:1px solid var(--hairline-strong)}
-.spec-side figcaption{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:14px}
-.spec-main{padding:44px 46px}
-.spec-solo{grid-template-columns:1fr}
-.spec-solo .spec-main{max-width:780px}
-.spec-top{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px}
-.software-feats{list-style:none;margin:24px 0 30px;border-top:1px solid var(--hairline)}
-.software-feats li{font-size:.87rem;color:var(--ink-muted);padding:11px 0 11px 26px;border-bottom:1px solid var(--hairline);position:relative}
-.software-feats li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;background:var(--aurea)}
-/* ---------- FERRAMENTAS: painel escuro ---------- */
-.panel-dark{border:1px solid var(--aurea-hair);background:var(--stone-basalto);padding:70px 60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.panel-dark h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.2;margin-bottom:12px}
-.panel-dark h2 span{color:var(--aurea-lux)}
-.panel-dark p{color:var(--ink-muted);max-width:520px}
-.panel-dark .band-note{display:block;margin-top:16px;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--aurea)}
-.panel-dark .btn{white-space:nowrap}
-/* ---------- DIFERENCIAIS: verbetes ---------- */
-.why-list{border-top:2px solid var(--aurea-umbra)}
-.why-card{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--hairline)}
-.why-card .wn{font-family:var(--font-display);color:var(--ink-dim);font-size:.95rem;letter-spacing:.1em}
-.why-card h3{font-size:1.02rem}
-.why-card p{font-size:.89rem;color:var(--ink-muted)}
-.why-icon{display:none}
-/* ---------- DEPOIMENTOS: papel ---------- */
-.wall{background:var(--paper);color:var(--paper-ink)}
-.wall .rule-top{background:var(--aurea-umbra)}
-.wall .section-title{color:var(--paper-ink)}
-.wall-lead{font-family:var(--font-quote);font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.4;max-width:800px;margin-bottom:50px;color:var(--paper-ink)}
-.testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
-.testimonial-card{padding:26px 0;border-bottom:1px solid rgba(25,21,16,0.2)}
-.stars{color:var(--aurea-deep);letter-spacing:.2em;font-size:.8rem;margin-bottom:8px}
-.testimonial-text{font-size:.95rem;color:#33302A}
-.testimonial-author{margin-top:10px;font-size:.82rem;color:var(--paper-dim)}
-.testimonial-author strong{color:var(--paper-ink)}
-.fineprint{margin-top:26px;font-size:.75rem;color:var(--paper-dim)}
-/* ---------- CONTATO: dividido ---------- */
-.contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:70px;align-items:start}
-.contact-channels{border-top:2px solid var(--aurea-umbra)}
-.contact-channel{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:22px 0;border-bottom:1px solid var(--hairline);text-decoration:none}
-.contact-channel:hover .channel-label{color:var(--aurea-lux)}
-.channel-icon{width:44px;height:44px;border:1px solid var(--aurea-hair);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--aurea)}
-.channel-label{font-weight:600;font-size:.95rem}
-.channel-go{color:var(--ink-dim)}
-.contact-form{border:1px solid var(--hairline-strong);padding:40px;background:var(--stone-basalto)}
-.contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.contact-form-grid .field{margin-bottom:0}
-.field label{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim)}
-.field input,.field textarea{background:none;border:0;border-bottom:1px solid var(--hairline-strong);color:var(--ink-primary);font-family:var(--font-body);font-size:.98rem;padding:12px 2px;width:100%;border-radius:0}
-.field textarea{border:1px solid var(--hairline-strong);padding:14px;margin-top:6px}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--aurea)}
-.notify-msg{margin-top:14px;font-size:.85rem;color:var(--aurea-lux);min-height:1.4em}
-/* ---------- FOOTER: zonas ---------- */
-.footer{border-top:2px solid var(--aurea-umbra);padding:64px 0 30px;background:#050506}
-.footer-banner{display:block;margin-bottom:20px}
-.footer-banner img{height:84px;width:auto}
-.footer-tag{color:var(--ink-muted);font-size:.92rem;max-width:460px;margin-bottom:34px}
-.footer-lines{border-top:1px solid var(--hairline);padding:22px 0;display:flex;gap:10px 26px;flex-wrap:wrap;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted)}
-.footer-lines a{text-decoration:none}
-.footer-lines a:hover{color:var(--aurea-lux)}
-.footer-lines .sep{color:var(--aurea-umbra)}
-.footer-bottom{border-top:1px solid var(--hairline);margin-top:6px;padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:var(--ink-dim)}
-/* ---------- CHAMATIVO sem ai-slop: vitrine, prova, chips, marquee ---------- */
-.hero-title .it{font-family:var(--font-quote);font-style:italic;font-weight:500;color:var(--aurea-lux);border-bottom:2px solid var(--aurea-umbra);padding-bottom:2px}
-.hero-proof{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;margin-bottom:30px;font-size:.82rem;color:var(--ink-muted)}
-.hero-proof strong{color:var(--aurea-lux)}
-.hero-proof .stars{color:var(--aurea);letter-spacing:.18em;font-size:.78rem;margin:0}
-.hero-ctas .btn-aurea{box-shadow:0 8px 28px rgba(212,175,106,0.22)}
-.ficha{position:relative;overflow:hidden}
-.ficha::before{content:"";position:absolute;top:-90px;left:50%;transform:translateX(-50%);width:340px;height:220px;background:radial-gradient(closest-side,rgba(212,175,106,0.22),transparent 70%);pointer-events:none}
-.ficha figure img{width:210px;filter:drop-shadow(0 14px 30px rgba(0,0,0,0.55))}
-.ficha-vitrine{display:flex;gap:10px;justify-content:center;padding:18px 24px 4px}
-.ficha-vitrine img{width:72px;border:1px solid var(--hairline-strong);transition:transform .3s var(--ease-expo),border-color .3s}
-.ficha-vitrine img:hover{transform:translateY(-4px);border-color:var(--aurea)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
-.chip{font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--aurea-lux);border:1px solid var(--aurea-hair);background:rgba(212,175,106,0.07);padding:6px 12px}
-/* biblioteca vitrine */
-.ebook-row{grid-template-columns:148px 1fr auto auto;transition:background .25s}
-.ebook-row:hover{background:rgba(212,175,106,0.04)}
-.ebook-cover img{width:148px;transition:transform .3s var(--ease-expo),border-color .3s}
-.ebook-row:hover .ebook-cover img{transform:translateY(-4px);border-color:var(--aurea)}
-.ebook-price{display:flex;flex-direction:column;gap:2px;text-align:right;margin-right:4px}
-.ebook-price .old{font-size:.78rem;color:var(--ink-dim);text-decoration:line-through}
-.ebook-price .now{font-family:var(--font-display);font-size:1.25rem;color:var(--aurea-lux)}
-.ebook-safe{display:block;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
+  --bg:      oklch(0.1297 0.005 285.67);   /* #070709 obsidiana */
+  --surface: oklch(0.1652 0.0062 285.70);  /* #0E0E11 basalto   */
+  --fg:      oklch(0.9445 0.0091 78.28);   /* #F0ECE6 tinta     */
+  --muted:   oklch(0.6687 0.0161 80.68);   /* #9A948A secund.   */
+  --border:  oklch(0.9445 0.0091 78.28 / 0.13);
+  --accent:  oklch(0.7721 0.0976 82.03);   /* #D4AF6A ouro      */
+  --accent-lift: oklch(0.851 0.0708 77.91);  /* #E8C99A ouro claro */
 
-/* depoimentos iniciais */
-.testi-init{width:40px;height:40px;flex:none;border:1px solid var(--aurea-deep);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;letter-spacing:.08em;color:var(--aurea-deep);background:rgba(212,175,106,0.12);margin-right:10px;vertical-align:middle}
-.wall .testimonial-author{display:flex;align-items:center;margin-top:12px}
-/* whatsapp flutuante */
-.wa-float{position:fixed;right:22px;bottom:22px;z-index:120;width:58px;height:58px;border-radius:50%;background:#1E3A2B;border:1px solid rgba(46,125,72,0.6);display:flex;align-items:center;justify-content:center;color:#7BD88F;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:transform .25s var(--ease-expo),background .25s}
-.wa-float:hover{transform:translateY(-3px);background:#24482F}
-/* mockup browser */
-.browser{border:1px solid var(--hairline-strong);background:#101014}
-.browser-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--hairline);background:#17171D}
-.browser-bar i{width:10px;height:10px;border-radius:50%;background:#3A3A44;display:block}
-.browser-bar i:first-child{background:var(--aurea)}
-.browser-url{flex:1;margin-left:10px;font-size:.72rem;color:var(--ink-dim);border:1px solid var(--hairline);padding:5px 12px;letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  --accent-soft:  color-mix(in oklch, var(--accent) 13%, transparent);
+  --accent-hair:  color-mix(in oklch, var(--accent) 30%, transparent);
+  --fg-soft:      color-mix(in oklch, var(--fg) 6%, transparent);
+  --grid-line:    color-mix(in oklch, var(--fg) 4%, transparent);
+  --surface-2:    color-mix(in oklch, var(--fg) 3.5%, var(--surface));
+  --border-strong:color-mix(in oklch, var(--fg) 26%, transparent);
+  --ink:          color-mix(in oklch, var(--accent) 12%, var(--bg));
+
+  --paper:     oklch(0.9254 0.0264 90.10);
+  --paper-ink: oklch(0.1987 0.0116 73.24);
+  --paper-dim: oklch(0.4517 0.0252 85.94);
+  --paper-hair:oklch(0.1987 0.0116 73.24 / 0.18);
+  --paper-gold:oklch(0.4506 0.0798 77.24);
+
+  --wa-bg:   oklch(0.3211 0.0438 159.19);
+  --wa-fg:   oklch(0.8058 0.1363 149.46);
+  --wa-hair: oklch(0.8058 0.1363 149.46 / 0.42);
+
+  --font-display:'Instrument Serif','Iowan Old Style',Charter,Georgia,'Times New Roman',serif;
+  --font-body:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+
+  --fs-h1:clamp(40px,6.4vw,74px);
+  --fs-h2:clamp(30px,4vw,48px);
+  --fs-h3:22px;
+  --fs-lead:19px;
+  --fs-body:16px;
+  --fs-meta:13px;
+
+  --gap-xs:8px;--gap-sm:12px;--gap-md:20px;--gap-lg:32px;--gap-xl:56px;--gap-2xl:104px;
+  --container:1180px;--gutter:28px;
+  --radius:10px;--radius-lg:16px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:66px;
+}
+
+/* ── reset / base ───────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px);scrollbar-color:color-mix(in oklch,var(--accent) 40%,transparent) var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:var(--fs-body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(to right,var(--grid-line) 1px,transparent 1px),linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);
+  background-size:76px 76px;background-position:center top;
+  -webkit-mask-image:radial-gradient(ellipse 120% 60% at 50% 0%,var(--fg) 0%,transparent 72%);
+  mask-image:radial-gradient(ellipse 120% 60% at 50% 0%,var(--fg) 0%,transparent 72%)}
+main{position:relative;z-index:0}
+body.is-locked{overflow:hidden}
+img{display:block;max-width:100%;height:auto}
+svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+p{text-wrap:pretty}h1,h2,h3,h4{text-wrap:balance}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ── layout ─────────────────────────────────────────────────────── */
+.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter);width:100%}
+.section{padding-block:clamp(60px,8vw,var(--gap-2xl));position:relative}
+.section+.section{border-top:1px solid var(--border)}
+.stack{display:flex;flex-direction:column}
+.stack>*+*{margin-top:var(--gap-md)}
+.row{display:flex;align-items:center;gap:var(--gap-md)}
+.row-between{display:flex;align-items:center;justify-content:space-between;gap:var(--gap-md)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-lg)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-md)}
+.grid-2-1{display:grid;grid-template-columns:2fr 1fr;gap:var(--gap-xl);align-items:start}
+.grid-1-2{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap-xl);align-items:start}
+
+/* ── type ───────────────────────────────────────────────────────── */
+h1,.h1{font-family:var(--font-display);font-size:var(--fs-h1);line-height:1.02;letter-spacing:-.022em;font-weight:400;margin:0}
+h2,.h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.016em;font-weight:400;margin:0}
+h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.006em;margin:0}
+.lead{font-size:var(--fs-lead);line-height:1.55;color:var(--muted);max-width:58ch;margin:0}
+.eyebrow{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--gap-md);font-weight:500}
+.eyebrow-accent{color:var(--accent)}
+.meta{font-family:var(--font-mono);font-size:var(--fs-meta);color:var(--muted);letter-spacing:.02em}
+.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.fineprint{font-size:.76rem;color:var(--muted);margin:0}
+.rule{height:1px;background:var(--border);border:0;margin:0}
+
+/* ── chrome: topnav + drawer ───────────────────────────────────── */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:96;height:var(--nav-h);
+  background:color-mix(in oklch,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--border);
+  transition:background .3s var(--ease)}
+.topnav.is-scrolled{background:color-mix(in oklch,var(--bg) 95%,transparent)}
+.topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--gap-md);height:var(--nav-h)}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:21px;letter-spacing:.02em;line-height:1}
+.logo-mark{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:44% 34%;border:1px solid var(--accent-hair);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 8%,transparent)}
+.topnav nav{display:flex;gap:var(--gap-lg);align-items:center}
+.topnav nav a{font-size:13.5px;color:var(--muted);display:inline-flex;align-items:baseline;gap:7px;transition:color .18s var(--ease)}
+.topnav nav a .idx{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);opacity:.7;transition:color .18s var(--ease)}
+.topnav nav a:hover{color:var(--fg)}
+.topnav nav a:hover .idx{color:var(--accent)}
+.topnav nav a.is-current{color:var(--fg)}
+.topnav nav a.is-current .idx{color:var(--accent);opacity:1}
+.topnav-actions{display:flex;align-items:center;gap:var(--gap-sm)}
+.kbd-hint{font-family:var(--font-mono);font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:4px 7px;line-height:1;transition:color .18s var(--ease),border-color .18s var(--ease)}
+.kbd-hint:hover{color:var(--fg);border-color:var(--border-strong)}
+.nav-burger{display:none;width:44px;height:44px;border:1px solid var(--border);border-radius:var(--radius);align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.nav-burger span{display:block;width:18px;height:1.5px;background:var(--fg);transition:transform .25s var(--ease),opacity .2s var(--ease)}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(3.25px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-3.25px) rotate(-45deg)}
+.scroll-rail{position:fixed;top:var(--nav-h);left:0;right:0;height:2px;z-index:91;background:transparent;pointer-events:none}
+.scroll-rail span{display:block;height:100%;width:0;background:var(--accent);transition:width .12s linear}
+.drawer{position:fixed;inset:0;z-index:95;background:color-mix(in oklch,var(--bg) 97%,transparent);
+  padding:calc(var(--nav-h) + 28px) var(--gutter) 40px;display:flex;flex-direction:column;gap:var(--gap-lg);
+  opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s}
+.drawer.is-open{opacity:1;visibility:visible;transform:none}
+.drawer nav{display:flex;flex-direction:column}
+.drawer nav a{font-family:var(--font-display);font-size:30px;padding:14px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:14px}
+.drawer nav a .idx{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.drawer-actions{display:flex;flex-direction:column;gap:12px;margin-top:auto}
+
+/* ── botões ─────────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 22px;
+  border-radius:var(--radius);border:1px solid transparent;font-size:15px;font-weight:600;letter-spacing:-.005em;
+  transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.btn-primary:hover{background:color-mix(in oklch,var(--accent) 86%,black);border-color:color-mix(in oklch,var(--accent) 86%,black)}
+.btn-secondary{background:transparent;color:var(--fg);border-color:var(--border-strong)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--muted);border-color:transparent;padding-inline:8px}
+.btn-ghost:hover{color:var(--fg)}
+.btn-arrow::after{content:"→";transition:transform .16s var(--ease)}
+.btn-arrow:hover::after{transform:translateX(3px)}
+.btn-wa{background:var(--wa-bg);color:var(--wa-fg);border-color:var(--wa-hair)}
+.btn-wa:hover{background:color-mix(in oklch,var(--wa-bg) 80%,black)}
+
+/* ── superfícies ────────────────────────────────────────────────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px}
+.card-flat{background:transparent;border:0;padding:0}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid var(--border);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--accent-soft);color:var(--accent-lift);
+  border-radius:999px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.tag{display:inline-flex;align-items:center;padding:4px 10px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:999px;font-size:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--border);padding:5px 10px;border-radius:6px}
+.content-img{display:block;max-width:100%;max-height:min(70vh,720px);width:auto;height:auto;object-fit:contain;border-radius:var(--radius-lg)}
+
+/* ── boot ───────────────────────────────────────────────────────── */
+.boot{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;opacity:0;visibility:hidden;
+  transition:opacity .55s var(--ease),visibility .55s}
+.boot.is-on{opacity:1;visibility:visible}
+.boot-inner{width:min(420px,84vw);text-align:center}
+.boot-mark{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;object-fit:cover;object-position:44% 34%;
+  border:1px solid var(--accent-hair);box-shadow:0 0 0 8px color-mix(in oklch,var(--accent) 6%,transparent),0 20px 50px rgba(0,0,0,.6);
+  animation:bootRise .9s var(--ease) both}
+.boot-name{font-family:var(--font-display);font-size:30px;letter-spacing:.34em;text-indent:.34em;color:var(--fg);margin-bottom:26px}
+.boot-bar{height:2px;background:var(--border);overflow:hidden}
+.boot-bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s var(--ease)}
+.boot-readout{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.boot-readout .num{color:var(--accent)}
+@keyframes bootRise{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+/* ── hero ───────────────────────────────────────────────────────── */
+.hero{position:relative;padding-block:calc(var(--nav-h) + clamp(40px,7vw,84px)) clamp(48px,6vw,80px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:url('./bg-salao.webp') center 32%/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,color-mix(in oklch,var(--bg) 96%,transparent) 0%,color-mix(in oklch,var(--bg) 88%,transparent) 38%,color-mix(in oklch,var(--bg) 72%,transparent) 68%,var(--bg) 100%),
+             linear-gradient(to bottom,color-mix(in oklch,var(--bg) 70%,transparent),var(--bg) 88%)}
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{margin-bottom:var(--gap-md);max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{margin-bottom:var(--gap-lg)}
+.hero-cta{display:flex;gap:var(--gap-sm);flex-wrap:wrap;margin-bottom:var(--gap-xl)}
+.telemetry{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.telemetry div{background:var(--bg);padding:16px 14px}
+.telemetry dt{font-family:var(--font-mono);font-size:22px;color:var(--accent);line-height:1.1;margin-bottom:6px;letter-spacing:-.02em}
+.telemetry dd{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
+.status-list{list-style:none;margin:0;padding:0}
+.status-list a{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border);transition:background .18s var(--ease)}
+.status-list a:last-child{border-bottom:0}
+.status-list a:hover{background:var(--surface-2)}
+.status-list .s-idx{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.status-list .s-name{font-size:15px;font-weight:600}
+.status-list .s-state{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right}
+.status-list .s-state[data-state="on"]{color:var(--accent)}
+.panel-foot{padding:13px 18px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hero-scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:9px}
+.hero-scroll::after{content:"";width:1px;height:26px;background:linear-gradient(var(--accent),transparent);animation:scrollCue 2.1s var(--ease) infinite}
+@keyframes scrollCue{0%,100%{opacity:.25;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── módulos (scroll fixado) ───────────────────────────────────── */
+.modules{height:370vh;padding:0;background:var(--bg)}
+.modules-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;padding-block:calc(var(--nav-h) + 18px) 18px}
+.modules-head{margin-bottom:var(--gap-lg)}
+.modules-head h2{font-size:clamp(28px,3.2vw,40px)}
+.modules-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(24px,3.4vw,52px);align-items:stretch}
+.modules-rail{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.rail-item{width:100%;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:baseline;text-align:left;
+  padding:15px 4px;border-bottom:1px solid var(--border);color:var(--muted);transition:color .2s var(--ease),padding-left .2s var(--ease)}
+.rail-item .rail-idx{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.rail-item .rail-name{font-size:16px;font-weight:600;color:var(--fg)}
+.rail-item .rail-state{grid-column:2;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rail-item:hover{color:var(--fg);padding-left:8px}
+.rail-item.is-active{color:var(--fg);padding-left:8px}
+.rail-item.is-active .rail-idx{color:var(--accent)}
+.rail-item.is-active .rail-name{color:var(--accent)}
+.rail-progress{height:2px;background:var(--border);margin-top:14px}
+.rail-progress span{display:block;height:100%;width:20%;background:var(--accent);transition:width .25s var(--ease)}
+.modules-stage{position:relative;min-height:clamp(380px,52vh,520px)}
+.module{position:absolute;inset:0;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3vw,44px);align-items:center;
+  opacity:0;transform:translateY(16px);visibility:hidden;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility .45s}
+.module.is-active{opacity:1;transform:none;visibility:visible}
+.module-media{display:flex;align-items:center;justify-content:center;min-height:0}
+.module-media img{max-height:min(46vh,380px);width:auto;height:auto;object-fit:contain;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.module-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.module-meta .m-idx{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.module-body h3{font-family:var(--font-display);font-size:clamp(26px,2.8vw,36px);font-weight:400;margin-bottom:12px}
+.module-body>p{color:var(--muted);margin:0 0 var(--gap-md);max-width:46ch}
+.module-facts{list-style:none;margin:0 0 var(--gap-lg);padding:0;border-top:1px solid var(--border)}
+.module-facts li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--muted)}
+.module-facts b{color:var(--fg);font-weight:600;text-align:right}
+.browser{width:100%;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.browser-bar{display:flex;align-items:center;gap:7px;padding:10px 13px;border-bottom:1px solid var(--border);background:var(--surface-2)}
+.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--border-strong);display:block}
+.browser-bar i:first-child{background:var(--accent)}
+.browser-url{flex:1;margin-left:9px;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .browser-shot{display:block;width:100%;height:auto}
-.video-frame{position:relative;border:1px solid var(--aurea-hair);background:#101014;min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:50px 24px;text-align:center}
-.video-frame .play{width:74px;height:74px;border-radius:50%;border:1px solid var(--aurea);display:flex;align-items:center;justify-content:center;color:var(--aurea-lux);text-decoration:none;font-size:1.4rem;transition:background .25s,color .25s}
-.video-frame .play:hover{background:var(--aurea);color:#141204}
-.video-frame small{color:var(--ink-muted);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
-/* specs sites/videos (classes usadas sem estilo) */
-.lib-title{font-family:var(--font-display);font-size:1.5rem;margin:10px 0}
-.lib-sub{font-size:.92rem;color:var(--ink-muted);max-width:560px}
-.sw-feats{list-style:none;margin:24px 0 30px;border-top:1px solid var(--hairline)}
-.sw-feats li{font-size:.87rem;color:var(--ink-muted);padding:11px 0 11px 26px;border-bottom:1px solid var(--hairline);position:relative}
-.sw-feats li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;background:var(--aurea)}
-.sw-feats li strong{color:var(--ink-primary)}
-.buy-row{display:flex;gap:14px;flex-wrap:wrap}
-.btn-buy{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--gradient-aurea);color:#141204;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:transform .25s var(--ease-expo)}
-.btn-buy:hover{transform:translateY(-2px)}
-/* ---------- FAQ: verbetes ledgers ---------- */
-.faq-list{border-top:2px solid var(--aurea-umbra)}
-.faq-item{border-bottom:1px solid var(--hairline)}
-.faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;list-style:none;padding:22px 6px;font-weight:600;font-size:1.02rem;color:var(--ink-primary)}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-mark{flex:none;width:26px;height:26px;border:1px solid var(--aurea-hair);border-radius:50%;position:relative;transition:border-color .25s}
-.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;background:var(--aurea);transition:transform .25s var(--ease-expo),opacity .25s}
-.faq-mark::before{width:10px;height:1.5px;transform:translate(-50%,-50%)}
-.faq-mark::after{width:1.5px;height:10px;transform:translate(-50%,-50%)}
-.faq-item[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
-.faq-item summary:hover .faq-mark{border-color:var(--aurea)}
-.faq-item p{padding:0 6px 24px;color:var(--ink-muted);font-size:.95rem;max-width:720px}
-/* ---------- RESPONSIVO ---------- */
-@media(max-width:960px){
-  .hero{padding-top:140px}
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .roteiro-row{grid-template-columns:1fr;gap:8px}
-  .stoa-row{grid-template-columns:1fr;gap:14px}
-  .ebook-row{grid-template-columns:110px 1fr;grid-template-areas:"cover body" "cover preco" "cover buy"}
-  .ebook-cover img{width:110px}
-  .ebook-price{grid-area:preco;flex-direction:row;gap:10px;align-items:baseline;text-align:left;margin:10px 0 8px}
-  .ebook-cover{grid-area:cover}
-  .ebook-row .ebook-body{grid-area:body}
-  .ebook-row .buy{grid-area:buy}
-  .spec{grid-template-columns:1fr}
-  .spec-side{border-right:0;border-bottom:1px solid var(--hairline)}
-  .panel-dark{grid-template-columns:1fr;padding:44px 30px}
-  .why-card{grid-template-columns:1fr;gap:8px}
-  .testimonials-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr;gap:44px}
-  .platform-tabs{gap:20px;overflow-x:auto}
-  .platform-tab{white-space:nowrap}
-  .tabs-bar{position:static}
-  .funnel-body{padding:34px 22px}
-  .ebook-card-oraculo{grid-template-columns:1fr;text-align:center;justify-items:center}
-  .contact-form{padding:28px 20px}
-  .contact-form-grid{grid-template-columns:1fr}
-  .rec-card{grid-template-columns:1fr}
-  .faq-item summary{font-size:.95rem;padding:20px 4px}
-  .nav-menu{position:fixed;top:70px;left:0;right:0;background:#0E0E11;flex-direction:column;padding:12px 28px 22px;border-bottom:1px solid var(--hairline);display:none;gap:4px}
-  .nav-menu.active{display:flex}
-  .nav-toggle{display:block}
-  .nav-ed{display:none}
+.module-cases{display:flex;flex-direction:column;gap:10px;width:100%;max-width:380px}
+.module-case{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.module-case span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.module-case b{font-size:14px;font-weight:600}
+.bookstack{display:flex;gap:12px;align-items:flex-end;justify-content:center}
+.bookstack img{width:104px;height:auto;border-radius:8px;border:1px solid var(--border);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+
+/* ── spec (KodaGrid) ───────────────────────────────────────────── */
+.spec-media img{width:100%;max-width:330px;height:auto;object-fit:contain;margin-inline:auto;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.spec-media figcaption{text-align:center;margin-top:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.spec-list{list-style:none;margin:var(--gap-md) 0 var(--gap-lg);padding:0;border-top:1px solid var(--border)}
+.spec-list li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid var(--border);font-size:14.5px;color:var(--muted)}
+.spec-list li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;background:var(--accent)}
+.spec-list li strong{color:var(--fg);font-weight:600}
+
+/* ── biblioteca ─────────────────────────────────────────────────── */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:var(--gap-lg);border-bottom:1px solid var(--border);padding-bottom:var(--gap-md)}
+.filter-btn{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:9px 15px;border:1px solid var(--border);border-radius:999px;transition:color .18s,border-color .18s,background .18s}
+.filter-btn:hover{color:var(--fg);border-color:var(--border-strong)}
+.filter-btn[aria-pressed="true"]{color:var(--accent-lift);border-color:var(--accent-hair);background:var(--accent-soft)}
+.books{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-lg)}
+.book{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease)}
+.book:hover{border-color:var(--border-strong);transform:translateY(-4px);background:var(--surface-2)}
+.book[hidden]{display:none}
+.book-cover{background:color-mix(in oklch,var(--bg) 70%,transparent);padding:18px;display:flex;justify-content:center}
+.book-cover img{width:100%;height:auto;border-radius:6px;box-shadow:0 16px 36px rgba(0,0,0,.5)}
+.book-body{padding:0 18px 18px;display:flex;flex-direction:column;flex:1}
+.book-badge{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.book-title{font-family:var(--font-display);font-size:19px;font-weight:400;line-height:1.25;margin:8px 0}
+.book-desc{font-size:13px;color:var(--muted);margin:0 0 14px;flex:1}
+.book-price{display:flex;align-items:baseline;gap:9px;margin-bottom:12px}
+.book-price .old{font-size:12.5px;color:var(--muted);text-decoration:line-through}
+.book-price .now{font-family:var(--font-mono);font-size:19px;color:var(--fg)}
+.book-cta{width:100%}
+.book-safe{display:block;margin-top:9px;text-align:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* ── console de diagnóstico ────────────────────────────────────── */
+.console{border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}
+.console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.console-body{padding:clamp(24px,4vw,46px)}
+.step{display:none}
+.step.is-active{display:block;animation:stepIn .45s var(--ease)}
+@keyframes stepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.diag-title{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:400;line-height:1.15;margin:0 0 var(--gap-md);text-align:center}
+.diag-title em{font-style:italic;color:var(--accent)}
+.diag-lead{color:var(--muted);text-align:center;max-width:48ch;margin:0 auto var(--gap-lg)}
+.gift{display:flex;gap:16px;align-items:center;border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin:0 auto var(--gap-lg);max-width:520px;background:var(--surface-2)}
+.gift img{width:62px;height:auto;flex:none;border-radius:4px}
+.gift strong{display:block;font-family:var(--font-display);font-size:17px;font-weight:400;margin:3px 0}
+.gift small{color:var(--muted);font-size:12.5px;line-height:1.45}
+.gift-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.progress{height:2px;background:var(--border);margin-bottom:var(--gap-lg)}
+.progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .45s var(--ease)}
+.q-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.q-title{font-size:clamp(20px,2.4vw,26px);font-weight:600;line-height:1.3;margin:0 0 8px}
+.q-sub{color:var(--muted);font-size:14.5px;margin:0 0 var(--gap-md)}
+.options{list-style:none;margin:0;padding:0;border-top:1px solid var(--border);counter-reset:opt}
+.option{width:100%;min-height:44px;display:flex;gap:14px;align-items:flex-start;text-align:left;padding:15px 6px;border-bottom:1px solid var(--border);color:var(--fg);font-size:15px;transition:background .16s var(--ease),padding-left .16s var(--ease)}
+.option::before{counter-increment:opt;content:counter(opt,upper-alpha);font-family:var(--font-mono);font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:6px;width:24px;height:24px;flex:none;display:grid;place-items:center;margin-top:1px}
+.option:hover{background:var(--fg-soft);padding-left:10px}
+.option.is-selected{background:var(--accent-soft);padding-left:10px}
+.option.is-selected::before{border-color:var(--accent);color:var(--accent-lift)}
+.feedback{margin:16px 0 0;padding-left:14px;border-left:2px solid var(--accent);color:var(--muted);font-size:14px;opacity:0;transition:opacity .3s var(--ease)}
+.feedback.is-visible{opacity:1}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.profile{text-align:left;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:var(--surface-2);transition:border-color .18s,background .18s}
+.profile:hover{border-color:var(--border-strong)}
+.profile.is-selected{border-color:var(--accent);background:var(--accent-soft)}
+.profile strong{display:block;font-size:14px;margin-bottom:4px}
+.profile small{color:var(--muted);font-size:12.5px;line-height:1.4;display:block}
+.profile-mark{width:34px;height:34px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;color:var(--accent);margin-bottom:12px}
+.profile-mark svg{width:18px;height:18px}
+.diagnosis{border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border);padding:22px 0;margin-bottom:var(--gap-lg)}
+.diagnosis p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.diagnosis p strong{color:var(--fg)}
+.diagnosis ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.diagnosis li{display:flex;gap:11px;font-size:14.5px;color:var(--muted)}
+.diagnosis li svg{width:15px;height:15px;flex:none;color:var(--accent);margin-top:4px}
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);margin-top:var(--gap-lg)}
+.rec{border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--surface-2);display:flex;flex-direction:column;gap:6px}
+.rec-cover{width:86px;height:auto;border-radius:5px;border:1px solid var(--border);margin-bottom:6px;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+.rec.is-primary{border-color:var(--accent-hair);background:var(--accent-soft)}
+.rec-tag{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-lift)}
+.rec h4{font-family:var(--font-display);font-size:17px;font-weight:400;margin:0}
+.rec p{font-size:12.5px;color:var(--muted);margin:0 0 6px}
+.rec .btn{margin-top:auto;width:100%}
+.steps-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);margin-top:var(--gap-lg)}
+.step-item{border-top:1px solid var(--border);padding-top:14px}
+.step-item .num{font-size:11px;color:var(--accent);display:block;margin-bottom:8px}
+.step-item b{display:block;font-size:15px;margin-bottom:4px}
+.step-item small{color:var(--muted);font-size:12.5px;line-height:1.45}
+
+/* ── ferramentas ────────────────────────────────────────────────── */
+.tool-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--gap-xl);align-items:center;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);padding:clamp(28px,4vw,52px)}
+.tool-panel h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:14px}
+.tool-panel h2 span{color:var(--accent)}
+.tool-panel p{color:var(--muted);margin:0 0 var(--gap-md);max-width:52ch}
+.tool-count{font-family:var(--font-mono);font-size:clamp(40px,5vw,64px);color:var(--accent);line-height:1;letter-spacing:-.03em}
+
+/* ── diferenciais ──────────────────────────────────────────────── */
+.why{border-top:1px solid var(--border-strong)}
+.why-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--border)}
+.why-item .wn{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.why-item h3{font-size:19px;margin-bottom:6px}
+.why-item p{margin:0;color:var(--muted);font-size:14.5px;max-width:62ch}
+
+/* ── depoimentos (papel) ────────────────────────────────────────── */
+.wall{background:var(--paper);color:var(--paper-ink)}
+.wall h2{color:var(--paper-ink)}
+.wall .eyebrow{color:var(--paper-gold)}
+.wall-lead{font-family:var(--font-display);font-size:clamp(24px,3vw,36px);line-height:1.28;max-width:30ch;margin:0 0 var(--gap-xl);color:var(--paper-ink)}
+.wall-lead cite{display:block;font-family:var(--font-body);font-size:14px;font-style:normal;color:var(--paper-dim);margin-top:14px}
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg)}
+.testi{padding-top:18px;border-top:1px solid var(--paper-hair)}
+.stars{color:var(--paper-gold);letter-spacing:.18em;font-size:13px;margin-bottom:9px}
+.testi p{font-size:14.5px;color:var(--paper-ink);margin:0 0 12px;line-height:1.55}
+.testi cite{font-style:normal;font-size:12.5px;color:var(--paper-dim)}
+.testi cite strong{color:var(--paper-ink);font-weight:600}
+.wall .fineprint{color:var(--paper-dim);margin-top:var(--gap-lg)}
+
+/* ── faq ────────────────────────────────────────────────────────── */
+.faq{border-top:1px solid var(--border-strong)}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 2px;font-size:17px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq-mark{position:relative;flex:none;width:24px;height:24px;border:1px solid var(--border-strong);border-radius:50%;transition:border-color .2s}
+.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;background:var(--accent);transition:transform .22s var(--ease),opacity .22s}
+.faq-mark::before{width:9px;height:1.5px;transform:translate(-50%,-50%)}
+.faq-mark::after{width:1.5px;height:9px;transform:translate(-50%,-50%)}
+.faq details[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq summary:hover .faq-mark{border-color:var(--accent)}
+.faq p{margin:0;padding:0 2px 22px;color:var(--muted);font-size:15px;max-width:64ch}
+
+/* ── contato ────────────────────────────────────────────────────── */
+.channels{list-style:none;margin:0;padding:0;border-top:1px solid var(--border-strong)}
+.channels a{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 2px;border-bottom:1px solid var(--border);transition:padding-left .18s var(--ease)}
+.channels a:hover{padding-left:8px}
+.channel-icon{width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--accent)}
+.channel-label{font-weight:600;font-size:15px}
+.channel-go{color:var(--muted)}
+.form{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);padding:clamp(24px,3vw,36px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.form-grid .field{margin-bottom:0}
+.field label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.input,.textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--fg);font:inherit;font-size:15px}
+.input::placeholder,.textarea::placeholder{color:color-mix(in oklch,var(--muted) 85%,transparent)}
+.input:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.textarea{min-height:120px;resize:vertical;line-height:1.55}
+.form-status{margin:14px 0 0;font-size:14px;color:var(--accent);min-height:1.4em}
+
+/* ── footer ─────────────────────────────────────────────────────── */
+.pagefoot{border-top:1px solid var(--border);background:color-mix(in oklch,var(--bg) 88%,black);padding-block:var(--gap-xl) 28px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gap-xl)}
+.foot-brand img{width:210px;height:auto;margin-bottom:16px;border-radius:6px}
+.foot-brand p{color:var(--muted);font-size:14px;margin:0;max-width:42ch}
+.foot-col h3{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
+.foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:14px;color:var(--muted);transition:color .16s}
+.foot-col a:hover{color:var(--fg)}
+.foot-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:var(--gap-xl);padding-top:20px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+.foot-credit{display:inline-flex;align-items:center;gap:8px;color:var(--muted);transition:color .16s var(--ease)}
+.foot-credit b{font-weight:500;color:var(--fg);transition:color .16s var(--ease)}
+.foot-credit svg{opacity:.7;transition:opacity .16s var(--ease)}
+.foot-credit:hover{color:var(--accent)}
+.foot-credit:hover b{color:var(--accent)}
+.foot-credit:hover svg{opacity:1}
+.foot-credit:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+
+/* ── paleta de comandos ─────────────────────────────────────────── */
+.palette{position:fixed;inset:0;z-index:150;background:color-mix(in oklch,var(--bg) 72%,transparent);backdrop-filter:blur(6px);display:flex;justify-content:center;padding:12vh var(--gutter) var(--gutter)}
+.palette[hidden]{display:none}
+.palette-panel{width:min(560px,100%);max-height:72vh;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.palette-input{width:100%;border:0;border-bottom:1px solid var(--border);background:transparent;color:var(--fg);font:inherit;font-size:16px;padding:18px 20px}
+.palette-input:focus{outline:none}
+.palette-list{list-style:none;margin:0;padding:8px;overflow-y:auto}
+.palette-item{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;text-align:left;padding:11px 12px;border-radius:8px;color:var(--muted);font-size:14.5px}
+.palette-item .p-kind{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--border);border-radius:5px;padding:3px 6px;flex:none}
+.palette-item .p-label{color:var(--fg)}
+.palette-item.is-active{background:var(--accent-soft)}
+.palette-item.is-active .p-label{color:var(--accent)}
+.palette-hint{margin:0;padding:12px 20px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:.06em}
+.palette-hint kbd{border:1px solid var(--border);border-radius:4px;padding:2px 5px;margin:0 2px;font-family:inherit}
+
+/* ── whatsapp flutuante ─────────────────────────────────────────── */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:88;width:56px;height:56px;border-radius:50%;background:var(--wa-bg);border:1px solid var(--wa-hair);display:grid;place-items:center;color:var(--wa-fg);box-shadow:0 12px 30px rgba(0,0,0,.55);transition:transform .2s var(--ease),background .2s var(--ease)}
+.wa-float:hover{transform:translateY(-3px);background:color-mix(in oklch,var(--wa-bg) 80%,black)}
+
+/* ── responsivo ─────────────────────────────────────────────────── */
+@media(max-width:1080px){
+  .modules{height:340vh}
+  .modules-grid{grid-template-columns:230px 1fr;gap:24px}
+  .books{grid-template-columns:repeat(3,1fr)}
+  .testis{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .telemetry{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:920px){
+  :root{--nav-h:60px}
+  .topnav nav,.kbd-hint,.topnav-actions .btn-ghost{display:none}
+  .nav-burger{display:flex}
+  .hero-split{grid-template-columns:1fr;gap:38px}
+  .hero h1{max-width:none}
+  .hero-bg{background-position:center 22%}
+  .hero-bg::after{background:linear-gradient(to bottom,color-mix(in oklch,var(--bg) 84%,transparent),var(--bg) 92%)}
+  .telemetry{grid-template-columns:repeat(2,1fr)}
+  .hero-scroll{display:none}
+  .modules{height:auto;padding-block:var(--gap-2xl)}
+  .modules-sticky{position:static;height:auto;display:block;padding:0}
+  .modules-rail{display:none}
+  .modules-stage{position:static;min-height:0;display:flex;flex-direction:column;gap:var(--gap-xl)}
+  .module{position:static;opacity:1;transform:none;visibility:visible;grid-template-columns:1fr;gap:22px;padding-top:26px;border-top:1px solid var(--border)}
+  .module-media img{max-height:300px}
+  .books{grid-template-columns:repeat(2,1fr)}
+  .grid-2-1,.grid-1-2,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .tool-panel{grid-template-columns:1fr}
+  .profiles,.recs,.steps-strip{grid-template-columns:1fr}
+  .console-body{padding:24px 18px}
+  .foot-top{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .why-item{grid-template-columns:44px 1fr}
+  .drawer nav a{font-size:26px}
+}
+@media(max-width:640px){
+  .books{grid-template-columns:1fr}
+  .testis{grid-template-columns:1fr}
+  .wa-float{right:16px;bottom:16px;width:52px;height:52px}
+  .telemetry dt{font-size:20px}
+  .hero h1{font-size:clamp(38px,10.5vw,54px)}
+  .console-bar{font-size:9.5px;letter-spacing:.14em}
+  .gift{flex-direction:column;text-align:center}
+  .gift img{margin-inline:auto}
+  .diag-title br{display:none}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
 }
+
+/* ── entrada do hero após o boot ───────────────────────────────── */
+html.is-ready .hero-copy>*{animation:heroIn .8s var(--ease) both}
+html.is-ready .hero-copy>*:nth-child(2){animation-delay:.09s}
+html.is-ready .hero-copy>*:nth-child(3){animation-delay:.18s}
+html.is-ready .hero-copy>*:nth-child(4){animation-delay:.27s}
+html.is-ready .hero-copy>*:nth-child(5){animation-delay:.36s}
+html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ── skip link ──────────────────────────────────────────────────── */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:210;background:var(--accent);color:var(--bg);
+  padding:12px 18px;font-weight:700;font-size:14px;border-radius:0 0 var(--radius) 0}
+.skip-link:focus{left:0}
+
+/* ── reveal ─────────────────────────────────────────────────────── */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.is-in{opacity:1;transform:none}
 </style>
 </head>
 <body>
-<canvas id="particles"></canvas>
-<canvas id="particles-canvas"></canvas>
-<a href="#inicio" class="skip-link">Pular para o conteúdo</a>
+<a class="skip-link" href="#content">Pular para o conteúdo</a>
 
-<nav class="navbar" id="navbar" aria-label="Navegação principal">
-  <div class="nav-container">
-    <a href="#inicio" class="nav-logo" aria-label="KODAROS">
-      <span class="nav-logo-text">KODAROS</span>
-      <img src="./bust.webp" alt="KODAROS" class="nav-bust" height="40">
-    </a>
-    
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="#ecossistema" class="nav-link">Ecossistema</a></li>
-      <li><a href="#biblioteca" class="nav-link">Biblioteca</a></li>
-      <li><a href="#diagnostico" class="nav-link"><b>○</b>Diagnóstico</a></li>
-      <li><a href="#duvidas" class="nav-link">Dúvidas</a></li>
-      <li><a href="#contato" class="nav-link">Contato</a></li>
-    </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<div class="page-wrap">
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div>
-      <span class="hero-over">Software · Sites · Vídeos</span>
-      <h1 class="hero-title">Uma empresa de tecnologia feita para <span class="it">vender</span> e escalar.</h1>
-      <p class="hero-sub">A <strong>KODAROS</strong> cria o que faz seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários — além de uma biblioteca de e-books e ferramentas para o dia a dia.</p>
-      <div class="hero-proof" aria-label="Prova social"><span class="stars">★★★★★</span><span><strong>4.9</strong> · acesso vitalício</span></div>
-      <div class="hero-ctas">
-        <a class="btn btn-aurea" href="#diagnostico">Fazer meu diagnóstico <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-whatsapp" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      </div>
-      <div class="hero-ledger">
-        <div><span>Acesso</span><b>Sem cadastro, direto no navegador</b></div>
-        <div><span>Entrega</span><b>Imediata via Hotmart, acesso vitalício</b></div>
-        <div><span>Suporte</span><b>Resposta em até 24h úteis</b></div>
-        <div><span>Software</span><b>100% offline para Windows</b></div>
-      </div>
-    </div>
-    <aside class="ficha" aria-label="Ficha da plataforma">
-      <div class="ficha-head"><span>PLATAFORMA</span></div>
-      <figure>
-        <img src="./kodaros-icon.webp" alt="Brasão KODAROS" width="420" height="420" fetchpriority="high">
-        <figcaption>Brasão oficial</figcaption>
-      </figure>
-      <div class="ficha-name">KODAROS</div>
-      <div class="ficha-vitrine" aria-hidden="true">
-        <img src="./arquitetura-capa.webp" alt="" width="144" height="192" loading="lazy">
-        <img src="./kodagrid-capa.webp" alt="" width="144" height="192" loading="lazy">
-        <img src="./livro-gestao.webp" alt="" width="144" height="192" loading="lazy">
-      </div>
-      <div class="hero-orcamento" role="note" aria-label="Orçamento de software sob medida">
-        <p><b>Software sob medida?</b> Precisa de um programa feito para você ou para sua empresa? Peça um orçamento, sem compromisso.</p>
-        <a class="btn btn-line" href="mailto:kodaros01@gmail.com?subject=Or%C3%A7amento%20%E2%80%94%20Software%20Sob%20Medida%20KODAROS&amp;body=Ol%C3%A1%2C%20equipe%20KODAROS!%0A%0AQuero%20um%20or%C3%A7amento%20para%20um%20software%20sob%20medida%20(uso%20pessoal%20%2F%20empresa).">Pedir orçamento</a>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ROTEIRO -->
-<section class="roteiro" aria-label="Como funciona">
-  <div class="container">
-    <div class="roteiro-row">
-      <div><h3>Diagnóstico de 2 minutos</h3><p>3 perguntas adaptadas ao seu perfil revelam o que trava seu negócio.</p></div>
-      <a href="#diagnostico">Começar agora →</a>
-    </div>
-    <div class="roteiro-row">
-      <div><h3>E-book de presente</h3><p>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</p></div>
-      <a href="#diagnostico">Ver presente →</a>
-    </div>
-    <div class="roteiro-row">
-      <div><h3>Biblioteca e ferramentas</h3><p>Com o diagnóstico na mão, escolha seu e-book e use as ferramentas.</p></div>
-      <a href="#biblioteca">Explorar →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ECOSSISTEMA -->
-<section class="section" id="ecossistema">
-  <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Tudo em um só lugar</h2>
-      <p class="section-desc">Softwares, sites, vídeos e e-books organizados para você achar rápido e usar na hora.</p>
-    </div>
-    <a class="stoa-row stoa-card" href="#softwares">
-      
-      <span><span class="stoa-status">Disponível</span><h3>Softwares &amp; Apps</h3><p>O primeiro já está no ar: KodaGrid, o construtor de planilhas com fórmulas. Programas de desktop e apps sob medida, pensados para você montar e escalar sem refazer tudo depois.</p></span>
-      <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-    </a>
-    <a class="stoa-row stoa-card" href="#sites">
-      
-      <span><span class="stoa-status">Sob encomenda</span><h3>Sites</h3><p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender seu produto ou serviço.</p></span>
-      <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-    </a>
-    <a class="stoa-row stoa-card" href="#videos">
-      
-      <span><span class="stoa-status">Sob encomenda</span><h3>Vídeos e Propagandas</h3><p>Motion graphics e vídeos publicitários para anúncios, redes e apresentações — do roteiro à entrega final.</p></span>
-      <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-    </a>
-    <a class="stoa-row stoa-card" href="https://kelvinoliveiracode.github.io/kodarosferramentas/" target="_blank" rel="noopener">
-      
-      <span><span class="stoa-status">Disponível</span><h3>Ferramentas</h3><p>50+ calculadoras e geradores que rodam 100% no navegador. Use na hora, sem cadastro — e com referência direta nos e-books.</p></span>
-      <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-    </a>
-    <a class="stoa-row stoa-card" href="#biblioteca">
-      
-      <span><span class="stoa-status">Disponível</span><h3>Biblioteca</h3><p>De Tráfego a Gestão. Entrega imediata via Hotmart, acesso vitalício.</p></span>
-      <span class="stoa-go"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<!-- ABAS -->
-
-<div class="tabs-bar" id="explorar">
-  <div class="container">
-    <div class="platform-tabs" role="tablist" aria-label="Conteúdos principais">
-      <button class="platform-tab" data-target="softwares" role="tab" aria-selected="false" aria-controls="panel-softwares" id="tab-softwares">Softwares <small>desktop &amp; apps</small></button>
-      <button class="platform-tab" data-target="sites" role="tab" aria-selected="false" aria-controls="panel-sites" id="tab-sites">Sites <small>sob encomenda</small></button>
-      <button class="platform-tab active" data-target="diagnostico" role="tab" aria-selected="true" aria-controls="panel-diagnostico" id="tab-diagnostico">Diagnóstico <small>2 min</small></button>
-      <button class="platform-tab" data-target="videos" role="tab" aria-selected="false" aria-controls="panel-videos" id="tab-videos">Vídeos <small>e propagandas</small></button>
-      <button class="platform-tab" data-target="biblioteca" role="tab" aria-selected="false" aria-controls="panel-biblioteca" id="tab-biblioteca">Biblioteca</button>
-    </div>
+<!-- ═══ BOOT ═══ -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <img class="boot-mark" src="./kodaros-icon.webp" alt="" width="336" height="334">
+    <div class="boot-name">KODAROS</div>
+    <div class="boot-bar"><span id="bootFill"></span></div>
+    <div class="boot-readout"><span id="bootStatus">iniciando runtime</span><span class="num" id="bootPct">00%</span></div>
   </div>
 </div>
 
-<!-- BIBLIOTECA -->
-<section class="section platform-panel" id="panel-biblioteca" role="tabpanel" aria-labelledby="tab-biblioteca" hidden>
-  <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Conteúdo direto para seu negócio</h2>
-      <p class="section-desc">Cada um resolve um problema específico. Escolha pelo nível e comece pelo que dói mais hoje. Entrega imediata via Hotmart, acesso vitalício.</p>
-    </div>
-    <div class="ebook-filter" id="ebook-filter" role="group" aria-label="Filtrar e-books">
-      <button class="ebook-filter-btn active" data-filter="all" aria-pressed="true">Geral</button>
-      <button class="ebook-filter-btn" data-filter="iniciantes" aria-pressed="false">Iniciantes</button>
-      <button class="ebook-filter-btn" data-filter="intermediario" aria-pressed="false">Intermediário</button>
-      <button class="ebook-filter-btn" data-filter="avancado" aria-pressed="false">Avançado</button>
-    </div>
-    <div class="ebooks-grid">
-      <article class="ebook-card ebook-row" data-class="avancado">
-        <div class="ebook-cover"><img src="./arquitetura-capa.webp" alt="Arquitetura de Aquisição" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Avançado</span><h3 class="ebook-title">Arquitetura de Aquisição</h3><p class="ebook-desc">O método completo de tráfego pago e funis — do anúncio à venda. Com o framework A.P.E.R.T.O., 3 calculadoras e checklists prontos.</p></div>
-        <div class="ebook-price"><span class="old">R$ 247</span><span class="now">R$ 197</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro3.webp" alt="Lançamento Milionário" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Lançamento Milionário</h3><p class="ebook-desc">Do planejamento à execução de lançamentos que convertem.</p></div>
-        <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro1.webp" alt="Tráfego Que Vende" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Tráfego Que Vende</h3><p class="ebook-desc">Facebook e Google Ads com retorno consistente.</p></div>
-        <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro2.webp" alt="Venda Mais Hoje" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Venda Mais Hoje</h3><p class="ebook-desc">Táticas práticas para vender hoje, sem enrolação.</p></div>
-        <div class="ebook-price"><span class="old">R$ 47</span><span class="now">R$ 12,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-gestao.webp" alt="Os 10 Pilares da Gestão Empresarial" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Os 10 Pilares da Gestão Empresarial</h3><p class="ebook-desc">10 pilares para organizar e crescer com controle.</p></div>
-        <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-financeiro.webp" alt="Os 10 Pilares do Controle Financeiro" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Os 10 Pilares do Controle Financeiro</h3><p class="ebook-desc">Fluxo de caixa, preços e custos com previsibilidade.</p></div>
-        <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="intermediario">
-        <div class="ebook-cover"><img src="./livro-site.webp" alt="Use Seu Site Para Escalar Sua Empresa" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Intermediário</span><h3 class="ebook-title">Use Seu Site Para Escalar Sua Empresa</h3><p class="ebook-desc">SEO, captura e automação para seu site vender.</p></div>
-        <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
-      <article class="ebook-card ebook-row" data-class="iniciantes">
-        <div class="ebook-cover"><img src="./livro-reclamacoes.webp" alt="Transforme Reclamações em Vendas" width="270" height="360" loading="lazy"></div>
-        <div class="ebook-body"><span class="ebook-badge">Iniciante</span><h3 class="ebook-title">Transforme Reclamações em Vendas</h3><p class="ebook-desc">De reclamação a fidelização, cultura centrada no cliente.</p></div>
-        <div class="ebook-price"><span class="old">R$ 67</span><span class="now">R$ 22,99</span></div>
-        <div class="buy"><a href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=biblioteca" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta">Comprar</a><span class="ebook-safe">Hotmart seguro · pagamento protegido</span></div>
-      </article>
+<!-- ═══ NAV ═══ -->
+<header class="topnav" id="topnav" data-od-id="topnav">
+  <div class="container topnav-inner">
+    <a href="#inicio" class="logo" data-od-id="nav-brand" aria-label="KODAROS — início">
+      <img src="./bust.webp" alt="" width="121" height="120" class="logo-mark">
+      <span>KODAROS</span>
+    </a>
+    <nav aria-label="Seções do site">
+      <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
+      <a href="#biblioteca"><span class="idx">02</span>Biblioteca</a>
+      <a href="#diagnostico"><span class="idx">03</span>Diagnóstico</a>
+      <a href="#duvidas"><span class="idx">04</span>Dúvidas</a>
+    </nav>
+    <div class="topnav-actions">
+      
+      <a class="btn btn-ghost btn-arrow" href="#diagnostico">Diagnóstico gratuito</a>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+</header>
+<div class="scroll-rail" aria-hidden="true"><span id="scrollRail"></span></div>
+
+<!-- ═══ DRAWER (mobile) ═══ -->
+<div class="drawer" id="drawer" data-od-id="drawer">
+  <nav aria-label="Menu principal">
+    <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
+    <a href="#kodagrid"><span class="idx">02</span>KodaGrid</a>
+    <a href="#biblioteca"><span class="idx">03</span>Biblioteca</a>
+    <a href="#diagnostico"><span class="idx">04</span>Diagnóstico</a>
+    <a href="#ferramentas"><span class="idx">05</span>Ferramentas</a>
+    <a href="#duvidas"><span class="idx">06</span>Dúvidas</a>
+    <a href="#contato"><span class="idx">07</span>Contato</a>
+  </nav>
+  <div class="drawer-actions">
+    <a class="btn btn-primary" href="#diagnostico">Começar meu diagnóstico</a>
+    <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</div>
+
+<main id="content" tabindex="-1">
+
+<!-- ═══ HERO ═══ -->
+<section class="section hero" id="inicio" data-od-id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-split">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-accent">Software · Sites · Vídeos · Biblioteca</p>
+      <h1>Uma empresa de tecnologia feita para <em>vender</em> e escalar.</h1>
+      <p class="lead">A KODAROS cria o que faz o seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários — e uma biblioteca de e-books com ferramentas que rodam direto no navegador.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#diagnostico" data-od-id="hero-cta-diagnostico">Fazer meu diagnóstico
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a class="btn btn-ghost btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+      <dl class="telemetry" aria-label="Números da plataforma">
+        <div><dt class="num">50+</dt><dd>ferramentas gratuitas no navegador</dd></div>
+        <div><dt class="num">8</dt><dd>e-books na biblioteca, entrega imediata</dd></div>
+        <div><dt class="num">42</dt><dd>páginas no e-book gratuito</dd></div>
+        <div><dt class="num">24h</dt><dd>resposta útil do suporte</dd></div>
+      </dl>
+    </div>
+    <aside class="panel hero-panel" aria-label="Módulos da plataforma">
+      <div class="panel-head"><span>Plataforma</span><span>5 módulos</span></div>
+      <ul class="status-list">
+        <li><a href="#modulos"><span class="s-idx num">01</span><span class="s-name">Softwares &amp; Apps</span><span class="s-state" data-state="on">Disponível</span></a></li>
+        <li><a href="#modulos"><span class="s-idx num">02</span><span class="s-name">Sites</span><span class="s-state">Sob encomenda</span></a></li>
+        <li><a href="#modulos"><span class="s-idx num">03</span><span class="s-name">Vídeos e Propagandas</span><span class="s-state">Sob encomenda</span></a></li>
+        <li><a href="#modulos"><span class="s-idx num">04</span><span class="s-name">Ferramentas</span><span class="s-state" data-state="on">Disponível</span></a></li>
+        <li><a href="#modulos"><span class="s-idx num">05</span><span class="s-name">Biblioteca</span><span class="s-state" data-state="on">Disponível</span></a></li>
+      </ul>
+      <p class="panel-foot">Acesso sem cadastro · Entrega via Hotmart</p>
+    </aside>
+  </div>
+  <p class="hero-scroll" aria-hidden="true">Role</p>
 </section>
 
-<!-- DIAGNÓSTICO -->
-<section class="section oraculo platform-panel active" id="panel-diagnostico" role="tabpanel" aria-labelledby="tab-diagnostico">
-  <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Descubra o que está travando seu negócio</h2>
-      <p class="section-desc">Responda 3 perguntas e receba um diagnóstico com um e-book gratuito (42 páginas).</p>
-    </div>
-    <div class="funnel" id="funnel">
-      <div class="funnel-bar"><span>DOSSIÊ</span><span>DIAGNÓSTICO GRATUITO</span></div>
-      <div class="funnel-body">
-      <section class="step is-active" id="step-intro">
-        <div style="text-align:center">
-          <span class="badge-oraculo"><span class="badge-dot"></span> Diagnóstico gratuito · 2 minutos</span>
-          <h3 class="oraculo-title" style="margin-top:18px">Descubra o que está<br><span class="aurea">travando o crescimento</span><br>do seu negócio</h3>
-          <p class="lead-oraculo">Responda <strong>3 perguntas rápidas</strong> e receba seu diagnóstico — com e-book de presente.</p>
-          <div class="ebook-teaser-oraculo"><img src="./ebook-cover.webp" alt="Do Zero ao Patrimônio" width="96"><div style="display:flex;flex-direction:column;gap:4px"><span class="gift-tag">Presente liberado no final</span><strong style="font-family:'Cormorant Garamond',serif;font-size:1.05rem">Do Zero ao Patrimônio</strong><small style="color:var(--ink-dim);font-size:.82rem;line-height:1.4">42 páginas sobre empreendedorismo e transformação digital</small></div></div>
-          <button class="btn btn-aurea" data-next type="button" style="padding:18px 34px;font-size:.92rem">COMEÇAR MEU DIAGNÓSTICO <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+<!-- ═══ MÓDULOS — scroll interativo (fixo no desktop) ═══ -->
+<section class="section modules" id="modulos" data-od-id="modulos">
+  <div class="modules-sticky">
+    <div class="container">
+      <div class="modules-head">
+        <p class="eyebrow">Ecossistema</p>
+        <h2>Tudo em um só lugar</h2>
+      </div>
+      <div class="modules-grid">
+        <ol class="modules-rail" id="modulesRail" aria-label="Módulos da KODAROS">
+          <li><button class="rail-item is-active" type="button" data-index="0" aria-pressed="true"><span class="rail-idx num">01</span><span class="rail-name">Softwares &amp; Apps</span><span class="rail-state">Disponível</span></button></li>
+          <li><button class="rail-item" type="button" data-index="1" aria-pressed="false"><span class="rail-idx num">02</span><span class="rail-name">Sites</span><span class="rail-state">Sob encomenda</span></button></li>
+          <li><button class="rail-item" type="button" data-index="2" aria-pressed="false"><span class="rail-idx num">03</span><span class="rail-name">Vídeos e Propagandas</span><span class="rail-state">Sob encomenda</span></button></li>
+          <li><button class="rail-item" type="button" data-index="3" aria-pressed="false"><span class="rail-idx num">04</span><span class="rail-name">Ferramentas</span><span class="rail-state">Disponível</span></button></li>
+          <li><button class="rail-item" type="button" data-index="4" aria-pressed="false"><span class="rail-idx num">05</span><span class="rail-name">Biblioteca</span><span class="rail-state">Disponível</span></button></li>
+          <li aria-hidden="true"><div class="rail-progress"><span id="railProgress"></span></div></li>
+        </ol>
+        <div class="modules-stage" id="modulesStage">
+
+          <article class="module is-active" data-index="0" data-od-id="modulo-softwares">
+            <div class="module-media">
+              <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid — Construtor de Planilhas com Fórmulas" width="400" height="533" loading="lazy">
+            </div>
+            <div class="module-body">
+              <div class="module-meta"><span class="m-idx num">01 / 05</span><span class="pill">Disponível</span></div>
+              <h3>Softwares &amp; Apps</h3>
+              <p>Programas de desktop e apps sob medida. Instalam, abrem e funcionam — inclusive 100% offline no Windows, sem depender de nuvem.</p>
+              <ul class="module-facts">
+                <li><span>Em produção</span><b>KodaGrid</b></li>
+                <li><span>Plataforma</span><b>Windows · 100% offline</b></li>
+                <li><span>Entrega</span><b>Hotmart · acesso vitalício</b></li>
+              </ul>
+              <a class="btn btn-secondary btn-arrow" href="#kodagrid">Conhecer o KodaGrid</a>
+            </div>
+          </article>
+
+          <article class="module" data-index="1" data-od-id="modulo-sites">
+            <div class="module-media">
+              <div class="browser">
+                <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">seusite.com.br</span></div>
+                <img class="browser-shot" src="./banner.webp" alt="Banner da KODAROS usado como identidade de um site institucional" width="1200" height="480" loading="lazy">
+              </div>
+            </div>
+            <div class="module-body">
+              <div class="module-meta"><span class="m-idx num">02 / 05</span><span class="pill">Sob encomenda</span></div>
+              <h3>Sites</h3>
+              <p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender o seu produto ou serviço.</p>
+              <ul class="module-facts">
+                <li><span>Entregas</span><b>Institucional · Landing · Portfólio</b></li>
+                <li><span>Inclui</span><b>Mobile-first, SEO e tags sociais</b></li>
+                <li><span>Prazo</span><b>Definido no orçamento</b></li>
+              </ul>
+              <a class="btn btn-secondary btn-arrow" href="mailto:kodaros01@gmail.com?subject=Or%C3%A7amento%20%E2%80%94%20Site%20KODAROS&amp;body=Ol%C3%A1%2C%20equipe%20KODAROS!%0A%0AQuero%20um%20or%C3%A7amento%20para%20um%20site.%0A%0ATipo%20(institucional%20%2F%20landing%20%2F%20portf%C3%B3lio)%3A%0ARefer%C3%AAncias%3A%0A">Pedir orçamento de site</a>
+            </div>
+          </article>
+
+          <article class="module" data-index="2" data-od-id="modulo-videos">
+            <div class="module-media">
+              <div class="module-cases">
+                <div class="module-case"><span>Vertical</span><b>Reels e TikTok</b></div>
+                <div class="module-case"><span>Quadrado</span><b>Feed e Meta Ads</b></div>
+                <div class="module-case"><span>Horizontal</span><b>YouTube e site</b></div>
+              </div>
+            </div>
+            <div class="module-body">
+              <div class="module-meta"><span class="m-idx num">03 / 05</span><span class="pill">Sob encomenda</span></div>
+              <h3>Vídeos e Propagandas</h3>
+              <p>Motion graphics e vídeos publicitários para anúncios, redes e apresentações — do roteiro à entrega final.</p>
+              <ul class="module-facts">
+                <li><span>Roteiro</span><b>Gancho, mensagem e chamada</b></li>
+                <li><span>Produção</span><b>Motion, trilha e locução</b></li>
+                <li><span>Entrega</span><b>Vertical, quadrado e horizontal</b></li>
+              </ul>
+              <a class="btn btn-secondary btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Quero%20ver%20um%20exemplo%20de%20v%C3%ADdeo%20KODAROS." target="_blank" rel="noopener">Pedir exemplo de vídeo</a>
+            </div>
+          </article>
+
+          <article class="module" data-index="3" data-od-id="modulo-ferramentas">
+            <div class="module-media">
+              <div class="browser">
+                <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">kelvinoliveiracode.github.io/kodarosferramentas</span></div>
+                <div class="browser-shot" style="padding:28px 20px">
+                  <p class="meta" style="margin:0 0 10px">Calculadoras e geradores</p>
+                  <p style="font-family:var(--font-mono);font-size:13px;color:var(--fg);margin:0;line-height:1.9">
+                    ROI de campanha<br>Margem de preço<br>Fluxo de caixa<br>Custo por lead<br>Meta de vendas
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="module-body">
+              <div class="module-meta"><span class="m-idx num">04 / 05</span><span class="pill">Disponível</span></div>
+              <h3>Ferramentas</h3>
+              <p>Mais de 50 calculadoras e geradores que rodam 100% no navegador. Use na hora, sem cadastro — e com referência direta nos e-books.</p>
+              <ul class="module-facts">
+                <li><span>Formato</span><b>Web app, sem instalação</b></li>
+                <li><span>Cadastro</span><b>Nenhum</b></li>
+                <li><span>Acesso</span><b>Gratuito</b></li>
+              </ul>
+              <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodarosferramentas/" target="_blank" rel="noopener">Abrir as ferramentas</a>
+            </div>
+          </article>
+
+          <article class="module" data-index="4" data-od-id="modulo-biblioteca">
+            <div class="module-media">
+              <div class="bookstack">
+                <img src="./arquitetura-capa.webp" alt="Capa do e-book Arquitetura de Aquisição" width="296" height="395" loading="lazy">
+                <img src="./livro-gestao.webp" alt="Capa do e-book Os 10 Pilares da Gestão Empresarial" width="296" height="419" loading="lazy">
+                <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
+              </div>
+            </div>
+            <div class="module-body">
+              <div class="module-meta"><span class="m-idx num">05 / 05</span><span class="pill">Disponível</span></div>
+              <h3>Biblioteca</h3>
+              <p>De Tráfego a Gestão. Oito e-books que resolvem um problema específico cada — escolha pelo nível e comece pelo que dói mais hoje.</p>
+              <ul class="module-facts">
+                <li><span>Entrega</span><b>Imediata via Hotmart</b></li>
+                <li><span>Acesso</span><b>Vitalício</b></li>
+                <li><span>Brinde</span><b>Do Zero ao Patrimônio (42 pág.)</b></li>
+              </ul>
+              <a class="btn btn-secondary btn-arrow" href="#biblioteca">Ver a biblioteca</a>
+            </div>
+          </article>
+
         </div>
-      </section>
-      <section class="step" id="step-profile">
-        <div style="text-align:center"><p class="progress-label">ANTES DE TUDO</p><h3 class="question">Onde você se encaixa melhor?</h3><p class="question-sub">As perguntas se adaptam ao seu perfil.</p></div>
-        <div class="profile-grid">
-          <button class="profile-card" type="button" data-profile="empresa"><span class="pc-icon violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="8" height="13" rx="1"/><rect x="11" y="3" width="10" height="18" rx="1"/><path d="M14.5 7h1M17.5 7h1M14.5 11h1M17.5 11h1M6 11h1M6 15h1M14.5 15h1M17.5 15h1M6 19h1"/></svg></span><span class="pc-text"><strong>JÁ TENHO UMA EMPRESA</strong><small>quero escalar, organizar e automatizar</small></span><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span></button>
-          <button class="profile-card" type="button" data-profile="iniciante"><span class="pc-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2.5c3.5 2 5.5 5.4 5.5 9.2 0 2.3-.8 4.4-2.2 6.1l-1.1 3.7h-4.4l-1.1-3.7a9.2 9.2 0 01-2.2-6.1c0-3.8 2-7.2 5.5-9.2z"/><circle cx="12" cy="10" r="2.2"/></svg></span><span class="pc-text"><strong>SOU INICIANTE NO DIGITAL</strong><small>quero começar com o passo a passo certo</small></span><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span></button>
-          <button class="profile-card" type="button" data-profile="outros"><span class="pc-icon" style="color:var(--ink-dim)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span class="pc-text"><strong>OUTROS</strong><small>renda extra, transição ou curiosidade</small></span><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span></button>
-        </div>
-      </section>
-      <section class="step" id="step-quiz">
-        <div class="progress-oraculo"><div class="progress-fill" id="quiz-progress"></div></div>
-        <p class="progress-label" id="quiz-label">PERGUNTA 1 DE 4</p>
-        <h3 class="question" id="quiz-title"></h3>
-        <p class="question-sub" id="quiz-sub"></p>
-        <div class="options" id="quiz-options"></div>
-        <p class="feedback" id="quiz-feedback"></p>
-      </section>
-      <section class="step" id="step-result">
-        <div style="text-align:center"><span class="result-flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5 5L20 6.5"/></svg> Diagnóstico concluído</span><h3 class="result-title">Isso é o que suas respostas revelaram</h3></div>
-        <div class="diagnosis" id="diagnosis"></div>
-        <div class="divider-oraculo"><span>SEU PRESENTE</span></div>
-        <div class="ebook-card-oraculo"><img src="./ebook-cover.webp" alt="Do Zero ao Patrimônio" width="132"><div><span class="gift-tag">E-BOOK 100% GRATUITO</span><h3>Do Zero ao Patrimônio</h3><p>Empreendedorismo, transformação digital e estratégias para construir patrimônio.</p><a class="btn btn-download" href="./do-zero-ao-patrimonio.pdf" download="Kodaros-Do-Zero-ao-Patrimonio.pdf" style="display:inline-flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg> BAIXAR MEU E-BOOK GRÁTIS</a></div></div>
-        <div class="divider-oraculo"><span>PRÓXIMO PASSO</span></div>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <a class="btn btn-aurea" href="#biblioteca"><span>VER BIBLIOTECA COMPLETA</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-          <a class="btn btn-whatsapp" href="https://wa.me/559192094504?text=Oi!%20Fiz%20o%20diagn%C3%B3stico%20KODAROS%20e%20quero%20o%20pr%C3%B3ximo%20passo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3.1 4.2c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.9 8.6c-.2-.4-.4-.4-.6-.4h-.4z"/></svg> FALAR COM A KODAROS</a>
-        </div>
-        <div class="rec-grid" id="rec-grid"></div>
-        <p style="margin-top:16px;color:var(--ink-dim);font-size:.78rem;text-align:center;letter-spacing:.04em">KODAROS · Automação · Marketing · Autoridade Digital</p>
-      </section>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOFTWARES -->
-<section class="section platform-panel" id="panel-softwares" role="tabpanel" aria-labelledby="tab-softwares" hidden>
-  <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Softwares &amp; Apps</h2>
-      <p class="section-desc">Programas de desktop e apps sob medida. Instalam, abrem e funcionam — inclusive 100% offline no Windows, sem depender de nuvem.</p>
+<!-- ═══ KODAGRID ═══ -->
+<section class="section" id="kodagrid" data-od-id="kodagrid">
+  <div class="container grid-1-2">
+    <figure class="spec-media reveal">
+      <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid — Construtor de Planilhas com Fórmulas para Windows" width="400" height="533" loading="lazy">
+      <figcaption>KodaGrid · Windows</figcaption>
+    </figure>
+    <div class="reveal">
+      <p class="eyebrow eyebrow-accent">Software · Windows</p>
+      <h2>KodaGrid — Construtor de Planilhas com Fórmulas</h2>
+      <p class="lead" style="margin-top:16px">Monte planilhas sem decorar fórmula. Escolha o tipo da coluna, clique num preset, pinte do seu jeito e preencha. O KodaGrid gera um .xlsx com fórmula viva, pronto para abrir no Excel.</p>
+      <ul class="spec-list">
+        <li><strong>Colunas como peças de montar.</strong> Texto, Número, Moeda R$, Data, Lista dropdown e Fórmula.</li>
+        <li><strong>Presets inteligentes de fórmula por clique.</strong> SOMA, %, SE e Acumulado.</li>
+        <li><strong>13 templates prontos.</strong> Fluxo de Caixa, Precificação, Estoque, Orçamento e mais.</li>
+        <li><strong>Arquivo .xlsx de verdade.</strong> Fórmulas vivas, cabeçalho colorido, filtro congelado e linha TOTAL.</li>
+        <li><strong>Preview ao vivo.</strong> Salvamento de modelos reutilizáveis.</li>
+        <li><strong>100% offline.</strong> Windows, sem depender de nuvem. Suporte: kodaros01@gmail.com</li>
+      </ul>
+      <div class="chips" style="margin-bottom:var(--gap-lg)"><span class="chip">Windows</span><span class="chip">100% offline</span><span class="chip">.xlsx real</span><span class="chip">13 templates</span></div>
+      <a class="btn btn-primary" href="https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=softwares" target="_blank" rel="noopener" data-od-id="cta-kodagrid-comprar">Comprar na Hotmart</a>
+      <p class="fineprint" style="margin-top:12px">Hotmart seguro · pagamento protegido</p>
     </div>
-    <article class="software-card spec">
-      <figure class="spec-side">
-        <img src="./kodagrid-capa.webp" alt="KodaGrid — Construtor de Planilhas com Fórmulas" width="270" height="360" loading="lazy">
-        <figcaption>KodaGrid</figcaption>
-      </figure>
-      <div class="spec-main">
-        <div class="spec-top">
-          <span class="ebook-badge">Software · Windows</span>
-          
-        </div>
-        <h3 class="ebook-title" style="font-size:1.5rem;margin:10px 0">KodaGrid — Construtor de Planilhas com Fórmulas</h3>
-        <div class="chips" aria-label="Destaques"><span class="chip">Windows</span><span class="chip">100% offline</span><span class="chip">.xlsx real</span><span class="chip">13 templates</span></div>
-        <p class="ebook-desc" style="font-size:.92rem">Monte planilhas sem decorar fórmula. Escolha o tipo da coluna, clique num preset (SOMA, %, SE, Acumulado), pinte do seu jeito e preencha. O KodaGrid gera um .xlsx com fórmula viva, cabeçalho colorido, filtro congelado e linha TOTAL — pronto para abrir no Excel. Vem com 13 templates e salvamento de modelos.</p>
-        <ul class="software-feats">
-          <li>Colunas como peças de montar: Texto, Número, Moeda R$, Data, Lista dropdown e Fórmula</li>
-          <li>Presets inteligentes de fórmula por clique: SOMA, %, SE e Acumulado</li>
-          <li>13 templates prontos: Fluxo de Caixa, Precificação, Estoque, Orçamento e mais</li>
-          <li>Gera .xlsx com fórmulas vivas, cabeçalho colorido, filtro congelado e linha TOTAL</li>
-          <li>Preview ao vivo e salvamento de modelos reutilizáveis</li>
-          <li>100% offline · Windows · Suporte: kodaros01@gmail.com</li>
-        </ul>
-        <a href="https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=softwares" target="_blank" rel="noopener" class="btn btn-aurea ebook-cta" style="max-width:340px;width:100%;justify-content:center">Comprar na Hotmart</a>
-      <span class="ebook-safe" style="display:block;margin-top:10px;text-align:center">Hotmart seguro · pagamento protegido</span>
-      </div>
-    </article>
   </div>
 </section>
 
-<!-- SITES -->
-<section class="section platform-panel" id="panel-sites" role="tabpanel" aria-labelledby="tab-sites" hidden>
+<!-- ═══ BIBLIOTECA ═══ -->
+<section class="section" id="biblioteca" data-od-id="biblioteca">
   <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Sites que convertem</h2>
-      <p class="section-desc">Sites e landing pages sob encomenda: rápidos, com identidade própria e prontos para vender.</p>
-    </div>
-    <article class="software-card spec">
-      <figure class="spec-side" aria-label="Exemplo de site">
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">seusite.com.br — landing KODAROS</span></div>
-          <img class="browser-shot" src="./banner.webp" alt="Exemplo de site com identidade KODAROS" width="600" height="200" loading="lazy">
-        </div>
-        <figcaption>Landing · Institucional · Portfólio</figcaption>
-        <div class="chips" style="justify-content:center;margin-top:14px"><span class="chip">Mobile-first</span><span class="chip">SEO incluso</span></div>
-      </figure>
-      <div class="spec-main">
-        <h3 class="lib-title">Site sob medida KODAROS</h3>
-        <p class="lib-sub">Do layout ao ar: página institucional, landing de vendas ou portfólio — otimizado para celular e buscadores.</p>
-        <ul class="sw-feats">
-          <li><strong>Identidade própria.</strong> Visual exclusivo, sem cara de template.</li>
-          <li><strong>Rápido e otimizado.</strong> Carregamento leve, SEO básico e tags sociais inclusos.</li>
-          <li><strong>Pronto para vender.</strong> Botões de contato, catálogo e integração com WhatsApp e pagamentos.</li>
-        </ul>
-        <div class="buy-row">
-          <a class="btn-buy" href="mailto:kodaros01@gmail.com?subject=Or%C3%A7amento%20%E2%80%94%20Site%20KODAROS&body=Ol%C3%A1%2C%20equipe%20KODAROS!%0A%0AQuero%20um%20or%C3%A7amento%20para%20um%20site.%0A%0ATipo%20(institucional%20%2F%20landing%20%2F%20portf%C3%B3lio)%3A%0ARefer%C3%AAncias%3A%0A">Pedir orçamento de site</a>
-        </div>
+    <div class="row-between" style="margin-bottom:var(--gap-lg);align-items:flex-end;flex-wrap:wrap">
+      <div style="max-width:44ch">
+        <p class="eyebrow">Biblioteca</p>
+        <h2>Conteúdo direto para o seu negócio</h2>
       </div>
-    </article>
+      <p class="lead" style="max-width:34ch;font-size:16px">Cada e-book resolve um problema específico. Entrega imediata via Hotmart, acesso vitalício.</p>
+    </div>
+    <div class="filters" id="bookFilters" role="group" aria-label="Filtrar e-books por nível">
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="filter-btn" type="button" data-filter="iniciantes" aria-pressed="false">Iniciante</button>
+      <button class="filter-btn" type="button" data-filter="intermediario" aria-pressed="false">Intermediário</button>
+      <button class="filter-btn" type="button" data-filter="avancado" aria-pressed="false">Avançado</button>
+    </div>
+    <div class="books" id="books">
+
+      <article class="book reveal" data-level="avancado" data-od-id="book-arquitetura">
+        <div class="book-cover"><img src="./arquitetura-capa.webp" alt="Capa do e-book Arquitetura de Aquisição" width="296" height="395" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Avançado</span>
+          <h3 class="book-title">Arquitetura de Aquisição</h3>
+          <p class="book-desc">O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists prontos.</p>
+          <div class="book-price"><span class="old">R$ 247</span><span class="now num">R$ 197</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="intermediario" data-od-id="book-lancamento">
+        <div class="book-cover"><img src="./livro3.webp" alt="Capa do e-book Lançamento Milionário" width="296" height="418" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Intermediário</span>
+          <h3 class="book-title">Lançamento Milionário</h3>
+          <p class="book-desc">O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.</p>
+          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="intermediario" data-od-id="book-trafego">
+        <div class="book-cover"><img src="./livro1.webp" alt="Capa do e-book Tráfego Que Vende" width="296" height="418" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Intermediário</span>
+          <h3 class="book-title">Tráfego Que Vende</h3>
+          <p class="book-desc">Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.</p>
+          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="intermediario" data-od-id="book-site">
+        <div class="book-cover"><img src="./livro-site.webp" alt="Capa do e-book Use Seu Site Para Escalar Sua Empresa" width="296" height="419" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Intermediário</span>
+          <h3 class="book-title">Use Seu Site Para Escalar Sua Empresa</h3>
+          <p class="book-desc">Transforme seu site em máquina de vendas com SEO, captura de leads e automação.</p>
+          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="iniciantes" data-od-id="book-venda">
+        <div class="book-cover"><img src="./livro2.webp" alt="Capa do e-book Venda Mais Hoje" width="296" height="416" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Iniciante</span>
+          <h3 class="book-title">Venda Mais Hoje</h3>
+          <p class="book-desc">Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar as suas vendas imediatamente.</p>
+          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="iniciantes" data-od-id="book-gestao">
+        <div class="book-cover"><img src="./livro-gestao.webp" alt="Capa do e-book Os 10 Pilares da Gestão Empresarial" width="296" height="419" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Iniciante</span>
+          <h3 class="book-title">Os 10 Pilares da Gestão Empresarial</h3>
+          <p class="book-desc">10 pilares para organizar e crescer a sua empresa com controle e decisões baseadas em dados.</p>
+          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="iniciantes" data-od-id="book-financeiro">
+        <div class="book-cover"><img src="./livro-financeiro.webp" alt="Capa do e-book Os 10 Pilares do Controle Financeiro" width="296" height="417" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Iniciante</span>
+          <h3 class="book-title">Os 10 Pilares do Controle Financeiro</h3>
+          <p class="book-desc">Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.</p>
+          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+      <article class="book reveal" data-level="iniciantes" data-od-id="book-reclamacoes">
+        <div class="book-cover"><img src="./livro-reclamacoes.webp" alt="Capa do e-book Transforme Reclamações em Vendas" width="296" height="419" loading="lazy"></div>
+        <div class="book-body">
+          <span class="book-badge">Iniciante</span>
+          <h3 class="book-title">Transforme Reclamações em Vendas</h3>
+          <p class="book-desc">O método para transformar reclamações em fidelização e construir uma cultura centrada no cliente.</p>
+          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
+          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
+          <span class="book-safe">Hotmart · pagamento protegido</span>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- VÍDEOS -->
-<section class="section platform-panel" id="panel-videos" role="tabpanel" aria-labelledby="tab-videos" hidden>
+<!-- ═══ FERRAMENTAS ═══ -->
+<section class="section" id="ferramentas" data-od-id="ferramentas">
   <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Vídeos e Propagandas</h2>
-      <p class="section-desc">Motion graphics e vídeos publicitários para anúncios, redes e apresentações — do roteiro à entrega.</p>
-    </div>
-    <article class="software-card spec spec-solo">
-      <div class="video-frame">
-        <a class="play" href="https://wa.me/559192094504?text=Oi!%20Quero%20ver%20um%20exemplo%20de%20v%C3%ADdeo%20KODAROS." target="_blank" rel="noopener" aria-label="Pedir exemplo de vídeo">▶</a>
-        <div><h3 class="lib-title" style="margin:0">Vídeo publicitário KODAROS</h3><small>Anúncio · Reels · Institucional — peça um exemplo no WhatsApp</small></div>
-      </div>
-      <div class="spec-main">
-        <h3 class="lib-title">Vídeo publicitário KODAROS</h3>
-        <p class="lib-sub">Criativo pronto para veicular: anúncio, reels, apresentação de produto ou institucional curto.</p>
-        <ul class="sw-feats">
-          <li><strong>Roteiro incluso.</strong> Gancho, mensagem e chamada para ação pensados para o seu público.</li>
-          <li><strong>Motion e narração.</strong> Animação, trilha e locução profissional sob medida.</li>
-          <li><strong>Formatos para cada canal.</strong> Entrega em vertical, quadrado e horizontal, pronta para anunciar.</li>
-        </ul>
-        <div class="buy-row">
-          <a class="btn-buy" href="mailto:kodaros01@gmail.com?subject=Or%C3%A7amento%20%E2%80%94%20V%C3%ADdeo%20KODAROS&body=Ol%C3%A1%2C%20equipe%20KODAROS!%0A%0AQuero%20um%20or%C3%A7amento%20para%20um%20v%C3%ADdeo.%0A%0ATipo%20(an%C3%BAncio%20%2F%20reels%20%2F%20institucional)%3A%0ADura%C3%A7%C3%A3o%20desejada%3A%0ARefer%C3%AAncias%3A%0A">Pedir orçamento de vídeo</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- FERRAMENTAS (PWA) -->
-<section class="section" id="ferramentas">
-  <div class="container">
-    <div class="panel-dark">
+    <div class="tool-panel reveal">
       <div>
+        <p class="eyebrow">Ferramentas</p>
         <h2>Mais de <span>50 ferramentas</span> gratuitas.</h2>
-        <p>Calculadoras de tráfego, financeiro, vendas e gestão. Rodam direto no navegador, sem login — agora em site próprio.</p>
-        <span class="band-note">Gratuito · Sem cadastro · 100% no navegador</span>
+        <p>Calculadoras de tráfego, financeiro, vendas e gestão. Rodam direto no navegador, sem login — agora em site próprio, com referência direta nos e-books.</p>
+        <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodarosferramentas/" target="_blank" rel="noopener">Acessar as ferramentas</a>
       </div>
-      <a class="btn btn-line" href="https://kelvinoliveiracode.github.io/kodarosferramentas/" target="_blank" rel="noopener">
-        <span>Acessar as ferramentas</span>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </a>
+      <div style="text-align:right">
+        <div class="tool-count num">50+</div>
+        <p class="meta" style="margin-top:10px">Gratuito · sem cadastro · 100% no navegador</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- DIFERENCIAIS -->
-<section class="section" id="diferenciais" style="padding-top:0">
+<!-- ═══ DIAGNÓSTICO ═══ -->
+<section class="section" id="diagnostico" data-od-id="diagnostico">
   <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Por que escolher a KODAROS?</h2>
+    <div style="max-width:46ch;margin-bottom:var(--gap-lg)">
+      <p class="eyebrow eyebrow-accent">Diagnóstico gratuito</p>
+      <h2>Onde o seu crescimento está travando</h2>
+      <p class="lead" style="margin-top:16px">3 perguntas que se adaptam ao seu perfil, em cerca de 2 minutos. No fim você recebe o diagnóstico e um e-book de presente.</p>
     </div>
-    <div class="why-list">
-      <div class="why-card"><h3>Código próprio, leve e rápido</h3><p>Sem peso extra, sem depender de IA para entregar. Abre rápido, roda liso, funciona.</p><div class="why-icon" aria-hidden="true"></div></div>
-      <div class="why-card"><h3>Feito para crescer junto</h3><p>Mesma base do primeiro cliente aos milhares. Cresce sem ter que refazer tudo do zero.</p><div class="why-icon" aria-hidden="true"></div></div>
-      <div class="why-card"><h3>Detalhe que você nota</h3><p>Tipografia, espaçamento e acabamento pensados à mão — do meandro ao botão.</p><div class="why-icon" aria-hidden="true"></div></div>
-      <div class="why-card"><h3>Gente de verdade</h3><p>Resposta direta, sem robô nem fila infinita. Se precisar, a gente está lá.</p><div class="why-icon" aria-hidden="true"></div></div>
+
+    <div class="steps-strip" style="margin-bottom:var(--gap-xl)">
+      <div class="step-item"><span class="num">01</span><b>Diagnóstico de 2 minutos</b><small>3 perguntas adaptadas ao seu perfil revelam o que trava o seu negócio.</small></div>
+      <div class="step-item"><span class="num">02</span><b>E-book de presente</b><small>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</small></div>
+      <div class="step-item"><span class="num">03</span><b>Biblioteca e ferramentas</b><small>Com o diagnóstico na mão, escolha o seu e-book e use as ferramentas.</small></div>
+    </div>
+
+    <div class="console" id="console" data-od-id="console-diagnostico">
+      <div class="console-bar"><span>Console · diagnóstico</span><span id="consoleState">Etapa 1 de 4</span></div>
+      <div class="console-body">
+
+        <section class="step is-active" id="step-intro" data-od-id="diag-passo-1">
+          <div style="text-align:center">
+            <span class="pill">Diagnóstico gratuito · 2 minutos</span>
+            <h3 class="diag-title" style="margin-top:18px">Três perguntas. <em>Um retrato real</em> do seu negócio.</h3>
+            <p class="diag-lead">Responda 3 perguntas rápidas e receba o seu diagnóstico — com e-book de presente.</p>
+            <div class="gift">
+              <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
+              <div>
+                <span class="gift-tag">Presente liberado no final</span>
+                <strong>Do Zero ao Patrimônio</strong>
+                <small>42 páginas sobre empreendedorismo e transformação digital</small>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="button" data-next="" data-od-id="cta-comecar-diagnostico">Começar meu diagnóstico
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" id="step-profile" data-od-id="diag-passo-2">
+          <div style="text-align:center">
+            <p class="q-label">Antes de tudo</p>
+            <h3 class="q-title" style="font-size:24px">Onde você se encaixa melhor?</h3>
+            <p class="q-sub">As perguntas se adaptam ao seu perfil.</p>
+          </div>
+          <div class="profiles" role="radiogroup" aria-label="Seu perfil">
+            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="empresa" data-od-id="perfil-empresa">
+              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="8" width="8" height="13" rx="1"></rect><rect x="11" y="3" width="10" height="18" rx="1"></rect><path d="M14.5 7h1M17.5 7h1M14.5 11h1M17.5 11h1M6 11h1M6 15h1M14.5 15h1M17.5 15h1"></path></svg></span>
+              <strong>Já tenho uma empresa</strong>
+              <small>Quero escalar, organizar e automatizar.</small>
+            </button>
+            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="iniciante" data-od-id="perfil-iniciante">
+              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2.5c3.5 2 5.5 5.4 5.5 9.2 0 2.3-.8 4.4-2.2 6.1l-1.1 3.7h-4.4l-1.1-3.7a9.2 9.2 0 01-2.2-6.1c0-3.8 2-7.2 5.5-9.2z"></path><circle cx="12" cy="10" r="2.2"></circle></svg></span>
+              <strong>Sou iniciante no digital</strong>
+              <small>Quero começar com o passo a passo certo.</small>
+            </button>
+            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="outros" data-od-id="perfil-outros">
+              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></span>
+              <strong>Outros</strong>
+              <small>Renda extra, transição ou curiosidade.</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" id="step-quiz" data-od-id="diag-passo-3">
+          <div class="progress"><span id="quizProgress"></span></div>
+          <p class="q-label" id="quizLabel">Pergunta 1 de 3</p>
+          <h3 class="q-title" id="quizTitle"></h3>
+          <p class="q-sub" id="quizSub"></p>
+          <ul class="options" id="quizOptions" role="radiogroup" aria-label="Selecione uma resposta"></ul>
+          <p class="feedback" id="quizFeedback"></p>
+        </section>
+
+        <section class="step" id="step-result" data-od-id="diag-passo-4">
+          <div style="text-align:center">
+            <span class="pill">Diagnóstico concluído</span>
+            <h3 class="diag-title" style="margin-top:16px">Isto é o que as suas respostas revelaram</h3>
+          </div>
+          <div class="diagnosis" id="diagnosis"></div>
+          <div class="gift" style="max-width:none;margin:0 0 var(--gap-lg)">
+            <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
+            <div>
+              <span class="gift-tag">E-book 100% gratuito</span>
+              <strong>Do Zero ao Patrimônio</strong>
+              <small>Empreendedorismo, transformação digital e estratégias para construir patrimônio.</small>
+              <a class="btn btn-secondary" style="margin-top:12px" href="./do-zero-ao-patrimonio.pdf" download="Kodaros-Do-Zero-ao-Patrimonio.pdf" data-od-id="cta-baixar-ebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"></path></svg>
+                Baixar meu e-book grátis
+              </a>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:var(--gap-xl)">
+            <a class="btn btn-secondary" href="#biblioteca">Ver a biblioteca completa</a>
+            <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Fiz%20o%20diagn%C3%B3stico%20KODAROS%20e%20quero%20o%20pr%C3%B3ximo%20passo." target="_blank" rel="noopener">Falar com a KODAROS</a>
+          </div>
+          <div class="recs" id="recs"></div>
+        </section>
+
+      </div>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="section wall" id="depoimentos">
+<!-- ═══ DIFERENCIAIS ═══ -->
+<section class="section" id="diferenciais" data-od-id="diferenciais">
   <div class="container">
-    <div class="rule-top"></div>
-    <h2 class="section-title">O que dizem sobre nós</h2>
-    <p class="wall-lead">“Não é mágica, é o passo a passo que eu precisava.” <span style="font-family:var(--font-body);font-size:.9rem;color:var(--paper-dim)">— Fernanda Lima, começando no digital</span></p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Uso o KodaGrid no fluxo de caixa. Antes perdia meia hora no Excel, agora monto a planilha em 5 minutos e já sai com fórmula funcionando."</p><div class="testimonial-author"><span class="testi-init">LA</span><span><strong>Lucas Andrade</strong> · Autônomo, Manaus</span></div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Sou designer e enjoo fácil de site poluído. Aqui achei o e-book de gestão em dois cliques, fonte boa, sem banner piscando."</p><div class="testimonial-author"><span class="testi-init">MC</span><span><strong>Mariana Costa</strong> · Product Designer</span></div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Comprei o pack de finanças. Sem enrolação, fui direto pro capítulo de preço e já ajustei minha margem na mesma semana."</p><div class="testimonial-author"><span class="testi-init">CM</span><span><strong>Carlos Mendes</strong> · Loja de materiais</span></div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Usei a calculadora de ROI antes de rodar tráfego. Ter o número na mão fez diferença — parei de chutar."</p><div class="testimonial-author"><span class="testi-init">JR</span><span><strong>Juliana Rocha</strong> · Gestora de tráfego iniciante</span></div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Mandei e-mail no domingo achando que só veriam na segunda. Responderam no mesmo dia. Isso pesa na escolha."</p><div class="testimonial-author"><span class="testi-init">RT</span><span><strong>Rafael Torres</strong> · Prestador de serviços</span></div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">"Comecei pelo diagnóstico, ganhei o e-book e peguei o de tráfego. Não é mágica, é o passo a passo que eu precisava."</p><div class="testimonial-author"><span class="testi-init">FL</span><span><strong>Fernanda Lima</strong> · Começando no digital</span></div></div>
+    <div style="max-width:44ch;margin-bottom:var(--gap-lg)">
+      <p class="eyebrow">Por que a KODAROS</p>
+      <h2>Código próprio, acabamento de quem entrega</h2>
     </div>
-    <p class="fineprint">* Depoimentos de usuários iniciais — resultados variam conforme aplicação.</p>
+    <div class="why">
+      <div class="why-item reveal"><span class="wn num">01</span><div><h3>Código próprio, leve e rápido</h3><p>Sem peso extra e sem depender de IA para entregar. Abre rápido, roda liso, funciona.</p></div></div>
+      <div class="why-item reveal"><span class="wn num">02</span><div><h3>Feito para crescer junto</h3><p>Mesma base do primeiro cliente aos milhares. Cresce sem ter que refazer tudo do zero.</p></div></div>
+      <div class="why-item reveal"><span class="wn num">03</span><div><h3>Detalhe que você nota</h3><p>Tipografia, espaçamento e acabamento pensados à mão — do meandro ao botão.</p></div></div>
+      <div class="why-item reveal"><span class="wn num">04</span><div><h3>Gente de verdade</h3><p>Resposta direta, sem robô nem fila infinita. Se precisar, a gente está lá.</p></div></div>
+    </div>
   </div>
 </section>
 
-<!-- DÚVIDAS -->
-<section class="section" id="duvidas">
+<!-- ═══ DEPOIMENTOS ═══ -->
+<section class="section wall" id="depoimentos" data-od-id="depoimentos">
   <div class="container">
-    <div class="section-head">
-      <div class="rule-top"></div>
-      <h2 class="section-title">Perguntas frequentes</h2>
-      <p class="section-desc">O que as pessoas perguntam antes de comprar. Se a sua dúvida não estiver aqui, chame no WhatsApp.</p>
+    <p class="eyebrow">Quem já usa</p>
+    <blockquote class="wall-lead">“Não é mágica, é o passo a passo que eu precisava.”
+      <cite>— Fernanda Lima, começando no digital</cite>
+    </blockquote>
+    <div class="testis">
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Uso o KodaGrid no fluxo de caixa. Antes perdia meia hora no Excel, agora monto a planilha em 5 minutos e já sai com fórmula funcionando.</p></blockquote><cite><strong>Lucas Andrade</strong> · Autônomo, Manaus</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Sou designer e enjoo fácil de site poluído. Aqui achei o e-book de gestão em dois cliques, fonte boa, sem banner piscando.</p></blockquote><cite><strong>Mariana Costa</strong> · Product Designer</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Comprei o pack de finanças. Sem enrolação, fui direto pro capítulo de preço e já ajustei a minha margem na mesma semana.</p></blockquote><cite><strong>Carlos Mendes</strong> · Loja de materiais</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Usei a calculadora de ROI antes de rodar tráfego. Ter o número na mão fez diferença — parei de chutar.</p></blockquote><cite><strong>Juliana Rocha</strong> · Gestora de tráfego iniciante</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Mandei e-mail no domingo achando que só veriam na segunda. Responderam no mesmo dia. Isso pesa na escolha.</p></blockquote><cite><strong>Rafael Torres</strong> · Prestador de serviços</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Comecei pelo diagnóstico, ganhei o e-book e peguei o de tráfego. Foi exatamente o passo a passo que eu precisava.</p></blockquote><cite><strong>Fernanda Lima</strong> · Começando no digital</cite></figure>
     </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>O diagnóstico é gratuito?<span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Como recebo os e-books depois de comprar?<span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício.</p>
-      </details>
-      <details class="faq-item">
-        <summary>O KodaGrid funciona sem internet?<span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Quais formas de pagamento a Hotmart aceita?<span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão.</p>
-      </details>
-      <details class="faq-item">
-        <summary>E se eu me arrepender da compra?<span class="faq-mark" aria-hidden="true"></span></summary>
-        <p>A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá.</p>
-      </details>
-    </div>
+    <p class="fineprint">* Depoimentos de usuários iniciais — resultados variam conforme a aplicação.</p>
   </div>
 </section>
 
-<!-- CONTATO -->
-<section class="section" id="contato">
-  <div class="container contact-grid">
+<!-- ═══ DÚVIDAS ═══ -->
+<section class="section" id="duvidas" data-od-id="duvidas">
+  <div class="container grid-1-2">
     <div>
-      <div class="rule-top"></div>
-      <h2 class="section-title">Fale com a gente</h2>
-      <p class="section-desc">Dúvida, orçamento ou sugestão? Resposta em até 24h úteis.</p>
-      <div class="contact-channels" style="margin-top:34px">
-        <a href="https://wa.me/559192094504" target="_blank" rel="noopener" class="contact-channel"><span class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span><span class="channel-label">WhatsApp</span><span class="channel-go">→</span></a>
-        <a href="mailto:kodaros01@gmail.com" class="contact-channel"><span class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></span><span class="channel-label">E-mail</span><span class="channel-go">→</span></a>
-        <a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener" class="contact-channel"><span class="channel-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg></span><span class="channel-label">Instagram</span><span class="channel-go">→</span></a>
-      </div>
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+      <p class="lead" style="margin-top:16px;font-size:16px">O que as pessoas perguntam antes de comprar.</p>
+      <a class="btn btn-secondary btn-arrow" style="margin-top:24px" href="https://wa.me/559192094504?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20KODAROS." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
-    <form class="contact-form" id="contactForm" onsubmit="return handleContact(event)" novalidate>
-      <div class="contact-form-grid"><div class="field"><label for="cf-name">Nome</label><input id="cf-name" type="text" placeholder="Seu nome" required autocomplete="name"></div><div class="field"><label for="cf-email">E-mail</label><input id="cf-email" type="email" placeholder="seu@email.com" required autocomplete="email"></div></div>
-      <div class="field"><label for="cf-msg">Mensagem</label><textarea id="cf-msg" rows="6" placeholder="Como podemos ajudar?" required></textarea></div>
+    <div class="faq">
+      <details><summary>O diagnóstico é gratuito?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada.</p></details>
+      <details><summary>Como recebo os e-books depois de comprar?<span class="faq-mark" aria-hidden="true"></span></summary><p>A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício.</p></details>
+      <details><summary>O KodaGrid funciona sem internet?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel.</p></details>
+      <details><summary>Quais formas de pagamento a Hotmart aceita?<span class="faq-mark" aria-hidden="true"></span></summary><p>Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão.</p></details>
+      <details><summary>E se eu me arrepender da compra?<span class="faq-mark" aria-hidden="true"></span></summary><p>A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTATO ═══ -->
+<section class="section" id="contato" data-od-id="contato">
+  <div class="container grid-2-1">
+    <div>
+      <p class="eyebrow">Contato</p>
+      <h2>Fale com a gente</h2>
+      <p class="lead" style="margin-top:16px;font-size:16px">Dúvida, orçamento ou sugestão? Resposta em até 24h úteis.</p>
+      <ul class="channels" style="margin-top:var(--gap-lg)">
+        <li><a href="https://wa.me/559192094504" target="_blank" rel="noopener"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></span><span class="channel-label">WhatsApp</span><span class="channel-go">→</span></a></li>
+        <li><a href="mailto:kodaros01@gmail.com"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M22 6l-10 7L2 6"></path></svg></span><span class="channel-label">E-mail</span><span class="channel-go">→</span></a></li>
+        <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></span><span class="channel-label">Instagram</span><span class="channel-go">→</span></a></li>
+      </ul>
+    </div>
+    <form class="form" id="contactForm" novalidate="" data-od-id="form-contato">
+      <div class="form-grid">
+        <div class="field"><label for="cf-name">Nome</label><input class="input" id="cf-name" type="text" placeholder="Seu nome" required="" autocomplete="name"></div>
+        <div class="field"><label for="cf-email">E-mail</label><input class="input" id="cf-email" type="email" placeholder="seu@email.com" required="" autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="cf-msg">Mensagem</label><textarea class="textarea" id="cf-msg" rows="6" placeholder="Como podemos ajudar?" required=""></textarea></div>
       <input type="text" name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <button type="submit" class="btn btn-aurea" style="width:100%;justify-content:center">Enviar mensagem</button>
-      <p class="notify-msg" id="cf-msg-status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-secondary" style="width:100%">Abrir conversa no WhatsApp</button>
+      <p class="form-status" id="cf-status" aria-live="polite"></p>
     </form>
   </div>
 </section>
 
-<footer class="footer">
+</main>
+
+<footer class="pagefoot" data-od-id="footer">
   <div class="container">
-    <a class="footer-banner" href="#inicio" aria-label="KODAROS — voltar ao início"><img src="./banner.webp" alt="KODAROS" height="84"></a>
-    <p class="footer-tag">Softwares, sites, vídeos e conteúdo para quem toca negócio de verdade.</p>
-    <nav class="footer-lines" aria-label="Mapa do site">
-      <a href="#inicio">Início</a><span class="sep">·</span>
-      <a href="#ecossistema">Ecossistema</a><span class="sep">·</span>
-      <a href="#biblioteca">Biblioteca</a><span class="sep">·</span>
-      <a href="#ferramentas">Ferramentas</a><span class="sep">·</span>
-      <a href="#diagnostico">Diagnóstico</a><span class="sep">·</span>
-      <a href="#duvidas">Dúvidas</a><span class="sep">·</span>
-      <a href="#contato">Contato</a>
-    </nav>
-    <nav class="footer-lines" aria-label="Legal">
-      <a href="./privacidade.html">Política de Privacidade</a><span class="sep">·</span>
-      <a href="./termos.html">Termos de Uso</a><span class="sep">·</span>
-      <a href="./sitemap.xml">Sitemap</a><span class="sep">·</span>
-      <a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener">Instagram</a><span class="sep">·</span>
-      <a href="mailto:kodaros01@gmail.com">E-mail</a>
-    </nav>
-    <div class="footer-bottom"><p>© <span id="footer-year">2026</span> KODAROS. Todos os direitos reservados.</p></div>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="./banner.webp" alt="KODAROS — Tecnologia, conteúdo, impacto" width="1200" height="480" loading="lazy">
+        <p>Softwares, sites, vídeos e conteúdo para quem toca negócio de verdade.</p>
+      </div>
+      <div class="foot-col">
+        <h3>Plataforma</h3>
+        <ul>
+          <li><a href="#modulos">Ecossistema</a></li>
+          <li><a href="#kodagrid">KodaGrid</a></li>
+          <li><a href="#biblioteca">Biblioteca</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+          <li><a href="#ferramentas">Ferramentas</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Contato e legal</h3>
+        <ul>
+          <li><a href="#contato">Falar com a gente</a></li>
+          <li><a href="./privacidade.html">Política de Privacidade</a></li>
+          <li><a href="./termos.html">Termos de Uso</a></li>
+          <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:kodaros01@gmail.com">kodaros01@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> KODAROS · Todos os direitos reservados.</span>
+      <a class="foot-credit" href="https://github.com/kelvinoliveiracode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira — abrir o GitHub de kelvinoliveiracode em nova aba">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>Feito por <b>Kelvin Oliveira</b></span>
+      </a>
+    </div>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" data-od-id="cta-whatsapp-flutuante">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3.1 4.2c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.6 0 0 0 0 0 .2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.9 8.6c-.2-.4-.4-.4-.6-.4h-.4z"></path></svg>
+</a>
+
+<!-- ═══ PALETA DE COMANDOS ═══ -->
+<div class="palette" id="palette" hidden="">
+  <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
+    <input class="palette-input" id="paletteInput" type="text" placeholder="Ir para um módulo…" autocomplete="off" aria-label="Buscar um módulo">
+    <ul class="palette-list" id="paletteList" role="listbox" aria-label="Comandos"></ul>
+    <p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> navegar · <kbd>Enter</kbd> abrir · <kbd>Esc</kbd> fechar</p>
+  </div>
 </div>
-<a class="wa-float" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3.1 4.2c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.9 8.6c-.2-.4-.4-.4-.6-.4h-.4z"/></svg></a>
-<script src="script.js"></script>
-</body>
-</html>
+
+
+<!-- ═══ FOOTER ═══ -->
+
+
+<script>
+/* KODAROS v2 · Console — interações
+   Boot → navegação → scroll fixado → biblioteca → diagnóstico → paleta */
+(function () {
+  'use strict';
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var navH = function () { var n = $('#topnav'); return n ? n.offsetHeight : 60; };
+
+  var locks = 0;
+  function lock()   { locks++; document.body.classList.add('is-locked'); }
+  function unlock() { locks = Math.max(0, locks - 1); if (!locks) document.body.classList.remove('is-locked'); }
+
+  /* ─── 1. BOOT ─────────────────────────────────────────────────── */
+  (function boot() {
+    var el = $('#boot'), fill = $('#bootFill'), pct = $('#bootPct'), status = $('#bootStatus');
+    if (!el) return;
+    if (reduce) { document.documentElement.classList.add('is-ready'); return; }
+    lock();
+    el.classList.add('is-on');
+    var steps = ['iniciando runtime', 'carregando ativos', 'montando interface', 'indexando biblioteca', 'pronto'];
+    var CRIT = ['kodaros-icon.webp','bust.webp','banner.webp','bg-salao.webp','kodagrid-capa.webp','ebook-cover.webp',
+                'arquitetura-capa.webp','livro1.webp','livro2.webp','livro3.webp','livro-gestao.webp',
+                'livro-financeiro.webp','livro-site.webp','livro-reclamacoes.webp'];
+    var done = 0, total = CRIT.length, finished = false;
+    function paint(p, label) {
+      var v = Math.max(0, Math.min(100, Math.round(p)));
+      fill.style.width = v + '%';
+      pct.textContent = (v < 10 ? '0' : '') + v + '%';
+      if (label) status.textContent = label;
+    }
+    function finish() {
+      if (finished) return; finished = true;
+      paint(100, 'pronto');
+      setTimeout(function () {
+        el.classList.remove('is-on');
+        unlock();
+        document.documentElement.classList.add('is-ready');
+      }, 420);
+    }
+    CRIT.forEach(function (src) {
+      var im = new Image();
+      im.onload = im.onerror = function () {
+        done++;
+        paint(done / total * 100, steps[Math.min(3, Math.floor(done / total * 4))]);
+        if (done >= total) finish();
+      };
+      im.src = './' + src;
+    });
+    paint(6, steps[0]);
+    setTimeout(finish, 3200); /* rede lenta ou asset ausente: nunca prende o usuário */
+  })();
+
+  /* ─── 2. NAVEGAÇÃO ────────────────────────────────────────────── */
+  (function nav() {
+    var top = $('#topnav'), rail = $('#scrollRail'), burger = $('#navBurger'), drawer = $('#drawer');
+    var ticking = false;
+    function onScroll() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (top) top.classList.toggle('is-scrolled', y > 12);
+      if (rail) rail.style.width = (h > 0 ? Math.min(100, y / h * 100) : 0) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+    }, { passive: true });
+    onScroll();
+
+    var links = $$('.topnav nav a');
+    if ('IntersectionObserver' in window) {
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove('is-current'); });
+          if (map[en.target.id]) map[en.target.id].classList.add('is-current');
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['modulos', 'biblioteca', 'diagnostico', 'duvidas'].forEach(function (id) {
+        var s = document.getElementById(id); if (s) io.observe(s);
+      });
+    }
+
+    if (burger && drawer) {
+      function setDrawer(open) {
+        drawer.classList.toggle('is-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        if (open) lock(); else unlock();
+      }
+      burger.addEventListener('click', function () { setDrawer(!drawer.classList.contains('is-open')); });
+      $$('a', drawer).forEach(function (a) { a.addEventListener('click', function () { setDrawer(false); }); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false);
+      });
+    }
+  })();
+
+  /* ─── 3. REVEAL ──────────────────────────────────────────────── */
+  (function reveal() {
+    var els = $$('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* ─── 4. MÓDULOS — rolagem fixada (desktop) / lista (mobile) ──── */
+  (function modules() {
+    var sec = $('#modulos'), rail = $('#modulesRail'), stage = $('#modulesStage'), prog = $('#railProgress');
+    if (!sec) return;
+    var items = $$('.module', stage), btns = $$('.rail-item', rail);
+    var current = -1;
+    function setActive(i) {
+      if (i === current) return;
+      current = i;
+      items.forEach(function (m, k) { m.classList.toggle('is-active', k === i); });
+      btns.forEach(function (b, k) {
+        b.classList.toggle('is-active', k === i);
+        b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
+      });
+      if (prog) prog.style.width = ((i + 1) / items.length * 100) + '%';
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = +b.dataset.index;
+        setActive(i);
+        if (window.innerWidth >= 921) {
+          var top = sec.getBoundingClientRect().top + window.pageYOffset;
+          var h = sec.offsetHeight - window.innerHeight;
+          window.scrollTo({ top: top + h * ((i + 0.5) / items.length), behavior: reduce ? 'auto' : 'smooth' });
+        }
+      });
+    });
+    var ticking = false;
+    function update() {
+      ticking = false;
+      if (window.innerWidth < 921) return;
+      var total = sec.offsetHeight - window.innerHeight;
+      if (total <= 0) return;
+      var p = Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / total));
+      setActive(Math.min(items.length - 1, Math.floor(p * items.length)));
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* ─── 5. BIBLIOTECA — filtros ────────────────────────────────── */
+  (function filters() {
+    var group = $('#bookFilters'); if (!group) return;
+    var books = $$('#books .book');
+    function apply(f) {
+      books.forEach(function (b) {
+        var show = f === 'all' || b.dataset.level === f;
+        b.hidden = !show;
+        if (show) b.classList.add('is-in');
+      });
+      try { localStorage.setItem('kodaros_v2_filtro', f); } catch (e) {}
+    }
+    $$('.filter-btn', group).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        $$('.filter-btn', group).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        apply(btn.dataset.filter);
+      });
+    });
+    var VALID = ['all', 'iniciantes', 'intermediario', 'avancado'];
+    var saved = null;
+    try { saved = localStorage.getItem('kodaros_v2_filtro'); } catch (e) {}
+    if (saved && VALID.indexOf(saved) > -1) {
+      $$('.filter-btn', group).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      var t = $('.filter-btn[data-filter="' + saved + '"]', group);
+      if (t) { t.setAttribute('aria-pressed', 'true'); apply(saved); }
+    }
+  })();
+
+  /* ─── 6. DIAGNÓSTICO ─────────────────────────────────────────── */
+  (function quiz() {
+    var PRODUCTS = {
+      lancamento: { badge: 'Intermediário', title: 'Lançamento Milionário', cover: './livro3.webp', cw: 296, ch: 418, desc: 'O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/R106895415M?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      trafego:    { badge: 'Intermediário', title: 'Tráfego Que Vende', cover: './livro1.webp', cw: 296, ch: 418, desc: 'Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/D106894870O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      venda:      { badge: 'Iniciante', title: 'Venda Mais Hoje', cover: './livro2.webp', cw: 296, ch: 416, desc: 'Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar as suas vendas imediatamente.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/R106895345D?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      gestao:     { badge: 'Iniciante', title: 'Os 10 Pilares da Gestão Empresarial', cover: './livro-gestao.webp', cw: 296, ch: 419, desc: '10 pilares para organizar e crescer a sua empresa com controle e decisões baseadas em dados.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/S107016677T?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      financeiro: { badge: 'Iniciante', title: 'Os 10 Pilares do Controle Financeiro', cover: './livro-financeiro.webp', cw: 296, ch: 417, desc: 'Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/E107016796K?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      site:       { badge: 'Intermediário', title: 'Use Seu Site Para Escalar Sua Empresa', cover: './livro-site.webp', cw: 296, ch: 419, desc: 'Transforme o seu site em máquina de vendas com SEO, captura de leads e automação.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/Y107016734X?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      reclamacoes:{ badge: 'Iniciante', title: 'Transforme Reclamações em Vendas', cover: './livro-reclamacoes.webp', cw: 296, ch: 419, desc: 'O método para transformar reclamações em fidelização e construir uma cultura centrada no cliente.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/G107016779V?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
+      arquitetura:{ badge: 'Avançado', title: 'Arquitetura de Aquisição', cover: './arquitetura-capa.webp', cw: 296, ch: 395, desc: 'O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists.', old: 'R$ 247,00', now: 'R$ 197,00', url: 'https://pay.hotmart.com/B107295159O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' }
+    };
+
+    var QUESTIONS = {
+      empresa: [
+        { q: 'Quanto tempo do seu dia vai para tarefas repetitivas?', sub: 'Responder clientes, postar nas redes, mandar orçamento, cobrar pagamento…', options: [
+          { v: '3h+', t: 'Mais de 3 horas por dia', fb: 'Mais de 3 horas por dia em tarefas repetitivas é tempo que não volta.' },
+          { v: '1-3h', t: 'Entre 1 e 3 horas', fb: 'Entre 1 e 3 horas diárias somam semanas inteiras de trabalho manual por ano.' },
+          { v: '<1h', t: 'Menos de 1 hora', fb: 'Menos de 1 hora já é bom sinal — mas cada minuto salvo vira margem.' },
+          { v: 'auto', t: 'Quase nada — aqui muita coisa já é automática', fb: 'Você já entendeu o jogo: o que é manual, escala mal.' } ] },
+        { q: 'Hoje, o que mais trava o seu crescimento?', sub: 'Seja sincero — ninguém está olhando.', options: [
+          { v: 'tempo', t: 'Falta de tempo pra cuidar de tudo', fb: 'Falta de tempo é o sintoma mais comum de processos manuais.' },
+          { v: 'clientes', t: 'Falta de clientes entrando', fb: 'Sem presença e sem follow-up automático, a entrada de clientes vira montanha-russa.' },
+          { v: 'organizacao', t: 'Desorganização e processos na cabeça', fb: 'Processo que vive na cabeça não escala — e cobra caro pelo esquecimento.' },
+          { v: 'autoridade', t: 'Falta de presença e autoridade digital', fb: 'Sem autoridade digital, o cliente compara só preço. Com autoridade, ele escolhe você.' } ] },
+        { q: 'Se um sistema trabalhasse por você 24h por dia, por onde começaria?', sub: '', options: [
+          { v: 'whatsapp', t: 'Atendimento e respostas no WhatsApp', fb: 'O WhatsApp é onde a venda nasce — e onde ela morre sem resposta rápida.' },
+          { v: 'redes', t: 'Redes sociais e publicação de conteúdo', fb: 'Constância nas redes constrói autoridade. O problema nunca é ideia, é rotina.' },
+          { v: 'followup', t: 'Follow-up de clientes e orçamentos', fb: 'Grande parte das vendas acontece no follow-up — e é exatamente ele que ninguém tem tempo de fazer.' },
+          { v: 'tudo', t: 'Por tudo — quero escalar de vez', fb: 'Quem automatiza tudo não contrai dívida de tempo com o próprio negócio.' } ] }
+      ],
+      iniciante: [
+        { q: 'Qual é o seu maior desafio ao começar no digital?', sub: 'O primeiro passo é saber onde dói.', options: [
+          { v: 'poronde', t: 'Não saber por onde começar', fb: 'Começar sem mapa é o erro nº 1 — e o mais fácil de corrigir.' },
+          { v: 'tempo', t: 'Ter pouco tempo por dia', fb: 'Você não precisa de 8 horas: precisa de um método que caiba na sua rotina.' },
+          { v: 'medo', t: 'Medo de errar na frente dos outros', fb: 'Todo mundo que hoje fatura começou errando em público — é parte do caminho.' },
+          { v: 'tech', t: 'Achar que precisa entender de tecnologia', fb: 'As ferramentas de hoje fazem o pesado. O que falta é processo, não código.' } ] },
+        { q: 'Em que ponto você está hoje?', sub: 'Sem julgamento — só clareza.', options: [
+          { v: 'parado', t: 'Ainda não comecei', fb: 'Perfeito: começar do zero, começando certo, é vantagem.' },
+          { v: 'posts', t: 'Já posto nas redes, mas sem estratégia', fb: 'Postar sem estratégia é correr na esteira: cansa e não sai do lugar.' },
+          { v: 'vendo', t: 'Já vendo algo, mas tudo no manual', fb: 'Vender manualmente prova que existe demanda — agora falta estrutura para escalar.' },
+          { v: 'estudo', t: 'Estudo muito e pratico pouco', fb: 'Conhecimento sem execução vira ansiedade. O segredo é prática guiada.' } ] },
+        { q: 'Se alguém te mostrasse o caminho, o que resolveria primeiro?', sub: '', options: [
+          { v: 'base', t: 'Entender o básico do jogo digital', fb: 'Base sólida evita meses de tentativa e erro.' },
+          { v: 'primeiravenda', t: 'Fazer a primeira venda', fb: 'A primeira venda muda a mentalidade — depois dela, o jogo fica real.' },
+          { v: 'constancia', t: 'Criar constância nas redes', fb: 'Constância é o que separa quem aparece de quem desiste na semana 3.' },
+          { v: 'plano', t: 'Ter um plano claro passo a passo', fb: 'Com plano, cada dia tem um próximo passo. Sem plano, cada dia é dúvida.' } ] }
+      ],
+      outros: [
+        { q: 'O que te trouxe até aqui hoje?', sub: 'Me conta — o diagnóstico se adapta a você.', options: [
+          { v: 'renda', t: 'Quero uma renda extra', fb: 'Renda extra bem construída vira renda principal — com método.' },
+          { v: 'transicao', t: 'Quero mudar de área / carreira', fb: 'Transição de carreira pro digital é a mais rápida do mercado quando há direção.' },
+          { v: 'escalar', t: 'Já atendo clientes e quero escalar', fb: 'Escalar sem estrutura quebra a operação — por isso automação vem primeiro.' },
+          { v: 'curiosidade', t: 'Curiosidade — quero entender o jogo', fb: 'Entender o jogo antes de apostar é a decisão mais inteligente.' } ] },
+        { q: 'Qual frase te define melhor neste momento?', sub: '', options: [
+          { v: 'tempopouco', t: 'Tenho pouco tempo disponível', fb: 'Pouco tempo não é obstáculo: é filtro. O que importa é direção.' },
+          { v: 'direcao', t: 'Tenho tempo, mas falta direção', fb: 'Direção transforma horas soltas em progresso composto.' },
+          { v: 'oquevender', t: 'Não sei o que vender', fb: 'Você não precisa inventar: precisa mapear o que já resolve bem.' },
+          { v: 'execucao', t: 'Sei o que quero, falta execução', fb: 'Execução é músculo — e sistemas são a academia.' } ] },
+        { q: 'Se pudesse resolver uma coisa só este mês, qual seria?', sub: '', options: [
+          { v: 'clareza', t: 'Ter clareza do próximo passo', fb: 'Clareza é o ativo mais barato e mais negligenciado.' },
+          { v: 'presenca', t: 'Criar presença digital de verdade', fb: 'Presença é ativo composto: cada publicação trabalha para sempre.' },
+          { v: 'vendas', t: 'Aumentar as minhas vendas', fb: 'Venda consistente nasce de processo, não de sorte.' },
+          { v: 'automatizar', t: 'Automatizar o que já faço manualmente', fb: 'Automatizar o que existe libera o tempo para o que vem.' } ] }
+      ]
+    };
+
+    var DIAG = {
+      empresa: function (a) {
+        var q1 = { '3h+': 'você está gastando <strong>mais de 3 horas por dia</strong> em tarefas que uma máquina faria por você',
+          '1-3h': 'você perde <strong>entre 1 e 3 horas por dia</strong> com o que poderia rodar sozinho',
+          '<1h': 'você já controla o tempo manual — mas o processo ainda depende de você',
+          'auto': 'sua operação já tem automação — o próximo nível é virar estratégia' };
+        var q2 = { tempo: 'seu gargalo é <strong>tempo</strong>', clientes: 'seu gargalo é <strong>entrada de clientes</strong>',
+          organizacao: 'seu gargalo é <strong>organização</strong>', autoridade: 'seu gargalo é <strong>autoridade digital</strong>' };
+        var q3 = { whatsapp: 'atendimento automático no WhatsApp, respondendo na hora — inclusive de madrugada',
+          redes: 'publicação de conteúdo agendada e constante, sem depender de memória ou motivação',
+          followup: 'follow-up automático de orçamentos e clientes, para nenhuma venda morrer no esquecimento',
+          tudo: 'atendimento, conteúdo e follow-up rodando juntos, como um time invisível 24h' };
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1['1-3h']) + ', e ' + (q2[a[1]] || q2.tempo) + '. A boa notícia: isso tem solução — e ela começa com o que está no seu e-book.',
+          bullets: ['Prioridade nº 1: ' + (q3[a[2]] || q3.tudo) + '.',
+            'Automação não substitui você — ela devolve o seu tempo para vender e crescer.',
+            'Quanto antes o sistema assume o repetitivo, mais cedo o negócio trabalha por você.'] };
+      },
+      iniciante: function (a) {
+        var q1 = { poronde: 'o seu desafio é <strong>saber por onde começar</strong>', tempo: 'o seu desafio é <strong>falta de tempo</strong>',
+          medo: 'o seu desafio é <strong>medo de errar em público</strong>', tech: 'o seu desafio é <strong>achar que precisa ser técnico</strong>' };
+        var q2 = { parado: 'você ainda está no marco zero — e isso é vantagem: dá pra começar certo',
+          posts: 'você já produz conteúdo, mas ainda sem estratégia por trás',
+          vendo: 'você já vende — agora falta estrutura para escalar',
+          estudo: 'você acumula teoria e ainda pratica pouco' };
+        var q3 = { base: 'montar a base: presença, oferta e uma rotina mínima viável',
+          primeiravenda: 'estruturar o caminho direto até a primeira venda',
+          constancia: 'criar um ciclo de constância que caiba na sua semana',
+          plano: 'seguir um plano claro, um passo por dia' };
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.poronde) + ' e ' + (q2[a[1]] || q2.parado) + '. Ninguém nasce pronto — o que muda o jogo é começar com método.',
+          bullets: ['Primeiro passo: ' + (q3[a[2]] || q3.base) + '.',
+            'Constância vence talento: passos diários pequenos constroem autoridade.',
+            'O e-book abaixo organiza exatamente essa base — do zero ao patrimônio.'] };
+      },
+      outros: function (a) {
+        var q1 = { renda: 'você quer <strong>uma renda extra</strong>', transicao: 'você quer <strong>transição de carreira</strong>',
+          escalar: 'você quer <strong>escalar o que já atende</strong>', curiosidade: 'você quer <strong>entender o jogo antes de apostar</strong>' };
+        var q2 = { tempopouco: 'o seu tempo é curto', direcao: 'o seu tempo existe, mas falta direção',
+          oquevender: 'a sua dúvida é o que vender', execucao: 'a sua lacuna é execução' };
+        var q3 = { clareza: 'ter clareza do próximo passo', presenca: 'construir presença digital de verdade',
+          vendas: 'aumentar as suas vendas', automatizar: 'automatizar o que você já faz manualmente' };
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.curiosidade) + ' e ' + (q2[a[1]] || q2.direcao) + '. O digital premia quem tem método — não quem tem sorte.',
+          bullets: ['Foco do mês: ' + (q3[a[2]] || q3.clareza) + '.',
+            'Autoridade digital é ativo composto: começa pequeno e cresce sozinho.',
+            'O e-book abaixo mostra a base completa — do zero ao patrimônio.'] };
+      }
+    };
+
+    function recommend(profile, a) {
+      var p = profile || 'outros', q2 = a[1], q3 = a[2], primary, s1, s2;
+      if (p === 'empresa') {
+        if (q2 === 'organizacao') { primary = 'gestao'; s1 = 'financeiro'; s2 = 'site'; }
+        else if (q2 === 'autoridade') { primary = 'site'; s1 = 'trafego'; s2 = 'arquitetura'; }
+        else if (q2 === 'clientes') {
+          if (q3 === 'redes') { primary = 'trafego'; s1 = 'venda'; s2 = 'site'; }
+          else if (q3 === 'followup') { primary = 'venda'; s1 = 'trafego'; s2 = 'reclamacoes'; }
+          else { primary = 'trafego'; s1 = 'venda'; s2 = 'lancamento'; }
+        } else {
+          if (q3 === 'whatsapp') { primary = 'reclamacoes'; s1 = 'venda'; s2 = 'trafego'; }
+          else if (q3 === 'followup') { primary = 'venda'; s1 = 'reclamacoes'; s2 = 'gestao'; }
+          else if (q3 === 'tudo') { primary = 'arquitetura'; s1 = 'trafego'; s2 = 'gestao'; }
+          else { primary = 'trafego'; s1 = 'gestao'; s2 = 'venda'; }
+        }
+      } else if (p === 'iniciante') {
+        if (q3 === 'primeiravenda') { primary = 'venda'; s1 = 'lancamento'; s2 = 'trafego'; }
+        else if (q3 === 'constancia') { primary = 'trafego'; s1 = 'lancamento'; s2 = 'site'; }
+        else if (q3 === 'plano') { primary = 'gestao'; s1 = 'lancamento'; s2 = 'venda'; }
+        else if (q2 === 'estudo' || a[0] === 'tech') { primary = 'lancamento'; s1 = 'gestao'; s2 = 'venda'; }
+        else { primary = 'lancamento'; s1 = 'venda'; s2 = 'trafego'; }
+      } else {
+        if (q3 === 'presenca') { primary = 'site'; s1 = 'trafego'; s2 = 'lancamento'; }
+        else if (q3 === 'vendas') { primary = 'venda'; s1 = 'reclamacoes'; s2 = 'trafego'; }
+        else if (q3 === 'automatizar') { primary = 'trafego'; s1 = 'site'; s2 = 'gestao'; }
+        else if (q2 === 'oquevender') { primary = 'gestao'; s1 = 'lancamento'; s2 = 'venda'; }
+        else { primary = 'lancamento'; s1 = 'gestao'; s2 = 'venda'; }
+      }
+      var seen = {}, list = [];
+      [primary, s1, s2].forEach(function (id) { if (id && !seen[id] && PRODUCTS[id]) { seen[id] = 1; list.push(id); } });
+      ['venda', 'trafego', 'lancamento'].forEach(function (id) { if (list.length < 3 && !seen[id]) { list.push(id); seen[id] = 1; } });
+      return list;
+    }
+
+    var state = { profile: null, qIndex: 0, answers: [], busy: false };
+    var steps = $$('#console .step'), stateLabel = $('#consoleState');
+    var ADVANCE_MS = 1100;
+
+    function goTo(id) {
+      steps.forEach(function (s) { s.classList.remove('is-active'); });
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('is-active');
+      var order = { 'step-intro': 1, 'step-profile': 2, 'step-quiz': 3, 'step-result': 4 };
+      if (stateLabel) stateLabel.textContent = 'Etapa ' + (order[id] || 1) + ' de 4';
+      var host = $('#console');
+      if (host) {
+        var top = host.getBoundingClientRect().top + window.pageYOffset - navH() - 24;
+        window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      }
+    }
+
+    function renderQuestion() {
+      var list = QUESTIONS[state.profile], item = list[state.qIndex];
+      var bar = $('#quizProgress');
+      if (bar) bar.style.width = ((state.qIndex + 1) / list.length * 100) + '%';
+      var lbl = $('#quizLabel');
+      if (lbl) lbl.textContent = state.qIndex === list.length - 1 ? 'Última pergunta' : 'Pergunta ' + (state.qIndex + 1) + ' de ' + list.length;
+      var t = $('#quizTitle'); if (t) t.textContent = item.q;
+      var s = $('#quizSub'); if (s) s.textContent = item.sub || '';
+      var fb = $('#quizFeedback'); if (fb) { fb.textContent = ''; fb.classList.remove('is-visible'); }
+      var box = $('#quizOptions');
+      if (!box) return;
+      state.busy = false;
+      box.innerHTML = '';
+      item.options.forEach(function (opt) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'option';
+        btn.textContent = opt.t;
+        btn.setAttribute('role', 'radio');
+        btn.setAttribute('aria-checked', 'false');
+        btn.addEventListener('click', function () { pick(opt, btn, fb); });
+        box.appendChild(btn);
+      });
+    }
+
+    function pick(opt, btn, fb) {
+      if (state.busy) return;
+      state.busy = true;
+      var box = $('#quizOptions');
+      $$('.option', box).forEach(function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-checked', 'false'); });
+      btn.classList.add('is-selected');
+      btn.setAttribute('aria-checked', 'true');
+      state.answers[state.qIndex] = opt.v;
+      if (opt.fb && fb) { fb.textContent = opt.fb; fb.classList.add('is-visible'); }
+      setTimeout(function () {
+        if (state.qIndex < QUESTIONS[state.profile].length - 1) {
+          state.qIndex++;
+          renderQuestion();
+          var step = $('#step-quiz');
+          step.classList.remove('is-active'); void step.offsetWidth; step.classList.add('is-active');
+        } else {
+          state.busy = false;
+          buildDiagnosis();
+          goTo('step-result');
+        }
+      }, ADVANCE_MS);
+    }
+
+    function recCard(id, primary) {
+      var p = PRODUCTS[id];
+      if (!p) return '';
+      return '<div class="rec' + (primary ? ' is-primary' : '') + '">' +
+        '<img class="rec-cover" src="' + p.cover + '" alt="Capa do e-book ' + p.title + '" width="' + p.cw + '" height="' + p.ch + '" loading="lazy">' +
+        '<span class="rec-tag">' + (primary ? 'Comece por aqui' : p.badge) + '</span>' +
+        '<h4>' + p.title + '</h4><p>' + p.desc + '</p>' +
+        '<div class="book-price" style="margin:0 0 10px"><span class="old">' + p.old + '</span><span class="now num">' + p.now + '</span></div>' +
+        '<a class="btn ' + (primary ? 'btn-primary' : 'btn-secondary') + '" href="' + p.url + '" target="_blank" rel="noopener">' +
+        (primary ? 'Comprar agora' : 'Ver e-book') + '</a></div>';
+    }
+
+    function buildDiagnosis() {
+      var box = $('#diagnosis');
+      if (!box) return;
+      var d = (DIAG[state.profile] || DIAG.outros)(state.answers);
+      var html = '<p>' + d.text + '</p><ul>';
+      d.bullets.forEach(function (b) {
+        html += '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>' + b + '</span></li>';
+      });
+      html += '</ul>';
+      box.innerHTML = html;
+      var recs = $('#recs');
+      if (recs) {
+        var list = recommend(state.profile, state.answers);
+        recs.innerHTML = recCard(list[0], true) + recCard(list[1], false) + recCard(list[2], false);
+      }
+    }
+
+    $$('[data-next]').forEach(function (btn) {
+      btn.addEventListener('click', function () { goTo('step-profile'); });
+    });
+    $$('.profile').forEach(function (card) {
+      card.addEventListener('click', function () {
+        $$('.profile').forEach(function (c) { c.classList.remove('is-selected'); c.setAttribute('aria-checked', 'false'); });
+        card.classList.add('is-selected');
+        card.setAttribute('aria-checked', 'true');
+        state.profile = card.dataset.profile;
+        state.qIndex = 0;
+        state.answers = [];
+        state.busy = true;
+        setTimeout(function () { state.busy = false; renderQuestion(); goTo('step-quiz'); }, 380);
+      });
+    });
+  })();
+
+  /* ─── 7. CONTATO ─────────────────────────────────────────────── */
+  (function contact() {
+    var f = $('#contactForm'); if (!f) return;
+    var status = $('#cf-status');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var hp = f.querySelector('[name="hp"]');
+      if (hp && hp.value) return;
+      var name = $('#cf-name').value.trim();
+      var email = $('#cf-email').value.trim();
+      var msg = $('#cf-msg').value.trim();
+      if (!name || !email || !msg) { status.textContent = 'Preencha todos os campos.'; return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { status.textContent = 'E-mail inválido.'; return; }
+      var text = 'Contato pelo site\n\nNome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + msg;
+      status.textContent = 'Abrindo o WhatsApp com a sua mensagem… se não abrir, use o botão verde no canto da tela.';
+      window.location.href = 'https://wa.me/559192094504?text=' + encodeURIComponent(text);
+      f.reset();
+    });
+  })();
+
+  /* ─── 8. PALETA DE COMANDOS ──────────────────────────────────── */
+  (function palette() {
+    var box = $('#palette'), input = $('#paletteInput'), list = $('#paletteList'), opener = $('#cmdOpen');
+    if (!box) return;
+    var CMDS = [
+      { k: 'Seção', l: 'Ecossistema', h: '#modulos' },
+      { k: 'Seção', l: 'KodaGrid', h: '#kodagrid' },
+      { k: 'Seção', l: 'Biblioteca de e-books', h: '#biblioteca' },
+      { k: 'Seção', l: 'Diagnóstico gratuito', h: '#diagnostico' },
+      { k: 'Seção', l: 'Ferramentas', h: '#ferramentas' },
+      { k: 'Seção', l: 'Perguntas frequentes', h: '#duvidas' },
+      { k: 'Seção', l: 'Falar com a gente', h: '#contato' },
+      { k: 'Site', l: 'Abrir as 50+ ferramentas', u: 'https://kelvinoliveiracode.github.io/kodarosferramentas/' },
+      { k: 'Contato', l: 'Chamar no WhatsApp', u: 'https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS.' },
+      { k: 'Contato', l: 'Enviar e-mail', u: 'mailto:kodaros01@gmail.com' },
+      { k: 'Loja', l: 'Comprar KodaGrid na Hotmart', u: 'https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=paleta' }
+    ];
+    var found = CMDS, index = 0;
+
+    function render() {
+      list.innerHTML = '';
+      if (!found.length) {
+        var li = document.createElement('li');
+        li.className = 'palette-item';
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-disabled', 'true');
+        li.style.cursor = 'default';
+        li.textContent = 'Nenhum comando encontrado';
+        list.appendChild(li);
+        return;
+      }
+      found.forEach(function (c, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'palette-item' + (i === index ? ' is-active' : '');
+        b.setAttribute('role', 'option');
+        b.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        var kind = document.createElement('span');
+        kind.className = 'p-kind'; kind.textContent = c.k;
+        var label = document.createElement('span');
+        label.className = 'p-label'; label.textContent = c.l;
+        b.appendChild(kind); b.appendChild(label);
+        b.addEventListener('click', function () { go(c); });
+        list.appendChild(b);
+      });
+    }
+    function filter(q) {
+      q = (q || '').toLowerCase().trim();
+      found = CMDS.filter(function (c) { return !q || (c.l + ' ' + c.k).toLowerCase().indexOf(q) > -1; });
+      index = 0;
+      render();
+    }
+    function go(c) {
+      close();
+      if (c.h) {
+        var el = document.querySelector(c.h);
+        if (el) {
+          var top = el.getBoundingClientRect().top + window.pageYOffset - navH() - 20;
+          window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+        }
+      } else if (c.u) {
+        if (c.u.indexOf('mailto:') === 0) window.location.href = c.u;
+        else window.open(c.u, '_blank', 'noopener');
+      }
+    }
+    var lastFocus = null;
+    function open() {
+      lastFocus = document.activeElement;
+      box.hidden = false; input.value = ''; filter(''); input.focus(); lock();
+    }
+    function close() {
+      if (box.hidden) return;
+      box.hidden = true; unlock();
+      if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (err) {} }
+      lastFocus = null;
+    }
+
+    input.addEventListener('input', function () { filter(this.value); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); index = Math.min(found.length - 1, index + 1); render(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); index = Math.max(0, index - 1); render(); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (found[index]) go(found[index]); }
+      else if (e.key === 'Escape') { close(); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab' && !box.hidden) {
+        var f = $('input, button, [href]', box);
+        if (f.length) {
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+        return;
+      }
+      var tag = (document.activeElement && document.activeElement.tagName) || '';
+      var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(tag);
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); box.hidden ? open() : close(); }
+      else if (e.key === '/' && !typing && box.hidden) { e.preventDefault(); open(); }
+      else if (e.key === 'Escape' && !box.hidden) close();
+    });
+    if (opener) opener.addEventListener('click', function () { box.hidden ? open() : close(); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  })();
+
+  /* ─── 9. RODAPÉ ──────────────────────────────────────────────── */
+  var yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+
+</body></html>
