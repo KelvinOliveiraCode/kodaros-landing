@@ -1,117 +1,105 @@
-# kodaros-landing
-
-<div align="center">
+# KODAROS — Official landing page
 
 **English** · [Português (Brasil)](README.md)
 
-</div>
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-222?style=flat-square&logo=githubpages)](https://pages.github.com/) [![MIT License](https://img.shields.io/badge/License-MIT-f4c430?style=flat-square)](LICENSE)
-
-### KODAROS platform landing with interactive diagnosis funnel
-
----
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](#) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](#) [![Vanilla JS](https://img.shields.io/badge/Vanilla%20JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](#) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-222?style=flat-square&logo=githubpages)](#) [![MIT License](https://img.shields.io/badge/License-MIT-f4c430?style=flat-square)](LICENSE)
 
 ## What it is
 
-KODAROS platform landing with interactive diagnosis funnel
+The official landing page for **KODAROS**, the digital-products brand of Kelvin Oliveira. The page showcases the e-book store, the KodaGrid software and the software, website and video services, and ends with an interactive diagnostic funnel that recommends the right offer for each visitor.
 
----
+It is a static landing page: **no framework, no build step, no backend**. Everything runs in the browser from `index.html` and `script.js`.
 
-## Quick Start
+## Status
 
-Open `index.html` directly in your browser, or serve locally:
+In production. Published at <https://kelvinoliveiracode.github.io/kodaros-landing/> (HTTP 200 verified).
 
-```bash
-python -m http.server 8080
-# Access http://localhost:8080
+## Features
+
+- **Showcase of 8 e-books** sold through Hotmart, filterable by level (beginner / intermediate / advanced), with a detail view.
+- **Interactive diagnostic** (quiz): asks about the business profile and runs 3 tailored questions; at the end it reveals the result, offers the `do-zero-ao-patrimonio.pdf` e-book (42 pages) for free, and suggests the best-matching offer.
+- **Service sections** — Software & Apps, Websites, Videos and Ads, Tools and Library — each with a buy CTA and WhatsApp.
+- **KodaGrid**: a dedicated section for the spreadsheet builder with live formulas for Windows (offline), with a purchase link.
+- **Contact form** and a floating WhatsApp button.
+- **Light/dark mode** and a theme palette persisted via `localStorage`.
+- **SEO**: `sitemap.xml`, `robots.txt`, Open Graph, Twitter Cards, JSON-LD (Organization and FAQPage) and a canonical link.
+- **PWA manifest** (`site.webmanifest`) with 192/512 icons and a dark theme. (The page registers no service worker; it is only installable as a shortcut.)
+
+## Architecture
+
+A single HTML page (`index.html`) holds the full structure and the inline styles, plus a `script.js` for the logic. There are no modules and no bundler.
+
+```mermaid
+flowchart LR
+    A[index.html] --> B[Inline CSS + Google Fonts]
+    A --> C[script.js]
+    C --> D[Renders e-book library]
+    C --> E[Diagnostic/quiz funnel]
+    C --> F[Theme persistence]
+    E --> G[Hotmart checkout]
+    D --> G
 ```
 
-Or deploy to GitHub Pages / Netlify / Vercel with zero configuration.
+## Stack
 
-## How it works
+- HTML5, CSS3 (variables in `oklch` and `color-mix`) — no framework
+- Vanilla ES6+ JavaScript (`script.js`, 776 lines)
+- Google Fonts: Figtree, Instrument Serif and JetBrains Mono
+- Hosting: GitHub Pages
 
-**Arquitetura zero-build, arquivo único** ,  tudo vive em `index.html`:
-- **HTML5** estrutura semântica
-- **CSS3** propriedades customizadas para tema (claro/escuro)
-- **Vanilla ES6+ JavaScript** ,  sem framework, sem build
-- **localStorage** para persistência de tema
-- **Catálogo JSON** (`catalogo.json`) como fonte de dados aberta
+## Repository layout
 
----
+```
+kodaros-landing/
+├── index.html          # full landing (structure + inline CSS)
+├── script.js           # logic: library, quiz, theme, contact
+├── privacidade.html    # privacy page
+├── termos.html         # terms of use
+├── do-zero-ao-patrimonio.pdf  # free e-book from the diagnostic
+├── *.webp / *.png / *.jpg     # images (covers, artwork)
+├── site.webmanifest    # PWA manifest
+├── sitemap.xml         # sitemap for indexing
+├── robots.txt
+└── LICENSE             # MIT
+```
 
-## Capabilities
+## Prerequisites and installation
 
-| Capacidade | Descrição |
-|------------|-------------|
-| Motor de Recomendação | Filtro determinístico: Área ∩ Preço -> Provedor -> Tier gratuito -> Nível de config |
-| Catálogo | 124 serviços de 8 provedores (AWS, Azure, GCP, Oracle, Cloudflare, DO, Firebase, Google) |
-| Dados Abertos | catalogo.json + llms.txt para consumo por chat de IA |
-| Educação | Vocabulário de nuvem (IaaS/PaaS/SaaS), myth-busting, glossário, quiz de 5 perguntas |
-| Tematização | Modo claro/escuro persistido em localStorage, sem CSS externo |
-| Zero Build | index.html único ,  deploy em qualquer lugar (GitHub Pages, Netlify, Vercel) |
-| Auditoria | Cada decisão do filtro exibida: "Como chegamos aqui" rastreia todos 124 serviços |
-| Sem Rastreamento | Sem contas de usuário, sem analytics, sem dependências externas |
+None. Just serve the folder statically.
 
+## How to run
 
----
+```bash
+# option 1: open directly in the browser
+# open index.html
 
+# option 2: local server
+python -m http.server 8080
+# go to http://localhost:8080
+```
 
+## Tests and quality
 
----
+There are no automated tests in this repository (the absence of a test folder and of `package.json` is confirmed). There is no CI pipeline.
 
-## FAQ
+## Technical decisions and trade-offs
 
-<details>
-<summary><strong>What is this project?</strong></summary>
+- **A single HTML with inline CSS instead of separate assets**: fewer requests and simpler deployment on static hosting; the trade-off is a large file (~129 KB).
+- **Browser-side interaction with no backend**: the quiz and the showcase depend on no server. The final conversion happens on Hotmart, which processes payment and delivery.
+- **Duplicated WebP/PNG**: each artwork ships a `.webp` (light) version and a `.png`/`.jpg` (fallback), a manual choice for compatibility.
 
-A vanilla JS study/project demonstrating Single-page HTML entry, Vanilla JavaScript logic, localStorage theme persistence.
+## Known limitations and roadmap
 
-</details>
+- With no service worker registered, the PWA install does not enable full offline use.
+- The page depends on Google Fonts; offline, the typography falls back to local fonts.
+- The checkout is external (Hotmart); the landing has no cart of its own.
 
-<details>
-<summary><strong>How do I run it?</strong></summary>
+## Development process
 
-See [Quick Start](#quick-start) for copy-paste commands.
+An individual project by Kelvin Oliveira, built with orchestrated AI agents and reviewed by the author. The page architecture, the visual identity (oklch tokens) and the maintenance are the author's.
 
-</details>
+## License and author
 
-<details>
-<summary><strong>Are there tests?</strong></summary>
+MIT — Copyright (c) 2026 Kelvin Rebelo de Oliveira.
 
-No automated tests in this repository.
-
-</details>
-
-<details>
-<summary><strong>Can I use this in production?</strong></summary>
-
-This is a **study/portfolio project**. Review and harden (auth, persistence, monitoring, etc.) before production use.
-
-</details>
-
-
-
----
-
-## Documentation
-
-- **Source Code** ,  Browse the `src/` directory for implementation details
-- **API Reference** ,  N/A
-- **Architecture Diagram** ,  See [architecture.mermaid](docs/architecture.mermaid) (if present)
-- **Changelog** ,  [CHANGELOG.md](CHANGELOG.md) (if present)
-- **Contributing** ,  [CONTRIBUTING.md](CONTRIBUTING.md) (if present)
-
-## License
-
-[MIT](LICENSE) ,  Kelvin Oliveira
-
----
-
-<div align="center">
-
-**Built with** · Vanilla HTML/CSS/JS
-
-**Author** · [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
-
-</div>
+**Author**: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
