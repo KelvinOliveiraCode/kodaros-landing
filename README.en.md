@@ -1,4 +1,4 @@
-# KODAROS — Official landing page
+# KODAROS · Official landing page
 
 **English** · [Português (Brasil)](README.md)
 
@@ -18,7 +18,7 @@ In production. Published at <https://kelvinoliveiracode.github.io/kodaros-landin
 
 - **Showcase of 8 e-books** sold through Hotmart, filterable by level (beginner / intermediate / advanced), with a detail view.
 - **Interactive diagnostic** (quiz): asks about the business profile and runs 3 tailored questions; at the end it reveals the result, offers the `do-zero-ao-patrimonio.pdf` e-book (42 pages) for free, and suggests the best-matching offer.
-- **Service sections** — Software & Apps, Websites, Videos and Ads, Tools and Library — each with a buy CTA and WhatsApp.
+- **Service sections**: Software & Apps, Websites, Videos and Ads, Tools and Library, each with a buy CTA and WhatsApp.
 - **KodaGrid**: a dedicated section for the spreadsheet builder with live formulas for Windows (offline), with a purchase link.
 - **Contact form** and a floating WhatsApp button.
 - **Light/dark mode** and a theme palette persisted via `localStorage`.
@@ -42,7 +42,7 @@ flowchart LR
 
 ## Stack
 
-- HTML5, CSS3 (variables in `oklch` and `color-mix`) — no framework
+- HTML5, CSS3 (variables in `oklch` and `color-mix`), no framework
 - Vanilla ES6+ JavaScript (`script.js`, 776 lines)
 - Google Fonts: Figtree, Instrument Serif and JetBrains Mono
 - Hosting: GitHub Pages
@@ -100,6 +100,6 @@ An individual project by Kelvin Oliveira, built with orchestrated AI agents and 
 
 ## License and author
 
-MIT — Copyright (c) 2026 Kelvin Rebelo de Oliveira.
+MIT · Copyright (c) 2026 Kelvin Rebelo de Oliveira.
 
 **Author**: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)

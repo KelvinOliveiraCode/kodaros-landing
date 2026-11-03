@@ -1,4 +1,4 @@
-# KODAROS — Landing page oficial
+# KODAROS · Landing page oficial
 
 [English](README.en.md) · **Português (Brasil)**
 
@@ -6,7 +6,7 @@
 
 ## O que é
 
-Landing page oficial da **KODAROS** — a marca de produtos digitais de Kelvin Oliveira. A página apresenta a loja de e-books, o software KodaGrid e os serviços de software, sites e vídeos, e termina com um funil de diagnóstico interativo que recomenda a oferta certa para cada visitante.
+Landing page oficial da **KODAROS**, a marca de produtos digitais de Kelvin Oliveira. A página apresenta a loja de e-books, o software KodaGrid e os serviços de software, sites e vídeos, e termina com um funil de diagnóstico interativo que recomenda a oferta certa para cada visitante.
 
 É uma landing estática: **sem framework, sem build, sem backend**. Todo o conteúdo roda no navegador a partir de `index.html` e `script.js`.
 
@@ -18,7 +18,7 @@ Em produção. Publicada em <https://kelvinoliveiracode.github.io/kodaros-landin
 
 - **Vitrine de 8 e-books** vendidos via Hotmart, com filtro por nível (iniciante / intermediário / avançado) e página de detalhe.
 - **Diagnóstico interativo** (quiz): pergunta o perfil do negócio e aplica 3 perguntas adaptadas; ao final revela o resultado e oferece o e-book brinde `do-zero-ao-patrimonio.pdf` (42 páginas) grátis, além de sugerir a oferta mais aderente.
-- **Seções de serviços** — Softwares & Apps, Sites, Vídeos e Propagandas, Ferramentas e Biblioteca — com CTA de compra e WhatsApp.
+- **Seções de serviços**: Softwares & Apps, Sites, Vídeos e Propagandas, Ferramentas e Biblioteca, com CTA de compra e WhatsApp.
 - **KodaGrid**: seção dedicada ao construtor de planilhas com fórmulas para Windows (offline), com link de compra.
 - **Formulário de contato** e botão flutuante de WhatsApp.
 - **Modo claro/escuro** e paleta de temas com persistência via `localStorage`.
@@ -42,7 +42,7 @@ flowchart LR
 
 ## Stack
 
-- HTML5, CSS3 (variáveis em `oklch` e `color-mix`) — sem framework
+- HTML5, CSS3 (variáveis em `oklch` e `color-mix`), sem framework
 - JavaScript ES6+ vanilla (`script.js`, 776 linhas)
 - Google Fonts: Figtree, Instrument Serif e JetBrains Mono
 - Hospedagem: GitHub Pages
@@ -100,6 +100,6 @@ Projeto individual de Kelvin Oliveira, construído com agentes de IA orquestrado
 
 ## Licença e autor
 
-MIT — Copyright (c) 2026 Kelvin Rebelo de Oliveira.
+MIT · Copyright (c) 2026 Kelvin Rebelo de Oliveira.
 
 **Autor**: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfólio](https://kelvinoliveiracode.github.io/portfolio/)
