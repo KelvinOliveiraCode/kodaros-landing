@@ -1,4 +1,4 @@
-// PLATAFORMA KODAROS — Script unificado
+// PLATAFORMA KODAROS · Script unificado
 // Navbar + Reveal + Biblioteca + Diagnóstico
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -135,7 +135,7 @@ function handleContact(e){
   form.reset(); return false;
 }
 
-// PLATFORM TABS — Biblioteca / Ferramentas / Diagnóstico
+// PLATFORM TABS · Biblioteca / Ferramentas / Diagnóstico
 (function(){
   const tabs=document.querySelectorAll('.platform-tab');
   const panels=document.querySelectorAll('.platform-panel');
@@ -196,7 +196,7 @@ function handleContact(e){
   });
 })();
 
-/* KODAROS — Funil de diagnóstico
+/* KODAROS · Funil de diagnóstico
    Fluxo: abertura → perfil → 3 perguntas adaptadas ao perfil → diagnóstico + brinde + vitrine 1+2 → site principal */
 
 (function () {
@@ -284,17 +284,17 @@ function handleContact(e){
                 options: [
                     { v: "3h+", t: "Mais de 3 horas por dia", fb: "Mais de 3 horas por dia em tarefas repetitivas é tempo que não volta." },
                     { v: "1-3h", t: "Entre 1 e 3 horas", fb: "Entre 1 e 3 horas diárias somam semanas inteiras de trabalho manual por ano." },
-                    { v: "<1h", t: "Menos de 1 hora", fb: "Menos de 1 hora já é bom sinal — mas cada minuto salvo vira margem." },
-                    { v: "auto", t: "Quase nada — aqui muita coisa já é automática", fb: "Você já entendeu o jogo: o que é manual, escala mal." }
+                    { v: "<1h", t: "Menos de 1 hora", fb: "Menos de 1 hora já é bom sinal, mas cada minuto salvo vira margem." },
+                    { v: "auto", t: "Quase nada. Aqui muita coisa já é automática", fb: "Você já entendeu o jogo: o que é manual, escala mal." }
                 ]
             },
             {
                 q: "Hoje, o que mais trava o seu crescimento?",
-                sub: "Seja sincero — ninguém está olhando.",
+                sub: "Seja sincero. Ninguém está olhando.",
                 options: [
                     { v: "tempo", t: "Falta de tempo pra cuidar de tudo", fb: "Falta de tempo é o sintoma mais comum de processos manuais." },
                     { v: "clientes", t: "Falta de clientes entrando", fb: "Sem presença e sem follow-up automático, a entrada de clientes vira montanha-russa." },
-                    { v: "organizacao", t: "Desorganização e processos na cabeça", fb: "Processo que vive na cabeça não escala — e cobra caro pelo esquecimento." },
+                    { v: "organizacao", t: "Desorganização e processos na cabeça", fb: "Processo que vive na cabeça não escala, e cobra caro pelo esquecimento." },
                     { v: "autoridade", t: "Falta de presença e autoridade digital", fb: "Sem autoridade digital, o cliente compara só preço. Com autoridade, ele escolhe você." }
                 ]
             },
@@ -302,10 +302,10 @@ function handleContact(e){
                 q: "Se um sistema trabalhasse por você 24h por dia, por onde começaria?",
                 sub: "",
                 options: [
-                    { v: "whatsapp", t: "Atendimento e respostas no WhatsApp", fb: "O WhatsApp é onde a venda nasce — e onde ela morre sem resposta rápida." },
+                    { v: "whatsapp", t: "Atendimento e respostas no WhatsApp", fb: "O WhatsApp é onde a venda nasce, e onde ela morre sem resposta rápida." },
                     { v: "redes", t: "Redes sociais e publicação de conteúdo", fb: "Constância nas redes constrói autoridade. O problema nunca é ideia, é rotina." },
-                    { v: "followup", t: "Follow-up de clientes e orçamentos", fb: "Grande parte das vendas acontece no follow-up — e é exatamente ele que ninguém tem tempo de fazer." },
-                    { v: "tudo", t: "Por tudo — quero escalar de vez", fb: "Quem automatiza tudo não contrai dívida de tempo com o próprio negócio." }
+                    { v: "followup", t: "Follow-up de clientes e orçamentos", fb: "Grande parte das vendas acontece no follow-up, e é exatamente ele que ninguém tem tempo de fazer." },
+                    { v: "tudo", t: "Por tudo. Quero escalar de vez", fb: "Quem automatiza tudo não contrai dívida de tempo com o próprio negócio." }
                 ]
             }
         ],
@@ -314,19 +314,19 @@ function handleContact(e){
                 q: "Qual é o seu maior desafio ao começar no digital?",
                 sub: "O primeiro passo é saber onde dói.",
                 options: [
-                    { v: "poronde", t: "Não saber por onde começar", fb: "Começar sem mapa é o erro nº 1 — e o mais fácil de corrigir." },
+                    { v: "poronde", t: "Não saber por onde começar", fb: "Começar sem mapa é o erro número 1, e o mais fácil de corrigir." },
                     { v: "tempo", t: "Ter pouco tempo por dia", fb: "Você não precisa de 8 horas: precisa de um método que caiba na sua rotina." },
-                    { v: "medo", t: "Medo de errar na frente dos outros", fb: "Todo mundo que hoje fatura começou errando em público — é parte do caminho." },
+                    { v: "medo", t: "Medo de errar na frente dos outros", fb: "Todo mundo que hoje fatura começou errando em público. É parte do caminho." },
                     { v: "tech", t: "Achar que precisa entender de tecnologia", fb: "As ferramentas de hoje fazem o pesado. O que falta é processo, não código." }
                 ]
             },
             {
                 q: "Em que ponto você está hoje?",
-                sub: "Sem julgamento — só clareza.",
+                sub: "Sem julgamento, só clareza.",
                 options: [
                     { v: "parado", t: "Ainda não comecei", fb: "Perfeito: começar do zero, começando certo, é vantagem." },
                     { v: "posts", t: "Já posto nas redes, mas sem estratégia", fb: "Postar sem estratégia é correr na esteira: cansa e não sai do lugar." },
-                    { v: "vendo", t: "Já vendo algo, mas tudo no manual", fb: "Vender manualmente prova que existe demanda — agora é estrutura para escalar." },
+                    { v: "vendo", t: "Já vendo algo, mas tudo no manual", fb: "Vender manualmente prova que existe demanda; agora é estrutura para escalar." },
                     { v: "estudo", t: "Estudo muito e pratico pouco", fb: "Conhecimento sem execução vira ansiedade. O segredo é prática guiada." }
                 ]
             },
@@ -335,7 +335,7 @@ function handleContact(e){
                 sub: "",
                 options: [
                     { v: "base", t: "Entender o básico do jogo digital", fb: "Base sólida evita meses de tentativa e erro." },
-                    { v: "primeiravenda", t: "Fazer a primeira venda", fb: "A primeira venda muda a mentalidade — depois dela, o jogo fica real." },
+                    { v: "primeiravenda", t: "Fazer a primeira venda", fb: "A primeira venda muda a mentalidade. Depois dela, o jogo fica real." },
                     { v: "constancia", t: "Criar constância nas redes", fb: "Constância é o que separa quem aparece de quem desiste na semana 3." },
                     { v: "plano", t: "Ter um plano claro passo a passo", fb: "Com plano, cada dia tem um próximo passo. Sem plano, cada dia é dúvida." }
                 ]
@@ -344,12 +344,12 @@ function handleContact(e){
         outros: [
             {
                 q: "O que te trouxe até aqui hoje?",
-                sub: "Me conta — o diagnóstico se adapta a você.",
+                sub: "Me conta: o diagnóstico se adapta a você.",
                 options: [
-                    { v: "renda", t: "Quero uma renda extra", fb: "Renda extra bem construída vira renda principal — com método." },
+                    { v: "renda", t: "Quero uma renda extra", fb: "Renda extra bem construída vira renda principal, com método." },
                     { v: "transicao", t: "Quero mudar de área / carreira", fb: "Transição de carreira pro digital é a mais rápida do mercado quando há direção." },
-                    { v: "escalar", t: "Já atendo clientes e quero escalar", fb: "Escalar sem estrutura quebra a operação — por isso automação vem primeiro." },
-                    { v: "curiosidade", t: "Curiosidade — quero entender o jogo", fb: "Entender o jogo antes de apostar é a decisão mais inteligente." }
+                    { v: "escalar", t: "Já atendo clientes e quero escalar", fb: "Escalar sem estrutura quebra a operação. Por isso automação vem primeiro." },
+                    { v: "curiosidade", t: "Curiosidade: quero entender o jogo", fb: "Entender o jogo antes de apostar é a decisão mais inteligente." }
                 ]
             },
             {
@@ -359,7 +359,7 @@ function handleContact(e){
                     { v: "tempopouco", t: "Tenho pouco tempo disponível", fb: "Pouco tempo não é obstáculo: é filtro. O que importa é direção." },
                     { v: "direcao", t: "Tenho tempo, mas falta direção", fb: "Direção transforma horas soltas em progresso composto." },
                     { v: "oquevender", t: "Não sei o que vender", fb: "Você não precisa inventar: precisa mapear o que já resolve bem." },
-                    { v: "execucao", t: "Sei o que quero, falta execução", fb: "Execução é músculo — e sistemas são a academia." }
+                    { v: "execucao", t: "Sei o que quero, falta execução", fb: "Execução é músculo, e sistemas são a academia." }
                 ]
             },
             {
@@ -382,8 +382,8 @@ function handleContact(e){
                 var q1 = {
                     "3h+": "você está gastando <strong>mais de 3 horas por dia</strong> em tarefas que uma máquina faria por você",
                     "1-3h": "você perde <strong>entre 1 e 3 horas por dia</strong> com o que poderia rodar sozinho",
-                    "<1h": "você já controla o tempo manual — mas o processo ainda depende de você",
-                    "auto": "sua operação já tem automação — o próximo nível é virar estratégia"
+                    "<1h": "você já controla o tempo manual, mas o processo ainda depende de você",
+                    "auto": "sua operação já tem automação, e o próximo nível é virar estratégia"
                 };
                 var q2 = {
                     "tempo": "seu gargalo é <strong>tempo</strong>",
@@ -392,17 +392,17 @@ function handleContact(e){
                     "autoridade": "seu gargalo é <strong>autoridade digital</strong>"
                 };
                 var q3 = {
-                    "whatsapp": "atendimento automático no WhatsApp, respondendo na hora — inclusive de madrugada",
+                    "whatsapp": "atendimento automático no WhatsApp, respondendo na hora, inclusive de madrugada",
                     "redes": "publicação de conteúdo agendada e constante, sem depender de memória ou motivação",
                     "followup": "follow-up automático de orçamentos e clientes, para nenhuma venda morrer no esquecimento",
                     "tudo": "atendimento, conteúdo e follow-up rodando juntos, como um time invisível 24h"
                 };
                 return {
                     text: "Pelas suas respostas, " + (q1[a[0]] || q1["1-3h"]) + ", e " + (q2[a[1]] || q2.tempo) +
-                        ". A boa notícia: isso tem solução — e ela começa com o que está no seu e-book.",
+                        ". A boa notícia: isso tem solução, e ela começa com o que está no seu e-book.",
                     bullets: [
                         "Prioridade nº 1: " + (q3[a[2]] || q3.tudo) + ".",
-                        "Automação não substitui você — ela devolve seu tempo para vender e crescer.",
+                        "Automação não substitui você, ela devolve seu tempo para vender e crescer.",
                         "Quanto antes o sistema assume o repetitivo, mais cedo o negócio trabalha por você."
                     ]
                 };
@@ -417,9 +417,9 @@ function handleContact(e){
                     "tech": "o seu desafio é <strong>achar que precisa ser técnico</strong>"
                 };
                 var q2 = {
-                    "parado": "você ainda está no marco zero — e isso é vantagem: dá pra começar certo",
+                    "parado": "você ainda está no marco zero, e isso é vantagem: dá pra começar certo",
                     "posts": "você já produz conteúdo, mas ainda sem estratégia por trás",
-                    "vendo": "você já vende — agora falta estrutura para escalar",
+                    "vendo": "você já vende; agora falta estrutura para escalar",
                     "estudo": "você acumula teoria e ainda pratica pouco"
                 };
                 var q3 = {
@@ -430,11 +430,11 @@ function handleContact(e){
                 };
                 return {
                     text: "Pelas suas respostas, " + (q1[a[0]] || q1.poronde) + " e " + (q2[a[1]] || q2.parado) +
-                        ". Ninguém nasce pronto — o que muda o jogo é começar com método.",
+                        ". Ninguém nasce pronto. O que muda o jogo é começar com método.",
                     bullets: [
                         "Primeiro passo: " + (q3[a[2]] || q3.base) + ".",
                         "Constância vence talento: passos diários pequenos constroem autoridade.",
-                        "O e-book abaixo organiza exatamente essa base — do zero ao patrimônio."
+                        "O e-book abaixo organiza exatamente essa base, do zero ao patrimônio."
                     ]
                 };
             }
@@ -461,11 +461,11 @@ function handleContact(e){
                 };
                 return {
                     text: "Pelas suas respostas, " + (q1[a[0]] || q1.curiosidade) + " e " + (q2[a[1]] || q2.direcao) +
-                        ". O digital premia quem tem método — não quem tem sorte.",
+                        ". O digital premia quem tem método, não quem tem sorte.",
                     bullets: [
                         "Foco do mês: " + (q3[a[2]] || q3.clareza) + ".",
                         "Autoridade digital é ativo composto: começa pequeno e cresce sozinho.",
-                        "O e-book abaixo mostra a base completa — do zero ao patrimônio."
+                        "O e-book abaixo mostra a base completa, do zero ao patrimônio."
                     ]
                 };
             }
@@ -709,7 +709,7 @@ function handleContact(e){
     })();
 
     /* ========================================
-       GOLDEN PARTICLES — diagonal rise
+       GOLDEN PARTICLES · diagonal rise
        ======================================== */
     (function initGoldenParticles() {
         const canvas = document.getElementById('particles-canvas');

@@ -28,7 +28,7 @@
 </script>
 <style>
 /* ══════════════════════════════════════════════════════════════════
-   KODAROS v2 · "Console" — tokens extraídos do brand source atual
+   KODAROS v2 · "Console": tokens extraídos do brand source atual
    (index.html v1) e convertidos para OKLch. Sem hex solto fora daqui.
    ══════════════════════════════════════════════════════════════════ */
 :root{
@@ -176,8 +176,6 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px}
 .card-flat{background:transparent;border:0;padding:0}
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid var(--border);
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--accent-soft);color:var(--accent-lift);
   border-radius:999px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
 .tag{display:inline-flex;align-items:center;padding:4px 10px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:999px;font-size:12px}
@@ -223,9 +221,6 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .status-list .s-name{font-size:15px;font-weight:600}
 .status-list .s-state{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right}
 .status-list .s-state[data-state="on"]{color:var(--accent)}
-.panel-foot{padding:13px 18px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.hero-scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:9px}
-.hero-scroll::after{content:"";width:1px;height:26px;background:linear-gradient(var(--accent),transparent);animation:scrollCue 2.1s var(--ease) infinite}
 @keyframes scrollCue{0%,100%{opacity:.25;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
 
 /* ── módulos (scroll fixado) ───────────────────────────────────── */
@@ -299,7 +294,6 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .book-price .old{font-size:12.5px;color:var(--muted);text-decoration:line-through}
 .book-price .now{font-family:var(--font-mono);font-size:19px;color:var(--fg)}
 .book-cta{width:100%}
-.book-safe{display:block;margin-top:9px;text-align:center;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
 /* ── console de diagnóstico ────────────────────────────────────── */
 .console{border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}
@@ -471,7 +465,6 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
   .hero-bg{background-position:center 22%}
   .hero-bg::after{background:linear-gradient(to bottom,color-mix(in oklch,var(--bg) 84%,transparent),var(--bg) 92%)}
   .telemetry{grid-template-columns:repeat(2,1fr)}
-  .hero-scroll{display:none}
   .modules{height:auto;padding-block:var(--gap-2xl)}
   .modules-sticky{position:static;height:auto;display:block;padding:0}
   .modules-rail{display:none}
@@ -540,7 +533,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
 <!-- ═══ NAV ═══ -->
 <header class="topnav" id="topnav" data-od-id="topnav">
   <div class="container topnav-inner">
-    <a href="#inicio" class="logo" data-od-id="nav-brand" aria-label="KODAROS — início">
+    <a href="#inicio" class="logo" data-od-id="nav-brand" aria-label="KODAROS, início">
       <img src="./bust.webp" alt="" width="121" height="120" class="logo-mark">
       <span>KODAROS</span>
     </a>
@@ -587,7 +580,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <div class="hero-copy">
       <p class="eyebrow eyebrow-accent">Software · Sites · Vídeos · Biblioteca</p>
       <h1>Uma empresa de tecnologia feita para <em>vender</em> e escalar.</h1>
-      <p class="lead">A KODAROS cria o que faz o seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários — e uma biblioteca de e-books com ferramentas que rodam direto no navegador.</p>
+      <p class="lead">A KODAROS cria o que faz o seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários, além de uma biblioteca de e-books com ferramentas que rodam direto no navegador.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#diagnostico" data-od-id="hero-cta-diagnostico">Fazer meu diagnóstico
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
@@ -602,7 +595,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       </dl>
     </div>
     <aside class="panel hero-panel" aria-label="Módulos da plataforma">
-      <div class="panel-head"><span>Plataforma</span><span>5 módulos</span></div>
+      
       <ul class="status-list">
         <li><a href="#modulos"><span class="s-idx num">01</span><span class="s-name">Softwares &amp; Apps</span><span class="s-state" data-state="on">Disponível</span></a></li>
         <li><a href="#modulos"><span class="s-idx num">02</span><span class="s-name">Sites</span><span class="s-state">Sob encomenda</span></a></li>
@@ -610,19 +603,19 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
         <li><a href="#modulos"><span class="s-idx num">04</span><span class="s-name">Ferramentas</span><span class="s-state" data-state="on">Disponível</span></a></li>
         <li><a href="#modulos"><span class="s-idx num">05</span><span class="s-name">Biblioteca</span><span class="s-state" data-state="on">Disponível</span></a></li>
       </ul>
-      <p class="panel-foot">Acesso sem cadastro · Entrega via Hotmart</p>
+      
     </aside>
   </div>
-  <p class="hero-scroll" aria-hidden="true">Role</p>
+  
 </section>
 
-<!-- ═══ MÓDULOS — scroll interativo (fixo no desktop) ═══ -->
+<!-- ═══ MÓDULOS · scroll interativo (fixo no desktop) ═══ -->
 <section class="section modules" id="modulos" data-od-id="modulos">
   <div class="modules-sticky">
     <div class="container">
       <div class="modules-head">
         <p class="eyebrow">Ecossistema</p>
-        <h2>Tudo em um só lugar</h2>
+        <h2>Cinco módulos.</h2>
       </div>
       <div class="modules-grid">
         <ol class="modules-rail" id="modulesRail" aria-label="Módulos da KODAROS">
@@ -637,12 +630,12 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
 
           <article class="module is-active" data-index="0" data-od-id="modulo-softwares">
             <div class="module-media">
-              <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid — Construtor de Planilhas com Fórmulas" width="400" height="533" loading="lazy">
+              <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid, construtor de planilhas com fórmulas" width="400" height="533" loading="lazy">
             </div>
             <div class="module-body">
-              <div class="module-meta"><span class="m-idx num">01 / 05</span><span class="pill">Disponível</span></div>
+              <div class="module-meta"><span class="pill">Disponível</span></div>
               <h3>Softwares &amp; Apps</h3>
-              <p>Programas de desktop e apps sob medida. Instalam, abrem e funcionam — inclusive 100% offline no Windows, sem depender de nuvem.</p>
+              <p>Programas de desktop e apps sob medida. Instalam, abrem e funcionam, inclusive 100% offline no Windows, sem depender de nuvem.</p>
               <ul class="module-facts">
                 <li><span>Em produção</span><b>KodaGrid</b></li>
                 <li><span>Plataforma</span><b>Windows · 100% offline</b></li>
@@ -660,7 +653,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
               </div>
             </div>
             <div class="module-body">
-              <div class="module-meta"><span class="m-idx num">02 / 05</span><span class="pill">Sob encomenda</span></div>
+              <div class="module-meta"><span class="pill">Sob encomenda</span></div>
               <h3>Sites</h3>
               <p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender o seu produto ou serviço.</p>
               <ul class="module-facts">
@@ -681,9 +674,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
               </div>
             </div>
             <div class="module-body">
-              <div class="module-meta"><span class="m-idx num">03 / 05</span><span class="pill">Sob encomenda</span></div>
+              <div class="module-meta"><span class="pill">Sob encomenda</span></div>
               <h3>Vídeos e Propagandas</h3>
-              <p>Motion graphics e vídeos publicitários para anúncios, redes e apresentações — do roteiro à entrega final.</p>
+              <p>Motion graphics e vídeos publicitários para anúncios, redes e apresentações, do roteiro à entrega final.</p>
               <ul class="module-facts">
                 <li><span>Roteiro</span><b>Gancho, mensagem e chamada</b></li>
                 <li><span>Produção</span><b>Motion, trilha e locução</b></li>
@@ -706,9 +699,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
               </div>
             </div>
             <div class="module-body">
-              <div class="module-meta"><span class="m-idx num">04 / 05</span><span class="pill">Disponível</span></div>
+              <div class="module-meta"><span class="pill">Disponível</span></div>
               <h3>Ferramentas</h3>
-              <p>Mais de 50 calculadoras e geradores que rodam 100% no navegador. Use na hora, sem cadastro — e com referência direta nos e-books.</p>
+              <p>Mais de 50 calculadoras e geradores que rodam 100% no navegador. Use na hora, sem cadastro, com referência direta nos e-books.</p>
               <ul class="module-facts">
                 <li><span>Formato</span><b>Web app, sem instalação</b></li>
                 <li><span>Cadastro</span><b>Nenhum</b></li>
@@ -727,9 +720,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
               </div>
             </div>
             <div class="module-body">
-              <div class="module-meta"><span class="m-idx num">05 / 05</span><span class="pill">Disponível</span></div>
+              <div class="module-meta"><span class="pill">Disponível</span></div>
               <h3>Biblioteca</h3>
-              <p>De Tráfego a Gestão. Oito e-books que resolvem um problema específico cada — escolha pelo nível e comece pelo que dói mais hoje.</p>
+              <p>De Tráfego a Gestão. Oito e-books que resolvem um problema específico cada. Escolha pelo nível e comece pelo que dói mais hoje.</p>
               <ul class="module-facts">
                 <li><span>Entrega</span><b>Imediata via Hotmart</b></li>
                 <li><span>Acesso</span><b>Vitalício</b></li>
@@ -749,12 +742,12 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
 <section class="section" id="kodagrid" data-od-id="kodagrid">
   <div class="container grid-1-2">
     <figure class="spec-media reveal">
-      <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid — Construtor de Planilhas com Fórmulas para Windows" width="400" height="533" loading="lazy">
+      <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid, construtor de planilhas com fórmulas para Windows" width="400" height="533" loading="lazy">
       <figcaption>KodaGrid · Windows</figcaption>
     </figure>
     <div class="reveal">
       <p class="eyebrow eyebrow-accent">Software · Windows</p>
-      <h2>KodaGrid — Construtor de Planilhas com Fórmulas</h2>
+      <h2>KodaGrid, o construtor de planilhas com fórmulas.</h2>
       <p class="lead" style="margin-top:16px">Monte planilhas sem decorar fórmula. Escolha o tipo da coluna, clique num preset, pinte do seu jeito e preencha. O KodaGrid gera um .xlsx com fórmula viva, pronto para abrir no Excel.</p>
       <ul class="spec-list">
         <li><strong>Colunas como peças de montar.</strong> Texto, Número, Moeda R$, Data, Lista dropdown e Fórmula.</li>
@@ -766,7 +759,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       </ul>
       <div class="chips" style="margin-bottom:var(--gap-lg)"><span class="chip">Windows</span><span class="chip">100% offline</span><span class="chip">.xlsx real</span><span class="chip">13 templates</span></div>
       <a class="btn btn-primary" href="https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=softwares" target="_blank" rel="noopener" data-od-id="cta-kodagrid-comprar">Comprar na Hotmart</a>
-      <p class="fineprint" style="margin-top:12px">Hotmart seguro · pagamento protegido</p>
+      
     </div>
   </div>
 </section>
@@ -777,9 +770,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <div class="row-between" style="margin-bottom:var(--gap-lg);align-items:flex-end;flex-wrap:wrap">
       <div style="max-width:44ch">
         <p class="eyebrow">Biblioteca</p>
-        <h2>Conteúdo direto para o seu negócio</h2>
+        <h2>Oito e-books.</h2>
       </div>
-      <p class="lead" style="max-width:34ch;font-size:16px">Cada e-book resolve um problema específico. Entrega imediata via Hotmart, acesso vitalício.</p>
+      
     </div>
     <div class="filters" id="bookFilters" role="group" aria-label="Filtrar e-books por nível">
       <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Todos</button>
@@ -797,7 +790,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists prontos.</p>
           <div class="book-price"><span class="old">R$ 247</span><span class="now num">R$ 197</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -809,7 +802,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.</p>
           <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -821,7 +814,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.</p>
           <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -833,7 +826,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">Transforme seu site em máquina de vendas com SEO, captura de leads e automação.</p>
           <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -845,7 +838,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar as suas vendas imediatamente.</p>
           <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -857,7 +850,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">10 pilares para organizar e crescer a sua empresa com controle e decisões baseadas em dados.</p>
           <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -869,7 +862,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.</p>
           <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -881,7 +874,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <p class="book-desc">O método para transformar reclamações em fidelização e construir uma cultura centrada no cliente.</p>
           <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
           <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          <span class="book-safe">Hotmart · pagamento protegido</span>
+          
         </div>
       </article>
 
@@ -896,12 +889,12 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       <div>
         <p class="eyebrow">Ferramentas</p>
         <h2>Mais de <span>50 ferramentas</span> gratuitas.</h2>
-        <p>Calculadoras de tráfego, financeiro, vendas e gestão. Rodam direto no navegador, sem login — agora em site próprio, com referência direta nos e-books.</p>
+        <p>Calculadoras de tráfego, financeiro, vendas e gestão. Rodam direto no navegador, sem login, em site próprio e com referência direta nos e-books.</p>
         <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Acessar as ferramentas</a>
       </div>
       <div style="text-align:right">
         <div class="tool-count num">50+</div>
-        <p class="meta" style="margin-top:10px">Gratuito · sem cadastro · 100% no navegador</p>
+        
       </div>
     </div>
   </div>
@@ -930,7 +923,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <div style="text-align:center">
             <span class="pill">Diagnóstico gratuito · 2 minutos</span>
             <h3 class="diag-title" style="margin-top:18px">Três perguntas. <em>Um retrato real</em> do seu negócio.</h3>
-            <p class="diag-lead">Responda 3 perguntas rápidas e receba o seu diagnóstico — com e-book de presente.</p>
+            <p class="diag-lead">Responda 3 perguntas rápidas e receba o seu diagnóstico, com e-book de presente.</p>
             <div class="gift">
               <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
               <div>
@@ -1014,7 +1007,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
   <div class="container">
     <div style="max-width:44ch;margin-bottom:var(--gap-lg)">
       <p class="eyebrow">Por que a KODAROS</p>
-      <h2>Código próprio, acabamento de quem entrega</h2>
+      <h2>Quatro decisões.</h2>
     </div>
     <div class="why">
       <div class="why-item reveal"><span class="wn num">01</span><div><h3>Código próprio, leve e rápido</h3><p>Sem dependências e sem servidor: as calculadoras rodam no navegador, abrem direto e, depois do primeiro acesso, seguem funcionando offline.</p></div></div>
@@ -1030,17 +1023,17 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
   <div class="container">
     <p class="eyebrow">Quem já usa</p>
     <blockquote class="wall-lead">“Não é mágica, é o passo a passo que eu precisava.”
-      <cite>— Fernanda Lima, começando no digital</cite>
+      <cite>Fernanda Lima, começando no digital</cite>
     </blockquote>
     <div class="testis">
       <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Uso o KodaGrid no fluxo de caixa. Antes perdia meia hora no Excel, agora monto a planilha em 5 minutos e já sai com fórmula funcionando.</p></blockquote><cite><strong>Lucas Andrade</strong> · Autônomo, Manaus</cite></figure>
       <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Sou designer e enjoo fácil de site poluído. Aqui achei o e-book de gestão em dois cliques, fonte boa, sem banner piscando.</p></blockquote><cite><strong>Mariana Costa</strong> · Product Designer</cite></figure>
       <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Comprei o pack de finanças. Sem enrolação, fui direto pro capítulo de preço e já ajustei a minha margem na mesma semana.</p></blockquote><cite><strong>Carlos Mendes</strong> · Loja de materiais</cite></figure>
-      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Usei a calculadora de ROI antes de rodar tráfego. Ter o número na mão fez diferença — parei de chutar.</p></blockquote><cite><strong>Juliana Rocha</strong> · Gestora de tráfego iniciante</cite></figure>
+      <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Usei a calculadora de ROI antes de rodar tráfego. Ter o número na mão fez diferença. Parei de chutar.</p></blockquote><cite><strong>Juliana Rocha</strong> · Gestora de tráfego iniciante</cite></figure>
       <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Mandei e-mail no domingo achando que só veriam na segunda. Responderam no mesmo dia. Isso pesa na escolha.</p></blockquote><cite><strong>Rafael Torres</strong> · Prestador de serviços</cite></figure>
       <figure class="testi"><div class="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote><p>Comecei pelo diagnóstico, ganhei o e-book e peguei o de tráfego. Foi exatamente o passo a passo que eu precisava.</p></blockquote><cite><strong>Fernanda Lima</strong> · Começando no digital</cite></figure>
     </div>
-    <p class="fineprint">* Depoimentos de usuários iniciais — resultados variam conforme a aplicação.</p>
+    <p class="fineprint">* Depoimentos de usuários iniciais. Resultados variam conforme a aplicação.</p>
   </div>
 </section>
 
@@ -1050,7 +1043,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <div>
       <p class="eyebrow">Dúvidas</p>
       <h2>Perguntas frequentes</h2>
-      <p class="lead" style="margin-top:16px;font-size:16px">O que as pessoas perguntam antes de comprar.</p>
+      
       <a class="btn btn-secondary btn-arrow" style="margin-top:24px" href="https://wa.me/559192094504?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20KODAROS." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
     <div class="faq">
@@ -1069,7 +1062,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <div>
       <p class="eyebrow">Contato</p>
       <h2>Fale com a gente</h2>
-      <p class="lead" style="margin-top:16px;font-size:16px">Dúvida, orçamento ou sugestão? Resposta em até 24h úteis.</p>
+      <p class="lead" style="margin-top:16px;font-size:16px">Resposta em até 24h úteis.</p>
       <ul class="channels" style="margin-top:var(--gap-lg)">
         <li><a href="https://wa.me/559192094504" target="_blank" rel="noopener"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></span><span class="channel-label">WhatsApp</span><span class="channel-go">→</span></a></li>
         <li><a href="mailto:kodaros01@gmail.com"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M22 6l-10 7L2 6"></path></svg></span><span class="channel-label">E-mail</span><span class="channel-go">→</span></a></li>
@@ -1095,8 +1088,8 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="./banner.webp" alt="KODAROS — Tecnologia, conteúdo, impacto" width="1200" height="480" loading="lazy">
-        <p>Softwares, sites, vídeos e conteúdo para quem toca negócio de verdade.</p>
+        <img src="./banner.webp" alt="KODAROS, tecnologia, conteúdo e impacto" width="1200" height="480" loading="lazy">
+        
       </div>
       <div class="foot-col">
         <h3>Plataforma</h3>
@@ -1122,7 +1115,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> KODAROS · Todos os direitos reservados.</span>
-      <a class="foot-credit" href="https://github.com/kelvinoliveiracode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira — abrir o GitHub de kelvinoliveiracode em nova aba">
+      <a class="foot-credit" href="https://github.com/kelvinoliveiracode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira. Abrir o GitHub de kelvinoliveiracode em nova aba">
         <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
         <span>Feito por <b>Kelvin Oliveira</b></span>
       </a>
@@ -1148,7 +1141,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
 
 
 <script>
-/* KODAROS v2 · Console — interações
+/* KODAROS v2 · Console · interações
    Boot → navegação → scroll fixado → biblioteca → diagnóstico → paleta */
 (function () {
   'use strict';
@@ -1261,7 +1254,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     els.forEach(function (el) { io.observe(el); });
   })();
 
-  /* ─── 4. MÓDULOS — rolagem fixada (desktop) / lista (mobile) ──── */
+  /* ─── 4. MÓDULOS · rolagem fixada (desktop) / lista (mobile) ──── */
   (function modules() {
     var sec = $('#modulos'), rail = $('#modulesRail'), stage = $('#modulesStage'), prog = $('#railProgress');
     if (!sec) return;
@@ -1304,7 +1297,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     update();
   })();
 
-  /* ─── 5. BIBLIOTECA — filtros ────────────────────────────────── */
+  /* ─── 5. BIBLIOTECA · filtros ────────────────────────────────── */
   (function filters() {
     var group = $('#bookFilters'); if (!group) return;
     var books = $$('#books .book');
@@ -1351,47 +1344,47 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
         { q: 'Quanto tempo do seu dia vai para tarefas repetitivas?', sub: 'Responder clientes, postar nas redes, mandar orçamento, cobrar pagamento…', options: [
           { v: '3h+', t: 'Mais de 3 horas por dia', fb: 'Mais de 3 horas por dia em tarefas repetitivas é tempo que não volta.' },
           { v: '1-3h', t: 'Entre 1 e 3 horas', fb: 'Entre 1 e 3 horas diárias somam semanas inteiras de trabalho manual por ano.' },
-          { v: '<1h', t: 'Menos de 1 hora', fb: 'Menos de 1 hora já é bom sinal — mas cada minuto salvo vira margem.' },
-          { v: 'auto', t: 'Quase nada — aqui muita coisa já é automática', fb: 'Você já entendeu o jogo: o que é manual, escala mal.' } ] },
-        { q: 'Hoje, o que mais trava o seu crescimento?', sub: 'Seja sincero — ninguém está olhando.', options: [
+          { v: '<1h', t: 'Menos de 1 hora', fb: 'Menos de 1 hora já é bom sinal, mas cada minuto salvo vira margem.' },
+          { v: 'auto', t: 'Quase nada. Aqui muita coisa já é automática', fb: 'Você já entendeu o jogo: o que é manual, escala mal.' } ] },
+        { q: 'Hoje, o que mais trava o seu crescimento?', sub: 'Seja sincero. Ninguém está olhando.', options: [
           { v: 'tempo', t: 'Falta de tempo pra cuidar de tudo', fb: 'Falta de tempo é o sintoma mais comum de processos manuais.' },
           { v: 'clientes', t: 'Falta de clientes entrando', fb: 'Sem presença e sem follow-up automático, a entrada de clientes vira montanha-russa.' },
-          { v: 'organizacao', t: 'Desorganização e processos na cabeça', fb: 'Processo que vive na cabeça não escala — e cobra caro pelo esquecimento.' },
+          { v: 'organizacao', t: 'Desorganização e processos na cabeça', fb: 'Processo que vive na cabeça não escala, e cobra caro pelo esquecimento.' },
           { v: 'autoridade', t: 'Falta de presença e autoridade digital', fb: 'Sem autoridade digital, o cliente compara só preço. Com autoridade, ele escolhe você.' } ] },
         { q: 'Se um sistema trabalhasse por você 24h por dia, por onde começaria?', sub: '', options: [
-          { v: 'whatsapp', t: 'Atendimento e respostas no WhatsApp', fb: 'O WhatsApp é onde a venda nasce — e onde ela morre sem resposta rápida.' },
+          { v: 'whatsapp', t: 'Atendimento e respostas no WhatsApp', fb: 'O WhatsApp é onde a venda nasce, e onde ela morre sem resposta rápida.' },
           { v: 'redes', t: 'Redes sociais e publicação de conteúdo', fb: 'Constância nas redes constrói autoridade. O problema nunca é ideia, é rotina.' },
-          { v: 'followup', t: 'Follow-up de clientes e orçamentos', fb: 'Grande parte das vendas acontece no follow-up — e é exatamente ele que ninguém tem tempo de fazer.' },
-          { v: 'tudo', t: 'Por tudo — quero escalar de vez', fb: 'Quem automatiza tudo não contrai dívida de tempo com o próprio negócio.' } ] }
+          { v: 'followup', t: 'Follow-up de clientes e orçamentos', fb: 'Grande parte das vendas acontece no follow-up, e é exatamente ele que ninguém tem tempo de fazer.' },
+          { v: 'tudo', t: 'Por tudo. Quero escalar de vez', fb: 'Quem automatiza tudo não contrai dívida de tempo com o próprio negócio.' } ] }
       ],
       iniciante: [
         { q: 'Qual é o seu maior desafio ao começar no digital?', sub: 'O primeiro passo é saber onde dói.', options: [
-          { v: 'poronde', t: 'Não saber por onde começar', fb: 'Começar sem mapa é o erro nº 1 — e o mais fácil de corrigir.' },
+          { v: 'poronde', t: 'Não saber por onde começar', fb: 'Começar sem mapa é o erro número 1, e o mais fácil de corrigir.' },
           { v: 'tempo', t: 'Ter pouco tempo por dia', fb: 'Você não precisa de 8 horas: precisa de um método que caiba na sua rotina.' },
-          { v: 'medo', t: 'Medo de errar na frente dos outros', fb: 'Todo mundo que hoje fatura começou errando em público — é parte do caminho.' },
+          { v: 'medo', t: 'Medo de errar na frente dos outros', fb: 'Todo mundo que hoje fatura começou errando em público. É parte do caminho.' },
           { v: 'tech', t: 'Achar que precisa entender de tecnologia', fb: 'As ferramentas de hoje fazem o pesado. O que falta é processo, não código.' } ] },
-        { q: 'Em que ponto você está hoje?', sub: 'Sem julgamento — só clareza.', options: [
+        { q: 'Em que ponto você está hoje?', sub: 'Sem julgamento, só clareza.', options: [
           { v: 'parado', t: 'Ainda não comecei', fb: 'Perfeito: começar do zero, começando certo, é vantagem.' },
           { v: 'posts', t: 'Já posto nas redes, mas sem estratégia', fb: 'Postar sem estratégia é correr na esteira: cansa e não sai do lugar.' },
-          { v: 'vendo', t: 'Já vendo algo, mas tudo no manual', fb: 'Vender manualmente prova que existe demanda — agora falta estrutura para escalar.' },
+          { v: 'vendo', t: 'Já vendo algo, mas tudo no manual', fb: 'Vender manualmente prova que existe demanda; agora falta estrutura para escalar.' },
           { v: 'estudo', t: 'Estudo muito e pratico pouco', fb: 'Conhecimento sem execução vira ansiedade. O segredo é prática guiada.' } ] },
         { q: 'Se alguém te mostrasse o caminho, o que resolveria primeiro?', sub: '', options: [
           { v: 'base', t: 'Entender o básico do jogo digital', fb: 'Base sólida evita meses de tentativa e erro.' },
-          { v: 'primeiravenda', t: 'Fazer a primeira venda', fb: 'A primeira venda muda a mentalidade — depois dela, o jogo fica real.' },
+          { v: 'primeiravenda', t: 'Fazer a primeira venda', fb: 'A primeira venda muda a mentalidade. Depois dela, o jogo fica real.' },
           { v: 'constancia', t: 'Criar constância nas redes', fb: 'Constância é o que separa quem aparece de quem desiste na semana 3.' },
           { v: 'plano', t: 'Ter um plano claro passo a passo', fb: 'Com plano, cada dia tem um próximo passo. Sem plano, cada dia é dúvida.' } ] }
       ],
       outros: [
-        { q: 'O que te trouxe até aqui hoje?', sub: 'Me conta — o diagnóstico se adapta a você.', options: [
-          { v: 'renda', t: 'Quero uma renda extra', fb: 'Renda extra bem construída vira renda principal — com método.' },
+        { q: 'O que te trouxe até aqui hoje?', sub: 'Me conta: o diagnóstico se adapta a você.', options: [
+          { v: 'renda', t: 'Quero uma renda extra', fb: 'Renda extra bem construída vira renda principal, com método.' },
           { v: 'transicao', t: 'Quero mudar de área / carreira', fb: 'Transição de carreira pro digital é a mais rápida do mercado quando há direção.' },
-          { v: 'escalar', t: 'Já atendo clientes e quero escalar', fb: 'Escalar sem estrutura quebra a operação — por isso automação vem primeiro.' },
-          { v: 'curiosidade', t: 'Curiosidade — quero entender o jogo', fb: 'Entender o jogo antes de apostar é a decisão mais inteligente.' } ] },
+          { v: 'escalar', t: 'Já atendo clientes e quero escalar', fb: 'Escalar sem estrutura quebra a operação. Por isso automação vem primeiro.' },
+          { v: 'curiosidade', t: 'Curiosidade: quero entender o jogo', fb: 'Entender o jogo antes de apostar é a decisão mais inteligente.' } ] },
         { q: 'Qual frase te define melhor neste momento?', sub: '', options: [
           { v: 'tempopouco', t: 'Tenho pouco tempo disponível', fb: 'Pouco tempo não é obstáculo: é filtro. O que importa é direção.' },
           { v: 'direcao', t: 'Tenho tempo, mas falta direção', fb: 'Direção transforma horas soltas em progresso composto.' },
           { v: 'oquevender', t: 'Não sei o que vender', fb: 'Você não precisa inventar: precisa mapear o que já resolve bem.' },
-          { v: 'execucao', t: 'Sei o que quero, falta execução', fb: 'Execução é músculo — e sistemas são a academia.' } ] },
+          { v: 'execucao', t: 'Sei o que quero, falta execução', fb: 'Execução é músculo, e sistemas são a academia.' } ] },
         { q: 'Se pudesse resolver uma coisa só este mês, qual seria?', sub: '', options: [
           { v: 'clareza', t: 'Ter clareza do próximo passo', fb: 'Clareza é o ativo mais barato e mais negligenciado.' },
           { v: 'presenca', t: 'Criar presença digital de verdade', fb: 'Presença é ativo composto: cada publicação trabalha para sempre.' },
@@ -1404,34 +1397,34 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       empresa: function (a) {
         var q1 = { '3h+': 'você está gastando <strong>mais de 3 horas por dia</strong> em tarefas que uma máquina faria por você',
           '1-3h': 'você perde <strong>entre 1 e 3 horas por dia</strong> com o que poderia rodar sozinho',
-          '<1h': 'você já controla o tempo manual — mas o processo ainda depende de você',
-          'auto': 'sua operação já tem automação — o próximo nível é virar estratégia' };
+          '<1h': 'você já controla o tempo manual, mas o processo ainda depende de você',
+          'auto': 'sua operação já tem automação, e o próximo nível é virar estratégia' };
         var q2 = { tempo: 'seu gargalo é <strong>tempo</strong>', clientes: 'seu gargalo é <strong>entrada de clientes</strong>',
           organizacao: 'seu gargalo é <strong>organização</strong>', autoridade: 'seu gargalo é <strong>autoridade digital</strong>' };
-        var q3 = { whatsapp: 'atendimento automático no WhatsApp, respondendo na hora — inclusive de madrugada',
+        var q3 = { whatsapp: 'atendimento automático no WhatsApp, respondendo na hora, inclusive de madrugada',
           redes: 'publicação de conteúdo agendada e constante, sem depender de memória ou motivação',
           followup: 'follow-up automático de orçamentos e clientes, para nenhuma venda morrer no esquecimento',
           tudo: 'atendimento, conteúdo e follow-up rodando juntos, como um time invisível 24h' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1['1-3h']) + ', e ' + (q2[a[1]] || q2.tempo) + '. A boa notícia: isso tem solução — e ela começa com o que está no seu e-book.',
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1['1-3h']) + ', e ' + (q2[a[1]] || q2.tempo) + '. A boa notícia: isso tem solução, e ela começa com o que está no seu e-book.',
           bullets: ['Prioridade nº 1: ' + (q3[a[2]] || q3.tudo) + '.',
-            'Automação não substitui você — ela devolve o seu tempo para vender e crescer.',
+            'Automação não substitui você, ela devolve o seu tempo para vender e crescer.',
             'Quanto antes o sistema assume o repetitivo, mais cedo o negócio trabalha por você.'] };
       },
       iniciante: function (a) {
         var q1 = { poronde: 'o seu desafio é <strong>saber por onde começar</strong>', tempo: 'o seu desafio é <strong>falta de tempo</strong>',
           medo: 'o seu desafio é <strong>medo de errar em público</strong>', tech: 'o seu desafio é <strong>achar que precisa ser técnico</strong>' };
-        var q2 = { parado: 'você ainda está no marco zero — e isso é vantagem: dá pra começar certo',
+        var q2 = { parado: 'você ainda está no marco zero, e isso é vantagem: dá pra começar certo',
           posts: 'você já produz conteúdo, mas ainda sem estratégia por trás',
-          vendo: 'você já vende — agora falta estrutura para escalar',
+          vendo: 'você já vende; agora falta estrutura para escalar',
           estudo: 'você acumula teoria e ainda pratica pouco' };
         var q3 = { base: 'montar a base: presença, oferta e uma rotina mínima viável',
           primeiravenda: 'estruturar o caminho direto até a primeira venda',
           constancia: 'criar um ciclo de constância que caiba na sua semana',
           plano: 'seguir um plano claro, um passo por dia' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.poronde) + ' e ' + (q2[a[1]] || q2.parado) + '. Ninguém nasce pronto — o que muda o jogo é começar com método.',
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.poronde) + ' e ' + (q2[a[1]] || q2.parado) + '. Ninguém nasce pronto. O que muda o jogo é começar com método.',
           bullets: ['Primeiro passo: ' + (q3[a[2]] || q3.base) + '.',
             'Constância vence talento: passos diários pequenos constroem autoridade.',
-            'O e-book abaixo organiza exatamente essa base — do zero ao patrimônio.'] };
+            'O e-book abaixo organiza exatamente essa base, do zero ao patrimônio.'] };
       },
       outros: function (a) {
         var q1 = { renda: 'você quer <strong>uma renda extra</strong>', transicao: 'você quer <strong>transição de carreira</strong>',
@@ -1440,10 +1433,10 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           oquevender: 'a sua dúvida é o que vender', execucao: 'a sua lacuna é execução' };
         var q3 = { clareza: 'ter clareza do próximo passo', presenca: 'construir presença digital de verdade',
           vendas: 'aumentar as suas vendas', automatizar: 'automatizar o que você já faz manualmente' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.curiosidade) + ' e ' + (q2[a[1]] || q2.direcao) + '. O digital premia quem tem método — não quem tem sorte.',
+        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.curiosidade) + ' e ' + (q2[a[1]] || q2.direcao) + '. O digital premia quem tem método, não quem tem sorte.',
           bullets: ['Foco do mês: ' + (q3[a[2]] || q3.clareza) + '.',
             'Autoridade digital é ativo composto: começa pequeno e cresce sozinho.',
-            'O e-book abaixo mostra a base completa — do zero ao patrimônio.'] };
+            'O e-book abaixo mostra a base completa, do zero ao patrimônio.'] };
       }
     };
 
