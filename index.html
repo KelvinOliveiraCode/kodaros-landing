@@ -131,12 +131,12 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:21px;letter-spacing:.02em;line-height:1}
 .logo-mark{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:44% 34%;border:1px solid var(--accent-hair);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 8%,transparent)}
 .topnav nav{display:flex;gap:var(--gap-lg);align-items:center}
-.topnav nav a{font-size:13.5px;color:var(--muted);display:inline-flex;align-items:baseline;gap:7px;transition:color .18s var(--ease)}
-.topnav nav a .idx{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);opacity:.7;transition:color .18s var(--ease)}
+.topnav nav a{font-size:13.5px;color:var(--muted);transition:color .18s var(--ease)}
+
 .topnav nav a:hover{color:var(--fg)}
-.topnav nav a:hover .idx{color:var(--accent)}
+
 .topnav nav a.is-current{color:var(--fg)}
-.topnav nav a.is-current .idx{color:var(--accent);opacity:1}
+
 .topnav-actions{display:flex;align-items:center;gap:var(--gap-sm)}
 .kbd-hint{font-family:var(--font-mono);font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:4px 7px;line-height:1;transition:color .18s var(--ease),border-color .18s var(--ease)}
 .kbd-hint:hover{color:var(--fg);border-color:var(--border-strong)}
@@ -152,8 +152,8 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
   opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s}
 .drawer.is-open{opacity:1;visibility:visible;transform:none}
 .drawer nav{display:flex;flex-direction:column}
-.drawer nav a{font-family:var(--font-display);font-size:30px;padding:14px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:14px}
-.drawer nav a .idx{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.drawer nav a{font-family:var(--font-display);font-size:30px;padding:14px 0;border-bottom:1px solid var(--border)}
+
 .drawer-actions{display:flex;flex-direction:column;gap:12px;margin-top:auto}
 
 /* ── botões ─────────────────────────────────────────────────────── */
@@ -214,10 +214,10 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .telemetry dt{font-family:var(--font-mono);font-size:22px;color:var(--accent);line-height:1.1;margin-bottom:6px;letter-spacing:-.02em}
 .telemetry dd{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
 .status-list{list-style:none;margin:0;padding:0}
-.status-list a{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border);transition:background .18s var(--ease)}
+.status-list a{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border);transition:background .18s var(--ease)}
 .status-list a:last-child{border-bottom:0}
 .status-list a:hover{background:var(--surface-2)}
-.status-list .s-idx{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+
 .status-list .s-name{font-size:15px;font-weight:600}
 .status-list .s-state{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right}
 .status-list .s-state[data-state="on"]{color:var(--accent)}
@@ -230,14 +230,14 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .modules-head h2{font-size:clamp(28px,3.2vw,40px)}
 .modules-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(24px,3.4vw,52px);align-items:stretch}
 .modules-rail{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border)}
-.rail-item{width:100%;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:baseline;text-align:left;
+.rail-item{width:100%;display:block;text-align:left;
   padding:15px 4px;border-bottom:1px solid var(--border);color:var(--muted);transition:color .2s var(--ease),padding-left .2s var(--ease)}
-.rail-item .rail-idx{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+
 .rail-item .rail-name{font-size:16px;font-weight:600;color:var(--fg)}
-.rail-item .rail-state{grid-column:2;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rail-item .rail-state{display:block;margin-top:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .rail-item:hover{color:var(--fg);padding-left:8px}
 .rail-item.is-active{color:var(--fg);padding-left:8px}
-.rail-item.is-active .rail-idx{color:var(--accent)}
+
 .rail-item.is-active .rail-name{color:var(--accent)}
 .rail-progress{height:2px;background:var(--border);margin-top:14px}
 .rail-progress span{display:block;height:100%;width:20%;background:var(--accent);transition:width .25s var(--ease)}
@@ -347,7 +347,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .rec .btn{margin-top:auto;width:100%}
 .steps-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);margin-top:var(--gap-lg)}
 .step-item{border-top:1px solid var(--border);padding-top:14px}
-.step-item .num{font-size:11px;color:var(--accent);display:block;margin-bottom:8px}
+
 .step-item b{display:block;font-size:15px;margin-bottom:4px}
 .step-item small{color:var(--muted);font-size:12.5px;line-height:1.45}
 
@@ -378,8 +378,8 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 
 /* ── diferenciais ──────────────────────────────────────────────── */
 .why{border-top:1px solid var(--border-strong)}
-.why-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--border)}
-.why-item .wn{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.why-item{padding:26px 0;border-bottom:1px solid var(--border)}
+
 .why-item h3{font-size:19px;margin-bottom:6px}
 .why-item p{margin:0;color:var(--muted);font-size:14.5px;max-width:62ch}
 
@@ -497,7 +497,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
   .console-body{padding:24px 18px}
   .foot-top{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
-  .why-item{grid-template-columns:44px 1fr}
+
   .drawer nav a{font-size:26px}
 }
 @media(max-width:640px){
@@ -558,11 +558,11 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       <span>KODAROS</span>
     </a>
     <nav aria-label="Seções do site">
-      <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
-      <a href="#biblioteca"><span class="idx">02</span>Biblioteca</a>
-      <a href="#mostruario"><span class="idx">03</span>Mostruário</a>
-      <a href="#diagnostico"><span class="idx">04</span>Diagnóstico</a>
-      <a href="#duvidas"><span class="idx">05</span>Dúvidas</a>
+      <a href="#modulos">Ecossistema</a>
+      <a href="#biblioteca">Biblioteca</a>
+      <a href="#mostruario">Mostruário</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#duvidas">Dúvidas</a>
     </nav>
     <div class="topnav-actions">
       
@@ -578,14 +578,14 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
 <!-- ═══ DRAWER (mobile) ═══ -->
 <div class="drawer" id="drawer" data-od-id="drawer">
   <nav aria-label="Menu principal">
-    <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
-    <a href="#kodagrid"><span class="idx">02</span>KodaGrid</a>
-    <a href="#biblioteca"><span class="idx">03</span>Biblioteca</a>
-    <a href="#mostruario"><span class="idx">04</span>Mostruário</a>
-    <a href="#diagnostico"><span class="idx">05</span>Diagnóstico</a>
-    <a href="#ferramentas"><span class="idx">06</span>Ferramentas</a>
-    <a href="#duvidas"><span class="idx">07</span>Dúvidas</a>
-    <a href="#contato"><span class="idx">08</span>Contato</a>
+    <a href="#modulos">Ecossistema</a>
+    <a href="#kodagrid">KodaGrid</a>
+    <a href="#biblioteca">Biblioteca</a>
+    <a href="#mostruario">Mostruário</a>
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#ferramentas">Ferramentas</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a href="#contato">Contato</a>
   </nav>
   <div class="drawer-actions">
     <a class="btn btn-primary" href="#diagnostico">Começar meu diagnóstico</a>
@@ -619,11 +619,11 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <aside class="panel hero-panel" aria-label="Módulos da plataforma">
       
       <ul class="status-list">
-        <li><a href="#modulos"><span class="s-idx num">01</span><span class="s-name">Softwares &amp; Apps</span><span class="s-state" data-state="on">Disponível</span></a></li>
-        <li><a href="#modulos"><span class="s-idx num">02</span><span class="s-name">Sites</span><span class="s-state">Sob encomenda</span></a></li>
-        <li><a href="#modulos"><span class="s-idx num">03</span><span class="s-name">Vídeos e Propagandas</span><span class="s-state">Sob encomenda</span></a></li>
-        <li><a href="#modulos"><span class="s-idx num">04</span><span class="s-name">Ferramentas</span><span class="s-state" data-state="on">Disponível</span></a></li>
-        <li><a href="#modulos"><span class="s-idx num">05</span><span class="s-name">Biblioteca</span><span class="s-state" data-state="on">Disponível</span></a></li>
+        <li><a href="#modulos"><span class="s-name">Softwares &amp; Apps</span><span class="s-state" data-state="on">Disponível</span></a></li>
+        <li><a href="#modulos"><span class="s-name">Sites</span><span class="s-state">Sob encomenda</span></a></li>
+        <li><a href="#modulos"><span class="s-name">Vídeos e Propagandas</span><span class="s-state">Sob encomenda</span></a></li>
+        <li><a href="#modulos"><span class="s-name">Ferramentas</span><span class="s-state" data-state="on">Disponível</span></a></li>
+        <li><a href="#modulos"><span class="s-name">Biblioteca</span><span class="s-state" data-state="on">Disponível</span></a></li>
       </ul>
       
     </aside>
@@ -641,11 +641,11 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       </div>
       <div class="modules-grid">
         <ol class="modules-rail" id="modulesRail" aria-label="Módulos da KODAROS">
-          <li><button class="rail-item is-active" type="button" data-index="0" aria-pressed="true"><span class="rail-idx num">01</span><span class="rail-name">Softwares &amp; Apps</span><span class="rail-state">Disponível</span></button></li>
-          <li><button class="rail-item" type="button" data-index="1" aria-pressed="false"><span class="rail-idx num">02</span><span class="rail-name">Sites</span><span class="rail-state">Sob encomenda</span></button></li>
-          <li><button class="rail-item" type="button" data-index="2" aria-pressed="false"><span class="rail-idx num">03</span><span class="rail-name">Vídeos e Propagandas</span><span class="rail-state">Sob encomenda</span></button></li>
-          <li><button class="rail-item" type="button" data-index="3" aria-pressed="false"><span class="rail-idx num">04</span><span class="rail-name">Ferramentas</span><span class="rail-state">Disponível</span></button></li>
-          <li><button class="rail-item" type="button" data-index="4" aria-pressed="false"><span class="rail-idx num">05</span><span class="rail-name">Biblioteca</span><span class="rail-state">Disponível</span></button></li>
+          <li><button class="rail-item is-active" type="button" data-index="0" aria-pressed="true"><span class="rail-name">Softwares &amp; Apps</span><span class="rail-state">Disponível</span></button></li>
+          <li><button class="rail-item" type="button" data-index="1" aria-pressed="false"><span class="rail-name">Sites</span><span class="rail-state">Sob encomenda</span></button></li>
+          <li><button class="rail-item" type="button" data-index="2" aria-pressed="false"><span class="rail-name">Vídeos e Propagandas</span><span class="rail-state">Sob encomenda</span></button></li>
+          <li><button class="rail-item" type="button" data-index="3" aria-pressed="false"><span class="rail-name">Ferramentas</span><span class="rail-state">Disponível</span></button></li>
+          <li><button class="rail-item" type="button" data-index="4" aria-pressed="false"><span class="rail-name">Biblioteca</span><span class="rail-state">Disponível</span></button></li>
           <li aria-hidden="true"><div class="rail-progress"><span id="railProgress"></span></div></li>
         </ol>
         <div class="modules-stage" id="modulesStage">
@@ -981,9 +981,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     </div>
 
     <div class="steps-strip" style="margin-bottom:var(--gap-xl)">
-      <div class="step-item"><span class="num">01</span><b>Diagnóstico de 2 minutos</b><small>3 perguntas adaptadas ao seu perfil revelam o que trava o seu negócio.</small></div>
-      <div class="step-item"><span class="num">02</span><b>E-book de presente</b><small>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</small></div>
-      <div class="step-item"><span class="num">03</span><b>Biblioteca e ferramentas</b><small>Com o diagnóstico na mão, escolha o seu e-book e use as ferramentas.</small></div>
+      <div class="step-item"><b>Diagnóstico de 2 minutos</b><small>3 perguntas adaptadas ao seu perfil revelam o que trava o seu negócio.</small></div>
+      <div class="step-item"><b>E-book de presente</b><small>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</small></div>
+      <div class="step-item"><b>Biblioteca e ferramentas</b><small>Com o diagnóstico na mão, escolha o seu e-book e use as ferramentas.</small></div>
     </div>
 
     <div class="console" id="console" data-od-id="console-diagnostico">
@@ -1081,10 +1081,10 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       <h2>Quatro decisões.</h2>
     </div>
     <div class="why">
-      <div class="why-item reveal"><span class="wn num">01</span><div><h3>Código próprio, leve e rápido</h3><p>Sem dependências e sem servidor: as calculadoras rodam no navegador, abrem direto e, depois do primeiro acesso, seguem funcionando offline.</p></div></div>
-      <div class="why-item reveal"><span class="wn num">02</span><div><h3>Feito para crescer junto</h3><p>Mesma base do primeiro cliente aos milhares. Cresce sem ter que refazer tudo do zero.</p></div></div>
-      <div class="why-item reveal"><span class="wn num">03</span><div><h3>Detalhe que você nota</h3><p>Tipografia, espaçamento e cores definidos por tokens: o mesmo layout em todos os módulos, sem retrabalho de estilo a cada tela.</p></div></div>
-      <div class="why-item reveal"><span class="wn num">04</span><div><h3>Gente de verdade</h3><p>Resposta pelo WhatsApp: você fala direto com quem mantém o produto, sem fila de chat automático.</p></div></div>
+      <div class="why-item reveal"><div><h3>Código próprio, leve e rápido</h3><p>Sem dependências e sem servidor: as calculadoras rodam no navegador, abrem direto e, depois do primeiro acesso, seguem funcionando offline.</p></div></div>
+      <div class="why-item reveal"><div><h3>Feito para crescer junto</h3><p>Mesma base do primeiro cliente aos milhares. Cresce sem ter que refazer tudo do zero.</p></div></div>
+      <div class="why-item reveal"><div><h3>Detalhe que você nota</h3><p>Tipografia, espaçamento e cores definidos por tokens: o mesmo layout em todos os módulos, sem retrabalho de estilo a cada tela.</p></div></div>
+      <div class="why-item reveal"><div><h3>Gente de verdade</h3><p>Resposta pelo WhatsApp: você fala direto com quem mantém o produto, sem fila de chat automático.</p></div></div>
     </div>
   </div>
 </section>
