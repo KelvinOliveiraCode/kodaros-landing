@@ -358,6 +358,24 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 .tool-panel p{color:var(--muted);margin:0 0 var(--gap-md);max-width:52ch}
 .tool-count{font-family:var(--font-mono);font-size:clamp(40px,5vw,64px);color:var(--accent);line-height:1;letter-spacing:-.03em}
 
+/* ── mostruário ─────────────────────────────────────────────────── */
+.shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg);margin-bottom:var(--gap-xl)}
+.shot{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease)}
+.shot:hover{border-color:var(--border-strong);transform:translateY(-4px);background:var(--surface-2)}
+.shot-cover{display:block;aspect-ratio:16/10;overflow:hidden;background:color-mix(in oklch,var(--bg) 70%,transparent)}
+.shot-cover img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s var(--ease)}
+.shot:hover .shot-cover img{transform:scale(1.04)}
+.shot-body{padding:18px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.shot-cat{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.shot-name{font-family:var(--font-display);font-size:19px;font-weight:400;line-height:1.25;margin:0}
+.shot-niche{font-size:12.5px;color:var(--muted);margin:0;flex:1}
+.shot-more{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--border);margin-top:4px}
+.shot-more span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.shot-more b{font-size:13px;color:var(--accent);font-weight:600}
+.shot-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:6px}
+.shot-foot .fineprint{margin:0}
+.shot-cta{display:flex;gap:var(--gap-sm);flex-wrap:wrap}
+
 /* ── diferenciais ──────────────────────────────────────────────── */
 .why{border-top:1px solid var(--border-strong)}
 .why-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--border)}
@@ -472,6 +490,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
   .module{position:static;opacity:1;transform:none;visibility:visible;grid-template-columns:1fr;gap:22px;padding-top:26px;border-top:1px solid var(--border)}
   .module-media img{max-height:300px}
   .books{grid-template-columns:repeat(2,1fr)}
+  .shot-grid{grid-template-columns:repeat(2,1fr)}
   .grid-2-1,.grid-1-2,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
   .tool-panel{grid-template-columns:1fr}
   .profiles,.recs,.steps-strip{grid-template-columns:1fr}
@@ -483,6 +502,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.0
 }
 @media(max-width:640px){
   .books{grid-template-columns:1fr}
+  .shot-grid{grid-template-columns:1fr}
   .testis{grid-template-columns:1fr}
   .wa-float{right:16px;bottom:16px;width:52px;height:52px}
   .telemetry dt{font-size:20px}
@@ -540,8 +560,9 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <nav aria-label="Seções do site">
       <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
       <a href="#biblioteca"><span class="idx">02</span>Biblioteca</a>
-      <a href="#diagnostico"><span class="idx">03</span>Diagnóstico</a>
-      <a href="#duvidas"><span class="idx">04</span>Dúvidas</a>
+      <a href="#mostruario"><span class="idx">03</span>Mostruário</a>
+      <a href="#diagnostico"><span class="idx">04</span>Diagnóstico</a>
+      <a href="#duvidas"><span class="idx">05</span>Dúvidas</a>
     </nav>
     <div class="topnav-actions">
       
@@ -560,10 +581,11 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
     <a href="#modulos"><span class="idx">01</span>Ecossistema</a>
     <a href="#kodagrid"><span class="idx">02</span>KodaGrid</a>
     <a href="#biblioteca"><span class="idx">03</span>Biblioteca</a>
-    <a href="#diagnostico"><span class="idx">04</span>Diagnóstico</a>
-    <a href="#ferramentas"><span class="idx">05</span>Ferramentas</a>
-    <a href="#duvidas"><span class="idx">06</span>Dúvidas</a>
-    <a href="#contato"><span class="idx">07</span>Contato</a>
+    <a href="#mostruario"><span class="idx">04</span>Mostruário</a>
+    <a href="#diagnostico"><span class="idx">05</span>Diagnóstico</a>
+    <a href="#ferramentas"><span class="idx">06</span>Ferramentas</a>
+    <a href="#duvidas"><span class="idx">07</span>Dúvidas</a>
+    <a href="#contato"><span class="idx">08</span>Contato</a>
   </nav>
   <div class="drawer-actions">
     <a class="btn btn-primary" href="#diagnostico">Começar meu diagnóstico</a>
@@ -655,13 +677,16 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
             <div class="module-body">
               <div class="module-meta"><span class="pill">Sob encomenda</span></div>
               <h3>Sites</h3>
-              <p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender o seu produto ou serviço.</p>
+              <p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender o seu produto ou serviço. Comece vendo referências reais no mostruário.</p>
               <ul class="module-facts">
                 <li><span>Entregas</span><b>Institucional · Landing · Portfólio</b></li>
                 <li><span>Inclui</span><b>Mobile-first, SEO e tags sociais</b></li>
                 <li><span>Prazo</span><b>Definido no orçamento</b></li>
               </ul>
-              <a class="btn btn-secondary btn-arrow" href="mailto:kodaros01@gmail.com?subject=Or%C3%A7amento%20%E2%80%94%20Site%20KODAROS&amp;body=Ol%C3%A1%2C%20equipe%20KODAROS!%0A%0AQuero%20um%20or%C3%A7amento%20para%20um%20site.%0A%0ATipo%20(institucional%20%2F%20landing%20%2F%20portf%C3%B3lio)%3A%0ARefer%C3%AAncias%3A%0A">Pedir orçamento de site</a>
+              <div style="display:flex;gap:var(--gap-sm);flex-wrap:wrap">
+                <a class="btn btn-primary btn-arrow" href="#mostruario">Ver referências</a>
+                <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener">Mostruário completo</a>
+              </div>
             </div>
           </article>
 
@@ -900,6 +925,52 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
   </div>
 </section>
 
+<!-- ═══ MOSTRUÁRIO ═══ -->
+<section class="section" id="mostruario" data-od-id="mostruario">
+  <div class="container">
+    <div style="max-width:52ch;margin-bottom:var(--gap-xl)">
+      <p class="eyebrow eyebrow-accent">Mostruário</p>
+      <h2>Gosta de um destes?</h2>
+      <p class="lead" style="margin-top:16px">50 modelos de sites, feitos para se sentir como se fossem empresas de verdade, cada um com a sua identidade. Use como referência e peça um seu, do seu jeito.</p>
+    </div>
+
+    <div class="shot-grid">
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#atelie-lumina" target="_blank" rel="noopener" data-od-id="shot-atelie-lumina">
+        <span class="shot-cover"><img src="./mostruario-covers/atelie-lumina.webp" alt="Prévia do projeto Ateliê Lúmina" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Beleza</span><span class="shot-name">Ateliê Lúmina</span><span class="shot-niche">Cabelo e coloração</span><span class="shot-more"><span>Corte e cor com ficha técnica do seu fio</span><b>Ver →</b></span></span>
+      </a>
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#casa-boa" target="_blank" rel="noopener" data-od-id="shot-casa-boa">
+        <span class="shot-cover"><img src="./mostruario-covers/casa-boa.webp" alt="Prévia do projeto Casa Boa" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Alimentação</span><span class="shot-name">Casa Boa</span><span class="shot-niche">Restaurante brasileiro</span><span class="shot-more"><span>Cozinha brasileira de forno a lenha</span><b>Ver →</b></span></span>
+      </a>
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#dente-novo" target="_blank" rel="noopener" data-od-id="shot-dente-novo">
+        <span class="shot-cover"><img src="./mostruario-covers/dente-novo.webp" alt="Prévia do projeto Dente Novo" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Saúde</span><span class="shot-name">Dente Novo</span><span class="shot-niche">Odontologia</span><span class="shot-more"><span>Clínica odontológica com tabela de procedimento</span><b>Ver →</b></span></span>
+      </a>
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#madeira-viva" target="_blank" rel="noopener" data-od-id="shot-madeira-viva">
+        <span class="shot-cover"><img src="./mostruario-covers/madeira-viva.webp" alt="Prévia do projeto Madeira Viva" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Construção</span><span class="shot-name">Madeira Viva</span><span class="shot-niche">Marcenaria sob medida</span><span class="shot-more"><span>Móveis sob medida em madeira maciça</span><b>Ver →</b></span></span>
+      </a>
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#prisma-curso" target="_blank" rel="noopener" data-od-id="shot-prisma-curso">
+        <span class="shot-cover"><img src="./mostruario-covers/prisma-curso.webp" alt="Prévia do projeto Prisma" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Educação</span><span class="shot-name">Prisma</span><span class="shot-niche">Curso online de design</span><span class="shot-more"><span>Design de produto em oito módulos</span><b>Ver →</b></span></span>
+      </a>
+      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#saraiva-prado" target="_blank" rel="noopener" data-od-id="shot-saraiva-prado">
+        <span class="shot-cover"><img src="./mostruario-covers/saraiva-prado.webp" alt="Prévia do projeto Saraiva Prado" loading="lazy"></span>
+        <span class="shot-body"><span class="shot-cat">Serviços</span><span class="shot-name">Saraiva Prado</span><span class="shot-niche">Advocacia</span><span class="shot-more"><span>Advocacia trabalhista e acidentes de trabalho</span><b>Ver →</b></span></span>
+      </a>
+    </div>
+
+    <div class="shot-foot">
+      <p class="fineprint">Prévias reproduzidas do mostruário. São empresas de exemplo — o site que pedimos para você tem o seu nome, seus serviços e os seus preços.</p>
+      <div class="shot-cta">
+        <a class="btn btn-primary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener" data-od-id="cta-mostruario-ver">Ver os 50 no mostruário</a>
+        <a class="btn btn-ghost btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Vi%20o%20mostru%C3%A1rio%20da%20KODAROS%20e%20quero%20um%20site%20nesse%20estilo." target="_blank" rel="noopener">Quero um site assim</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ DIAGNÓSTICO ═══ -->
 <section class="section" id="diagnostico" data-od-id="diagnostico">
   <div class="container">
@@ -1052,6 +1123,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       <details><summary>O KodaGrid funciona sem internet?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel.</p></details>
       <details><summary>Quais formas de pagamento a Hotmart aceita?<span class="faq-mark" aria-hidden="true"></span></summary><p>Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão.</p></details>
       <details><summary>E se eu me arrepender da compra?<span class="faq-mark" aria-hidden="true"></span></summary><p>A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá.</p></details>
+      <details><summary>Os sites do mostruário são de empresas reais?<span class="faq-mark" aria-hidden="true"></span></summary><p>Não. São 50 exemplos feitos para mostrar o padrão: cada um tem nome, setor e identidade próprios, mas as empresas não existem. Quando você encomenda um site, ele nasce com o seu nome, seus serviços e os seus preços.</p></details>
     </div>
   </div>
 </section>
@@ -1097,6 +1169,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           <li><a href="#modulos">Ecossistema</a></li>
           <li><a href="#kodagrid">KodaGrid</a></li>
           <li><a href="#biblioteca">Biblioteca</a></li>
+          <li><a href="#mostruario">Mostruário</a></li>
           <li><a href="#diagnostico">Diagnóstico</a></li>
           <li><a href="#ferramentas">Ferramentas</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
@@ -1222,7 +1295,7 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
           if (map[en.target.id]) map[en.target.id].classList.add('is-current');
         });
       }, { rootMargin: '-45% 0px -50% 0px' });
-      ['modulos', 'biblioteca', 'diagnostico', 'duvidas'].forEach(function (id) {
+      ['modulos', 'biblioteca', 'mostruario', 'diagnostico', 'duvidas'].forEach(function (id) {
         var s = document.getElementById(id); if (s) io.observe(s);
       });
     }
@@ -1614,6 +1687,8 @@ html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
       { k: 'Seção', l: 'Ecossistema', h: '#modulos' },
       { k: 'Seção', l: 'KodaGrid', h: '#kodagrid' },
       { k: 'Seção', l: 'Biblioteca de e-books', h: '#biblioteca' },
+      { k: 'Seção', l: 'Mostruário — 50 referências de site', h: '#mostruario' },
+      { k: 'Site', l: 'Abrir o mostruário completo', u: 'https://kelvinoliveiracode.github.io/kodaros-mostruario/' },
       { k: 'Seção', l: 'Diagnóstico gratuito', h: '#diagnostico' },
       { k: 'Seção', l: 'Ferramentas', h: '#ferramentas' },
       { k: 'Seção', l: 'Perguntas frequentes', h: '#duvidas' },
