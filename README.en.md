@@ -18,11 +18,11 @@ In production. Published at <https://kelvinoliveiracode.github.io/kodaros-landin
 
 - **Showcase of 8 e-books** sold through Hotmart, filterable by level (beginner / intermediate / advanced), with a detail view.
 - **Interactive diagnostic** (quiz): asks about the business profile and runs 3 tailored questions; at the end it reveals the result, offers the `do-zero-ao-patrimonio.pdf` e-book (42 pages) for free, and suggests the best-matching offer.
-- **Service sections**: Software & Apps, Websites, Videos and Ads, Tools and Library, each with a buy CTA and WhatsApp.
-- **KodaGrid**: a dedicated section for the spreadsheet builder with live formulas for Windows (offline), with a purchase link.
+- Service sections: Software & Apps, Websites, Videos and Ads, Tools and Library, each with a buy CTA and WhatsApp.
+- KodaGrid: a dedicated section for the spreadsheet builder with live formulas for Windows (offline), with a purchase link.
 - **Contact form** and a floating WhatsApp button.
 - **Light/dark mode** and a theme palette persisted via `localStorage`.
-- **SEO**: `sitemap.xml`, `robots.txt`, Open Graph, Twitter Cards, JSON-LD (Organization and FAQPage) and a canonical link.
+- SEO: `sitemap.xml`, `robots.txt`, Open Graph, Twitter Cards, JSON-LD (Organization and FAQPage) and a canonical link.
 - **PWA manifest** (`site.webmanifest`) with 192/512 icons and a dark theme. (The page registers no service worker; it is only installable as a shortcut.)
 
 ## Architecture
@@ -49,7 +49,7 @@ flowchart LR
 
 ## Repository layout
 
-```
+```text
 kodaros-landing/
 ├── index.html          # full landing (structure + inline CSS)
 ├── script.js           # logic: library, quiz, theme, contact
@@ -84,9 +84,9 @@ There are no automated tests in this repository (the absence of a test folder an
 
 ## Technical decisions and trade-offs
 
-- **A single HTML with inline CSS instead of separate assets**: fewer requests and simpler deployment on static hosting; the trade-off is a large file (~129 KB).
-- **Browser-side interaction with no backend**: the quiz and the showcase depend on no server. The final conversion happens on Hotmart, which processes payment and delivery.
-- **Duplicated WebP/PNG**: each artwork ships a `.webp` (light) version and a `.png`/`.jpg` (fallback), a manual choice for compatibility.
+- A single HTML with inline CSS instead of separate assets: fewer requests and simpler deployment on static hosting; the trade-off is a large file (~129 KB).
+- Browser-side interaction with no backend: the quiz and the showcase depend on no server. The final conversion happens on Hotmart, which processes payment and delivery.
+- Duplicated WebP/PNG: each artwork ships a `.webp` (light) version and a `.png`/`.jpg` (fallback), a manual choice for compatibility.
 
 ## Known limitations and roadmap
 

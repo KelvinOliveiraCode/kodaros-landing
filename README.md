@@ -18,11 +18,11 @@ Em produção. Publicada em <https://kelvinoliveiracode.github.io/kodaros-landin
 
 - **Vitrine de 8 e-books** vendidos via Hotmart, com filtro por nível (iniciante / intermediário / avançado) e página de detalhe.
 - **Diagnóstico interativo** (quiz): pergunta o perfil do negócio e aplica 3 perguntas adaptadas; ao final revela o resultado e oferece o e-book brinde `do-zero-ao-patrimonio.pdf` (42 páginas) grátis, além de sugerir a oferta mais aderente.
-- **Seções de serviços**: Softwares & Apps, Sites, Vídeos e Propagandas, Ferramentas e Biblioteca, com CTA de compra e WhatsApp.
-- **KodaGrid**: seção dedicada ao construtor de planilhas com fórmulas para Windows (offline), com link de compra.
+- Seções de serviços: Softwares & Apps, Sites, Vídeos e Propagandas, Ferramentas e Biblioteca, com CTA de compra e WhatsApp.
+- KodaGrid: seção dedicada ao construtor de planilhas com fórmulas para Windows (offline), com link de compra.
 - **Formulário de contato** e botão flutuante de WhatsApp.
 - **Modo claro/escuro** e paleta de temas com persistência via `localStorage`.
-- **SEO**: `sitemap.xml`, `robots.txt`, Open Graph, Twitter Cards, JSON-LD (Organization e FAQPage) e link canônico.
+- SEO: `sitemap.xml`, `robots.txt`, Open Graph, Twitter Cards, JSON-LD (Organization e FAQPage) e link canônico.
 - **PWA manifest** (`site.webmanifest`) com ícones 192/512 e tema escuro. (A página não registra service worker; é instalável apenas como atalho.)
 
 ## Arquitetura
@@ -49,7 +49,7 @@ flowchart LR
 
 ## Estrutura do repositório
 
-```
+```text
 kodaros-landing/
 ├── index.html          # landing completa (estrutura + CSS embutido)
 ├── script.js           # lógica: biblioteca, quiz, tema, contato
@@ -84,9 +84,9 @@ Não há testes automatizados neste repositório (ausência de pasta de testes e
 
 ## Decisões técnicas e trade-offs
 
-- **Um único HTML com CSS embutido em vez de assets separados**: reduz requisições e simplifica deploy em hospedagem estática; em troca, o arquivo fica grande (~129 KB).
-- **Interação no navegador sem backend**: o quiz e a vitrine não dependem de servidor. A conversão final acontece na Hotmart, que processa pagamento e entrega.
-- **WebP/png duplicados**: cada arte tem versão `.webp` (leve) e `.png/.jpg` (fallback), escolha manual para compatibilidade.
+- Um único HTML com CSS embutido em vez de assets separados: reduz requisições e simplifica deploy em hospedagem estática; em troca, o arquivo fica grande (~129 KB).
+- Interação no navegador sem backend: o quiz e a vitrine não dependem de servidor. A conversão final acontece na Hotmart, que processa pagamento e entrega.
+- WebP/png duplicados: cada arte tem versão `.webp` (leve) e `.png/.jpg` (fallback), escolha manual para compatibilidade.
 
 ## Limitações conhecidas e roadmap
 
