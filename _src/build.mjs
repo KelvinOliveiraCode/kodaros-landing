@@ -235,7 +235,7 @@ function header(base, active) {
 <header class="topnav" id="topnav">
   <div class="container nav-inner">
     <a class="brand" href="${url(base, "index.html")}" aria-label="KODAROS, início">
-      <img src="${asset(base, "bust.webp")}" alt="" width="38" height="38">
+      <img src="${asset(base, "img/kodaros-icon.webp")}" alt="" width="38" height="38">
       <span class="brand-name">KODAROS</span>
     </a>
     <nav class="nav-links" aria-label="Principal">
@@ -270,7 +270,7 @@ function footer(base) {
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="${asset(base, "kodaros-icon.webp")}" alt="KODAROS" width="64" height="64">
+        <img src="${asset(base, "img/kodaros-icon.webp")}" alt="KODAROS" width="64" height="64">
         <p>Tecnologia, conteúdo e engenharia. Sites, automações, agentes, sistemas e software sob medida.</p>
         <div class="social">
         ${socialLinks}
@@ -1324,6 +1324,7 @@ O domínio usado no sitemap é \`https://kodaros.com.br\`. Troque essa constante
 `);
 
 console.log("Build concluído.");
+
 
 
 
