@@ -3,1792 +3,493 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KODAROS: Softwares, sites, vídeos e conteúdo para escalar</title>
-<meta name="description" content="Softwares, sites, vídeos, e-books e ferramentas que rodam no navegador, mais um diagnóstico gratuito de 2 minutos para o seu negócio.">
+<title>KODAROS · Tecnologia, conteúdo e engenharia</title>
+<meta name="description" content="Sites, landing pages, automações, bots, agentes de IA, sistemas sob medida e software. Código publicado, produto no ar e número verificável.">
+<meta name="theme-color" content="#070709">
+<link rel="icon" type="image/png" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<link rel="canonical" href="https://kelvinoliveiracode.github.io/kodaros-landing/">
-<meta property="og:title" content="KODAROS: Plataforma">
-<meta property="og:description" content="Softwares, biblioteca e ferramentas para o seu negócio.">
-<meta property="og:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
-<meta property="og:url" content="https://kelvinoliveiracode.github.io/kodaros-landing/">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="KODAROS">
+<meta property="og:title" content="KODAROS · Tecnologia, conteúdo e engenharia">
+<meta property="og:description" content="Sites, landing pages, automações, bots, agentes de IA, sistemas sob medida e software. Código publicado, produto no ar e número verificável.">
+<meta property="og:image" content="assets/img/kodaros_og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://kelvinoliveiracode.github.io/kodaros-landing/kodaros_og.jpg">
-<meta name="theme-color" content="#070709">
-<link rel="icon" type="image/png" href="./favicon-192.png">
-<link rel="apple-touch-icon" href="./favicon-180.png">
-<link rel="manifest" href="./site.webmanifest">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"KODAROS","url":"https://kelvinoliveiracode.github.io/kodaros-landing/","logo":"https://kelvinoliveiracode.github.io/kodaros-landing/favicon-512.png","sameAs":["https://www.instagram.com/kodaros01"]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O diagnóstico KODAROS é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada."}},{"@type":"Question","name":"Como recebo os e-books depois de comprar?","acceptedAnswer":{"@type":"Answer","text":"A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício."}},{"@type":"Question","name":"O KodaGrid funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel."}},{"@type":"Question","name":"Quais formas de pagamento a Hotmart aceita?","acceptedAnswer":{"@type":"Answer","text":"Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão."}},{"@type":"Question","name":"E se eu me arrepender da compra?","acceptedAnswer":{"@type":"Answer","text":"A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá."}}]}
-</script>
-<style>
-/* ══════════════════════════════════════════════════════════════════
-   KODAROS v2 · "Console": tokens extraídos do brand source atual
-   (index.html v1) e convertidos para OKLch. Sem hex solto fora daqui.
-   ══════════════════════════════════════════════════════════════════ */
-:root{
-  --bg:      oklch(0.1297 0.005 285.67);   /* #070709 obsidiana */
-  --surface: oklch(0.1652 0.0062 285.70);  /* #0E0E11 basalto   */
-  --fg:      oklch(0.9445 0.0091 78.28);   /* #F0ECE6 tinta     */
-  --muted:   oklch(0.6687 0.0161 80.68);   /* #9A948A secund.   */
-  --border:  oklch(0.9445 0.0091 78.28 / 0.13);
-  --accent:  oklch(0.7721 0.0976 82.03);   /* #D4AF6A ouro      */
-  --accent-lift: oklch(0.851 0.0708 77.91);  /* #E8C99A ouro claro */
-
-  --accent-soft:  color-mix(in oklch, var(--accent) 13%, transparent);
-  --accent-hair:  color-mix(in oklch, var(--accent) 30%, transparent);
-  --fg-soft:      color-mix(in oklch, var(--fg) 6%, transparent);
-  --grid-line:    color-mix(in oklch, var(--fg) 4%, transparent);
-  --surface-2:    color-mix(in oklch, var(--fg) 3.5%, var(--surface));
-  --border-strong:color-mix(in oklch, var(--fg) 26%, transparent);
-  --ink:          color-mix(in oklch, var(--accent) 12%, var(--bg));
-
-  --paper:     oklch(0.9254 0.0264 90.10);
-  --paper-ink: oklch(0.1987 0.0116 73.24);
-  --paper-dim: oklch(0.4517 0.0252 85.94);
-  --paper-hair:oklch(0.1987 0.0116 73.24 / 0.18);
-  --paper-gold:oklch(0.4506 0.0798 77.24);
-
-  --wa-bg:   oklch(0.3211 0.0438 159.19);
-  --wa-fg:   oklch(0.8058 0.1363 149.46);
-  --wa-hair: oklch(0.8058 0.1363 149.46 / 0.42);
-
-  --font-display:'Instrument Serif','Iowan Old Style',Charter,Georgia,'Times New Roman',serif;
-  --font-body:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
-
-  --fs-h1:clamp(40px,6.4vw,74px);
-  --fs-h2:clamp(30px,4vw,48px);
-  --fs-h3:22px;
-  --fs-lead:19px;
-  --fs-body:16px;
-  --fs-meta:13px;
-
-  --gap-xs:8px;--gap-sm:12px;--gap-md:20px;--gap-lg:32px;--gap-xl:56px;--gap-2xl:104px;
-  --container:1180px;--gutter:28px;
-  --radius:10px;--radius-lg:16px;
-  --ease:cubic-bezier(.22,1,.36,1);
-  --nav-h:66px;
-}
-
-/* ── reset / base ───────────────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px);scrollbar-color:color-mix(in oklch,var(--accent) 40%,transparent) var(--bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:var(--fs-body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(to right,var(--grid-line) 1px,transparent 1px),linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);
-  background-size:76px 76px;background-position:center top;
-  -webkit-mask-image:radial-gradient(ellipse 120% 60% at 50% 0%,var(--fg) 0%,transparent 72%);
-  mask-image:radial-gradient(ellipse 120% 60% at 50% 0%,var(--fg) 0%,transparent 72%)}
-main{position:relative;z-index:0}
-body.is-locked{overflow:hidden}
-img{display:block;max-width:100%;height:auto}
-svg{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
-p{text-wrap:pretty}h1,h2,h3,h4{text-wrap:balance}
-::selection{background:var(--accent);color:var(--bg)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-
-/* ── layout ─────────────────────────────────────────────────────── */
-.container{max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter);width:100%}
-.section{padding-block:clamp(60px,8vw,var(--gap-2xl));position:relative}
-.section+.section{border-top:1px solid var(--border)}
-.stack{display:flex;flex-direction:column}
-.stack>*+*{margin-top:var(--gap-md)}
-.row{display:flex;align-items:center;gap:var(--gap-md)}
-.row-between{display:flex;align-items:center;justify-content:space-between;gap:var(--gap-md)}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-lg)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg)}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-md)}
-.grid-2-1{display:grid;grid-template-columns:2fr 1fr;gap:var(--gap-xl);align-items:start}
-.grid-1-2{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap-xl);align-items:start}
-
-/* ── type ───────────────────────────────────────────────────────── */
-h1,.h1{font-family:var(--font-display);font-size:var(--fs-h1);line-height:1.02;letter-spacing:-.022em;font-weight:400;margin:0}
-h2,.h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.016em;font-weight:400;margin:0}
-h3,.h3{font-size:var(--fs-h3);font-weight:600;line-height:1.3;letter-spacing:-.006em;margin:0}
-.lead{font-size:var(--fs-lead);line-height:1.55;color:var(--muted);max-width:58ch;margin:0}
-.eyebrow{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 var(--gap-md);font-weight:500}
-.eyebrow-accent{color:var(--accent)}
-.meta{font-family:var(--font-mono);font-size:var(--fs-meta);color:var(--muted);letter-spacing:.02em}
-.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.fineprint{font-size:.76rem;color:var(--muted);margin:0}
-.rule{height:1px;background:var(--border);border:0;margin:0}
-
-/* ── chrome: topnav + drawer ───────────────────────────────────── */
-.topnav{position:fixed;top:0;left:0;right:0;z-index:96;height:var(--nav-h);
-  background:color-mix(in oklch,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.2);
-  -webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--border);
-  transition:background .3s var(--ease)}
-.topnav.is-scrolled{background:color-mix(in oklch,var(--bg) 95%,transparent)}
-.topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--gap-md);height:var(--nav-h)}
-.logo{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-size:21px;letter-spacing:.02em;line-height:1}
-.logo-mark{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:44% 34%;border:1px solid var(--accent-hair);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 8%,transparent)}
-.topnav nav{display:flex;gap:var(--gap-lg);align-items:center}
-.topnav nav a{font-size:13.5px;color:var(--muted);transition:color .18s var(--ease)}
-
-.topnav nav a:hover{color:var(--fg)}
-
-.topnav nav a.is-current{color:var(--fg)}
-
-.topnav-actions{display:flex;align-items:center;gap:var(--gap-sm)}
-.kbd-hint{font-family:var(--font-mono);font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:4px 7px;line-height:1;transition:color .18s var(--ease),border-color .18s var(--ease)}
-.kbd-hint:hover{color:var(--fg);border-color:var(--border-strong)}
-.nav-burger{display:none;width:44px;height:44px;border:1px solid var(--border);border-radius:var(--radius);align-items:center;justify-content:center;flex-direction:column;gap:5px}
-.nav-burger span{display:block;width:18px;height:1.5px;background:var(--fg);transition:transform .25s var(--ease),opacity .2s var(--ease)}
-.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(3.25px) rotate(45deg)}
-.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-3.25px) rotate(-45deg)}
-.scroll-rail{position:fixed;top:var(--nav-h);left:0;right:0;height:2px;z-index:91;background:transparent;pointer-events:none}
-.scroll-rail span{display:block;height:100%;width:0;background:var(--accent);transition:width .12s linear}
-.drawer{position:fixed;inset:0;z-index:95;background:color-mix(in oklch,var(--bg) 97%,transparent);
-  padding:calc(var(--nav-h) + 28px) var(--gutter) 40px;display:flex;flex-direction:column;gap:var(--gap-lg);
-  opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s}
-.drawer.is-open{opacity:1;visibility:visible;transform:none}
-.drawer nav{display:flex;flex-direction:column}
-.drawer nav a{font-family:var(--font-display);font-size:30px;padding:14px 0;border-bottom:1px solid var(--border)}
-
-.drawer-actions{display:flex;flex-direction:column;gap:12px;margin-top:auto}
-
-/* ── botões ─────────────────────────────────────────────────────── */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 22px;
-  border-radius:var(--radius);border:1px solid transparent;font-size:15px;font-weight:600;letter-spacing:-.005em;
-  transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease)}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.btn-primary:hover{background:color-mix(in oklch,var(--accent) 86%,black);border-color:color-mix(in oklch,var(--accent) 86%,black)}
-.btn-secondary{background:transparent;color:var(--fg);border-color:var(--border-strong)}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-.btn-ghost{background:transparent;color:var(--muted);border-color:transparent;padding-inline:8px}
-.btn-ghost:hover{color:var(--fg)}
-.btn-arrow::after{content:"→";transition:transform .16s var(--ease)}
-.btn-arrow:hover::after{transform:translateX(3px)}
-.btn-wa{background:var(--wa-bg);color:var(--wa-fg);border-color:var(--wa-hair)}
-.btn-wa:hover{background:color-mix(in oklch,var(--wa-bg) 80%,black)}
-
-/* ── superfícies ────────────────────────────────────────────────── */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px}
-.card-flat{background:transparent;border:0;padding:0}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--accent-soft);color:var(--accent-lift);
-  border-radius:999px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
-.tag{display:inline-flex;align-items:center;padding:4px 10px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:999px;font-size:12px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--border);padding:5px 10px;border-radius:6px}
-.content-img{display:block;max-width:100%;max-height:min(70vh,720px);width:auto;height:auto;object-fit:contain;border-radius:var(--radius-lg)}
-
-/* ── boot ───────────────────────────────────────────────────────── */
-.boot{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;opacity:0;visibility:hidden;
-  transition:opacity .55s var(--ease),visibility .55s}
-.boot.is-on{opacity:1;visibility:visible}
-.boot-inner{width:min(420px,84vw);text-align:center}
-.boot-mark{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;object-fit:cover;object-position:44% 34%;
-  border:1px solid var(--accent-hair);box-shadow:0 0 0 8px color-mix(in oklch,var(--accent) 6%,transparent),0 20px 50px rgba(0,0,0,.6);
-  animation:bootRise .9s var(--ease) both}
-.boot-name{font-family:var(--font-display);font-size:30px;letter-spacing:.34em;text-indent:.34em;color:var(--fg);margin-bottom:26px}
-.boot-bar{height:2px;background:var(--border);overflow:hidden}
-.boot-bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s var(--ease)}
-.boot-readout{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.boot-readout .num{color:var(--accent)}
-@keyframes bootRise{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
-
-/* ── hero ───────────────────────────────────────────────────────── */
-.hero{position:relative;padding-block:calc(var(--nav-h) + clamp(40px,7vw,84px)) clamp(48px,6vw,80px);overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-1;background:url('./bg-salao.webp') center 32%/cover no-repeat}
-.hero-bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(100deg,color-mix(in oklch,var(--bg) 96%,transparent) 0%,color-mix(in oklch,var(--bg) 88%,transparent) 38%,color-mix(in oklch,var(--bg) 72%,transparent) 68%,var(--bg) 100%),
-             linear-gradient(to bottom,color-mix(in oklch,var(--bg) 70%,transparent),var(--bg) 88%)}
-.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
-.hero h1{margin-bottom:var(--gap-md);max-width:15ch}
-.hero .lead{margin-bottom:var(--gap-lg)}
-.hero-cta{display:flex;gap:var(--gap-sm);flex-wrap:wrap;margin-bottom:var(--gap-xl)}
-.telemetry{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.telemetry div{background:var(--bg);padding:16px 14px}
-.telemetry dt{font-family:var(--font-mono);font-size:22px;color:var(--accent);line-height:1.1;margin-bottom:6px;letter-spacing:-.02em}
-.telemetry dd{margin:0;font-size:12.5px;color:var(--muted);line-height:1.4}
-.status-list{list-style:none;margin:0;padding:0}
-.status-list a{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border);transition:background .18s var(--ease)}
-.status-list a:last-child{border-bottom:0}
-.status-list a:hover{background:var(--surface-2)}
-
-.status-list .s-name{font-size:15px;font-weight:600}
-.status-list .s-state{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:right}
-.status-list .s-state[data-state="on"]{color:var(--accent)}
-@keyframes scrollCue{0%,100%{opacity:.25;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
-
-/* ── módulos (scroll fixado) ───────────────────────────────────── */
-.modules{height:370vh;padding:0;background:var(--bg)}
-.modules-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;padding-block:calc(var(--nav-h) + 18px) 18px}
-.modules-head{margin-bottom:var(--gap-lg)}
-.modules-head h2{font-size:clamp(28px,3.2vw,40px)}
-.modules-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(24px,3.4vw,52px);align-items:stretch}
-.modules-rail{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border)}
-.rail-item{width:100%;display:block;text-align:left;
-  padding:15px 4px;border-bottom:1px solid var(--border);color:var(--muted);transition:color .2s var(--ease),padding-left .2s var(--ease)}
-
-.rail-item .rail-name{font-size:16px;font-weight:600;color:var(--fg)}
-.rail-item .rail-state{display:block;margin-top:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.rail-item:hover{color:var(--fg);padding-left:8px}
-.rail-item.is-active{color:var(--fg);padding-left:8px}
-
-.rail-item.is-active .rail-name{color:var(--accent)}
-.rail-progress{height:2px;background:var(--border);margin-top:14px}
-.rail-progress span{display:block;height:100%;width:20%;background:var(--accent);transition:width .25s var(--ease)}
-.modules-stage{position:relative;min-height:clamp(380px,52vh,520px)}
-.module{position:absolute;inset:0;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3vw,44px);align-items:center;
-  opacity:0;transform:translateY(16px);visibility:hidden;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility .45s}
-.module.is-active{opacity:1;transform:none;visibility:visible}
-.module-media{display:flex;align-items:center;justify-content:center;min-height:0}
-.module-media img{max-height:min(46vh,380px);width:auto;height:auto;object-fit:contain;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.5)}
-.module-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.module-meta .m-idx{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
-.module-body h3{font-family:var(--font-display);font-size:clamp(26px,2.8vw,36px);font-weight:400;margin-bottom:12px}
-.module-body>p{color:var(--muted);margin:0 0 var(--gap-md);max-width:46ch}
-.module-facts{list-style:none;margin:0 0 var(--gap-lg);padding:0;border-top:1px solid var(--border)}
-.module-facts li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--muted)}
-.module-facts b{color:var(--fg);font-weight:600;text-align:right}
-.browser{width:100%;border:1px solid var(--border-strong);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
-.browser-bar{display:flex;align-items:center;gap:7px;padding:10px 13px;border-bottom:1px solid var(--border);background:var(--surface-2)}
-.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--border-strong);display:block}
-.browser-bar i:first-child{background:var(--accent)}
-.browser-url{flex:1;margin-left:9px;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.browser-shot{display:block;width:100%;height:auto}
-.module-cases{display:flex;flex-direction:column;gap:10px;width:100%;max-width:380px}
-.module-case{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
-.module-case span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.module-case b{font-size:14px;font-weight:600}
-.bookstack{display:flex;gap:12px;align-items:flex-end;justify-content:center}
-.bookstack img{width:104px;height:auto;border-radius:8px;border:1px solid var(--border);box-shadow:0 18px 40px rgba(0,0,0,.55)}
-
-/* ── spec (KodaGrid) ───────────────────────────────────────────── */
-.spec-media img{width:100%;max-width:330px;height:auto;object-fit:contain;margin-inline:auto;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.5)}
-.spec-media figcaption{text-align:center;margin-top:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.spec-list{list-style:none;margin:var(--gap-md) 0 var(--gap-lg);padding:0;border-top:1px solid var(--border)}
-.spec-list li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid var(--border);font-size:14.5px;color:var(--muted)}
-.spec-list li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;background:var(--accent)}
-.spec-list li strong{color:var(--fg);font-weight:600}
-
-/* ── biblioteca ─────────────────────────────────────────────────── */
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:var(--gap-lg);border-bottom:1px solid var(--border);padding-bottom:var(--gap-md)}
-.filter-btn{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:9px 15px;border:1px solid var(--border);border-radius:999px;transition:color .18s,border-color .18s,background .18s}
-.filter-btn:hover{color:var(--fg);border-color:var(--border-strong)}
-.filter-btn[aria-pressed="true"]{color:var(--accent-lift);border-color:var(--accent-hair);background:var(--accent-soft)}
-.books{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-lg)}
-.book{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease)}
-.book:hover{border-color:var(--border-strong);transform:translateY(-4px);background:var(--surface-2)}
-.book[hidden]{display:none}
-.book-cover{background:color-mix(in oklch,var(--bg) 70%,transparent);padding:18px;display:flex;justify-content:center}
-.book-cover img{width:100%;height:auto;border-radius:6px;box-shadow:0 16px 36px rgba(0,0,0,.5)}
-.book-body{padding:0 18px 18px;display:flex;flex-direction:column;flex:1}
-.book-badge{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.book-title{font-family:var(--font-display);font-size:19px;font-weight:400;line-height:1.25;margin:8px 0}
-.book-desc{font-size:13px;color:var(--muted);margin:0 0 14px;flex:1}
-.book-price{display:flex;align-items:baseline;gap:9px;margin-bottom:12px}
-.book-price .old{font-size:12.5px;color:var(--muted);text-decoration:line-through}
-.book-price .now{font-family:var(--font-mono);font-size:19px;color:var(--fg)}
-.book-cta{width:100%}
-
-/* ── console de diagnóstico ────────────────────────────────────── */
-.console{border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden}
-.console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.console-body{padding:clamp(24px,4vw,46px)}
-.step{display:none}
-.step.is-active{display:block;animation:stepIn .45s var(--ease)}
-@keyframes stepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.diag-title{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:400;line-height:1.15;margin:0 0 var(--gap-md);text-align:center}
-.diag-lead{color:var(--muted);text-align:center;max-width:48ch;margin:0 auto var(--gap-lg)}
-.gift{display:flex;gap:16px;align-items:center;border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin:0 auto var(--gap-lg);max-width:520px;background:var(--surface-2)}
-.gift img{width:62px;height:auto;flex:none;border-radius:4px}
-.gift strong{display:block;font-family:var(--font-display);font-size:17px;font-weight:400;margin:3px 0}
-.gift small{color:var(--muted);font-size:12.5px;line-height:1.45}
-.gift-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.progress{height:2px;background:var(--border);margin-bottom:var(--gap-lg)}
-.progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .45s var(--ease)}
-.q-label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.q-title{font-size:clamp(20px,2.4vw,26px);font-weight:600;line-height:1.3;margin:0 0 8px}
-.q-sub{color:var(--muted);font-size:14.5px;margin:0 0 var(--gap-md)}
-.options{list-style:none;margin:0;padding:0;border-top:1px solid var(--border);counter-reset:opt}
-.option{width:100%;min-height:44px;display:flex;gap:14px;align-items:flex-start;text-align:left;padding:15px 6px;border-bottom:1px solid var(--border);color:var(--fg);font-size:15px;transition:background .16s var(--ease),padding-left .16s var(--ease)}
-.option::before{counter-increment:opt;content:counter(opt,upper-alpha);font-family:var(--font-mono);font-size:11px;color:var(--muted);border:1px solid var(--border);border-radius:6px;width:24px;height:24px;flex:none;display:grid;place-items:center;margin-top:1px}
-.option:hover{background:var(--fg-soft);padding-left:10px}
-.option.is-selected{background:var(--accent-soft);padding-left:10px}
-.option.is-selected::before{border-color:var(--accent);color:var(--accent-lift)}
-.feedback{margin:16px 0 0;padding-left:14px;border-left:2px solid var(--accent);color:var(--muted);font-size:14px;opacity:0;transition:opacity .3s var(--ease)}
-.feedback.is-visible{opacity:1}
-.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.profile{text-align:left;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:var(--surface-2);transition:border-color .18s,background .18s}
-.profile:hover{border-color:var(--border-strong)}
-.profile.is-selected{border-color:var(--accent);background:var(--accent-soft)}
-.profile strong{display:block;font-size:14px;margin-bottom:4px}
-.profile small{color:var(--muted);font-size:12.5px;line-height:1.4;display:block}
-.profile-mark{width:34px;height:34px;border-radius:8px;border:1px solid var(--border);display:grid;place-items:center;color:var(--accent);margin-bottom:12px}
-.profile-mark svg{width:18px;height:18px}
-.diagnosis{border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border);padding:22px 0;margin-bottom:var(--gap-lg)}
-.diagnosis p{margin:0 0 12px;color:var(--muted);font-size:15px}
-.diagnosis p strong{color:var(--fg)}
-.diagnosis ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.diagnosis li{display:flex;gap:11px;font-size:14.5px;color:var(--muted)}
-.diagnosis li svg{width:15px;height:15px;flex:none;color:var(--accent);margin-top:4px}
-.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);margin-top:var(--gap-lg)}
-.rec{border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--surface-2);display:flex;flex-direction:column;gap:6px}
-.rec-cover{width:86px;height:auto;border-radius:5px;border:1px solid var(--border);margin-bottom:6px;box-shadow:0 10px 24px rgba(0,0,0,.45)}
-.rec.is-primary{border-color:var(--accent-hair);background:var(--accent-soft)}
-.rec-tag{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-lift)}
-.rec h4{font-family:var(--font-display);font-size:17px;font-weight:400;margin:0}
-.rec p{font-size:12.5px;color:var(--muted);margin:0 0 6px}
-.rec .btn{margin-top:auto;width:100%}
-.steps-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);margin-top:var(--gap-lg)}
-.step-item{border-top:1px solid var(--border);padding-top:14px}
-
-.step-item b{display:block;font-size:15px;margin-bottom:4px}
-.step-item small{color:var(--muted);font-size:12.5px;line-height:1.45}
-
-/* ── ferramentas ────────────────────────────────────────────────── */
-.tool-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--gap-xl);align-items:center;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);padding:clamp(28px,4vw,52px)}
-.tool-panel h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:14px}
-.tool-panel h2 span{color:var(--accent)}
-.tool-panel p{color:var(--muted);margin:0 0 var(--gap-md);max-width:52ch}
-.tool-count{font-family:var(--font-mono);font-size:clamp(40px,5vw,64px);color:var(--accent);line-height:1;letter-spacing:-.03em}
-
-/* ── mostruário ─────────────────────────────────────────────────── */
-.shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg);margin-bottom:var(--gap-xl)}
-.shot{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease)}
-.shot:hover{border-color:var(--border-strong);transform:translateY(-4px);background:var(--surface-2)}
-.shot-cover{display:block;aspect-ratio:16/10;overflow:hidden;background:color-mix(in oklch,var(--bg) 70%,transparent)}
-.shot-cover img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s var(--ease)}
-.shot:hover .shot-cover img{transform:scale(1.04)}
-.shot-body{padding:18px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.shot-cat{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.shot-name{font-family:var(--font-display);font-size:19px;font-weight:400;line-height:1.25;margin:0}
-.shot-niche{font-size:12.5px;color:var(--muted);margin:0;flex:1}
-.shot-more{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--border);margin-top:4px}
-.shot-more span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.shot-more b{font-size:13px;color:var(--accent);font-weight:600}
-.shot-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:6px}
-.shot-foot .fineprint{margin:0}
-.shot-cta{display:flex;gap:var(--gap-sm);flex-wrap:wrap}
-
-/* ── diferenciais ──────────────────────────────────────────────── */
-.why{border-top:1px solid var(--border-strong)}
-.why-item{padding:26px 0;border-bottom:1px solid var(--border)}
-
-.why-item h3{font-size:19px;margin-bottom:6px}
-.why-item p{margin:0;color:var(--muted);font-size:14.5px;max-width:62ch}
-
-/* ── depoimentos (papel) ────────────────────────────────────────── */
-.wall{background:var(--paper);color:var(--paper-ink)}
-.wall h2{color:var(--paper-ink)}
-.wall .eyebrow{color:var(--paper-gold)}
-.wall-lead{font-family:var(--font-display);font-size:clamp(24px,3vw,36px);line-height:1.28;max-width:30ch;margin:0 0 var(--gap-xl);color:var(--paper-ink)}
-.wall-lead cite{display:block;font-family:var(--font-body);font-size:14px;font-style:normal;color:var(--paper-dim);margin-top:14px}
-.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-lg)}
-.testi{padding-top:18px;border-top:1px solid var(--paper-hair)}
-.stars{color:var(--paper-gold);letter-spacing:.18em;font-size:13px;margin-bottom:9px;display:flex;gap:3px}
-.stars svg{width:15px;height:15px;flex:none}
-.testi p{font-size:14.5px;color:var(--paper-ink);margin:0 0 12px;line-height:1.55}
-.testi cite{font-style:normal;font-size:12.5px;color:var(--paper-dim)}
-.testi cite strong{color:var(--paper-ink);font-weight:600}
-.wall .fineprint{color:var(--paper-dim);margin-top:var(--gap-lg)}
-
-/* ── faq ────────────────────────────────────────────────────────── */
-.faq{border-top:1px solid var(--border-strong)}
-.faq details{border-bottom:1px solid var(--border)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 2px;font-size:17px;font-weight:600}
-.faq summary::-webkit-details-marker{display:none}
-.faq-mark{position:relative;flex:none;width:24px;height:24px;border:1px solid var(--border-strong);border-radius:50%;transition:border-color .2s}
-.faq-mark::before,.faq-mark::after{content:"";position:absolute;left:50%;top:50%;background:var(--accent);transition:transform .22s var(--ease),opacity .22s}
-.faq-mark::before{width:9px;height:1.5px;transform:translate(-50%,-50%)}
-.faq-mark::after{width:1.5px;height:9px;transform:translate(-50%,-50%)}
-.faq details[open] .faq-mark::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
-.faq summary:hover .faq-mark{border-color:var(--accent)}
-.faq p{margin:0;padding:0 2px 22px;color:var(--muted);font-size:15px;max-width:64ch}
-
-/* ── contato ────────────────────────────────────────────────────── */
-.channels{list-style:none;margin:0;padding:0;border-top:1px solid var(--border-strong)}
-.channels a{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px 2px;border-bottom:1px solid var(--border);transition:padding-left .18s var(--ease)}
-.channels a:hover{padding-left:8px}
-.channel-icon{width:40px;height:40px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;color:var(--accent)}
-.channel-label{font-weight:600;font-size:15px}
-.channel-go{color:var(--muted)}
-.form{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);padding:clamp(24px,3vw,36px)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
-.form-grid .field{margin-bottom:0}
-.field label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.input,.textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--fg);font:inherit;font-size:15px}
-.input::placeholder,.textarea::placeholder{color:color-mix(in oklch,var(--muted) 85%,transparent)}
-.input:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.textarea{min-height:120px;resize:vertical;line-height:1.55}
-.form-status{margin:14px 0 0;font-size:14px;color:var(--accent);min-height:1.4em}
-
-/* ── footer ─────────────────────────────────────────────────────── */
-.pagefoot{border-top:1px solid var(--border);background:color-mix(in oklch,var(--bg) 88%,black);padding-block:var(--gap-xl) 28px}
-.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gap-xl)}
-.foot-brand img{width:210px;height:auto;margin-bottom:16px;border-radius:6px}
-.foot-brand p{color:var(--muted);font-size:14px;margin:0;max-width:42ch}
-.foot-col h3{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:500}
-.foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.foot-col a{font-size:14px;color:var(--muted);transition:color .16s}
-.foot-col a:hover{color:var(--fg)}
-.foot-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:var(--gap-xl);padding-top:20px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
-.foot-credit{display:inline-flex;align-items:center;gap:8px;color:var(--muted);transition:color .16s var(--ease)}
-.foot-credit b{font-weight:500;color:var(--fg);transition:color .16s var(--ease)}
-.foot-credit svg{opacity:.7;transition:opacity .16s var(--ease)}
-.foot-credit:hover{color:var(--accent)}
-.foot-credit:hover b{color:var(--accent)}
-.foot-credit:hover svg{opacity:1}
-.foot-credit:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
-
-/* ── paleta de comandos ─────────────────────────────────────────── */
-.palette{position:fixed;inset:0;z-index:150;background:color-mix(in oklch,var(--bg) 72%,transparent);backdrop-filter:blur(6px);display:flex;justify-content:center;padding:12vh var(--gutter) var(--gutter)}
-.palette[hidden]{display:none}
-.palette-panel{width:min(560px,100%);max-height:72vh;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.6)}
-.palette-input{width:100%;border:0;border-bottom:1px solid var(--border);background:transparent;color:var(--fg);font:inherit;font-size:16px;padding:18px 20px}
-.palette-input:focus{outline:none}
-.palette-list{list-style:none;margin:0;padding:8px;overflow-y:auto}
-.palette-item{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;text-align:left;padding:11px 12px;border-radius:8px;color:var(--muted);font-size:14.5px}
-.palette-item .p-kind{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--border);border-radius:5px;padding:3px 6px;flex:none}
-.palette-item .p-label{color:var(--fg)}
-.palette-item.is-active{background:var(--accent-soft)}
-.palette-item.is-active .p-label{color:var(--accent)}
-.palette-hint{margin:0;padding:12px 20px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:.06em}
-.palette-hint kbd{border:1px solid var(--border);border-radius:4px;padding:2px 5px;margin:0 2px;font-family:inherit}
-
-/* ── whatsapp flutuante ─────────────────────────────────────────── */
-.wa-float{position:fixed;right:22px;bottom:22px;z-index:88;width:56px;height:56px;border-radius:50%;background:var(--wa-bg);border:1px solid var(--wa-hair);display:grid;place-items:center;color:var(--wa-fg);box-shadow:0 12px 30px rgba(0,0,0,.55);transition:transform .2s var(--ease),background .2s var(--ease)}
-.wa-float:hover{transform:translateY(-3px);background:color-mix(in oklch,var(--wa-bg) 80%,black)}
-
-/* ── responsivo ─────────────────────────────────────────────────── */
-@media(max-width:1080px){
-  .modules{height:340vh}
-  .modules-grid{grid-template-columns:230px 1fr;gap:24px}
-  .books{grid-template-columns:repeat(3,1fr)}
-  .testis{grid-template-columns:repeat(2,1fr)}
-  .foot-top{grid-template-columns:1fr 1fr}
-  .telemetry{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:920px){
-  :root{--nav-h:60px}
-  .topnav nav,.kbd-hint,.topnav-actions .btn-ghost{display:none}
-  .nav-burger{display:flex}
-  .hero-split{grid-template-columns:1fr;gap:38px}
-  .hero h1{max-width:none}
-  .hero-bg{background-position:center 22%}
-  .hero-bg::after{background:linear-gradient(to bottom,color-mix(in oklch,var(--bg) 84%,transparent),var(--bg) 92%)}
-  .telemetry{grid-template-columns:repeat(2,1fr)}
-  .modules{height:auto;padding-block:var(--gap-2xl)}
-  .modules-sticky{position:static;height:auto;display:block;padding:0}
-  .modules-rail{display:none}
-  .modules-stage{position:static;min-height:0;display:flex;flex-direction:column;gap:var(--gap-xl)}
-  .module{position:static;opacity:1;transform:none;visibility:visible;grid-template-columns:1fr;gap:22px;padding-top:26px;border-top:1px solid var(--border)}
-  .module-media img{max-height:300px}
-  .books{grid-template-columns:repeat(2,1fr)}
-  .shot-grid{grid-template-columns:repeat(2,1fr)}
-  .grid-2-1,.grid-1-2,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-  .tool-panel{grid-template-columns:1fr}
-  .profiles,.recs,.steps-strip{grid-template-columns:1fr}
-  .console-body{padding:24px 18px}
-  .foot-top{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-
-  .drawer nav a{font-size:26px}
-}
-@media(max-width:640px){
-  .books{grid-template-columns:1fr}
-  .shot-grid{grid-template-columns:1fr}
-  .testis{grid-template-columns:1fr}
-  .wa-float{right:16px;bottom:16px;width:52px;height:52px}
-  .telemetry dt{font-size:20px}
-  .hero h1{font-size:clamp(38px,10.5vw,54px)}
-  .console-bar{font-size:9.5px;letter-spacing:.14em}
-  .gift{flex-direction:column;text-align:center}
-  .gift img{margin-inline:auto}
-  .diag-title br{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none}
-}
-
-/* ── entrada do hero após o boot ───────────────────────────────── */
-html.is-ready .hero-copy>*{animation:heroIn .8s var(--ease) both}
-html.is-ready .hero-copy>*:nth-child(2){animation-delay:.09s}
-html.is-ready .hero-copy>*:nth-child(3){animation-delay:.18s}
-html.is-ready .hero-copy>*:nth-child(4){animation-delay:.27s}
-html.is-ready .hero-copy>*:nth-child(5){animation-delay:.36s}
-html.is-ready .hero-panel{animation:heroIn .8s var(--ease) .2s both}
-@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-
-/* ── skip link ──────────────────────────────────────────────────── */
-.skip-link{position:absolute;left:-9999px;top:0;z-index:210;background:var(--accent);color:var(--bg);
-  padding:12px 18px;font-weight:700;font-size:14px;border-radius:0 0 var(--radius) 0}
-.skip-link:focus{left:0}
-
-/* ── reveal ─────────────────────────────────────────────────────── */
-.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .reveal.is-in{opacity:1;transform:none}
-</style>
+<meta name="twitter:title" content="KODAROS · Tecnologia, conteúdo e engenharia">
+<meta name="twitter:description" content="Sites, landing pages, automações, bots, agentes de IA, sistemas sob medida e software. Código publicado, produto no ar e número verificável.">
+<meta name="twitter:image" content="assets/img/kodaros_og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KODAROS","description":"Empresa de tecnologia, conteúdo e engenharia. Sites, automações, bots, agentes, sistemas e software sob medida.","sameAs":["https://www.instagram.com/kodaros01","https://www.linkedin.com/in/kelvin-oliveira-code/","https://github.com/KelvinOliveiraCode"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"kodaros01@gmail.com","telephone":"+559192094504"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#content">Pular para o conteúdo</a>
-
-<!-- ═══ BOOT ═══ -->
-<div class="boot" id="boot" aria-hidden="true">
-  <div class="boot-inner">
-    <img class="boot-mark" src="./kodaros-icon.webp" alt="" width="336" height="334">
-    <div class="boot-name">KODAROS</div>
-    <div class="boot-bar"><span id="bootFill"></span></div>
-    <div class="boot-readout"><span id="bootStatus">iniciando runtime</span><span class="num" id="bootPct">00%</span></div>
-  </div>
-</div>
-
-<!-- ═══ NAV ═══ -->
-<header class="topnav" id="topnav" data-od-id="topnav">
-  <div class="container topnav-inner">
-    <a href="#inicio" class="logo" data-od-id="nav-brand" aria-label="KODAROS, início">
-      <img src="./bust.webp" alt="" width="121" height="120" class="logo-mark">
-      <span>KODAROS</span>
+<header class="topnav" id="topnav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="KODAROS, início">
+      <img src="assets/bust.webp" alt="" width="38" height="38">
+      <span class="brand-name">KODAROS</span>
     </a>
-    <nav aria-label="Seções do site">
-      <a href="#modulos">Ecossistema</a>
-      <a href="#biblioteca">Biblioteca</a>
-      <a href="#mostruario">Mostruário</a>
-      <a href="#diagnostico">Diagnóstico</a>
-      <a href="#duvidas">Dúvidas</a>
+    <nav class="nav-links" aria-label="Principal">
+        <a href="servicos/index.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="planos.html">Planos</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="sobre.html">Sobre</a>
     </nav>
-    <div class="topnav-actions">
-      
-      <a class="btn btn-ghost btn-arrow" href="#diagnostico">Diagnóstico gratuito</a>
-      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+    <div class="nav-actions">
+      <a class="btn btn-ghost nav-cta" href="contato.html">Contato</a>
+      <a class="btn btn-primary nav-cta" href="diagnostico.html">Diagnóstico gratuito</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
-<div class="scroll-rail" aria-hidden="true"><span id="scrollRail"></span></div>
-
-<!-- ═══ DRAWER (mobile) ═══ -->
-<div class="drawer" id="drawer" data-od-id="drawer">
+<div class="mobile-menu" id="mobileMenu">
   <nav aria-label="Menu principal">
-    <a href="#modulos">Ecossistema</a>
-    <a href="#kodagrid">KodaGrid</a>
-    <a href="#biblioteca">Biblioteca</a>
-    <a href="#mostruario">Mostruário</a>
-    <a href="#diagnostico">Diagnóstico</a>
-    <a href="#ferramentas">Ferramentas</a>
-    <a href="#duvidas">Dúvidas</a>
-    <a href="#contato">Contato</a>
+        <a href="servicos/index.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="planos.html">Planos</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
   </nav>
-  <div class="drawer-actions">
-    <a class="btn btn-primary" href="#diagnostico">Começar meu diagnóstico</a>
-    <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  <div class="stack">
+    <a class="btn btn-primary" href="diagnostico.html">Diagnóstico gratuito</a>
+    <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Conversar no WhatsApp</a>
   </div>
+  <div class="menu-foot">KODAROS · tecnologia, conteúdo e engenharia</div>
 </div>
-
 <main id="content" tabindex="-1">
 
-<!-- ═══ HERO ═══ -->
-<section class="section hero" id="inicio" data-od-id="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-split">
     <div class="hero-copy">
-      <p class="eyebrow eyebrow-accent">Software · Sites · Vídeos · Biblioteca</p>
-      <h1>Uma empresa de tecnologia feita para vender e escalar.</h1>
-      <p class="lead">A KODAROS cria o que faz o seu negócio vender: softwares e apps sob medida, sites que convertem, motion e vídeos publicitários, além de uma biblioteca de e-books com ferramentas que rodam direto no navegador.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#diagnostico" data-od-id="hero-cta-diagnostico">Fazer meu diagnóstico
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      <p class="eyebrow">Tecnologia, conteúdo e engenharia</p>
+      <h1>Tecnologia que já está no ar.</h1>
+      <p class="lead">A Kodaros cria sites, automações, bots, agentes e sistemas sob medida. Cada serviço mostra o que já foi construído: código publicado, produto rodando e número verificável.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#servicos">Ver serviços
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </a>
-        <a class="btn btn-ghost btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn btn-secondary" href="biblioteca.html">Para você</a>
       </div>
-      <dl class="telemetry" aria-label="Números da plataforma">
-        <div><dt class="num">50+</dt><dd>ferramentas gratuitas no navegador</dd></div>
-        <div><dt class="num">8</dt><dd>e-books na biblioteca, entrega imediata</dd></div>
-        <div><dt class="num">42</dt><dd>páginas no e-book gratuito</dd></div>
-        <div><dt class="num">24h</dt><dd>resposta útil do suporte</dd></div>
-      </dl>
+      
     </div>
-    <aside class="panel hero-panel" aria-label="Módulos da plataforma">
-      
-      <ul class="status-list">
-        <li><a href="#modulos"><span class="s-name">Softwares &amp; Apps</span><span class="s-state" data-state="on">Disponível</span></a></li>
-        <li><a href="#modulos"><span class="s-name">Sites</span><span class="s-state">Sob encomenda</span></a></li>
-        <li><a href="#modulos"><span class="s-name">Vídeos e Propagandas</span><span class="s-state">Sob encomenda</span></a></li>
-        <li><a href="#modulos"><span class="s-name">Ferramentas</span><span class="s-state" data-state="on">Disponível</span></a></li>
-        <li><a href="#modulos"><span class="s-name">Biblioteca</span><span class="s-state" data-state="on">Disponível</span></a></li>
-      </ul>
-      
+    <aside class="hero-panel" aria-label="Números da Kodaros">
+      <div class="metrics">
+        <div class="metric"><b>100</b><span>repositórios públicos</span></div>
+        <div class="metric"><b>50</b><span>projetos funcionais</span></div>
+        <div class="metric"><b>53</b><span>ferramentas gratuitas</span></div>
+        <div class="metric"><b>50</b><span>modelos de site</span></div>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/img/banner.webp" alt="Banner da KODAROS" width="1200" height="480">
+        <figcaption>KODAROS · tecnologia, conteúdo e impacto</figcaption>
+      </figure>
     </aside>
   </div>
-  
 </section>
 
-<!-- ═══ MÓDULOS · scroll interativo (fixo no desktop) ═══ -->
-<section class="section modules" id="modulos" data-od-id="modulos">
-  <div class="modules-sticky">
-    <div class="container">
-      <div class="modules-head">
-        <p class="eyebrow">Ecossistema</p>
-        <h2>Cinco módulos.</h2>
-      </div>
-      <div class="modules-grid">
-        <ol class="modules-rail" id="modulesRail" aria-label="Módulos da KODAROS">
-          <li><button class="rail-item is-active" type="button" data-index="0" aria-pressed="true"><span class="rail-name">Softwares &amp; Apps</span><span class="rail-state">Disponível</span></button></li>
-          <li><button class="rail-item" type="button" data-index="1" aria-pressed="false"><span class="rail-name">Sites</span><span class="rail-state">Sob encomenda</span></button></li>
-          <li><button class="rail-item" type="button" data-index="2" aria-pressed="false"><span class="rail-name">Vídeos e Propagandas</span><span class="rail-state">Sob encomenda</span></button></li>
-          <li><button class="rail-item" type="button" data-index="3" aria-pressed="false"><span class="rail-name">Ferramentas</span><span class="rail-state">Disponível</span></button></li>
-          <li><button class="rail-item" type="button" data-index="4" aria-pressed="false"><span class="rail-name">Biblioteca</span><span class="rail-state">Disponível</span></button></li>
-          <li aria-hidden="true"><div class="rail-progress"><span id="railProgress"></span></div></li>
-        </ol>
-        <div class="modules-stage" id="modulesStage">
 
-          <article class="module is-active" data-index="0" data-od-id="modulo-softwares">
-            <div class="module-media">
-              <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid, construtor de planilhas com fórmulas" width="400" height="533" loading="lazy">
-            </div>
-            <div class="module-body">
-              <div class="module-meta"><span class="pill">Disponível</span></div>
-              <h3>Softwares &amp; Apps</h3>
-              <p>Programas de desktop e apps sob medida. Instalam, abrem e funcionam, inclusive 100% offline no Windows, sem depender de nuvem.</p>
-              <ul class="module-facts">
-                <li><span>Em produção</span><b>KodaGrid</b></li>
-                <li><span>Plataforma</span><b>Windows · 100% offline</b></li>
-                <li><span>Entrega</span><b>Hotmart · acesso vitalício</b></li>
-              </ul>
-              <a class="btn btn-secondary btn-arrow" href="#kodagrid">Conhecer o KodaGrid</a>
-            </div>
-          </article>
-
-          <article class="module" data-index="1" data-od-id="modulo-sites">
-            <div class="module-media">
-              <div class="browser">
-                <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">seusite.com.br</span></div>
-                <img class="browser-shot" src="./banner.webp" alt="Banner da KODAROS usado como identidade de um site institucional" width="1200" height="480" loading="lazy">
-              </div>
-            </div>
-            <div class="module-body">
-              <div class="module-meta"><span class="pill">Sob encomenda</span></div>
-              <h3>Sites</h3>
-              <p>Sites e landing pages que convertem: rápidos, com identidade própria e prontos para vender o seu produto ou serviço. Comece vendo referências reais no mostruário.</p>
-              <ul class="module-facts">
-                <li><span>Entregas</span><b>Institucional · Landing · Portfólio</b></li>
-                <li><span>Inclui</span><b>Mobile-first, SEO e tags sociais</b></li>
-                <li><span>Prazo</span><b>Definido no orçamento</b></li>
-              </ul>
-              <div style="display:flex;gap:var(--gap-sm);flex-wrap:wrap">
-                <a class="btn btn-primary btn-arrow" href="#mostruario">Ver referências</a>
-                <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener">Mostruário completo</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="module" data-index="2" data-od-id="modulo-videos">
-            <div class="module-media">
-              <div class="module-cases">
-                <div class="module-case"><span>Vertical</span><b>Reels e TikTok</b></div>
-                <div class="module-case"><span>Quadrado</span><b>Feed e Meta Ads</b></div>
-                <div class="module-case"><span>Horizontal</span><b>YouTube e site</b></div>
-              </div>
-            </div>
-            <div class="module-body">
-              <div class="module-meta"><span class="pill">Sob encomenda</span></div>
-              <h3>Vídeos e Propagandas</h3>
-              <p>Motion graphics e vídeos publicitários para anúncios, redes e apresentações, do roteiro à entrega final.</p>
-              <ul class="module-facts">
-                <li><span>Roteiro</span><b>Gancho, mensagem e chamada</b></li>
-                <li><span>Produção</span><b>Motion, trilha e locução</b></li>
-                <li><span>Entrega</span><b>Vertical, quadrado e horizontal</b></li>
-              </ul>
-              <a class="btn btn-secondary btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Quero%20ver%20um%20exemplo%20de%20v%C3%ADdeo%20KODAROS." target="_blank" rel="noopener">Pedir exemplo de vídeo</a>
-            </div>
-          </article>
-
-          <article class="module" data-index="3" data-od-id="modulo-ferramentas">
-            <div class="module-media">
-              <div class="browser">
-                <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">kelvinoliveiracode.github.io/kodaros-ferramentas</span></div>
-                <div class="browser-shot" style="padding:28px 20px">
-                  <p class="meta" style="margin:0 0 10px">Calculadoras e geradores</p>
-                  <p style="font-family:var(--font-mono);font-size:13px;color:var(--fg);margin:0;line-height:1.9">
-                    ROI de campanha<br>Margem de preço<br>Fluxo de caixa<br>Custo por lead<br>Meta de vendas
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="module-body">
-              <div class="module-meta"><span class="pill">Disponível</span></div>
-              <h3>Ferramentas</h3>
-              <p>Mais de 50 calculadoras e geradores que rodam 100% no navegador. Use na hora, sem cadastro, com referência direta nos e-books.</p>
-              <ul class="module-facts">
-                <li><span>Formato</span><b>Web app, sem instalação</b></li>
-                <li><span>Cadastro</span><b>Nenhum</b></li>
-                <li><span>Acesso</span><b>Gratuito</b></li>
-              </ul>
-              <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Abrir as ferramentas</a>
-            </div>
-          </article>
-
-          <article class="module" data-index="4" data-od-id="modulo-biblioteca">
-            <div class="module-media">
-              <div class="bookstack">
-                <img src="./arquitetura-capa.webp" alt="Capa do e-book Arquitetura de Aquisição" width="296" height="395" loading="lazy">
-                <img src="./livro-gestao.webp" alt="Capa do e-book Os 10 Pilares da Gestão Empresarial" width="296" height="419" loading="lazy">
-                <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
-              </div>
-            </div>
-            <div class="module-body">
-              <div class="module-meta"><span class="pill">Disponível</span></div>
-              <h3>Biblioteca</h3>
-              <p>De Tráfego a Gestão. Oito e-books que resolvem um problema específico cada. Escolha pelo nível e comece pelo que dói mais hoje.</p>
-              <ul class="module-facts">
-                <li><span>Entrega</span><b>Imediata via Hotmart</b></li>
-                <li><span>Acesso</span><b>Vitalício</b></li>
-                <li><span>Brinde</span><b>Do Zero ao Patrimônio (42 pág.)</b></li>
-              </ul>
-              <a class="btn btn-secondary btn-arrow" href="#biblioteca">Ver a biblioteca</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Serviços</p>
+      <h2>Seis formas de contratar a Kodaros.</h2>
+      <p>Cada linha tem escopo, prazo e entrega definidos. O detalhe está na página de cada serviço, com prova do que já foi construído.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card reveal">
+  <span class="service-label">Sites</span>
+  <h3>Sites básicos e profissionais.</h3>
+  <p>Sites institucionais, catálogos e páginas de serviço com identidade própria, mobile first e medição.</p>
+  <ul class="service-list">
+    <li>Estrutura e conteúdo</li>
+    <li>Design responsivo</li>
+    <li>SEO técnico e metadados</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/sites.html">Ver o serviço</a>
+  </div>
+</article>
+      <article class="service-card reveal">
+  <span class="service-label">Landing pages</span>
+  <h3>Uma página, uma decisão.</h3>
+  <p>Landing pages para campanhas, lançamentos e captura. Copy, design, formulário e integração.</p>
+  <ul class="service-list">
+    <li>Copy e estrutura</li>
+    <li>Design responsivo</li>
+    <li>Formulário e automação</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/landing-pages.html">Ver o serviço</a>
+  </div>
+</article>
+      <article class="service-card reveal">
+  <span class="service-label">Automações</span>
+  <h3>Processos que rodam sem você.</h3>
+  <p>Automação de tarefas repetitivas com n8n, Make, scripts e integrações. Do gargalo ao monitoramento.</p>
+  <ul class="service-list">
+    <li>Mapa do processo</li>
+    <li>Fluxo e integrações</li>
+    <li>Tratamento de erro</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/automacoes.html">Ver o serviço</a>
+  </div>
+</article>
+      <article class="service-card reveal">
+  <span class="service-label">Bots e agentes</span>
+  <h3>Atendimento e análise no mesmo canal.</h3>
+  <p>Bots para Telegram, Discord e WhatsApp. Agentes com base de conhecimento, guardrails e revisão humana.</p>
+  <ul class="service-list">
+    <li>Fluxo e personalidade</li>
+    <li>Base de conhecimento</li>
+    <li>Integração com canais</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/bots-agentes.html">Ver o serviço</a>
+  </div>
+</article>
+      <article class="service-card reveal">
+  <span class="service-label">Sistemas e apps</span>
+  <h3>Do banco de dados à interface.</h3>
+  <p>Sistemas web e aplicativos sob medida. API, autenticação, painel, deploy e manutenção.</p>
+  <ul class="service-list">
+    <li>Levantamento e arquitetura</li>
+    <li>API e banco de dados</li>
+    <li>Interface web</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/sistemas-apps.html">Ver o serviço</a>
+  </div>
+</article>
+      <article class="service-card reveal">
+  <span class="service-label">Marketing</span>
+  <h3>Conteúdo e mídia com medida.</h3>
+  <p>Tráfego pago, conteúdo, SEO e criativos. A mesma disciplina de engenharia aplicada à aquisição.</p>
+  <ul class="service-list">
+    <li>Plano de aquisição</li>
+    <li>Criativos e copy</li>
+    <li>Campanhas e medição</li>
+  </ul>
+  <div class="service-foot">
+    <a class="btn btn-secondary btn-arrow" href="servicos/marketing.html">Ver o serviço</a>
+  </div>
+</article>
+    </div>
+    <div class="row" style="margin-top:32px">
+      <a class="btn btn-secondary btn-arrow" href="servicos/index.html">Ver todos os serviços</a>
+      <a class="btn btn-ghost btn-arrow" href="diagnostico.html">Não sei por onde começar</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ KODAGRID ═══ -->
-<section class="section" id="kodagrid" data-od-id="kodagrid">
-  <div class="container grid-1-2">
-    <figure class="spec-media reveal">
-      <img src="./kodagrid-capa.webp" alt="Capa do KodaGrid, construtor de planilhas com fórmulas para Windows" width="400" height="533" loading="lazy">
-      <figcaption>KodaGrid · Windows</figcaption>
-    </figure>
+<section class="section">
+  <div class="container">
+    <div class="between section-head reveal">
+      <div style="max-width:58ch">
+        <p class="eyebrow">Evidência</p>
+        <h2>O que já está no ar.</h2>
+        <p>Não é uma lista de promessas. É o que pode ser aberto, testado e lido hoje.</p>
+      </div>
+      <a class="text-link" href="projetos.html">Ver todos os projetos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+    <div class="evidence">
+      
+      <div class="evidence-row reveal">
+  <div>
+    <div class="evidence-name">Kodaros Ferramentas</div>
+    <div class="evidence-desc">53 calculadoras de negócio, PWA offline, sem cadastro e sem custo.</div>
+  </div>
+  <div class="evidence-stack"></div>
+  <div class="evidence-stack">Produtos</div>
+  <a class="evidence-link" href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Abrir</a>
+</div>
+      <div class="evidence-row reveal">
+  <div>
+    <div class="evidence-name">Mostruário Kodaros</div>
+    <div class="evidence-desc">50 landing pages de demonstração, uma para cada nicho, com busca e filtro.</div>
+  </div>
+  <div class="evidence-stack"></div>
+  <div class="evidence-stack">Produtos</div>
+  <a class="evidence-link" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener">Abrir</a>
+</div>
+      <div class="evidence-row reveal">
+  <div>
+    <div class="evidence-name">MegaAGT</div>
+    <div class="evidence-desc">App desktop em Tauri e Rust para o OpenCode CLI: sessões, subagentes, raciocínio e diffs.</div>
+  </div>
+  <div class="evidence-stack"></div>
+  <div class="evidence-stack">Apps</div>
+  <a class="evidence-link" href="https://github.com/KelvinOliveiraCode/MegaAGT" target="_blank" rel="noopener">Abrir</a>
+</div>
+      
+      <div class="evidence-row reveal">
+  <div>
+    <div class="evidence-name">Agente de suporte bancário</div>
+    <div class="evidence-desc">Agente RAG com validação em quatro camadas.</div>
+  </div>
+  <div class="evidence-stack"></div>
+  <div class="evidence-stack">Dados e IA</div>
+  <a class="evidence-link" href="https://github.com/KelvinOliveiraCode/agente-suporte-bancario-rag" target="_blank" rel="noopener">Abrir</a>
+</div>
+      <div class="evidence-row reveal">
+  <div>
+    <div class="evidence-name">Prospecção com n8n</div>
+    <div class="evidence-desc">Automação que dispara buscas amplas e entrega o CSV completo no Telegram.</div>
+  </div>
+  <div class="evidence-stack"></div>
+  <div class="evidence-stack">Automação e infra</div>
+  <a class="evidence-link" href="https://github.com/KelvinOliveiraCode/prospectos-n8n-telegram" target="_blank" rel="noopener">Abrir</a>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Produtos</p>
+      <h2>Coisas que funcionam.</h2>
+      <p>Uma parte da Kodaros é produto. A outra é serviço. Os dois se sustentam com a mesma base técnica.</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card reveal">
+        <div class="product-media is-contain">
+          <img src="assets/img/kodagrid-capa.webp" alt="Capa do KodaGrid" width="400" height="533" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Software · Windows</span>
+          <h3>KodaGrid</h3>
+          <p>Construtor de planilhas com fórmulas. 13 templates, arquivo .xlsx real e 100% offline.</p>
+          <a class="btn btn-secondary" href="https://kelvinoliveiracode.github.io/kodaros-landing/#kodagrid" target="_blank" rel="noopener">Conhecer</a>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="assets/img/mostruario/atelie-lumina.webp" alt="Prévia do projeto Ateliê Lúmina" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Mostruário</span>
+          <h3>50 modelos de site</h3>
+          <p>Uma página por nicho, com nome, serviço e identidade próprios. Referência real para o seu projeto.</p>
+          <a class="btn btn-secondary" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener">Abrir mostruário</a>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-media is-contain">
+          <img src="assets/img/arquitetura-capa.webp" alt="Capa do e-book Arquitetura de Aquisição" width="296" height="395" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Biblioteca</span>
+          <h3>Oito e-books</h3>
+          <p>Um problema por livro. Tráfego, vendas, gestão, finanças, site e reclamações. Entrega imediata.</p>
+          <a class="btn btn-secondary" href="biblioteca.html">Ver biblioteca</a>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-media" style="flex-direction:column;gap:6px">
+          <span class="mono">100% no navegador</span>
+          <strong style="font-family:var(--font-display);font-size:clamp(52px,6vw,72px);line-height:1;color:var(--gold-light);font-weight:400">53</strong>
+          <span class="mono">calculadoras · 7 categorias</span>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Ferramentas</span>
+          <h3>Kodaros Ferramentas</h3>
+          <p>53 calculadoras de aquisição, finanças, vendas e gestão. Sem cadastro, sem custo e com funcionamento offline.</p>
+          <a class="btn btn-secondary" href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Abrir ferramentas</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Processo</p>
+      <h2>Como o trabalho acontece.</h2>
+      <p>Quatro etapas, com escopo fechado antes de começar. Sem surpresa no meio do caminho.</p>
+    </div>
+    <div class="process">
+      <div class="process-step reveal"><div class="mono">Diagnóstico</div><h3>Entender o gargalo</h3><p>Uma conversa curta para mapear o problema, o público e o que precisa ser resolvido primeiro.</p></div>
+      <div class="process-step reveal"><div class="mono">Proposta</div><h3>Fechar o escopo</h3><p>Entregáveis, prazo e valor por escrito. O que entra, o que não entra e como o resultado será medido.</p></div>
+      <div class="process-step reveal"><div class="mono">Execução</div><h3>Construir e revisar</h3><p>Construção em etapas, com revisão humana e registro do que foi feito. O código fica versionado.</p></div>
+      <div class="process-step reveal"><div class="mono">Suporte</div><h3>Publicar e manter</h3><p>Deploy, treinamento e suporte. O projeto não termina no dia da entrega.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Planos</p>
+      <h2>Escopo fechado antes de começar.</h2>
+      <p>Três formatos de projeto. Automações, bots e agentes são orçados por processo, depois do diagnóstico.</p>
+    </div>
+    <div class="plans">
+      <article class="plan reveal">
+        <h3>Landing page</h3>
+        <div class="plan-price">Sob orçamento</div>
+        <p class="plan-desc">Uma página para uma campanha, lançamento ou captura. Copy, design, formulário e publicação.</p>
+        <ul><li>Copy e estrutura</li><li>Design responsivo</li><li>Formulário e WhatsApp</li><li>SEO e medição</li><li>Publicação</li></ul>
+        <a class="btn btn-secondary" href="contato.html">Pedir orçamento</a>
+      </article>
+      <article class="plan reveal is-featured">
+        <h3>Site institucional</h3>
+        <div class="plan-price">Sob orçamento</div>
+        <p class="plan-desc">Até seis páginas, painel de conteúdo, SEO e treinamento. A base para a empresa aparecer e vender.</p>
+        <ul><li>Estrutura e conteúdo</li><li>Até seis páginas</li><li>Painel de conteúdo</li><li>SEO técnico</li><li>Analytics</li><li>Treinamento</li></ul>
+        <a class="btn btn-primary" href="contato.html">Pedir orçamento</a>
+      </article>
+      <article class="plan reveal">
+        <h3>Sistema sob medida</h3>
+        <div class="plan-price">Sob orçamento</div>
+        <p class="plan-desc">Levantamento, arquitetura, API, interface, deploy e testes. Do processo ao sistema rodando.</p>
+        <ul><li>Levantamento</li><li>API e banco</li><li>Interface</li><li>Autenticação</li><li>Deploy</li><li>Testes</li></ul>
+        <a class="btn btn-secondary" href="contato.html">Pedir orçamento</a>
+      </article>
+    </div>
+    <p class="plan-note">O diagnóstico é gratuito e não compromete orçamento. O pagamento é dividido em etapas, conforme o avanço do projeto.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split-2-1">
     <div class="reveal">
-      <p class="eyebrow eyebrow-accent">Software · Windows</p>
-      <h2>KodaGrid, o construtor de planilhas com fórmulas.</h2>
-      <p class="lead" style="margin-top:16px">Monte planilhas sem decorar fórmula. Escolha o tipo da coluna, clique num preset, pinte do seu jeito e preencha. O KodaGrid gera um .xlsx com fórmula viva, pronto para abrir no Excel.</p>
-      <ul class="spec-list">
-        <li><strong>Colunas como peças de montar.</strong> Texto, Número, Moeda R$, Data, Lista dropdown e Fórmula.</li>
-        <li><strong>Presets inteligentes de fórmula por clique.</strong> SOMA, %, SE e Acumulado.</li>
-        <li><strong>13 templates prontos.</strong> Fluxo de Caixa, Precificação, Estoque, Orçamento e mais.</li>
-        <li><strong>Arquivo .xlsx de verdade.</strong> Fórmulas vivas, cabeçalho colorido, filtro congelado e linha TOTAL.</li>
-        <li><strong>Preview ao vivo.</strong> Salvamento de modelos reutilizáveis.</li>
-        <li><strong>100% offline.</strong> Windows, sem depender de nuvem. Suporte: kodaros01@gmail.com</li>
-      </ul>
-      <div class="chips" style="margin-bottom:var(--gap-lg)"><span class="chip">Windows</span><span class="chip">100% offline</span><span class="chip">.xlsx real</span><span class="chip">13 templates</span></div>
-      <a class="btn btn-primary" href="https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=softwares" target="_blank" rel="noopener" data-od-id="cta-kodagrid-comprar">Comprar na Hotmart</a>
-      
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BIBLIOTECA ═══ -->
-<section class="section" id="biblioteca" data-od-id="biblioteca">
-  <div class="container">
-    <div class="row-between" style="margin-bottom:var(--gap-lg);align-items:flex-end;flex-wrap:wrap">
-      <div style="max-width:44ch">
-        <p class="eyebrow">Biblioteca</p>
-        <h2>Oito e-books.</h2>
-      </div>
-      
-    </div>
-    <div class="filters" id="bookFilters" role="group" aria-label="Filtrar e-books por nível">
-      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Todos</button>
-      <button class="filter-btn" type="button" data-filter="iniciantes" aria-pressed="false">Iniciante</button>
-      <button class="filter-btn" type="button" data-filter="intermediario" aria-pressed="false">Intermediário</button>
-      <button class="filter-btn" type="button" data-filter="avancado" aria-pressed="false">Avançado</button>
-    </div>
-    <div class="books" id="books">
-
-      <article class="book reveal" data-level="avancado" data-od-id="book-arquitetura">
-        <div class="book-cover"><img src="./arquitetura-capa.webp" alt="Capa do e-book Arquitetura de Aquisição" width="296" height="395" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Avançado</span>
-          <h3 class="book-title">Arquitetura de Aquisição</h3>
-          <p class="book-desc">O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists prontos.</p>
-          <div class="book-price"><span class="old">R$ 247</span><span class="now num">R$ 197</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/B107295159O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="intermediario" data-od-id="book-lancamento">
-        <div class="book-cover"><img src="./livro3.webp" alt="Capa do e-book Lançamento Milionário" width="296" height="418" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Intermediário</span>
-          <h3 class="book-title">Lançamento Milionário</h3>
-          <p class="book-desc">O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.</p>
-          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895415M?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="intermediario" data-od-id="book-trafego">
-        <div class="book-cover"><img src="./livro1.webp" alt="Capa do e-book Tráfego Que Vende" width="296" height="418" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Intermediário</span>
-          <h3 class="book-title">Tráfego Que Vende</h3>
-          <p class="book-desc">Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.</p>
-          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/D106894870O?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="intermediario" data-od-id="book-site">
-        <div class="book-cover"><img src="./livro-site.webp" alt="Capa do e-book Use Seu Site Para Escalar Sua Empresa" width="296" height="419" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Intermediário</span>
-          <h3 class="book-title">Use Seu Site Para Escalar Sua Empresa</h3>
-          <p class="book-desc">Transforme seu site em máquina de vendas com SEO, captura de leads e automação.</p>
-          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/Y107016734X?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="iniciantes" data-od-id="book-venda">
-        <div class="book-cover"><img src="./livro2.webp" alt="Capa do e-book Venda Mais Hoje" width="296" height="416" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Iniciante</span>
-          <h3 class="book-title">Venda Mais Hoje</h3>
-          <p class="book-desc">Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar as suas vendas imediatamente.</p>
-          <div class="book-price"><span class="old">R$ 47</span><span class="now num">R$ 12,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/R106895345D?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="iniciantes" data-od-id="book-gestao">
-        <div class="book-cover"><img src="./livro-gestao.webp" alt="Capa do e-book Os 10 Pilares da Gestão Empresarial" width="296" height="419" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Iniciante</span>
-          <h3 class="book-title">Os 10 Pilares da Gestão Empresarial</h3>
-          <p class="book-desc">10 pilares para organizar e crescer a sua empresa com controle e decisões baseadas em dados.</p>
-          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/S107016677T?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="iniciantes" data-od-id="book-financeiro">
-        <div class="book-cover"><img src="./livro-financeiro.webp" alt="Capa do e-book Os 10 Pilares do Controle Financeiro" width="296" height="417" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Iniciante</span>
-          <h3 class="book-title">Os 10 Pilares do Controle Financeiro</h3>
-          <p class="book-desc">Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.</p>
-          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/E107016796K?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-      <article class="book reveal" data-level="iniciantes" data-od-id="book-reclamacoes">
-        <div class="book-cover"><img src="./livro-reclamacoes.webp" alt="Capa do e-book Transforme Reclamações em Vendas" width="296" height="419" loading="lazy"></div>
-        <div class="book-body">
-          <span class="book-badge">Iniciante</span>
-          <h3 class="book-title">Transforme Reclamações em Vendas</h3>
-          <p class="book-desc">O método para transformar reclamações em fidelização e construir uma cultura centrada no cliente.</p>
-          <div class="book-price"><span class="old">R$ 67</span><span class="now num">R$ 22,99</span></div>
-          <a class="btn btn-secondary book-cta" href="https://pay.hotmart.com/G107016779V?utm_source=kodaros_plataforma&amp;utm_medium=site&amp;utm_campaign=biblioteca" target="_blank" rel="noopener">Comprar e-book</a>
-          
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FERRAMENTAS ═══ -->
-<section class="section" id="ferramentas" data-od-id="ferramentas">
-  <div class="container">
-    <div class="tool-panel reveal">
-      <div>
-        <p class="eyebrow">Ferramentas</p>
-        <h2>Mais de <span>50 ferramentas</span> gratuitas.</h2>
-        <p>Calculadoras de tráfego, financeiro, vendas e gestão. Rodam direto no navegador, sem login, em site próprio e com referência direta nos e-books.</p>
-        <a class="btn btn-secondary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Acessar as ferramentas</a>
-      </div>
-      <div style="text-align:right">
-        <div class="tool-count num">50+</div>
-        
+      <p class="eyebrow">Diagnóstico gratuito</p>
+      <h2>Onde o seu crescimento está travando.</h2>
+      <p class="lead" style="margin-top:16px">Três perguntas sobre o seu cenário. No fim você recebe um retrato do gargalo, uma recomendação de serviço e um e-book de presente.</p>
+      <div class="row" style="margin-top:28px">
+        <a class="btn btn-primary" href="diagnostico.html">Começar meu diagnóstico</a>
+        <a class="btn btn-ghost" href="biblioteca.html">Ver a biblioteca</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ MOSTRUÁRIO ═══ -->
-<section class="section" id="mostruario" data-od-id="mostruario">
-  <div class="container">
-    <div style="max-width:52ch;margin-bottom:var(--gap-xl)">
-      <p class="eyebrow eyebrow-accent">Mostruário</p>
-      <h2>Gosta de um destes?</h2>
-      <p class="lead" style="margin-top:16px">50 modelos de sites, feitos para se sentir como se fossem empresas de verdade, cada um com a sua identidade. Use como referência e peça um seu, do seu jeito.</p>
-    </div>
-
-    <div class="shot-grid">
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#atelie-lumina" target="_blank" rel="noopener" data-od-id="shot-atelie-lumina">
-        <span class="shot-cover"><img src="./mostruario-covers/atelie-lumina.webp" alt="Prévia do projeto Ateliê Lúmina" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Beleza</span><span class="shot-name">Ateliê Lúmina</span><span class="shot-niche">Cabelo e coloração</span><span class="shot-more"><span>Corte e cor com ficha técnica do seu fio</span><b>Ver →</b></span></span>
-      </a>
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#casa-boa" target="_blank" rel="noopener" data-od-id="shot-casa-boa">
-        <span class="shot-cover"><img src="./mostruario-covers/casa-boa.webp" alt="Prévia do projeto Casa Boa" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Alimentação</span><span class="shot-name">Casa Boa</span><span class="shot-niche">Restaurante brasileiro</span><span class="shot-more"><span>Cozinha brasileira de forno a lenha</span><b>Ver →</b></span></span>
-      </a>
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#dente-novo" target="_blank" rel="noopener" data-od-id="shot-dente-novo">
-        <span class="shot-cover"><img src="./mostruario-covers/dente-novo.webp" alt="Prévia do projeto Dente Novo" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Saúde</span><span class="shot-name">Dente Novo</span><span class="shot-niche">Odontologia</span><span class="shot-more"><span>Clínica odontológica com tabela de procedimento</span><b>Ver →</b></span></span>
-      </a>
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#madeira-viva" target="_blank" rel="noopener" data-od-id="shot-madeira-viva">
-        <span class="shot-cover"><img src="./mostruario-covers/madeira-viva.webp" alt="Prévia do projeto Madeira Viva" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Construção</span><span class="shot-name">Madeira Viva</span><span class="shot-niche">Marcenaria sob medida</span><span class="shot-more"><span>Móveis sob medida em madeira maciça</span><b>Ver →</b></span></span>
-      </a>
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#prisma-curso" target="_blank" rel="noopener" data-od-id="shot-prisma-curso">
-        <span class="shot-cover"><img src="./mostruario-covers/prisma-curso.webp" alt="Prévia do projeto Prisma" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Educação</span><span class="shot-name">Prisma</span><span class="shot-niche">Curso online de design</span><span class="shot-more"><span>Design de produto em oito módulos</span><b>Ver →</b></span></span>
-      </a>
-      <a class="shot" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/#saraiva-prado" target="_blank" rel="noopener" data-od-id="shot-saraiva-prado">
-        <span class="shot-cover"><img src="./mostruario-covers/saraiva-prado.webp" alt="Prévia do projeto Saraiva Prado" loading="lazy"></span>
-        <span class="shot-body"><span class="shot-cat">Serviços</span><span class="shot-name">Saraiva Prado</span><span class="shot-niche">Advocacia</span><span class="shot-more"><span>Advocacia trabalhista e acidentes de trabalho</span><b>Ver →</b></span></span>
-      </a>
-    </div>
-
-    <div class="shot-foot">
-      <p class="fineprint">Prévias reproduzidas do mostruário. São empresas de exemplo. O site que pedimos para você tem o seu nome, seus serviços e os seus preços.</p>
-      <div class="shot-cta">
-        <a class="btn btn-primary btn-arrow" href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener" data-od-id="cta-mostruario-ver">Ver os 50 no mostruário</a>
-        <a class="btn btn-ghost btn-arrow" href="https://wa.me/559192094504?text=Oi!%20Vi%20o%20mostru%C3%A1rio%20da%20KODAROS%20e%20quero%20um%20site%20nesse%20estilo." target="_blank" rel="noopener">Quero um site assim</a>
-      </div>
+    <div class="reveal">
+      <img src="assets/img/ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy" style="max-width:260px;margin-inline:auto;border-radius:10px;border:1px solid var(--border)">
     </div>
   </div>
 </section>
 
-<!-- ═══ DIAGNÓSTICO ═══ -->
-<section class="section" id="diagnostico" data-od-id="diagnostico">
-  <div class="container">
-    <div style="max-width:46ch;margin-bottom:var(--gap-lg)">
-      <p class="eyebrow eyebrow-accent">Diagnóstico gratuito</p>
-      <h2>Onde o seu crescimento está travando</h2>
-      <p class="lead" style="margin-top:16px">3 perguntas que se adaptam ao seu perfil, em cerca de 2 minutos. No fim você recebe o diagnóstico e um e-book de presente.</p>
-    </div>
-
-    <div class="steps-strip" style="margin-bottom:var(--gap-xl)">
-      <div class="step-item"><b>Diagnóstico de 2 minutos</b><small>3 perguntas adaptadas ao seu perfil revelam o que trava o seu negócio.</small></div>
-      <div class="step-item"><b>E-book de presente</b><small>No final, download gratuito do “Do Zero ao Patrimônio”, 42 páginas.</small></div>
-      <div class="step-item"><b>Biblioteca e ferramentas</b><small>Com o diagnóstico na mão, escolha o seu e-book e use as ferramentas.</small></div>
-    </div>
-
-    <div class="console" id="console" data-od-id="console-diagnostico">
-      <div class="console-bar"><span>Console · diagnóstico</span><span id="consoleState">Etapa 1 de 4</span></div>
-      <div class="console-body">
-
-        <section class="step is-active" id="step-intro" data-od-id="diag-passo-1">
-          <div style="text-align:center">
-            <span class="pill">Diagnóstico gratuito · 2 minutos</span>
-            <h3 class="diag-title" style="margin-top:18px">Três perguntas. Um retrato real do seu negócio.</h3>
-            <p class="diag-lead">Responda 3 perguntas rápidas e receba o seu diagnóstico, com e-book de presente.</p>
-            <div class="gift">
-              <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
-              <div>
-                <span class="gift-tag">Presente liberado no final</span>
-                <strong>Do Zero ao Patrimônio</strong>
-                <small>42 páginas sobre empreendedorismo e transformação digital</small>
-              </div>
-            </div>
-            <button class="btn btn-primary" type="button" data-next="" data-od-id="cta-comecar-diagnostico">Começar meu diagnóstico
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-            </button>
-          </div>
-        </section>
-
-        <section class="step" id="step-profile" data-od-id="diag-passo-2">
-          <div style="text-align:center">
-            <p class="q-label">Antes de tudo</p>
-            <h3 class="q-title" style="font-size:24px">Onde você se encaixa melhor?</h3>
-            <p class="q-sub">As perguntas se adaptam ao seu perfil.</p>
-          </div>
-          <div class="profiles" role="radiogroup" aria-label="Seu perfil">
-            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="empresa" data-od-id="perfil-empresa">
-              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="8" width="8" height="13" rx="1"></rect><rect x="11" y="3" width="10" height="18" rx="1"></rect><path d="M14.5 7h1M17.5 7h1M14.5 11h1M17.5 11h1M6 11h1M6 15h1M14.5 15h1M17.5 15h1"></path></svg></span>
-              <strong>Já tenho uma empresa</strong>
-              <small>Quero escalar, organizar e automatizar.</small>
-            </button>
-            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="iniciante" data-od-id="perfil-iniciante">
-              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2.5c3.5 2 5.5 5.4 5.5 9.2 0 2.3-.8 4.4-2.2 6.1l-1.1 3.7h-4.4l-1.1-3.7a9.2 9.2 0 01-2.2-6.1c0-3.8 2-7.2 5.5-9.2z"></path><circle cx="12" cy="10" r="2.2"></circle></svg></span>
-              <strong>Sou iniciante no digital</strong>
-              <small>Quero começar com o passo a passo certo.</small>
-            </button>
-            <button class="profile" type="button" role="radio" aria-checked="false" data-profile="outros" data-od-id="perfil-outros">
-              <span class="profile-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></span>
-              <strong>Outros</strong>
-              <small>Renda extra, transição ou curiosidade.</small>
-            </button>
-          </div>
-        </section>
-
-        <section class="step" id="step-quiz" data-od-id="diag-passo-3">
-          <div class="progress"><span id="quizProgress"></span></div>
-          <p class="q-label" id="quizLabel">Pergunta 1 de 3</p>
-          <h3 class="q-title" id="quizTitle"></h3>
-          <p class="q-sub" id="quizSub"></p>
-          <ul class="options" id="quizOptions" role="radiogroup" aria-label="Selecione uma resposta"></ul>
-          <p class="feedback" id="quizFeedback"></p>
-        </section>
-
-        <section class="step" id="step-result" data-od-id="diag-passo-4">
-          <div style="text-align:center">
-            <span class="pill">Diagnóstico concluído</span>
-            <h3 class="diag-title" style="margin-top:16px">Isto é o que as suas respostas revelaram</h3>
-          </div>
-          <div class="diagnosis" id="diagnosis"></div>
-          <div class="gift" style="max-width:none;margin:0 0 var(--gap-lg)">
-            <img src="./ebook-cover.webp" alt="Capa do e-book Do Zero ao Patrimônio" width="280" height="396" loading="lazy">
-            <div>
-              <span class="gift-tag">E-book 100% gratuito</span>
-              <strong>Do Zero ao Patrimônio</strong>
-              <small>Empreendedorismo, transformação digital e estratégias para construir patrimônio.</small>
-              <a class="btn btn-secondary" style="margin-top:12px" href="./do-zero-ao-patrimonio.pdf" download="Kodaros-Do-Zero-ao-Patrimonio.pdf" data-od-id="cta-baixar-ebook">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"></path></svg>
-                Baixar meu e-book grátis
-              </a>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:var(--gap-xl)">
-            <a class="btn btn-secondary" href="#biblioteca">Ver a biblioteca completa</a>
-            <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Fiz%20o%20diagn%C3%B3stico%20KODAROS%20e%20quero%20o%20pr%C3%B3ximo%20passo." target="_blank" rel="noopener">Falar com a KODAROS</a>
-          </div>
-          <div class="recs" id="recs"></div>
-        </section>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DIFERENCIAIS ═══ -->
-<section class="section" id="diferenciais" data-od-id="diferenciais">
-  <div class="container">
-    <div style="max-width:44ch;margin-bottom:var(--gap-lg)">
-      <p class="eyebrow">Por que a KODAROS</p>
-      <h2>Quatro decisões.</h2>
-    </div>
-    <div class="why">
-      <div class="why-item reveal"><div><h3>Código próprio, leve e rápido</h3><p>Sem dependências e sem servidor: as calculadoras rodam no navegador, abrem direto e, depois do primeiro acesso, seguem funcionando offline.</p></div></div>
-      <div class="why-item reveal"><div><h3>Feito para crescer junto</h3><p>Mesma base do primeiro cliente aos milhares. Cresce sem ter que refazer tudo do zero.</p></div></div>
-      <div class="why-item reveal"><div><h3>Detalhe que você nota</h3><p>Tipografia, espaçamento e cores definidos por tokens: o mesmo layout em todos os módulos, sem retrabalho de estilo a cada tela.</p></div></div>
-      <div class="why-item reveal"><div><h3>Gente de verdade</h3><p>Resposta pelo WhatsApp: você fala direto com quem mantém o produto, sem fila de chat automático.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DEPOIMENTOS ═══ -->
-<section class="section wall" id="depoimentos" data-od-id="depoimentos">
-  <div class="container">
-    <p class="eyebrow">Quem já usa</p>
-    <blockquote class="wall-lead">“Não é mágica, é o passo a passo que eu precisava.”
-      <cite>Fernanda Lima, começando no digital</cite>
-    </blockquote>
-    <div class="testis">
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Uso o KodaGrid no fluxo de caixa. Antes perdia meia hora no Excel, agora monto a planilha em 5 minutos e já sai com fórmula funcionando.</p></blockquote><cite><strong>Lucas Andrade</strong> · Autônomo, Manaus</cite></figure>
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Sou designer e enjoo fácil de site poluído. Aqui achei o e-book de gestão em dois cliques, fonte boa, sem banner piscando.</p></blockquote><cite><strong>Mariana Costa</strong> · Product Designer</cite></figure>
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Comprei o pack de finanças. Sem enrolação, fui direto pro capítulo de preço e já ajustei a minha margem na mesma semana.</p></blockquote><cite><strong>Carlos Mendes</strong> · Loja de materiais</cite></figure>
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Usei a calculadora de ROI antes de rodar tráfego. Ter o número na mão fez diferença. Parei de chutar.</p></blockquote><cite><strong>Juliana Rocha</strong> · Gestora de tráfego iniciante</cite></figure>
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Mandei e-mail no domingo achando que só veriam na segunda. Responderam no mesmo dia. Isso pesa na escolha.</p></blockquote><cite><strong>Rafael Torres</strong> · Prestador de serviços</cite></figure>
-      <figure class="testi"><div class="stars" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.6l2.8 5.9 6.5.9-4.7 4.5 1.1 6.4L12 17.2l-5.7 3.1 1.1-6.4L2.7 9.4l6.5-.9z"/></svg></div><blockquote><p>Comecei pelo diagnóstico, ganhei o e-book e peguei o de tráfego. Foi exatamente o passo a passo que eu precisava.</p></blockquote><cite><strong>Fernanda Lima</strong> · Começando no digital</cite></figure>
-    </div>
-    <p class="fineprint">* Depoimentos de usuários iniciais. Resultados variam conforme a aplicação.</p>
-  </div>
-</section>
-
-<!-- ═══ DÚVIDAS ═══ -->
-<section class="section" id="duvidas" data-od-id="duvidas">
-  <div class="container grid-1-2">
+<section class="section">
+  <div class="container split-2-1">
     <div>
       <p class="eyebrow">Dúvidas</p>
       <h2>Perguntas frequentes</h2>
-      
-      <a class="btn btn-secondary btn-arrow" style="margin-top:24px" href="https://wa.me/559192094504?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20KODAROS." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <p class="lead" style="margin-top:16px">Se a sua pergunta não estiver aqui, fale no WhatsApp. A resposta vem de uma pessoa, não de um robô.</p>
+      <a class="btn btn-secondary" style="margin-top:24px" href="contato.html">Falar com a Kodaros</a>
     </div>
     <div class="faq">
-      <details><summary>O diagnóstico é gratuito?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. São 3 perguntas, cerca de 2 minutos, e no final você baixa o e-book Do Zero ao Patrimônio (42 páginas) sem pagar nada.</p></details>
-      <details><summary>Como recebo os e-books depois de comprar?<span class="faq-mark" aria-hidden="true"></span></summary><p>A entrega é feita pela Hotmart, no mesmo instante após a confirmação do pagamento, com acesso vitalício.</p></details>
-      <details><summary>O KodaGrid funciona sem internet?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. É um programa para Windows que roda offline e gera arquivos .xlsx com fórmula viva, prontos para abrir no Excel.</p></details>
-      <details><summary>Quais formas de pagamento a Hotmart aceita?<span class="faq-mark" aria-hidden="true"></span></summary><p>Pix, boleto e cartão. O pagamento é processado pela Hotmart; a KODAROS não guarda dados do seu cartão.</p></details>
-      <details><summary>E se eu me arrepender da compra?<span class="faq-mark" aria-hidden="true"></span></summary><p>A Hotmart oferece garantia de reembolso no prazo informado no checkout. Se não fizer sentido para você, o pedido é feito por lá.</p></details>
-      <details><summary>Os sites do mostruário são de empresas reais?<span class="faq-mark" aria-hidden="true"></span></summary><p>Não. São 50 exemplos feitos para mostrar o padrão: cada um tem nome, setor e identidade próprios, mas as empresas não existem. Quando você encomenda um site, ele nasce com o seu nome, seus serviços e os seus preços.</p></details>
+      <details><summary>O que a Kodaros faz?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sites, landing pages, automações, bots, agentes de IA, sistemas sob medida, software desktop e marketing. O escopo é definido por projeto, com prazo e valor fechados antes de começar.</p></details>
+      <details><summary>Quanto custa um site?<span class="faq-mark" aria-hidden="true"></span></summary><p>Depende do número de páginas, do conteúdo, das integrações e do prazo. O orçamento é feito depois de um diagnóstico curto, e o valor aparece por escrito. Sem taxa escondida.</p></details>
+      <details><summary>Qual é o prazo?<span class="faq-mark" aria-hidden="true"></span></summary><p>Uma landing page leva de cinco a sete dias. Um site institucional leva de duas a três semanas. Um sistema sob medida leva de quatro a oito semanas, a depender do escopo.</p></details>
+      <details><summary>Vocês atendem todo o Brasil?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. O trabalho é remoto, com reuniões por vídeo e acompanhamento por WhatsApp ou e-mail. O pagamento e o contrato são digitais.</p></details>
+      <details><summary>O código e os arquivos são meus?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. O repositório, os arquivos e as credenciais são entregues no seu nome. A Kodaros mantém acesso apenas para suporte, quando contratado.</p></details>
+      <details><summary>Como funciona o diagnóstico gratuito?<span class="faq-mark" aria-hidden="true"></span></summary><p>São três perguntas sobre o seu cenário. No fim você recebe um retrato do gargalo, uma recomendação de serviço e um e-book de presente. Sem compromisso de orçamento.</p></details>
+      <details><summary>Vocês fazem automação e agentes de IA?<span class="faq-mark" aria-hidden="true"></span></summary><p>Sim. A Kodaros mapeia o processo, integra as ferramentas e publica o fluxo. No caso de agentes, a base de conhecimento e os limites são definidos antes da publicação.</p></details>
+      <details><summary>Como contrato?<span class="faq-mark" aria-hidden="true"></span></summary><p>Pelo formulário do site ou pelo WhatsApp. A conversa começa com o diagnóstico, segue para a proposta e termina com o escopo assinado. O pagamento é dividido em etapas.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTATO ═══ -->
-<section class="section" id="contato" data-od-id="contato">
-  <div class="container grid-2-1">
-    <div>
-      <p class="eyebrow">Contato</p>
-      <h2>Fale com a gente</h2>
-      <p class="lead" style="margin-top:16px;font-size:16px">Resposta em até 24h úteis.</p>
-      <ul class="channels" style="margin-top:var(--gap-lg)">
-        <li><a href="https://wa.me/559192094504" target="_blank" rel="noopener"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></span><span class="channel-label">WhatsApp</span><span class="channel-go">→</span></a></li>
-        <li><a href="mailto:kodaros01@gmail.com"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="M22 6l-10 7L2 6"></path></svg></span><span class="channel-label">E-mail</span><span class="channel-go">→</span></a></li>
-        <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener"><span class="channel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><path d="M17.5 6.5h.01"></path></svg></span><span class="channel-label">Instagram</span><span class="channel-go">→</span></a></li>
-      </ul>
-    </div>
-    <form class="form" id="contactForm" novalidate="" data-od-id="form-contato">
-      <div class="form-grid">
-        <div class="field"><label for="cf-name">Nome</label><input class="input" id="cf-name" type="text" placeholder="Seu nome" required="" autocomplete="name"></div>
-        <div class="field"><label for="cf-email">E-mail</label><input class="input" id="cf-email" type="email" placeholder="seu@email.com" required="" autocomplete="email"></div>
-      </div>
-      <div class="field"><label for="cf-msg">Mensagem</label><textarea class="textarea" id="cf-msg" rows="6" placeholder="Como podemos ajudar?" required=""></textarea></div>
-      <input type="text" name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <button type="submit" class="btn btn-secondary" style="width:100%">Abrir conversa no WhatsApp</button>
-      <p class="form-status" id="cf-status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
-
-</main>
-
-<footer class="pagefoot" data-od-id="footer">
+<section class="section">
   <div class="container">
-    <div class="foot-top">
+    <div class="reveal" style="border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--gold-soft),transparent 46%),var(--surface);padding:clamp(28px,5vw,56px)">
+      <div class="between">
+        <div style="max-width:56ch">
+          <p class="eyebrow">Contato</p>
+          <h2>Fale com a Kodaros.</h2>
+          <p class="lead" style="margin-top:14px">Conte o que precisa resolver. A conversa começa com o diagnóstico e segue para uma proposta com escopo, prazo e valor.</p>
+        </div>
+        <div class="row">
+          <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn btn-secondary" href="contato.html">Formulário</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pagefoot">
+  <div class="container">
+    <div class="foot-grid">
       <div class="foot-brand">
-        <img src="./banner.webp" alt="KODAROS, tecnologia, conteúdo e impacto" width="1200" height="480" loading="lazy">
-        
+        <img src="assets/kodaros-icon.webp" alt="KODAROS" width="64" height="64">
+        <p>Tecnologia, conteúdo e engenharia. Sites, automações, agentes, sistemas e software sob medida.</p>
+        <div class="social">
+        <a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563-.789.308-1.458.72-2.123 1.388C1.334 2.703.925 3.372.62 4.162.325 4.926.125 5.799.068 7.076.012 8.354-.001 8.764.005 12.023c.006 3.259.02 3.667.082 4.947.061 1.277.264 2.148.564 2.911.308.789.72 1.457 1.388 2.123.668.665 1.337 1.074 2.129 1.38.763.295 1.636.496 2.913.552 1.277.056 1.688.069 4.946.063 3.258-.006 3.668-.021 4.948-.081 1.28-.061 2.147-.265 2.91-.564.789-.308 1.458-.72 2.123-1.388.665-.668 1.074-1.338 1.38-2.128.295-.763.496-1.636.552-2.913.056-1.28.069-1.689.063-4.948-.006-3.258-.021-3.667-.081-4.946-.061-1.28-.265-2.149-.564-2.912-.308-.789-.72-1.457-1.388-2.123C21.298 1.33 20.628.921 19.838.617 19.074.321 18.202.12 16.924.065 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084m.14 21.693c-1.17-.051-1.805-.245-2.229-.408-.56-.216-.96-.477-1.382-.895-.422-.418-.681-.819-.9-1.378-.164-.423-.362-1.058-.417-2.228-.06-1.265-.072-1.644-.079-4.848-.007-3.204.005-3.583.061-4.848.05-1.169.246-1.805.408-2.228.216-.561.476-.96.895-1.382.419-.422.818-.681 1.378-.9.423-.165 1.058-.361 2.227-.417 1.266-.06 1.645-.072 4.848-.079 3.203-.007 3.583.005 4.85.061 1.169.051 1.805.245 2.228.408.561.216.96.475 1.382.895.421.419.681.818.9 1.379.165.421.362 1.056.417 2.226.06 1.265.074 1.645.08 4.848.005 3.203-.006 3.583-.061 4.848-.051 1.17-.245 1.805-.408 2.229-.216.561-.476.96-.895 1.382-.419.421-.818.681-1.379.9-.422.164-1.057.361-2.226.417-1.266.06-1.645.072-4.849.079-3.205.007-3.583-.006-4.848-.061M16.953 5.586A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.442M5.838 12.012c.007 3.403 2.771 6.156 6.173 6.149 3.403-.006 6.157-2.77 6.151-6.173-.007-3.403-2.771-6.157-6.174-6.15-3.403.007-6.156 2.771-6.15 6.174M8 12.008a4 4 0 1 1 4.008 3.992A3.999 3.999 0 0 1 8 12.008"></path></svg></a>
+        <a href="https://www.linkedin.com/in/kelvin-oliveira-code/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg></a>
+        <a href="https://github.com/KelvinOliveiraCode" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+        <a href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+        </div>
       </div>
       <div class="foot-col">
-        <h3>Plataforma</h3>
+        <h3>Serviços</h3>
         <ul>
-          <li><a href="#modulos">Ecossistema</a></li>
-          <li><a href="#kodagrid">KodaGrid</a></li>
-          <li><a href="#biblioteca">Biblioteca</a></li>
-          <li><a href="#mostruario">Mostruário</a></li>
-          <li><a href="#diagnostico">Diagnóstico</a></li>
-          <li><a href="#ferramentas">Ferramentas</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="servicos/sites.html">Sites</a></li>
+          <li><a href="servicos/landing-pages.html">Landing pages</a></li>
+          <li><a href="servicos/automacoes.html">Automações</a></li>
+          <li><a href="servicos/bots-agentes.html">Bots e agentes</a></li>
+          <li><a href="servicos/sistemas-apps.html">Sistemas e apps</a></li>
+          <li><a href="servicos/marketing.html">Marketing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Ecossistema</h3>
+        <ul>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="planos.html">Planos</a></li>
+          <li><a href="biblioteca.html">Biblioteca</a></li>
+          <li><a href="diagnostico.html">Diagnóstico</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-ferramentas/" target="_blank" rel="noopener">Ferramentas</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-mostruario/" target="_blank" rel="noopener">Mostruário</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h3>Contato e legal</h3>
         <ul>
-          <li><a href="#contato">Falar com a gente</a></li>
-          <li><a href="./privacidade.html">Política de Privacidade</a></li>
-          <li><a href="./termos.html">Termos de Uso</a></li>
-          <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="contato.html">Falar com a Kodaros</a></li>
           <li><a href="mailto:kodaros01@gmail.com">kodaros01@gmail.com</a></li>
+          <li><a href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> KODAROS · Todos os direitos reservados.</span>
-      <a class="foot-credit" href="https://github.com/kelvinoliveiracode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira. Abrir o GitHub de kelvinoliveiracode em nova aba">
-        <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+      <a class="foot-credit" href="https://github.com/KelvinOliveiraCode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira. Abrir o GitHub em nova aba">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
         <span>Feito por <b>Kelvin Oliveira</b></span>
       </a>
     </div>
   </div>
 </footer>
-
-<a class="wa-float" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" data-od-id="cta-whatsapp-flutuante">
-  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 2a8 8 0 11-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0112 4zm-3.1 4.2c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.6 0 0 0 0 0 .2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.9 8.6c-.2-.4-.4-.4-.6-.4h-.4z"></path></svg>
-</a>
-
-<!-- ═══ PALETA DE COMANDOS ═══ -->
-<div class="palette" id="palette" hidden="">
-  <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
-    <input class="palette-input" id="paletteInput" type="text" placeholder="Ir para um módulo…" autocomplete="off" aria-label="Buscar um módulo">
-    <ul class="palette-list" id="paletteList" role="listbox" aria-label="Comandos"></ul>
-    <p class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> navegar · <kbd>Enter</kbd> abrir · <kbd>Esc</kbd> fechar</p>
+<div class="wa-pop" id="waPop" hidden="">
+  <div class="wa-pop-card">
+    <button class="wa-pop-close" id="waClose" aria-label="Fechar mensagem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+    <div class="wa-pop-head">
+      <span class="wa-pop-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></span>
+      <div>
+        <div class="wa-pop-title">Fale com a Kodaros</div>
+        <div class="wa-pop-sub">Resposta em até 24h úteis.</div>
+      </div>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Conversar no WhatsApp</a>
   </div>
 </div>
-
-
-<!-- ═══ FOOTER ═══ -->
-
-
-<script>
-/* KODAROS v2 · Console · interações
-   Boot → navegação → scroll fixado → biblioteca → diagnóstico → paleta */
-(function () {
-  'use strict';
-
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var $  = function (s, c) { return (c || document).querySelector(s); };
-  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
-  var navH = function () { var n = $('#topnav'); return n ? n.offsetHeight : 60; };
-
-  var locks = 0;
-  function lock()   { locks++; document.body.classList.add('is-locked'); }
-  function unlock() { locks = Math.max(0, locks - 1); if (!locks) document.body.classList.remove('is-locked'); }
-
-  /* ─── 1. BOOT ─────────────────────────────────────────────────── */
-  (function boot() {
-    var el = $('#boot'), fill = $('#bootFill'), pct = $('#bootPct'), status = $('#bootStatus');
-    if (!el) return;
-    if (reduce) { document.documentElement.classList.add('is-ready'); return; }
-    lock();
-    el.classList.add('is-on');
-    var steps = ['iniciando runtime', 'carregando ativos', 'montando interface', 'indexando biblioteca', 'pronto'];
-    var CRIT = ['kodaros-icon.webp','bust.webp','banner.webp','bg-salao.webp','kodagrid-capa.webp','ebook-cover.webp',
-                'arquitetura-capa.webp','livro1.webp','livro2.webp','livro3.webp','livro-gestao.webp',
-                'livro-financeiro.webp','livro-site.webp','livro-reclamacoes.webp'];
-    var done = 0, total = CRIT.length, finished = false;
-    function paint(p, label) {
-      var v = Math.max(0, Math.min(100, Math.round(p)));
-      fill.style.width = v + '%';
-      pct.textContent = (v < 10 ? '0' : '') + v + '%';
-      if (label) status.textContent = label;
-    }
-    function finish() {
-      if (finished) return; finished = true;
-      paint(100, 'pronto');
-      setTimeout(function () {
-        el.classList.remove('is-on');
-        unlock();
-        document.documentElement.classList.add('is-ready');
-      }, 420);
-    }
-    CRIT.forEach(function (src) {
-      var im = new Image();
-      im.onload = im.onerror = function () {
-        done++;
-        paint(done / total * 100, steps[Math.min(3, Math.floor(done / total * 4))]);
-        if (done >= total) finish();
-      };
-      im.src = './' + src;
-    });
-    paint(6, steps[0]);
-    setTimeout(finish, 3200); /* rede lenta ou asset ausente: nunca prende o usuário */
-  })();
-
-  /* ─── 2. NAVEGAÇÃO ────────────────────────────────────────────── */
-  (function nav() {
-    var top = $('#topnav'), rail = $('#scrollRail'), burger = $('#navBurger'), drawer = $('#drawer');
-    var ticking = false;
-    function onScroll() {
-      var y = window.pageYOffset || document.documentElement.scrollTop;
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      if (top) top.classList.toggle('is-scrolled', y > 12);
-      if (rail) rail.style.width = (h > 0 ? Math.min(100, y / h * 100) : 0) + '%';
-      ticking = false;
-    }
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
-    }, { passive: true });
-    onScroll();
-
-    var links = $$('.topnav nav a');
-    if ('IntersectionObserver' in window) {
-      var map = {};
-      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (!en.isIntersecting) return;
-          links.forEach(function (a) { a.classList.remove('is-current'); });
-          if (map[en.target.id]) map[en.target.id].classList.add('is-current');
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      ['modulos', 'biblioteca', 'mostruario', 'diagnostico', 'duvidas'].forEach(function (id) {
-        var s = document.getElementById(id); if (s) io.observe(s);
-      });
-    }
-
-    if (burger && drawer) {
-      function setDrawer(open) {
-        drawer.classList.toggle('is-open', open);
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-        if (open) lock(); else unlock();
-      }
-      burger.addEventListener('click', function () { setDrawer(!drawer.classList.contains('is-open')); });
-      $$('a', drawer).forEach(function (a) { a.addEventListener('click', function () { setDrawer(false); }); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false);
-      });
-    }
-  })();
-
-  /* ─── 3. REVEAL ──────────────────────────────────────────────── */
-  (function reveal() {
-    var els = $$('.reveal');
-    if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-    els.forEach(function (el) { io.observe(el); });
-  })();
-
-  /* ─── 4. MÓDULOS · rolagem fixada (desktop) / lista (mobile) ──── */
-  (function modules() {
-    var sec = $('#modulos'), rail = $('#modulesRail'), stage = $('#modulesStage'), prog = $('#railProgress');
-    if (!sec) return;
-    var items = $$('.module', stage), btns = $$('.rail-item', rail);
-    var current = -1;
-    function setActive(i) {
-      if (i === current) return;
-      current = i;
-      items.forEach(function (m, k) { m.classList.toggle('is-active', k === i); });
-      btns.forEach(function (b, k) {
-        b.classList.toggle('is-active', k === i);
-        b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
-      });
-      if (prog) prog.style.width = ((i + 1) / items.length * 100) + '%';
-    }
-    btns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var i = +b.dataset.index;
-        setActive(i);
-        if (window.innerWidth >= 921) {
-          var top = sec.getBoundingClientRect().top + window.pageYOffset;
-          var h = sec.offsetHeight - window.innerHeight;
-          window.scrollTo({ top: top + h * ((i + 0.5) / items.length), behavior: reduce ? 'auto' : 'smooth' });
-        }
-      });
-    });
-    var ticking = false;
-    function update() {
-      ticking = false;
-      if (window.innerWidth < 921) return;
-      var total = sec.offsetHeight - window.innerHeight;
-      if (total <= 0) return;
-      var p = Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / total));
-      setActive(Math.min(items.length - 1, Math.floor(p * items.length)));
-    }
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener('resize', update);
-    update();
-  })();
-
-  /* ─── 5. BIBLIOTECA · filtros ────────────────────────────────── */
-  (function filters() {
-    var group = $('#bookFilters'); if (!group) return;
-    var books = $$('#books .book');
-    function apply(f) {
-      books.forEach(function (b) {
-        var show = f === 'all' || b.dataset.level === f;
-        b.hidden = !show;
-        if (show) b.classList.add('is-in');
-      });
-      try { localStorage.setItem('kodaros_v2_filtro', f); } catch (e) {}
-    }
-    $$('.filter-btn', group).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        $$('.filter-btn', group).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-        btn.setAttribute('aria-pressed', 'true');
-        apply(btn.dataset.filter);
-      });
-    });
-    var VALID = ['all', 'iniciantes', 'intermediario', 'avancado'];
-    var saved = null;
-    try { saved = localStorage.getItem('kodaros_v2_filtro'); } catch (e) {}
-    if (saved && VALID.indexOf(saved) > -1) {
-      $$('.filter-btn', group).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-      var t = $('.filter-btn[data-filter="' + saved + '"]', group);
-      if (t) { t.setAttribute('aria-pressed', 'true'); apply(saved); }
-    }
-  })();
-
-  /* ─── 6. DIAGNÓSTICO ─────────────────────────────────────────── */
-  (function quiz() {
-    var PRODUCTS = {
-      lancamento: { badge: 'Intermediário', title: 'Lançamento Milionário', cover: './livro3.webp', cw: 296, ch: 418, desc: 'O método para vender cursos e produtos digitais: do planejamento à execução de lançamentos que convertem.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/R106895415M?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      trafego:    { badge: 'Intermediário', title: 'Tráfego Que Vende', cover: './livro1.webp', cw: 296, ch: 418, desc: 'Domine Facebook e Google Ads e crie campanhas pagas que geram retorno consistente e escalável.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/D106894870O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      venda:      { badge: 'Iniciante', title: 'Venda Mais Hoje', cover: './livro2.webp', cw: 296, ch: 416, desc: 'Marketing e vendas diretos, sem enrolação: táticas práticas para aumentar as suas vendas imediatamente.', old: 'R$ 47,00', now: 'R$ 12,99', url: 'https://pay.hotmart.com/R106895345D?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      gestao:     { badge: 'Iniciante', title: 'Os 10 Pilares da Gestão Empresarial', cover: './livro-gestao.webp', cw: 296, ch: 419, desc: '10 pilares para organizar e crescer a sua empresa com controle e decisões baseadas em dados.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/S107016677T?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      financeiro: { badge: 'Iniciante', title: 'Os 10 Pilares do Controle Financeiro', cover: './livro-financeiro.webp', cw: 296, ch: 417, desc: 'Organize o fluxo de caixa, a formação de preços e reduza custos para lucrar com previsibilidade.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/E107016796K?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      site:       { badge: 'Intermediário', title: 'Use Seu Site Para Escalar Sua Empresa', cover: './livro-site.webp', cw: 296, ch: 419, desc: 'Transforme o seu site em máquina de vendas com SEO, captura de leads e automação.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/Y107016734X?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      reclamacoes:{ badge: 'Iniciante', title: 'Transforme Reclamações em Vendas', cover: './livro-reclamacoes.webp', cw: 296, ch: 419, desc: 'O método para transformar reclamações em fidelização e construir uma cultura centrada no cliente.', old: 'R$ 67,00', now: 'R$ 22,99', url: 'https://pay.hotmart.com/G107016779V?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' },
-      arquitetura:{ badge: 'Avançado', title: 'Arquitetura de Aquisição', cover: './arquitetura-capa.webp', cw: 296, ch: 395, desc: 'O sistema operacional de tráfego pago e funis da KODAROS. Framework A.P.E.R.T.O., 3 calculadoras e checklists.', old: 'R$ 247,00', now: 'R$ 197,00', url: 'https://pay.hotmart.com/B107295159O?utm_source=funil&utm_medium=quiz&utm_campaign=diagnostico' }
-    };
-
-    var QUESTIONS = {
-      empresa: [
-        { q: 'Quanto tempo do seu dia vai para tarefas repetitivas?', sub: 'Responder clientes, postar nas redes, mandar orçamento, cobrar pagamento…', options: [
-          { v: '3h+', t: 'Mais de 3 horas por dia', fb: 'Mais de 3 horas por dia em tarefas repetitivas é tempo que não volta.' },
-          { v: '1-3h', t: 'Entre 1 e 3 horas', fb: 'Entre 1 e 3 horas diárias somam semanas inteiras de trabalho manual por ano.' },
-          { v: '<1h', t: 'Menos de 1 hora', fb: 'Menos de 1 hora já é bom sinal, mas cada minuto salvo vira margem.' },
-          { v: 'auto', t: 'Quase nada. Aqui muita coisa já é automática', fb: 'Você já entendeu o jogo: o que é manual, escala mal.' } ] },
-        { q: 'Hoje, o que mais trava o seu crescimento?', sub: 'Seja sincero. Ninguém está olhando.', options: [
-          { v: 'tempo', t: 'Falta de tempo pra cuidar de tudo', fb: 'Falta de tempo é o sintoma mais comum de processos manuais.' },
-          { v: 'clientes', t: 'Falta de clientes entrando', fb: 'Sem presença e sem follow-up automático, a entrada de clientes vira montanha-russa.' },
-          { v: 'organizacao', t: 'Desorganização e processos na cabeça', fb: 'Processo que vive na cabeça não escala, e cobra caro pelo esquecimento.' },
-          { v: 'autoridade', t: 'Falta de presença e autoridade digital', fb: 'Sem autoridade digital, o cliente compara só preço. Com autoridade, ele escolhe você.' } ] },
-        { q: 'Se um sistema trabalhasse por você 24h por dia, por onde começaria?', sub: '', options: [
-          { v: 'whatsapp', t: 'Atendimento e respostas no WhatsApp', fb: 'O WhatsApp é onde a venda nasce, e onde ela morre sem resposta rápida.' },
-          { v: 'redes', t: 'Redes sociais e publicação de conteúdo', fb: 'Constância nas redes constrói autoridade. O problema nunca é ideia, é rotina.' },
-          { v: 'followup', t: 'Follow-up de clientes e orçamentos', fb: 'Grande parte das vendas acontece no follow-up, e é exatamente ele que ninguém tem tempo de fazer.' },
-          { v: 'tudo', t: 'Por tudo. Quero escalar de vez', fb: 'Quem automatiza tudo não contrai dívida de tempo com o próprio negócio.' } ] }
-      ],
-      iniciante: [
-        { q: 'Qual é o seu maior desafio ao começar no digital?', sub: 'O primeiro passo é saber onde dói.', options: [
-          { v: 'poronde', t: 'Não saber por onde começar', fb: 'Começar sem mapa é o erro número 1, e o mais fácil de corrigir.' },
-          { v: 'tempo', t: 'Ter pouco tempo por dia', fb: 'Você não precisa de 8 horas: precisa de um método que caiba na sua rotina.' },
-          { v: 'medo', t: 'Medo de errar na frente dos outros', fb: 'Todo mundo que hoje fatura começou errando em público. É parte do caminho.' },
-          { v: 'tech', t: 'Achar que precisa entender de tecnologia', fb: 'As ferramentas de hoje fazem o pesado. O que falta é processo, não código.' } ] },
-        { q: 'Em que ponto você está hoje?', sub: 'Sem julgamento, só clareza.', options: [
-          { v: 'parado', t: 'Ainda não comecei', fb: 'Perfeito: começar do zero, começando certo, é vantagem.' },
-          { v: 'posts', t: 'Já posto nas redes, mas sem estratégia', fb: 'Postar sem estratégia é correr na esteira: cansa e não sai do lugar.' },
-          { v: 'vendo', t: 'Já vendo algo, mas tudo no manual', fb: 'Vender manualmente prova que existe demanda; agora falta estrutura para escalar.' },
-          { v: 'estudo', t: 'Estudo muito e pratico pouco', fb: 'Conhecimento sem execução vira ansiedade. O segredo é prática guiada.' } ] },
-        { q: 'Se alguém te mostrasse o caminho, o que resolveria primeiro?', sub: '', options: [
-          { v: 'base', t: 'Entender o básico do jogo digital', fb: 'Base sólida evita meses de tentativa e erro.' },
-          { v: 'primeiravenda', t: 'Fazer a primeira venda', fb: 'A primeira venda muda a mentalidade. Depois dela, o jogo fica real.' },
-          { v: 'constancia', t: 'Criar constância nas redes', fb: 'Constância é o que separa quem aparece de quem desiste na semana 3.' },
-          { v: 'plano', t: 'Ter um plano claro passo a passo', fb: 'Com plano, cada dia tem um próximo passo. Sem plano, cada dia é dúvida.' } ] }
-      ],
-      outros: [
-        { q: 'O que te trouxe até aqui hoje?', sub: 'Me conta: o diagnóstico se adapta a você.', options: [
-          { v: 'renda', t: 'Quero uma renda extra', fb: 'Renda extra bem construída vira renda principal, com método.' },
-          { v: 'transicao', t: 'Quero mudar de área / carreira', fb: 'Transição de carreira pro digital é a mais rápida do mercado quando há direção.' },
-          { v: 'escalar', t: 'Já atendo clientes e quero escalar', fb: 'Escalar sem estrutura quebra a operação. Por isso automação vem primeiro.' },
-          { v: 'curiosidade', t: 'Curiosidade: quero entender o jogo', fb: 'Entender o jogo antes de apostar é a decisão mais inteligente.' } ] },
-        { q: 'Qual frase te define melhor neste momento?', sub: '', options: [
-          { v: 'tempopouco', t: 'Tenho pouco tempo disponível', fb: 'Pouco tempo não é obstáculo: é filtro. O que importa é direção.' },
-          { v: 'direcao', t: 'Tenho tempo, mas falta direção', fb: 'Direção transforma horas soltas em progresso composto.' },
-          { v: 'oquevender', t: 'Não sei o que vender', fb: 'Você não precisa inventar: precisa mapear o que já resolve bem.' },
-          { v: 'execucao', t: 'Sei o que quero, falta execução', fb: 'Execução é músculo, e sistemas são a academia.' } ] },
-        { q: 'Se pudesse resolver uma coisa só este mês, qual seria?', sub: '', options: [
-          { v: 'clareza', t: 'Ter clareza do próximo passo', fb: 'Clareza é o ativo mais barato e mais negligenciado.' },
-          { v: 'presenca', t: 'Criar presença digital de verdade', fb: 'Presença é ativo composto: cada publicação trabalha para sempre.' },
-          { v: 'vendas', t: 'Aumentar as minhas vendas', fb: 'Venda consistente nasce de processo, não de sorte.' },
-          { v: 'automatizar', t: 'Automatizar o que já faço manualmente', fb: 'Automatizar o que existe libera o tempo para o que vem.' } ] }
-      ]
-    };
-
-    var DIAG = {
-      empresa: function (a) {
-        var q1 = { '3h+': 'você está gastando <strong>mais de 3 horas por dia</strong> em tarefas que uma máquina faria por você',
-          '1-3h': 'você perde <strong>entre 1 e 3 horas por dia</strong> com o que poderia rodar sozinho',
-          '<1h': 'você já controla o tempo manual, mas o processo ainda depende de você',
-          'auto': 'sua operação já tem automação, e o próximo nível é virar estratégia' };
-        var q2 = { tempo: 'seu gargalo é <strong>tempo</strong>', clientes: 'seu gargalo é <strong>entrada de clientes</strong>',
-          organizacao: 'seu gargalo é <strong>organização</strong>', autoridade: 'seu gargalo é <strong>autoridade digital</strong>' };
-        var q3 = { whatsapp: 'atendimento automático no WhatsApp, respondendo na hora, inclusive de madrugada',
-          redes: 'publicação de conteúdo agendada e constante, sem depender de memória ou motivação',
-          followup: 'follow-up automático de orçamentos e clientes, para nenhuma venda morrer no esquecimento',
-          tudo: 'atendimento, conteúdo e follow-up rodando juntos, como um time invisível 24h' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1['1-3h']) + ', e ' + (q2[a[1]] || q2.tempo) + '. A boa notícia: isso tem solução, e ela começa com o que está no seu e-book.',
-          bullets: ['Prioridade nº 1: ' + (q3[a[2]] || q3.tudo) + '.',
-            'Automação não substitui você, ela devolve o seu tempo para vender e crescer.',
-            'Quanto antes o sistema assume o repetitivo, mais cedo o negócio trabalha por você.'] };
-      },
-      iniciante: function (a) {
-        var q1 = { poronde: 'o seu desafio é <strong>saber por onde começar</strong>', tempo: 'o seu desafio é <strong>falta de tempo</strong>',
-          medo: 'o seu desafio é <strong>medo de errar em público</strong>', tech: 'o seu desafio é <strong>achar que precisa ser técnico</strong>' };
-        var q2 = { parado: 'você ainda está no marco zero, e isso é vantagem: dá pra começar certo',
-          posts: 'você já produz conteúdo, mas ainda sem estratégia por trás',
-          vendo: 'você já vende; agora falta estrutura para escalar',
-          estudo: 'você acumula teoria e ainda pratica pouco' };
-        var q3 = { base: 'montar a base: presença, oferta e uma rotina mínima viável',
-          primeiravenda: 'estruturar o caminho direto até a primeira venda',
-          constancia: 'criar um ciclo de constância que caiba na sua semana',
-          plano: 'seguir um plano claro, um passo por dia' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.poronde) + ' e ' + (q2[a[1]] || q2.parado) + '. Ninguém nasce pronto. O que muda o jogo é começar com método.',
-          bullets: ['Primeiro passo: ' + (q3[a[2]] || q3.base) + '.',
-            'Constância vence talento: passos diários pequenos constroem autoridade.',
-            'O e-book abaixo organiza exatamente essa base, do zero ao patrimônio.'] };
-      },
-      outros: function (a) {
-        var q1 = { renda: 'você quer <strong>uma renda extra</strong>', transicao: 'você quer <strong>transição de carreira</strong>',
-          escalar: 'você quer <strong>escalar o que já atende</strong>', curiosidade: 'você quer <strong>entender o jogo antes de apostar</strong>' };
-        var q2 = { tempopouco: 'o seu tempo é curto', direcao: 'o seu tempo existe, mas falta direção',
-          oquevender: 'a sua dúvida é o que vender', execucao: 'a sua lacuna é execução' };
-        var q3 = { clareza: 'ter clareza do próximo passo', presenca: 'construir presença digital de verdade',
-          vendas: 'aumentar as suas vendas', automatizar: 'automatizar o que você já faz manualmente' };
-        return { text: 'Pelas suas respostas, ' + (q1[a[0]] || q1.curiosidade) + ' e ' + (q2[a[1]] || q2.direcao) + '. O digital premia quem tem método, não quem tem sorte.',
-          bullets: ['Foco do mês: ' + (q3[a[2]] || q3.clareza) + '.',
-            'Autoridade digital é ativo composto: começa pequeno e cresce sozinho.',
-            'O e-book abaixo mostra a base completa, do zero ao patrimônio.'] };
-      }
-    };
-
-    function recommend(profile, a) {
-      var p = profile || 'outros', q2 = a[1], q3 = a[2], primary, s1, s2;
-      if (p === 'empresa') {
-        if (q2 === 'organizacao') { primary = 'gestao'; s1 = 'financeiro'; s2 = 'site'; }
-        else if (q2 === 'autoridade') { primary = 'site'; s1 = 'trafego'; s2 = 'arquitetura'; }
-        else if (q2 === 'clientes') {
-          if (q3 === 'redes') { primary = 'trafego'; s1 = 'venda'; s2 = 'site'; }
-          else if (q3 === 'followup') { primary = 'venda'; s1 = 'trafego'; s2 = 'reclamacoes'; }
-          else { primary = 'trafego'; s1 = 'venda'; s2 = 'lancamento'; }
-        } else {
-          if (q3 === 'whatsapp') { primary = 'reclamacoes'; s1 = 'venda'; s2 = 'trafego'; }
-          else if (q3 === 'followup') { primary = 'venda'; s1 = 'reclamacoes'; s2 = 'gestao'; }
-          else if (q3 === 'tudo') { primary = 'arquitetura'; s1 = 'trafego'; s2 = 'gestao'; }
-          else { primary = 'trafego'; s1 = 'gestao'; s2 = 'venda'; }
-        }
-      } else if (p === 'iniciante') {
-        if (q3 === 'primeiravenda') { primary = 'venda'; s1 = 'lancamento'; s2 = 'trafego'; }
-        else if (q3 === 'constancia') { primary = 'trafego'; s1 = 'lancamento'; s2 = 'site'; }
-        else if (q3 === 'plano') { primary = 'gestao'; s1 = 'lancamento'; s2 = 'venda'; }
-        else if (q2 === 'estudo' || a[0] === 'tech') { primary = 'lancamento'; s1 = 'gestao'; s2 = 'venda'; }
-        else { primary = 'lancamento'; s1 = 'venda'; s2 = 'trafego'; }
-      } else {
-        if (q3 === 'presenca') { primary = 'site'; s1 = 'trafego'; s2 = 'lancamento'; }
-        else if (q3 === 'vendas') { primary = 'venda'; s1 = 'reclamacoes'; s2 = 'trafego'; }
-        else if (q3 === 'automatizar') { primary = 'trafego'; s1 = 'site'; s2 = 'gestao'; }
-        else if (q2 === 'oquevender') { primary = 'gestao'; s1 = 'lancamento'; s2 = 'venda'; }
-        else { primary = 'lancamento'; s1 = 'gestao'; s2 = 'venda'; }
-      }
-      var seen = {}, list = [];
-      [primary, s1, s2].forEach(function (id) { if (id && !seen[id] && PRODUCTS[id]) { seen[id] = 1; list.push(id); } });
-      ['venda', 'trafego', 'lancamento'].forEach(function (id) { if (list.length < 3 && !seen[id]) { list.push(id); seen[id] = 1; } });
-      return list;
-    }
-
-    var state = { profile: null, qIndex: 0, answers: [], busy: false };
-    var steps = $$('#console .step'), stateLabel = $('#consoleState');
-    var ADVANCE_MS = 1100;
-
-    function goTo(id) {
-      steps.forEach(function (s) { s.classList.remove('is-active'); });
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.classList.add('is-active');
-      var order = { 'step-intro': 1, 'step-profile': 2, 'step-quiz': 3, 'step-result': 4 };
-      if (stateLabel) stateLabel.textContent = 'Etapa ' + (order[id] || 1) + ' de 4';
-      var host = $('#console');
-      if (host) {
-        var top = host.getBoundingClientRect().top + window.pageYOffset - navH() - 24;
-        window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
-      }
-    }
-
-    function renderQuestion() {
-      var list = QUESTIONS[state.profile], item = list[state.qIndex];
-      var bar = $('#quizProgress');
-      if (bar) bar.style.width = ((state.qIndex + 1) / list.length * 100) + '%';
-      var lbl = $('#quizLabel');
-      if (lbl) lbl.textContent = state.qIndex === list.length - 1 ? 'Última pergunta' : 'Pergunta ' + (state.qIndex + 1) + ' de ' + list.length;
-      var t = $('#quizTitle'); if (t) t.textContent = item.q;
-      var s = $('#quizSub'); if (s) s.textContent = item.sub || '';
-      var fb = $('#quizFeedback'); if (fb) { fb.textContent = ''; fb.classList.remove('is-visible'); }
-      var box = $('#quizOptions');
-      if (!box) return;
-      state.busy = false;
-      box.innerHTML = '';
-      item.options.forEach(function (opt) {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'option';
-        btn.textContent = opt.t;
-        btn.setAttribute('role', 'radio');
-        btn.setAttribute('aria-checked', 'false');
-        btn.addEventListener('click', function () { pick(opt, btn, fb); });
-        box.appendChild(btn);
-      });
-    }
-
-    function pick(opt, btn, fb) {
-      if (state.busy) return;
-      state.busy = true;
-      var box = $('#quizOptions');
-      $$('.option', box).forEach(function (b) { b.classList.remove('is-selected'); b.setAttribute('aria-checked', 'false'); });
-      btn.classList.add('is-selected');
-      btn.setAttribute('aria-checked', 'true');
-      state.answers[state.qIndex] = opt.v;
-      if (opt.fb && fb) { fb.textContent = opt.fb; fb.classList.add('is-visible'); }
-      setTimeout(function () {
-        if (state.qIndex < QUESTIONS[state.profile].length - 1) {
-          state.qIndex++;
-          renderQuestion();
-          var step = $('#step-quiz');
-          step.classList.remove('is-active'); void step.offsetWidth; step.classList.add('is-active');
-        } else {
-          state.busy = false;
-          buildDiagnosis();
-          goTo('step-result');
-        }
-      }, ADVANCE_MS);
-    }
-
-    function recCard(id, primary) {
-      var p = PRODUCTS[id];
-      if (!p) return '';
-      return '<div class="rec' + (primary ? ' is-primary' : '') + '">' +
-        '<img class="rec-cover" src="' + p.cover + '" alt="Capa do e-book ' + p.title + '" width="' + p.cw + '" height="' + p.ch + '" loading="lazy">' +
-        '<span class="rec-tag">' + (primary ? 'Comece por aqui' : p.badge) + '</span>' +
-        '<h4>' + p.title + '</h4><p>' + p.desc + '</p>' +
-        '<div class="book-price" style="margin:0 0 10px"><span class="old">' + p.old + '</span><span class="now num">' + p.now + '</span></div>' +
-        '<a class="btn ' + (primary ? 'btn-primary' : 'btn-secondary') + '" href="' + p.url + '" target="_blank" rel="noopener">' +
-        (primary ? 'Comprar agora' : 'Ver e-book') + '</a></div>';
-    }
-
-    function buildDiagnosis() {
-      var box = $('#diagnosis');
-      if (!box) return;
-      var d = (DIAG[state.profile] || DIAG.outros)(state.answers);
-      var html = '<p>' + d.text + '</p><ul>';
-      d.bullets.forEach(function (b) {
-        html += '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>' + b + '</span></li>';
-      });
-      html += '</ul>';
-      box.innerHTML = html;
-      var recs = $('#recs');
-      if (recs) {
-        var list = recommend(state.profile, state.answers);
-        recs.innerHTML = recCard(list[0], true) + recCard(list[1], false) + recCard(list[2], false);
-      }
-    }
-
-    $$('[data-next]').forEach(function (btn) {
-      btn.addEventListener('click', function () { goTo('step-profile'); });
-    });
-    $$('.profile').forEach(function (card) {
-      card.addEventListener('click', function () {
-        $$('.profile').forEach(function (c) { c.classList.remove('is-selected'); c.setAttribute('aria-checked', 'false'); });
-        card.classList.add('is-selected');
-        card.setAttribute('aria-checked', 'true');
-        state.profile = card.dataset.profile;
-        state.qIndex = 0;
-        state.answers = [];
-        state.busy = true;
-        setTimeout(function () { state.busy = false; renderQuestion(); goTo('step-quiz'); }, 380);
-      });
-    });
-  })();
-
-  /* ─── 7. CONTATO ─────────────────────────────────────────────── */
-  (function contact() {
-    var f = $('#contactForm'); if (!f) return;
-    var status = $('#cf-status');
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var hp = f.querySelector('[name="hp"]');
-      if (hp && hp.value) return;
-      var name = $('#cf-name').value.trim();
-      var email = $('#cf-email').value.trim();
-      var msg = $('#cf-msg').value.trim();
-      if (!name || !email || !msg) { status.textContent = 'Preencha todos os campos.'; return; }
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { status.textContent = 'E-mail inválido.'; return; }
-      var text = 'Contato pelo site\n\nNome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + msg;
-      status.textContent = 'Abrindo o WhatsApp com a sua mensagem… se não abrir, use o botão verde no canto da tela.';
-      window.location.href = 'https://wa.me/559192094504?text=' + encodeURIComponent(text);
-      f.reset();
-    });
-  })();
-
-  /* ─── 8. PALETA DE COMANDOS ──────────────────────────────────── */
-  (function palette() {
-    var box = $('#palette'), input = $('#paletteInput'), list = $('#paletteList'), opener = $('#cmdOpen');
-    if (!box) return;
-    var CMDS = [
-      { k: 'Seção', l: 'Ecossistema', h: '#modulos' },
-      { k: 'Seção', l: 'KodaGrid', h: '#kodagrid' },
-      { k: 'Seção', l: 'Biblioteca de e-books', h: '#biblioteca' },
-      { k: 'Seção', l: 'Mostruário: 50 referências de site', h: '#mostruario' },
-      { k: 'Site', l: 'Abrir o mostruário completo', u: 'https://kelvinoliveiracode.github.io/kodaros-mostruario/' },
-      { k: 'Seção', l: 'Diagnóstico gratuito', h: '#diagnostico' },
-      { k: 'Seção', l: 'Ferramentas', h: '#ferramentas' },
-      { k: 'Seção', l: 'Perguntas frequentes', h: '#duvidas' },
-      { k: 'Seção', l: 'Falar com a gente', h: '#contato' },
-      { k: 'Site', l: 'Abrir as 50+ ferramentas', u: 'https://kelvinoliveiracode.github.io/kodaros-ferramentas/' },
-      { k: 'Contato', l: 'Chamar no WhatsApp', u: 'https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20KODAROS.' },
-      { k: 'Contato', l: 'Enviar e-mail', u: 'mailto:kodaros01@gmail.com' },
-      { k: 'Loja', l: 'Comprar KodaGrid na Hotmart', u: 'https://pay.hotmart.com/H107355805V?utm_source=kodaros_plataforma&utm_medium=site&utm_campaign=paleta' }
-    ];
-    var found = CMDS, index = 0;
-
-    function render() {
-      list.innerHTML = '';
-      if (!found.length) {
-        var li = document.createElement('li');
-        li.className = 'palette-item';
-        li.setAttribute('role', 'option');
-        li.setAttribute('aria-disabled', 'true');
-        li.style.cursor = 'default';
-        li.textContent = 'Nenhum comando encontrado';
-        list.appendChild(li);
-        return;
-      }
-      found.forEach(function (c, i) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'palette-item' + (i === index ? ' is-active' : '');
-        b.setAttribute('role', 'option');
-        b.setAttribute('aria-selected', i === index ? 'true' : 'false');
-        var kind = document.createElement('span');
-        kind.className = 'p-kind'; kind.textContent = c.k;
-        var label = document.createElement('span');
-        label.className = 'p-label'; label.textContent = c.l;
-        b.appendChild(kind); b.appendChild(label);
-        b.addEventListener('click', function () { go(c); });
-        list.appendChild(b);
-      });
-    }
-    function filter(q) {
-      q = (q || '').toLowerCase().trim();
-      found = CMDS.filter(function (c) { return !q || (c.l + ' ' + c.k).toLowerCase().indexOf(q) > -1; });
-      index = 0;
-      render();
-    }
-    function go(c) {
-      close();
-      if (c.h) {
-        var el = document.querySelector(c.h);
-        if (el) {
-          var top = el.getBoundingClientRect().top + window.pageYOffset - navH() - 20;
-          window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
-        }
-      } else if (c.u) {
-        if (c.u.indexOf('mailto:') === 0) window.location.href = c.u;
-        else window.open(c.u, '_blank', 'noopener');
-      }
-    }
-    var lastFocus = null;
-    function open() {
-      lastFocus = document.activeElement;
-      box.hidden = false; input.value = ''; filter(''); input.focus(); lock();
-    }
-    function close() {
-      if (box.hidden) return;
-      box.hidden = true; unlock();
-      if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (err) {} }
-      lastFocus = null;
-    }
-
-    input.addEventListener('input', function () { filter(this.value); });
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowDown') { e.preventDefault(); index = Math.min(found.length - 1, index + 1); render(); }
-      else if (e.key === 'ArrowUp') { e.preventDefault(); index = Math.max(0, index - 1); render(); }
-      else if (e.key === 'Enter') { e.preventDefault(); if (found[index]) go(found[index]); }
-      else if (e.key === 'Escape') { close(); }
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Tab' && !box.hidden) {
-        var f = $('input, button, [href]', box);
-        if (f.length) {
-          var first = f[0], last = f[f.length - 1];
-          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-        return;
-      }
-      var tag = (document.activeElement && document.activeElement.tagName) || '';
-      var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(tag);
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); box.hidden ? open() : close(); }
-      else if (e.key === '/' && !typing && box.hidden) { e.preventDefault(); open(); }
-      else if (e.key === 'Escape' && !box.hidden) close();
-    });
-    if (opener) opener.addEventListener('click', function () { box.hidden ? open() : close(); });
-    box.addEventListener('click', function (e) { if (e.target === box) close(); });
-  })();
-
-  /* ─── 9. RODAPÉ ──────────────────────────────────────────────── */
-  var yearEl = $('#year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
-</script>
-
+<a class="wa-fab" id="waFab" href="https://wa.me/559192094504?text=Oi!%20Vim%20pelo%20site%20da%20KODAROS%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" hidden=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.570-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+<script src="assets/js/site.js"></script>
 
 </body></html>

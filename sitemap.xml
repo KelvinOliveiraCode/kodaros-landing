@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/termos.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/index.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/sites.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/landing-pages.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/automacoes.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/bots-agentes.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/sistemas-apps.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/servicos/marketing.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/projetos.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/planos.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/sobre.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/biblioteca.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/diagnostico.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/contato.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/privacidade.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kelvinoliveiracode.github.io/kodaros-landing/termos.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
