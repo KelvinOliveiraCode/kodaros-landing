@@ -203,7 +203,7 @@ h3{font-size:22px;line-height:1.3;letter-spacing:-.01em;font-weight:600}
 /* ── evidências ────────────────────────────────────────────────── */
 .evidence{border-top:1px solid var(--border-strong)}
 .evidence-row{
-  display:grid;grid-template-columns:1.5fr .8fr .7fr auto;gap:20px;align-items:center;
+  display:grid;grid-template-columns:1fr auto auto;gap:20px;align-items:center;
   padding:18px 4px;border-bottom:1px solid var(--border);
   transition:background .2s var(--ease),padding-left .2s var(--ease);
 }
@@ -469,10 +469,7 @@ h3{font-size:22px;line-height:1.3;letter-spacing:-.01em;font-weight:600}
 }
 
 
-/* linhas de evidência sem coluna de stack */
-.evidence-row .evidence-stack:empty{display:none}
-@media(min-width:641px){
-  .evidence-row:has(.evidence-stack:empty){grid-template-columns:1fr auto auto}
-}
+
+
 
 

@@ -123,7 +123,6 @@ const projects = {
   "kodagrid": { name: "KodaGrid", desc: "Construtor de planilhas com fórmulas para Windows. 13 templates, .xlsx real e 100% offline.", stack: "Windows · offline", href: "https://kelvinoliveiracode.github.io/kodaros-landing/#kodagrid", group: "Produtos" },
   "ferramentas": { name: "Kodaros Ferramentas", desc: "53 calculadoras de negócio, PWA offline, sem cadastro e sem custo.", stack: "JavaScript · PWA", href: "https://kelvinoliveiracode.github.io/kodaros-ferramentas/", group: "Produtos" },
   "mostruario": { name: "Mostruário Kodaros", desc: "50 landing pages de demonstração, uma para cada nicho, com busca e filtro.", stack: "HTML · CSS", href: "https://kelvinoliveiracode.github.io/kodaros-mostruario/", group: "Produtos" },
-  "cloud4all": { name: "Cloud4All", desc: "Catálogo de 124 serviços de nuvem, 8 provedores e recomendador com trilha visível. Aprovado para o CONNEPI 2026.", stack: "JavaScript · catálogo", href: "https://kelvinoliveiracode.github.io/cloud4all/", group: "Produtos" },
   "garimpo": { name: "Garimpo", desc: "Curadoria de ofertas com 131 itens, filtros, wishlist e catálogo aberto. Roda inteira no navegador.", stack: "JavaScript · navegador", href: "https://garimpo-oficial.vercel.app/", group: "Produtos" },
   "megaagt": { name: "MegaAGT", desc: "App desktop em Tauri e Rust para o OpenCode CLI: sessões, subagentes, raciocínio e diffs.", stack: "Rust · Tauri", href: "https://github.com/KelvinOliveiraCode/MegaAGT", group: "Apps" },
   "javaforge": { name: "JavaForge", desc: "Construtor visual de apps Java Swing com SQLite e geração de projetos Maven completos.", stack: "Rust · Java", href: "https://github.com/KelvinOliveiraCode/JavaForge", group: "Apps" },
@@ -375,7 +374,6 @@ function evidenceRow(id, base) {
     <div class="evidence-name">${p.name}</div>
     <div class="evidence-desc">${p.desc}</div>
   </div>
-  <div class="evidence-stack">${p.stack}</div>
   <div class="evidence-stack">${p.group}</div>
   <a class="evidence-link" href="${p.href}" target="_blank" rel="noopener">Abrir</a>
 </div>`;
@@ -866,18 +864,16 @@ const aboutBody = `
   <div class="container split-2-1">
     <div class="prose reveal">
       <h2>O que é a Kodaros</h2>
-      <p>A Kodaros é a empresa de tecnologia de Kelvin Rebelo de Oliveira. O trabalho cobre sites, landing pages, automações, bots, agentes de IA, sistemas sob medida, software desktop e marketing.</p>
+      <p>A Kodaros é um ecossistema de tecnologia. O trabalho cobre sites, landing pages, automações, bots, agentes de IA, sistemas sob medida, software desktop e marketing.</p>
       <p>A empresa não é uma agência que promete. É um acervo de software que já roda. Cada serviço mostra o que foi construído, com código, produto ou número. O visitante não precisa confiar em uma frase. Ele pode abrir.</p>
       <h2>O que já foi construído</h2>
-      <p>São 100 repositórios públicos, 50 deles projetos funcionais. O ecossistema inclui o KodaGrid, as 53 ferramentas gratuitas, o mostruário com 50 modelos de site, a Cloud4All e o Garimpo. A Cloud4All foi aprovada para apresentação no CONNEPI 2026.</p>
-      <p>A formação inclui Ciência da Computação no IFPA, Análise e Desenvolvimento de Sistemas na Uniasselvi, cinco bootcamps corporativos e 219 horas de formação concluída na DIO. Cada bootcamp terminou com projeto publicado, não só com certificado.</p>
-    </div>
-    <aside class="reveal">
+      <p>São 100 repositórios públicos, 50 deles projetos funcionais. O ecossistema inclui o KodaGrid, as 53 ferramentas gratuitas, o mostruário com 50 modelos de site e o Garimpo.</p>
+    </div>    <aside class="reveal">
       <div class="metrics" style="grid-template-columns:1fr 1fr">
         <div class="metric"><b>100</b><span>repositórios públicos</span></div>
         <div class="metric"><b>50</b><span>projetos funcionais</span></div>
-        <div class="metric"><b>5</b><span>bootcamps concluídos</span></div>
-        <div class="metric"><b>219h</b><span>de formação</span></div>
+        <div class="metric"><b>53</b><span>ferramentas gratuitas</span></div>
+        <div class="metric"><b>50</b><span>modelos de site</span></div>
       </div>
     </aside>
   </div>
@@ -893,23 +889,6 @@ const aboutBody = `
       <div class="process-step reveal"><div class="mono">Escopo</div><h3>Fechar antes de começar</h3><p>Entregáveis, prazo e valor por escrito. O que não entra também fica dito.</p></div>
       <div class="process-step reveal"><div class="mono">Propriedade</div><h3>O código é seu</h3><p>Repositório, arquivos e credenciais no seu nome. Sem dependência de uma pessoa.</p></div>
       <div class="process-step reveal"><div class="mono">Suporte</div><h3>Continuar depois</h3><p>Treinamento e suporte. O projeto não termina no dia da entrega.</p></div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container split-2">
-    <div class="reveal">
-      <p class="eyebrow">Fundador</p>
-      <h2>Kelvin Rebelo de Oliveira</h2>
-      <p class="lead" style="margin-top:16px">Engenheiro de Sistemas de IA. Estudante de Ciência da Computação no IFPA e de Análise e Desenvolvimento de Sistemas na Uniasselvi.</p>
-    </div>
-    <div class="prose reveal">
-      <p>Kelvin desenha a solução, orquestra os agentes que ajudam a implementar, revisa e mantém o código. O trabalho é individual, com revisão humana em cada entrega.</p>
-      <p>A base técnica cobre Python, Java, Spring Boot, React, TypeScript, Rust, dados, segurança, infraestrutura e automação. A mesma pessoa que constrói o backend revisa a interface e o texto.</p>
-      <p>O objetivo é simples: entregar software que funcione, com evidência e sem camada de promessa.</p>
-      <a class="text-link" style="margin-top:20px" href="projetos.html">Ver projetos
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-      </a>
     </div>
   </div>
 </section>
@@ -933,7 +912,7 @@ const aboutBody = `
 
 write("sobre.html", layout({
   title: "Sobre · KODAROS",
-  description: "A Kodaros é a empresa de tecnologia de Kelvin Rebelo de Oliveira. 100 repositórios públicos, 50 projetos funcionais e um ecossistema de produtos no ar.",
+  description: "A Kodaros é um ecossistema de tecnologia. 100 repositórios públicos, 50 projetos funcionais e produtos no ar.",
   active: "sobre.html",
   body: aboutBody
 }));
@@ -1324,6 +1303,10 @@ O domínio usado no sitemap é \`https://kodaros.com.br\`. Troque essa constante
 `);
 
 console.log("Build concluído.");
+
+
+
+
 
 
 
